@@ -277,6 +277,19 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
+                    <label>職稱</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="西醫">西醫</option>
+                      <option value="牙醫">牙醫</option>
+                      <option value="中醫">中醫</option>
+                      <option value="護理">護理</option>
+                      <option value="藥學">藥學</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
                     <label>管理者</label>
                     <div class="margin_x_child-l m-0 radio">
                       <label>
@@ -314,7 +327,7 @@
           </form>
         </div>
         <!-- /.box -->
-        <h2 class="text-center border-0 page-header"><a class="btn btn-primary btn-lg w-1/2 l:w-1/4" href="A01-users2.html">新增</a></h2>
+        <div style="margin: 5px;text-align: right;"><a class="btn btn-primary" href="A01-users2.html">匯入臨床教師設定</a></div>
         <div class="box box-warning">
           <div class="box-header">
             <h3 class="box-title">搜尋結果 - 使用者列表</h3>
@@ -322,6 +335,7 @@
           </div>
           <!-- /.box-header -->
           <div class="box-body table-responsive">
+            <div class="row"><div class="col-sm-6"><div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length" aria-controls="example1" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label></div></div></div>
             <table class="table table-hover">
               <tbody>
                 <tr>
@@ -344,13 +358,13 @@
                   <td>西醫</td>
                   <td>契約行政人員</td>
                   <td>院內</td>
-                  <td class="fa-check" style="color: #37ca37;">是</td>
+                  <td class="fa fa-check" style="color: #37ca37;">是</td>
                   <td style="color: #37ca37;">啟用</td>
                   <td>
                     <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info">檢視</button>
-                      <button type="button" class="btn btn-info">修改</button>
-                      <button type="button" class="btn btn-warning">切換身分</button>
+                      <button type="button" class="btn btn-info fa fa-pencil" alt="檢視"></button>
+                      <button type="button" class="btn btn-info fa fa-pencil" alt="修改"></button>
+                      <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分"></button>
                     </div>
                   </td>
                 </tr>
