@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900|Noto+Serif+TC|Poppins|Material+Icons&display=swap&subset=chinese-traditional");
+
+*, *::before, *::after {box-sizing: border-box;}
+body *:not(small) {
+  font-family: "Noto Sans TC", sans-serif;
+  /* font-weight: 100; */
+  font-size: 16px;
+  /* color: #665e5e; */
+}
+.margin_x_child > :not(:last-child) {
+  margin-right: 5px;
+}
+
+.margin_x_child-m > :not(:last-child) {
+  margin-right: 10px;
+}
+
+.margin_x_child-l > :not(:last-child) {
+  margin-right: 15px;
+}
+
+.margin_y_child > :not(:last-child):not(#footer), .margin_y_child-even > :nth-child(even):not(:last-child):not(#footer) {
+  margin-bottom: 5px;
+}
+
+.margin_y_child-m > :not(:last-child):not(#footer), .margin_y_child-even-m > :nth-child(even):not(:last-child):not(#footer) {
+  margin-bottom: 10px;
+}
+
+.margin_y_child-l > :not(:last-child):not(#footer), .margin_y_child-even-l > :nth-child(even):not(:last-child):not(#footer) {
+  margin-bottom: 15px;
+}
+
+.margin_y_all_child > :not(#footer), .margin_y_all_child-even > :nth-child(even):not(#footer) {
+  margin-bottom: 5px;
+}
+
+.margin_y_all_child-m > :not(#footer), .margin_y_all_child-even-m > :nth-child(even):not(#footer) {
+  margin-bottom: 10px;
+}
+
+.margin_y_all_child-l > :not(#footer), .margin_y_all_child-even-l > :nth-child(even):not(#footer) {
+  margin-bottom: 15px;
+}
+.mr-1 {margin-right: .25rem !important;}
+.p-0 {padding: 0 !important;}
+.h34 {height: 34px;}
+.min_w-1\/3 {min-width: calc(100%/3);}
+/* .w-2\/3 {min-width: calc(100%*2/3) !important;} */
+.w-full {width: 100% !important;}
+
+.sidebar-toggle {padding: 14px 15px !important;}
+.list_dot.fa-circle {transform: scale(.5);}
+.box-header {min-height: 45px;}
+[role="tooltip"] {min-width: 100px; max-width: 100%;}
+.form_s, .form_m, .form_l {width: 100%;}
+.form_s {height: 30px;}
+.form_m {height: 34px;}
+.form_l {height: 46px;}
+.pseudo_dash {
+  position: relative;
+}
+.pseudo_dash:after {
+  content: "╵";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+}
+.datepicker {
+  z-index: 1050 !important;
+}
+.select2 {width: 100%;}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 90%;
+  }
+  .pseudo_dash:after {
+    content: "-";
+    top: 5px;
+    right: -4px;
+    bottom: auto;
+    left: auto;
+  }
+}
+@media (min-width: 960px) {
+  .modal-dialog {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-dialog {
+    width: 60%;
+  }
+}
