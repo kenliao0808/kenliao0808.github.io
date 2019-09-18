@@ -327,15 +327,28 @@
           </form>
         </div>
         <!-- /.box -->
-        <div style="margin: 5px;text-align: right;"><a class="btn btn-primary" href="A01-users2.html">匯入臨床教師設定</a></div>
+        <div style="margin: 0px 0px 10px 0px;text-align: right;"><a class="btn btn-primary" href="A01-users2.html">匯入臨床教師設定</a></div>
         <div class="box box-warning">
           <div class="box-header">
             <h3 class="box-title">搜尋結果 - 使用者列表</h3>
             <div class="dataTables_info" role="status" aria-live="polite">共<span class="text-primary px-2">5</span>筆</div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="dataTables_length" id="example1_length">
+                  <label>顯示 
+                    <select name="example1_length" aria-controls="example1" class="form-control input-sm">
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select> 
+                  筆</label>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- /.box-header -->
           <div class="box-body table-responsive">
-            <div class="row"><div class="col-sm-6"><div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length" aria-controls="example1" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label></div></div></div>
             <table class="table table-hover">
               <tbody>
                 <tr>
