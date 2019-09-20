@@ -47,6 +47,28 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <style type="text/css">
+    /*==【popout】==*/
+  .popout{display:none;z-index:9999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.55);}
+  .popout .inbox{
+    background:#fff;width:600px;;position:absolute;left:50%;top:0;margin:0 0 0 -300px;
+    -webkit-box-shadow:2px 2px 10px rgba(0,0,0,0.2);-moz-box-shadow:2px 2px 10px rgba(0,0,0,0.2);box-shadow:2px 2px 10px rgba(0,0,0,0.2);
+  }
+    .pop_hd{background:#f9f9f9;padding:15px 20px;border-bottom:1px solid #eee;position:relative;}
+      .pop_hd h2{font-weight:bold;}
+      .i_close{position:absolute;right:15px;top:13px;background:none;border:0;cursor:pointer;padding:5px;margin-top:-2px;opacity:0.25;color:#000;font-size:21px;font-weight:bold;line-height:1;}
+      .i_close:hover{opacity:4;}
+    .pop_bd{padding:30px 20px;}
+      .psbox{text-align:center;padding:10px;border:1px dashed #ddd;margin:0 0 20px;}
+      .psbox a{color: #337ab7}
+      .psbox small{font-size:10px;}
+      .jquery-filestyle input{width:50% !important;}
+      .popbtn{padding:30px 0 0;text-align:right;margin-bottom:-15px}
+  .popout .chosen-container{width:20% !important;}
+  input[type=file] {display: unset;}
+  </style>
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -227,29 +249,30 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="box box-primary">
-          <form role="form">
-            <div class="box-header with-border">
-              <h3 class="box-title">使用者管理</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="收合/展開"><i class="fa fa-minus"></i></button>
-              </div>
+        <div class="box box-default">
+          <div class="box-header with-border">
+            <h3 class="box-title">使用者管理 - 查詢資料</h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
-            <div class="box-body">
+          </div>
+          <div class="box-body">
+            <form role="form">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>燈號</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>姓名</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>單位</label>
                     <select class="form-control">
@@ -262,7 +285,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>職類</label>
                     <select class="form-control">
@@ -275,7 +298,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>職稱</label>
                     <select class="form-control">
@@ -288,7 +311,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>等級</label>
                     <select class="form-control">
@@ -298,109 +321,167 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>管理者</label>
-                    <label>
-                      <input type="checkbox" class="flat-red" checked>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>狀態</label>
-                    <div class="margin_x_child-l m-0 radio">
-                      <label>
-                        <input type="radio" name="r3" class="flat-red" value="1" checked>啟用
-                      </label>
-                      <label>
-                        <input type="radio" name="r3" class="flat-red" value="2">停用
-                      </label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="啟用">啟用</option>
+                      <option value="未啟用">未啟用</option>
+                      <option value="關閉">關閉</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>管理者</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="1">是</option>
+                      <option value="0">否</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer">
+                <button type="reset" class="btn btn-warning">清除檢索</button>
+                <button type="submit" class="btn btn-info pull-right">查詢</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- middle layer -->
+        <div style="margin: 0px 0px 10px 0px;text-align: right;">
+          <a class="btn btn-primary fa fa-floppy-o" id="batch_popout"> 匯入臨床教師名單</a>
+        </div>
+        <!-- table contect list -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">搜尋結果 - 使用者列表</h3>
+              </div>
+              <div class="box-body">
+                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                  <!-- /.box-header -->
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="dataTables_length" id="example2_length">
+                        <label>顯示 
+                          <select name="example2_length" aria-controls="example2" class="form-control input-sm">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select> 
+                        筆</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <th style="width: 10px">#</th>
+                            <th>燈號</th>
+                            <th>姓名</th>
+                            <th>單位</th>
+                            <th>職類</th>
+                            <th>職稱</th>
+                            <th>等級</th>
+                            <th>管理者</th>
+                            <th>狀態</th>
+                            <th>動作</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>fly001</td>
+                            <td>王大明</td>
+                            <td>教師培育科</td>
+                            <td>西醫</td>
+                            <td>契約行政人員</td>
+                            <td>院內</td>
+                            <td class="fa fa-check" style="color: #37ca37;">是</td>
+                            <td style="color: #37ca37;">啟用</td>
+                            <td>
+                              <div class="margin_y_all_child">
+                                <button type="button" class="btn btn-info fa fa-search" alt="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
+                                <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
+                                <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>fly002</td>
+                            <td>陳中銘</td>
+                            <td>傳統醫學部</td>
+                            <td>中醫</td>
+                            <td>進修醫師</td>
+                            <td>院外</td>
+                            <td class="fa fa-check" style="color: #ca3737;">否</td>
+                            <td style="color: #96730f;">未啟用</td>
+                            <td>
+                              <div class="margin_y_all_child">
+                                <button type="button" class="btn btn-info fa fa-search" alt="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
+                                <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
+                                <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>fly003</td>
+                            <td>劉曉明</td>
+                            <td>教育部</td>
+                            <td>牙醫</td>
+                            <td>技士</td>
+                            <td>院內</td>
+                            <td class="fa fa-check" style="color: #37ca37;">是</td>
+                            <td style="color: #ca3737;">關閉</td>
+                            <td>
+                              <div class="margin_y_all_child">
+                                <button type="button" class="btn btn-info fa fa-search" alt="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
+                                <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
+                                <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                        <ul class="pagination">
+                          <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                          <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                          <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- /.box-body -->
-            <div class="margin_y_all_child box-footer">
-              <button type="reset" class="btn btn-warning">清除檢索</button>
-              <button type="submit" class="btn btn-info pull-right">查詢</button>
-            </div>
-            <!-- /.box-footer-->
-          </form>
+          </div>
         </div>
-        <!-- /.box -->
-        <div style="margin: 0px 0px 10px 0px;text-align: right;"><a class="btn btn-primary fa fa-floppy-o" href="A01-users2.html"> 匯入臨床教師設定</a></div>
-        <div class="box box-warning">
-          <div class="box-header">
-            <h3 class="box-title">搜尋結果 - 使用者列表</h3>
-            <div class="dataTables_info" role="status" aria-live="polite">共<span class="text-primary px-2">5</span>筆</div>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="dataTables_length" id="example1_length">
-                  <label>顯示 
-                    <select name="example1_length" aria-controls="example1" class="form-control input-sm">
-                      <option value="10">10</option>
-                      <option value="25">25</option>
-                      <option value="50">50</option>
-                      <option value="100">100</option>
-                    </select> 
-                  筆</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /.box-header -->
-          <div class="box-body table-responsive">
-            <table class="table table-hover">
-              <tbody>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>燈號</th>
-                  <th>姓名</th>
-                  <th>單位</th>
-                  <th>職類</th>
-                  <th>職稱</th>
-                  <th>等級</th>
-                  <th>管理者</th>
-                  <th>狀態</th>
-                  <th>動作</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>fly001</td>
-                  <td>王大明</td>
-                  <td>教師培育科</td>
-                  <td>西醫</td>
-                  <td>契約行政人員</td>
-                  <td>院內</td>
-                  <td class="fa fa-check" style="color: #37ca37;">是</td>
-                  <td style="color: #37ca37;">啟用</td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-search" alt="檢視"></button>
-                      <button type="button" class="btn btn-info fa fa-pencil" alt="修改"></button>
-                      <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分"></button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="margin_y_all_child box-footer">
-            <div class="box-tools">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
       </section>
       <!-- /.content -->
     </div>
@@ -410,6 +491,37 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
+
+  <!-- [popout] -->
+  <section class="popout" style="display: none">
+    <section class="inbox">
+      <section class="pop_hd">
+        <h2 id="batch_title">匯入資料</h2>
+        <button type="button" class="i_close" id="close_batch" title="close">
+          <i class="fa fa-times"></i>
+        </button>
+      </section>
+      <section class="pop_bd">
+        <section class="formbox">
+          <div class="psbox" id="batch_eg_list">
+            <a href="./clinical_teacher_eg.xlsx">臨床教師名單匯入範例格式</a>
+          </div>
+          <form id="batch_form" name="batch_form" method="POST" action="" enctype="multipart/form-data">
+            <div class="tfbar tfbar01 clearfix">
+              <b>上傳檔案：</b>
+              <span class="mcont">
+                <input type="file" name="upload_file">
+              </span>
+            </div>
+          </form>
+        </section>
+        <section class="popbtn">
+          <button class="btn btn-success" type="submit">確認送出</button>
+        </section>
+      </section>
+    </section>
+  </section>
+
   <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
@@ -463,6 +575,20 @@
       autoclose: true,
       language: 'zh-TW'
     })
+
+    $(document).ready(function(){
+      $("#batch_popout").on('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $('.popout').show();
+      })
+      $("#close_batch").on('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $('.popout').hide();
+      })
+    })
+
     //Money Euro
     $('[data-mask]').inputmask()
   </script>
