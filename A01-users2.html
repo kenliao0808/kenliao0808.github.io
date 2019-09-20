@@ -371,7 +371,7 @@
         <div class="box box-default collapsed-box">
           <div class="box-header with-border">
             <h3 class="box-title">人事系統資訊</h3>
-            <button type="button" class="btn btn-primary" style="margin: 0px 10px 0px 40px;">人事系統更新</button>
+            <button type="button" class="btn btn-primary person_system_btn" style="margin: 0px 10px 0px 40px;">人事系統更新</button>
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
             </div>
@@ -379,7 +379,7 @@
           <!-- /.box-header -->
           <div class="box-body">
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-sm-12">
                 <div class="form-group">
                   <label>身分</label>
                   <div class="m-0 checkbox">
@@ -390,6 +390,8 @@
                   <small class="help-block"></small>
                 </div>
               </div>
+            </div>
+            <div class="row">
               <span class="font-bold mb-2 px-5 block">單位</span>
               <div class="col-sm-4">
                 <div class="form-group">
@@ -400,6 +402,18 @@
                     <option value="家庭醫學部">家庭醫學部</option>
                     <option value="教學部">教學部</option>
                     <option value="護理部">護理部</option>
+                  </select>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <select class="form-control" disabled>
+                    <option value="請選擇">- 請選擇 -</option>
+                    <option selected value="實證醫學中心">實證醫學中心</option>
+                    <option value="社團">社團</option>
+                    <option value="教師培育科">教師培育科</option>
+                    <option value="臨床技術訓練科">臨床技術訓練科</option>
                   </select>
                   <small class="help-block"></small>
                 </div>
@@ -634,6 +648,10 @@
               </div>
             </div>
           </div>
+
+          <div class="overlay" style="display: none;">
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
         </div>
       </section>
       <!-- /.content -->
@@ -835,8 +853,7 @@
       <section class="content">
         <div class="box box-default">
           <div class="box-footer">
-            <button type="reset" class="btn btn-warning">清除重填</button>
-            <button type="submit" class="btn btn-info pull-right">儲存</button>
+            <button type="submit" class="btn btn-info pull-right">資料儲存</button>
           </div>
         </div>
       </section>
@@ -913,6 +930,15 @@
             var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
             filePath.html("<b>上傳檔案: </b>" + fileName);
         });
+
+
+        $(".person_system_btn").on('click',function(){
+          $(".overlay").show();
+          setTimeout(function(){
+            $(".overlay").hide();
+          },3000);
+        });
+
     });
 
     //Money Euro
