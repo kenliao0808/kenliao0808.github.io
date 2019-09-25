@@ -214,7 +214,6 @@
       <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
@@ -228,16 +227,17 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="box box-primary">
-          <form role="form">
-            <div class="box-header with-border">
-              <h3 class="box-title">班別管理</h3>
-              <div class="box-tools pull-right">
-                <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-keyboard="true">新增</button> -->
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="收合/展開"><i class="fa fa-minus"></i></button>
-              </div>
+        <div class="box box-default">
+          <div class="box-header with-border">
+            <h3 class="box-title">使用者管理 - 查詢資料</h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
-            <div class="box-body">
+          </div>
+          <div class="box-body">
+            <form role="form">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -295,7 +295,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>班別狀態</label>
+                    <label>狀態</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="草稿">草稿</option>
@@ -316,73 +316,126 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- /.box-body -->
-            <div class="margin_y_all_child box-footer">
-              <button type="reset" class="btn btn-warning">清除檢索</button>
-              <button type="submit" class="btn btn-info pull-right">查詢</button>
-            </div>
-            <!-- /.box-footer-->
-          </form>
-        </div>
-        <!-- /.box -->
-        <h2 class="text-center border-0 page-header"><a class="btn btn-primary btn-lg w-1/2 l:w-1/4" href="B01-class2.html">新增</a></h2>
-        <div class="box box-warning">
-          <div class="box-header">
-            <h3 class="box-title">搜尋結果 - 班別列表</h3>
-            <div class="dataTables_info" role="status" aria-live="polite">共<span class="text-primary px-2">5</span>筆</div>
+              <div class="box-footer">
+                <button type="reset" class="btn btn-warning">清除檢索</button>
+                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+              </div>
+            </form>
           </div>
-          <!-- /.box-header -->
-          <div class="box-body table-responsive">
-            <table class="table table-hover">
-              <tbody>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>班別代碼</th>
-                  <th>班別名稱</th>
-                  <th>開班單位</th>
-                  <th>班別類型</th>
-                  <th>狀態/行政審查</th>
-                  <th>附件</th>
-                  <th>動作</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>08383FD-1</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>全院開課</td>
-                  <td><a class="text-primary" href="#">預算表</a></td>
-                  <td>是</td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info">修改</button>
-                      <button type="button" class="btn btn-info">複製</button>
-                      <button type="button" class="btn btn-warning">刪除</button>
+        </div>
+
+        <!-- table contect list -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header">
+                <h3 class="box-title">搜尋結果 - 使用者列表</h3>
+              </div>
+              <div class="box-body">
+                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                  <!-- /.box-body -->
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table class="table table-hover">
+                        <tbody>
+                          <tr class="data_top">
+                            <th style="width: 10px">#</th>
+                            <th>班別代碼</th>
+                            <th>班別名稱</th>
+                            <th>開班單位</th>
+                            <th>班別類型</th>
+                            <th>開課起訖</th>
+                            <th>行政審查</th>
+                            <th>狀態</th>
+                            <th>附件</th>
+                            <th>動作</th>
+                          </tr>
+                          <tr>
+                            <td class='data_num'>1</td>
+                            <td>08383FD-1</td>
+                            <td>全人照護教育師培系列</td>
+                            <td>教師培育科</td>
+                            <td>全院開課</td>
+                            <td>2019/09/20 ~ 2019/09/30</td>
+                            <td><span class="label label-success fa fa-check"> 通過</span></td>
+                            <td><span class="label label-success fa fa-check"> 發佈</span></td>
+                            <td>是</td>
+                            <td>
+                              <div class="margin_y_all_child">
+                                <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                                <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B01-class2.html'"></button>
+                                <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='data_num'>2</td>
+                            <td>08383FD-2</td>
+                            <td>全人照護教育師培系列</td>
+                            <td>教師培育科</td>
+                            <td>單位開課</td>
+                            <td>2019/09/20 ~ 2019/09/30</td>
+                            <td><span class="label label-warning fa fa-exclamation"> 審查中</span></td>
+                            <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
+                            <td>是</td>
+                            <td>
+                              <div class="margin_y_all_child">
+                                <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                                <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B01-class2.html'"></button>
+                                <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class='data_num'>3</td>
+                            <td>08383FD-3</td>
+                            <td>全人照護教育師培系列</td>
+                            <td>教師培育科</td>
+                            <td>全院開課</td>
+                            <td>2019/09/20 ~ 2019/09/30</td>
+                            <td><span class="label label-danger fa fa-remove"> 不通過</span></td>
+                            <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
+                            <td>是</td>
+                            <td>
+                              <div class="margin_y_all_child">
+                                <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                                <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B01-class2.html'"></button>
+                                <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="margin_y_all_child box-footer">
-            <div class="box-tools">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-              </ul>
+                  </div>
+                  <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2 total_num">3</span> 筆</div>
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                        <ul class="pagination">
+                          <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                          <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                          <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- /.box-body -->
         </div>
-        <!-- /.box -->
       </section>
       <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
 
     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -427,8 +480,6 @@
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
   <!-- InputMask -->
@@ -445,6 +496,31 @@
     })
     //Money Euro
     $('[data-mask]').inputmask()
+
+    function copybtn(myObj){
+      var thisTab = myObj.parent().parent().parent()
+      var thisTD = thisTab.find('td');
+      var newHtml = "<tr><td class='data_num'>1</td>";
+      for (var i = 1; i < thisTD.length; i++) {
+        newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
+      }
+      newHtml = newHtml+"</tr>"
+      $('.data_top').after(newHtml)
+      var tr_length = $('.table tr').length;
+      for (var i = 2; i < tr_length; i++) {
+        var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
+        if(TrNum==9){
+          $('.table tr:eq('+i+')').remove()
+        }else{
+          var NewNum = parseInt(TrNum)+1;
+          $('.table tr:eq('+i+') td:eq(0)').html(NewNum)
+        }
+      }
+      var total_num = $('.total_num').html();
+      total_num = parseInt(total_num)+1;
+      $('.total_num').html(total_num);
+    }
+
   </script>
 </body>
 
