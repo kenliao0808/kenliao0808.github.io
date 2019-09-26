@@ -252,7 +252,7 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="box box-default">
+        <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">使用者管理 - 查詢資料</h3>
 
@@ -356,108 +356,104 @@
         </div>
 
         <!-- table contect list -->
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">搜尋結果 - 使用者列表</h3>
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">搜尋結果 - 使用者列表</h3>
+          </div>
+          <div class="box-body">
+            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <!-- /.box-body -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th style="width: 10px">#</th>
+                        <th>燈號</th>
+                        <th>姓名</th>
+                        <th>單位</th>
+                        <th>職類</th>
+                        <th>職稱</th>
+                        <th>等級</th>
+                        <th>管理者</th>
+                        <th>狀態</th>
+                        <th>動作</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>fly001</td>
+                        <td>王大明</td>
+                        <td>教師培育科</td>
+                        <td>西醫</td>
+                        <td>契約行政人員</td>
+                        <td>院內</td>
+                        <td><span class="label label-success fa fa-check"> 是</span></td>
+                        <td><span class="label label-success fa fa-check"> 啟用</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
+                            <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
+                            <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>fly002</td>
+                        <td>陳中銘</td>
+                        <td>傳統醫學部</td>
+                        <td>中醫</td>
+                        <td>進修醫師</td>
+                        <td>院外</td>
+                        <td><span class="label label-danger fa fa-remove"> 否</span></td>
+                        <td><span class="label label-warning fa fa-exclamation">未啟用</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
+                            <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
+                            <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>fly003</td>
+                        <td>劉曉明</td>
+                        <td>教育部</td>
+                        <td>牙醫</td>
+                        <td>技士</td>
+                        <td>院內</td>
+                        <td><span class="label label-success fa fa-check">是</span></td>
+                        <td><span class="label label-danger fa fa-remove">關閉</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-danger fa fa-eye" alt="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
+                            <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
+                            <!-- <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="box-body">
-                <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                  <!-- /.box-body -->
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <table class="table table-hover">
-                        <tbody>
-                          <tr>
-                            <th style="width: 10px">#</th>
-                            <th>燈號</th>
-                            <th>姓名</th>
-                            <th>單位</th>
-                            <th>職類</th>
-                            <th>職稱</th>
-                            <th>等級</th>
-                            <th>管理者</th>
-                            <th>狀態</th>
-                            <th>動作</th>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>fly001</td>
-                            <td>王大明</td>
-                            <td>教師培育科</td>
-                            <td>西醫</td>
-                            <td>契約行政人員</td>
-                            <td>院內</td>
-                            <td><span class="label label-success fa fa-check"> 是</span></td>
-                            <td><span class="label label-success fa fa-check"> 啟用</span></td>
-                            <td>
-                              <div class="margin_y_all_child">
-                                <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
-                                <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
-                                <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>fly002</td>
-                            <td>陳中銘</td>
-                            <td>傳統醫學部</td>
-                            <td>中醫</td>
-                            <td>進修醫師</td>
-                            <td>院外</td>
-                            <td><span class="label label-danger fa fa-remove"> 否</span></td>
-                            <td><span class="label label-warning fa fa-exclamation">未啟用</span></td>
-                            <td>
-                              <div class="margin_y_all_child">
-                                <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
-                                <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
-                                <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>fly003</td>
-                            <td>劉曉明</td>
-                            <td>教育部</td>
-                            <td>牙醫</td>
-                            <td>技士</td>
-                            <td>院內</td>
-                            <td><span class="label label-success fa fa-check">是</span></td>
-                            <td><span class="label label-danger fa fa-remove">關閉</span></td>
-                            <td>
-                              <div class="margin_y_all_child">
-                                <button type="button" class="btn btn-danger fa fa-eye" alt="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
-                                <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
-                                <!-- <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-                    </div>
-                    <div class="col-sm-7">
-                      <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                        <ul class="pagination">
-                          <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                          <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                          <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                          <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                        </ul>
-                      </div>
-                    </div>
+              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+              <div class="row">
+                <div class="col-sm-5">
+                  <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>

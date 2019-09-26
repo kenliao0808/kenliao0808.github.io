@@ -228,21 +228,46 @@
       <!-- Main content -->
       <section class="content">
         <div class="box box-primary">
-          <form role="form">
-            <div class="box-header with-border">
-              <h3 class="box-title">班別編輯</h3>
-              <div class="box-tools pull-right">
-                <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-keyboard="true">新增</button> -->
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="收合/展開"><i class="fa fa-minus"></i></button>
-              </div>
+          <div class="box-header with-border">
+            <h3 class="box-title">班別編輯</h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
-            <div class="box-body">
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="B01-class2.html">班別設定</a></li>
-                <li><a href="B01-class3.html">課程列表</a></li>
-              </ul>
-              <div class="tab-content">
+          </div>
+          <div class="box-body">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab">班別設定</a></li>
+              <li><a href="#tab_2" data-toggle="tab">課程列表</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
                 <h4 class="bg-gray-300 p-3 my-3">基本資訊</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>狀態</label>
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="草稿">草稿</option>
+                        <option value="發布">發布</option>
+                        <option value="關閉">關閉</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>班別類型</label>
+                      <select class="form-control" id="class_type">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="全院開課">全院開課</option>
+                        <option value="單位開課">單位開課</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -302,38 +327,6 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>班別類型</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="全院開課">全院開課</option>
-                        <option value="單位開課">單位開課</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>狀態</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="草稿">草稿</option>
-                        <option value="發布">發布</option>
-                        <option value="關閉">關閉</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>班別簡介</label>
-                      <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>開辦時間</label>
                       <div class="input-group">
                         <div class="input-group-addon">
@@ -344,9 +337,16 @@
                       <small class="help-block"></small>
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>班別簡介</label>
+                      <textarea class="form-control" rows="3" placeholder=""></textarea>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-5">
                     <div class="form-group">
                       <p class="font-bold mb-2">班別附件</p>
                       <button type="button" class="btn btn-info">瀏覽檔案</button>
@@ -361,12 +361,16 @@
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                       檔案名稱
                     </div>
+                    <div class="py-2 alert btn btn-default alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      檔案名稱
+                    </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <div class="form-group">
                       <label>認證資格</label>
                       <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                           <div class="form-group">
                             <div class="m-0 checkbox">
                               <label>
@@ -376,9 +380,13 @@
                             <small class="help-block"></small>
                           </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                           <div class="form-group">
-                            <input type="text" class="form-control" placeholder="">
+                            <select class="form-control">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="評量一">評量一</option>
+                              <option value="評量二">評量二</option>
+                            </select>
                             <small class="help-block"></small>
                           </div>
                         </div>
@@ -392,7 +400,17 @@
                             <small class="help-block"></small>
                           </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="m-0 checkbox">
+                              <label>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-assessment">新增評量</button>
+                              </label>
+                            </div>
+                            <small class="help-block"></small>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
                           <div class="form-group">
                             <div class="m-0 checkbox">
                               <label>
@@ -402,11 +420,15 @@
                             <small class="help-block"></small>
                           </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                           <div class="form-group">
-                            <input type="text" class="form-control" placeholder="">
+                            <select class="form-control">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="問卷一">問卷一</option>
+                              <option value="問卷二">問卷二</option>
+                            </select>
                             <small class="help-block"></small>
-                          </div>
+                          </div>   
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
@@ -418,12 +440,20 @@
                             <small class="help-block"></small>
                           </div>
                         </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class="m-0 checkbox">
+                              <label>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-question">新增問卷</button>
+                              </label>
+                            </div>
+                            <small class="help-block"></small>
+                          </div>
+                        </div>
                       </div>
-                      <!-- /.row -->
                     </div>
                   </div>
                 </div>
-                <!-- /.row -->
                 <h4 class="bg-gray-300 p-3 my-3">聯絡資訊</h4>
                 <div class="row">
                   <div class="col-md-6">
@@ -443,7 +473,6 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>電話</label>
-                      <!-- <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(99) 9999-9999&quot;" data-mask=""> -->
                       <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999-999-999&quot;" data-mask="">
                       <small class="help-block"></small>
                     </div>
@@ -455,36 +484,162 @@
                       <small class="help-block"></small>
                     </div>
                   </div>
-                  <div class="col-md-12">
-                    <div class="bg-warning p-5">
-                      <div class="form-group">
-                        <label>行政審查</label>
-                        <select class="form-control">
-                          <option value="通過- 2018/7/12 下午 03:41:00">通過- 2018/7/12 下午 03:41:00</option>
-                        </select>
-                        <small class="help-block"></small>
+                </div>
+                <h4 class="bg-gray-300 p-3 my-3">行政審查紀錄</h4>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="box">
+                      <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                          <tr>
+                            <th>審核人員</th>
+                            <th>時間</th>
+                            <th>狀態</th>
+                            <th>備註</th>
+                          </tr>
+                          <tr>
+                            <td>審核人員一</td>
+                            <td>2019/7/12 下午 03:41:00</td>
+                            <td><span class="label label-danger">未通過</span></td>
+                            <td>缺少附件檔案</td>
+                          </tr>
+                          <tr>
+                            <td>審核人員二</td>
+                            <td>2019/7/30 下午 03:41:00</td>
+                            <td><span class="label label-success">通過</span></td>
+                            <td>附件已補齊，通過審查</td>
+                          </tr>
+                        </table>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- /.row -->
               </div>
-              <!-- /.tab-content -->
-            </div>
-            <!-- /.box-body -->
-            <div class="margin_y_all_child box-footer">
-              <button type="button" class="btn btn-default">關閉</button>
-              <button type="reset" class="btn btn-warning">清除檢索</button>
-              <div class="pull-right">
-                <button type="button" class="btn btn-default" disabled>審查中</button>
-                <button type="button" class="btn btn-warning">行政審查</button>
-                <button type="submit" class="btn btn-info">儲存</button>
+              <div class="tab-pane" id="tab_2">
+                <table class="table table-hover">
+                  <tbody>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>課程代碼</th>
+                      <th>課程名稱</th>
+                      <th>開課時間</th>
+                      <th>狀態</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>08383FD-1</td>
+                      <td>全人照護教育師培系列</td>
+                      <td><time>2019-08-06（二） 17:00</time></td>
+                      <td><span class="label label-success fa fa-check"><strong> 發 佈</strong></span></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>08383FD-2</td>
+                      <td>全人照護教育師培課程(全人醫療照護—安寧療護)</td>
+                      <td><time>2019-08-06（二） 17:00</time></td>
+                      <td><span class="label label-warning fa fa-exclamation"><strong> 草 稿</strong></span></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>08383FD-3</td>
+                      <td>全人照護教育師培課程(全人醫療照護—安寧療護、生死學)</td>
+                      <td><time>2019-08-06（二） 17:00</time></td>
+                      <td><span class="label label-danger fa fa-remove"><strong> 關 閉</strong></span></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <!-- /.box-footer-->
-          </form>
+          </div>
+          <!-- /.box-body -->
+          <div class="margin_y_all_child box-footer">
+            <button type="reset" class="btn btn-warning">清除檢索</button>
+            <div class="pull-right">
+              <button type="button" style="display: none;" class="btn btn-default under_review" disabled>審查中</button>
+              <button type="button" class="btn btn-warning send_review">送出行政審查</button>
+              <button type="submit" class="btn btn-info">儲存</button>
+            </div>
+          </div>
         </div>
         <!-- /.box -->
+
+        <div class="modal fade" id="modal-assessment">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增評量</h4>
+              </div>
+              <!-- form start -->
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">評量標題</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="評量一">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">評量連結</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="https://www.google.com.tw">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="button" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="modal-question">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增問卷</h4>
+              </div>
+              <!-- form start -->
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">問卷標題</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="問卷一">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">問卷連結</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="https://www.google.com.tw">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="button" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
 
       </section>
       <!-- /.content -->
@@ -536,8 +691,6 @@
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
   <!-- InputMask -->
@@ -550,10 +703,10 @@
     //Date range picker with time picker
     $('.time').daterangepicker({
       timePicker: true,
-      timePickerIncrement: 30,
+      timePickerIncrement: 5,
       timePicker24Hour: true,
       locale: {
-        format: 'MM/DD/YYYY hh:mm',
+        format: 'YYYY/MM/DD hh:mm',
         applyLabel: '確認',
         cancelLabel: '取消',
         fromLabel: '從',
@@ -564,6 +717,23 @@
         monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
       },
       language: 'zh-TW'
+    })
+
+    $(document).ready(function(){
+      $('#class_type').change(function(){
+        var NewClassType = $(this).val()
+        if(NewClassType=='全院開課'){
+          $('.send_review').show();
+        }else{
+          $('.send_review').hide();
+        }
+      })
+
+      $('.send_review').click(function(){
+        $('.send_review').hide();
+        $('.under_review').show();
+      })
+
     })
   </script>
 </body>
