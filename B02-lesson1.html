@@ -233,7 +233,7 @@
             <h3 class="box-title">課程管理</h3>
 
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B02-lesson2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
@@ -355,7 +355,7 @@
           <div class="box-body table-responsive">
             <table class="table table-hover">
               <tbody>
-                <tr>
+                <tr class="data_top">
                   <th style="width: 10px">#</th>
                   <th>課程代碼</th>
                   <th>課程名稱</th>
@@ -368,7 +368,7 @@
                   <th>動作</th>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td class='data_num'>1</td>
                   <td>08383FD-1</td>
                   <td>全人照護教育師培系列</td>
                   <td>教師培育科</td>
@@ -376,7 +376,79 @@
                   <td>全院開課</td>
                   <td><time>2020-01-29（三）08:00</time></td>
                   <td>2</td>
-                  <td>發佈</td>
+                  <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
+                  <td>
+                    <div class="margin_y_all_child">
+                      <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class='data_num'>2</td>
+                  <td>08383FD-2</td>
+                  <td>全人照護教育師培系列</td>
+                  <td>教師培育科</td>
+                  <td>健康保護</td>
+                  <td>單位開課</td>
+                  <td><time>2020-01-29（三）08:00</time></td>
+                  <td>2</td>
+                  <td><span class="label label-warning fa fa-exclamation"> 待審查</span></td>
+                  <td>
+                    <div class="margin_y_all_child">
+                      <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class='data_num'>3</td>
+                  <td>08383FD-3</td>
+                  <td>全人照護教育師培系列</td>
+                  <td>教師培育科</td>
+                  <td>健康保護</td>
+                  <td>全院開課</td>
+                  <td><time>2020-01-29（三）08:00</time></td>
+                  <td>2</td>
+                  <td><span class="label label-success fa fa-check"> 已發佈</span></td>
+                  <td>
+                    <div class="margin_y_all_child">
+                      <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class='data_num'>4</td>
+                  <td>08383FD-4</td>
+                  <td>全人照護教育師培系列</td>
+                  <td>教師培育科</td>
+                  <td>健康保護</td>
+                  <td>全院開課</td>
+                  <td><time>2020-01-29（三）08:00</time></td>
+                  <td>2</td>
+                  <td><span class="label label-success fa fa-check"> 已結算</span></td>
+                  <td>
+                    <div class="margin_y_all_child">
+                      <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class='data_num'>5</td>
+                  <td>08383FD-5</td>
+                  <td>全人照護教育師培系列</td>
+                  <td>教師培育科</td>
+                  <td>健康保護</td>
+                  <td>全院開課</td>
+                  <td><time>2020-01-29（三）08:00</time></td>
+                  <td>2</td>
+                  <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
                   <td>
                     <div class="margin_y_all_child">
                       <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
@@ -466,6 +538,31 @@
     })
     //Money Euro
     $('[data-mask]').inputmask()
+
+    function copybtn(myObj){
+      var thisTab = myObj.parent().parent().parent()
+      var thisTD = thisTab.find('td');
+      var newHtml = "<tr><td class='data_num'>1</td>";
+      for (var i = 1; i < thisTD.length; i++) {
+        newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
+      }
+      newHtml = newHtml+"</tr>"
+      $('.data_top').after(newHtml)
+      var tr_length = $('.table tr').length;
+      for (var i = 2; i < tr_length; i++) {
+        var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
+        if(TrNum==9){
+          $('.table tr:eq('+i+')').remove()
+        }else{
+          var NewNum = parseInt(TrNum)+1;
+          $('.table tr:eq('+i+') td:eq(0)').html(NewNum)
+        }
+      }
+      var total_num = $('.total_num').html();
+      total_num = parseInt(total_num)+1;
+      $('.total_num').html(total_num);
+    }
+
   </script>
 </body>
 
