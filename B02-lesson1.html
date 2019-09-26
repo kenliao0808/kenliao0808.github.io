@@ -229,23 +229,37 @@
       <!-- Main content -->
       <section class="content">
         <div class="box box-primary">
-          <form role="form">
-            <div class="box-header with-border">
-              <h3 class="box-title">課程管理</h3>
-              <div class="box-tools pull-right">
-                <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-keyboard="true">新增</button> -->
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="收合/展開"><i class="fa fa-minus"></i></button>
-              </div>
+          <div class="box-header with-border">
+            <h3 class="box-title">課程管理</h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
-            <div class="box-body">
+          </div>
+          <div class="box-body">
+            <form role="form">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>課程狀態</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="草稿">草稿</option>
+                      <option value="待審查">待審查</option>
+                      <option value="已發佈">已發佈</option>
+                      <option value="已結算">已結算</option>
+                      <option value="關閉">關閉</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>課程代碼</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>課程名稱</label>
                     <input type="text" class="form-control" placeholder="">
@@ -253,9 +267,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label>開班性質</label>
+                    <label>課程類型</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="全院開課">全院開課</option>
+                      <option value="單位開課">單位開課</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>主要性質</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="護理部">護理部</option>
@@ -270,7 +294,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>開班單位</label>
                     <select class="form-control">
@@ -285,7 +309,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <label>開課起訖日</label>
                   <div class="row">
                     <div class="pseudo_dash col-md-6">
@@ -310,38 +334,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>課程狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="草稿">草稿</option>
-                      <option value="待審查">待審查</option>
-                      <option value="已發佈">已發佈</option>
-                      <option value="已結算">已結算</option>
-                      <option value="關閉">關閉</option>
-                    </select>
-                  </div>
-                </div>
               </div>
-            </div>
-            <!-- /.box-body -->
-            <div class="margin_y_all_child box-footer">
-              <button type="reset" class="btn btn-warning">清除檢索</button>
-              <button type="submit" class="btn btn-info pull-right">查詢</button>
-            </div>
-            <!-- /.box-footer-->
-          </form>
+            </form>
+          </div>
+          <!-- /.box-body -->
+          <div class="margin_y_all_child box-footer">
+            <button type="reset" class="btn btn-warning">清除檢索</button>
+            <button type="submit" class="btn btn-info pull-right">查詢</button>
+          </div>
+          <!-- /.box-footer-->
         </div>
-        <!-- /.box -->
-        <h2 class="text-center border-0 page-header">
-          <a class="btn btn-primary btn-lg w-1/2 l:w-1/4" href="B02-lesson2.html">新增</a>
-          <a class="btn btn-warning btn-lg w-1/2 l:w-1/4" href="#">匯出</a>
-        </h2>
         <div class="box box-warning">
           <div class="box-header">
             <h3 class="box-title">搜尋結果 - 班別列表</h3>
-            <div class="dataTables_info" role="status" aria-live="polite">共<span class="text-primary px-2">5</span>筆</div>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-primary pull-rightol"><i class="fa fa-share-square-o"></i> 匯出課程</button>
+            </div>
           </div>
           <!-- /.box-header -->
           <div class="box-body table-responsive">
@@ -352,7 +360,7 @@
                   <th>課程代碼</th>
                   <th>課程名稱</th>
                   <th>開班單位</th>
-                  <th>課程主要/加認性質</th>
+                  <th>課程主要性質</th>
                   <th>課程類型</th>
                   <th>開課時間</th>
                   <th>認證時數</th>
@@ -364,16 +372,16 @@
                   <td>08383FD-1</td>
                   <td>全人照護教育師培系列</td>
                   <td>教師培育科</td>
-                  <td>健康保護/醫學倫理與醫事法律</td>
+                  <td>健康保護</td>
                   <td>全院開課</td>
                   <td><time>2020-01-29（三）08:00</time></td>
                   <td>2</td>
                   <td>發佈</td>
                   <td>
                     <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info">修改</button>
-                      <button type="button" class="btn btn-info">複製</button>
-                      <button type="button" class="btn btn-warning">刪除</button>
+                      <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
                     </div>
                   </td>
                 </tr>
@@ -442,8 +450,6 @@
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
   <!-- InputMask -->
