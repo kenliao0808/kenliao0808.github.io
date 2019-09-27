@@ -254,8 +254,6 @@
       <section class="content">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">使用者管理 - 查詢資料</h3>
-
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-primary pull-rightol" id="batch_popout"><i class="fa fa-floppy-o"></i> 匯入臨床教師名單</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -358,7 +356,7 @@
         <!-- table contect list -->
         <div class="box box-warning">
           <div class="box-header with-border">
-            <h3 class="box-title">搜尋結果 - 使用者列表</h3>
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
           </div>
           <div class="box-body">
             <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -391,7 +389,6 @@
                         <td><span class="label label-success fa fa-check"> 啟用</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
                             <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
                             <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
                           </div>
@@ -409,7 +406,6 @@
                         <td><span class="label label-warning fa fa-exclamation">未啟用</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-danger fa fa-eye" title="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
                             <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
                             <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
                           </div>
@@ -427,7 +423,6 @@
                         <td><span class="label label-danger fa fa-remove">關閉</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-danger fa fa-eye" alt="檢視" onclick="javascript:location.href='A01-users2.html'"></button>
                             <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
                             <!-- <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
                           </div>
@@ -439,10 +434,7 @@
               </div>
               <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
               <div class="row">
-                <div class="col-sm-5">
-                  <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-                </div>
-                <div class="col-sm-7">
+                <div class="col-sm-12">
                   <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
                     <ul class="pagination">
                       <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
@@ -548,12 +540,7 @@
 
   <script src="dist/js/script.js"></script>
   <script>
-    //Date picker
-    $('#birthdate, #date, .date').datepicker({
-      autoclose: true,
-      language: 'zh-TW'
-    })
-
+    
     $(document).ready(function(){
       $("#batch_popout").on('click',function(e){
         e.preventDefault();
@@ -566,7 +553,6 @@
         $('.popout').hide();
       })
     })
-
     //Money Euro
     $('[data-mask]').inputmask()
   </script>

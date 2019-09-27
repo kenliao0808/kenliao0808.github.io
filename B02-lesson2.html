@@ -48,7 +48,9 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-
+<style type="text/css">
+  .form-control{height:auto;}
+</style>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -270,17 +272,14 @@
                   <div class="col-lg-4">
                     <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>所屬班別</label>
-                      <label class="w-full">
-                        <select class="select_prompt w-full form-control" multiple="multiple" data-placeholder="請選擇">
-                          <option>Alabama</option>
-                          <option>Alaska</option>
-                          <option>California</option>
-                          <option>Delaware</option>
-                          <option>Tennessee</option>
-                          <option>Texas</option>
-                          <option>Washington</option>
-                        </select>
-                      </label>
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="醫學研究部">醫學研究部</option>
+                        <option value="傳統醫學部">傳統醫學部</option>
+                        <option value="家庭醫學部">家庭醫學部</option>
+                        <option value="教學部">教學部</option>
+                        <option value="護理部">護理部</option>
+                      </select>
                       <small class="help-block"></small>
                     </div>
                   </div>
@@ -406,10 +405,272 @@
                   <!-- /.col-md-9 -->
                 </div>
 
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>開辦時間</label>
+                      <div class="input-group">
+                        <div class="input-group-addon">
+                          <i class="fa fa-clock-o"></i>
+                        </div>
+                        <input type="text" class="time form-control pull-right">
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>課程級階</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="checkbox">
+                        </span>
+                        <label class="form-control">初</label>
+                        <span class="input-group-addon">
+                          <input type="checkbox">
+                        </span>
+                        <label class="form-control">中</label>
+                        <span class="input-group-addon">
+                          <input type="checkbox">
+                        </span>
+                        <label class="form-control">進階</label>
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="row">
-                  <span class="font-bold mb-2 px-5 block"><span class="mr-1 text-danger">*</span>終身學習類別</span>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>招訓人數</label>
+                      <div class="form-inline">
+                        院內
+                        <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
+                        人
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                    <div class="col-md-13">
+                      <div class="form-group">
+                        <div class="form-inline">
+                          院外
+                          <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
+                          人
+                        </div>
+                        <small class="help-block"></small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>課程簡介</label>
+                      <textarea class="form-control" rows="4" placeholder=""></textarea>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>教學方式</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="radio" name="teaching" id="phy_class" checked>
+                        </span>
+                        <label class="form-control">實體上課</label>
+                        <span class="input-group-addon">
+                          <input type="radio" name="teaching" id="digit_class" >
+                        </span>
+                        <label class="form-control">數位學習</label>
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row div_digit" style="display: none;">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>實施方式</label>
+                      <select class="form-control">
+                        <option selected value="線上數位學習網">線上數位學習網</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>數位學習平台</label>
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="VHS">VHS</option>
+                        <option value="ShareCourse">ShareCourse</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>數位課程代碼</label>
+                      <div class="form-inline leading-none">
+                        <label class="w-3/4"><input type="text" class="w-full form-control" placeholder=""></label>
+                        <a class="text-success inline-block text-4xl px-4 h-10 align-middle" href="#"><i class="fa fa-eye"></i></a>
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row div_carry">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>實施方式</label>
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="電視教學">電視教學</option>
+                        <option value="專題講座">專題講座</option>
+                        <option value="工作坊（訓練班）">工作坊（訓練班）</option>
+                        <option value="研討會">研討會</option>
+                        <option value="讀書會">讀書會</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>上課地點</label>
+                      <input type="text" class="form-control" placeholder="">
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>主講人<a class="text-primary text-3xl px-4 leading-none" href="#"><i class="fa fa-plus"></i></a></label>
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="California">California</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Tennessee">Tennessee</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>主持人<a class="text-primary text-3xl px-4 leading-none" href="#"><i class="fa fa-plus"></i></a></label>
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="California">California</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Tennessee">Tennessee</option>
+                      </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <p class="font-bold mb-2">課程附件</p>
+                      <button type="button" class="btn btn-info">瀏覽檔案</button>
+                      <button type="button" class="btn btn-success">上傳檔案</button>
+                      <button type="button" class="btn btn-warning">清除檔案</button>
+                    </div>
+                    <div class="py-2 alert btn btn-default alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      檔案名稱
+                    </div>
+                    <div class="py-2 alert btn btn-default alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      檔案名稱
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>資料存放</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="checkbox">
+                        </span>
+                        <label class="form-control">存放講義資料庫</label>
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 id="caption2" class="bg-gray-300 p-3 my-3">認證資格</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>評量</label>
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <select class="form-control">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="評量一">評量一</option>
+                              <option value="評量二">評量二</option>
+                            </select>
+                            <small class="help-block"></small>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-assessment">新增評量</button>
+                            <small class="help-block"></small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>問卷</label>
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <select class="form-control">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="問卷一">問卷一</option>
+                              <option value="問卷二">問卷二</option>
+                            </select>
+                            <small class="help-block"></small>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-question">新增問卷</button>
+                            <small class="help-block"></small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 id="caption2" class="bg-gray-300 p-3 my-3">終身學習類別</h4>
+                <div class="row">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <select class="form-control">
                         <option selected value="請選擇">- 請選擇 -</option>
@@ -420,7 +681,7 @@
                       <small class="help-block"></small>
                     </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <select class="form-control">
                         <option selected value="請選擇">- 請選擇 -</option>
@@ -467,8 +728,9 @@
                     </div>
                   </div>
                 </div>
+
+                <h4 id="caption2" class="bg-gray-300 p-3 my-3">課程加認性質<a class="text-primary text-3xl px-4 leading-none" href="#"><i class="fa fa-plus"></i></a></h4>
                 <div class="row">
-                  <span class="font-bold mb-2 px-5 block"><span class="mr-1 text-danger">*</span>課程加認性質<a class="text-primary text-3xl px-4 leading-none" href="#"><i class="fa fa-plus"></i></a></span>
                   <div class="col-md-4">
                     <div class="form-group">
                       <select class="form-control">
@@ -510,229 +772,27 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>課程簡介</label>
-                      <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
+
+
+
+                <h4 id="caption2" class="bg-gray-300 p-3 my-3">教學時數評分</h4>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="form-group">
-                      <label>課程級階</label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">初</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">中</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">進階</label>
-                      </div>
-                      <small class="help-block"></small>
+                    <div class="form-inline">
+                      主講人教學時數
+                      <label class="w-32"><input type="number" class="w-full form-control" name="period" min="1" max="999" placeholder="1-999"></label>
+                      <a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>開辦時間</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">
-                          <i class="fa fa-clock-o"></i>
-                        </div>
-                        <input type="text" class="time form-control pull-right">
-                      </div>
-                      <small class="help-block"></small>
+                    <div class="form-inline">
+                      主持人教學時數
+                      <label class="w-32"><input type="number" class="w-full form-control" name="period" min="1" max="999" placeholder="1-999"></label>
+                      <a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="block">是否為重複課程</label>
-                      <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#period_modal" data-keyboard="true">自訂</button>
-                      <small class="help-block">每週 二、三，於2019/8/1結束</small> -->
-                      <div class="form-inline leading-none">
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#period_modal" data-keyboard="true">自訂</button>
-                        <small>每週 二、三，於2019/8/1結束</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>教學方式</label>
-                      <div class="margin_x_child-l m-0 radio">
-                        <label>
-                          <input class="mr-1" type="radio" name="teaching" checked>實體上課
-                        </label>
-                        <label>
-                          <input class="mr-1" type="radio" name="teaching">數位學習
-                        </label>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>數位學習平台</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="VHS">VHS</option>
-                        <option value="ShareCourse">ShareCourse</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>數位課程代碼</label>
-                      <div class="form-inline leading-none">
-                        <label class="w-3/4"><input type="text" class="w-full form-control" placeholder=""></label>
-                        <a class="text-success inline-block text-4xl px-4 h-10 align-middle" href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>實施方式</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="電視教學">電視教學</option>
-                        <option value="專題講座">專題講座</option>
-                        <option value="工作坊（訓練班）">工作坊（訓練班）</option>
-                        <option value="研討會">研討會</option>
-                        <option value="讀書會">讀書會</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="form-group">
-                      <label>招訓人數</label>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-inline">
-                            院內
-                            <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
-                            人
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-inline">
-                            院外
-                            <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
-                            人
-                          </div>
-                        </div>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>上課地點</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label>主講人<a class="text-primary text-3xl px-4 leading-none" href="#"><i class="fa fa-plus"></i></a></label>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label class="w-full">
-                            <select class="select_prompt w-full form-control" multiple="multiple" data-placeholder="輸入關鍵詞顯示提示清單">
-                              <option>Alabama</option>
-                              <option>Alaska</option>
-                              <option>California</option>
-                              <option>Delaware</option>
-                              <option>Tennessee</option>
-                              <option>Texas</option>
-                              <option>Washington</option>
-                            </select>
-                          </label>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-inline">
-                            教學時數
-                            <label class="w-32"><input type="number" class="w-full form-control" name="period" min="1" max="999" placeholder="1-999"></label>
-                            <a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <label>主持人<a class="text-primary text-3xl px-4 leading-none" href="#"><i class="fa fa-plus"></i></a></label>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label class="w-full">
-                            <select class="select_prompt w-full form-control" multiple="multiple" data-placeholder="輸入關鍵詞顯示提示清單">
-                              <option>Alabama</option>
-                              <option>Alaska</option>
-                              <option>California</option>
-                              <option>Delaware</option>
-                              <option>Tennessee</option>
-                              <option>Texas</option>
-                              <option>Washington</option>
-                            </select>
-                          </label>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-inline">
-                            教學時數
-                            <label class="w-32"><input type="number" class="w-full form-control" name="period" min="1" max="999" placeholder="1-999"></label>
-                            <a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <p class="font-bold mb-2">課程附件</p>
-                      <button type="button" class="btn btn-info">瀏覽檔案</button>
-                      <button type="button" class="btn btn-success">上傳檔案</button>
-                      <button type="button" class="btn btn-warning">清除檔案</button>
-                    </div>
-                    <div class="py-2 alert btn btn-default alert-dismissible">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      檔案名稱
-                    </div>
-                    <div class="py-2 alert btn btn-default alert-dismissible">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      檔案名稱
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="mr-1" for="checkbox_database">存放講義資料庫</label>
-                      <input id="checkbox_database" type="checkbox">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.row -->
+
                 <h4 id="caption2" class="bg-gray-300 p-3 my-3">報名資訊</h4>
                 <div class="row">
                   <div class="col-md-6">
@@ -772,6 +832,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -796,11 +857,11 @@
                       <label>出席規則 </label>
                       <div class="input-group">
                         <span class="input-group-addon">
-                          <input type="radio">
+                          <input type="radio" name="sign_btn">
                         </span>
                         <label class="form-control">需要簽退</label>
                         <span class="input-group-addon">
-                          <input type="radio">
+                          <input type="radio" name="sign_btn">
                         </span>
                         <label class="form-control">不需要簽退</label>
                       </div>
@@ -810,72 +871,94 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>報名限制</label>
-                      <div class="input-group">
-
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">單位</label>
-                        <div class="form-group">
-                          <select class="form-control">
-                            <option selected value="請選擇">- 請選擇 -</option>
-                            <option value="醫學研究部">醫學研究部</option>
-                            <option value="傳統醫學部">傳統醫學部</option>
-                            <option value="家庭醫學部">家庭醫學部</option>
-                            <option value="教學部">教學部</option>
-                            <option value="護理部">護理部</option>
-                          </select>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <input type="checkbox" id="click_ment">
+                              </span>
+                              <label class="form-control">單位</label>
+                              <div class="form-group">
+                                <select class="form-control">
+                                  <option selected value="請選擇">- 請選擇 -</option>
+                                  <option value="醫學研究部">醫學研究部</option>
+                                  <option value="傳統醫學部">傳統醫學部</option>
+                                  <option value="家庭醫學部">家庭醫學部</option>
+                                  <option value="教學部">教學部</option>
+                                  <option value="護理部">護理部</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <select class="form-control">
+                                  <option selected value="請選擇">- 請選擇 -</option>
+                                  <option value="醫學研究部">醫學研究部</option>
+                                  <option value="傳統醫學部">傳統醫學部</option>
+                                  <option value="家庭醫學部">家庭醫學部</option>
+                                  <option value="教學部">教學部</option>
+                                  <option value="護理部">護理部</option>
+                                </select>
+                              </div>
+                            </div>
+                            <small class="help-block"></small>
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <select class="form-control">
-                            <option selected value="請選擇">- 請選擇 -</option>
-                            <option value="醫學研究部">醫學研究部</option>
-                            <option value="傳統醫學部">傳統醫學部</option>
-                            <option value="家庭醫學部">家庭醫學部</option>
-                            <option value="教學部">教學部</option>
-                            <option value="護理部">護理部</option>
-                          </select>
-                        </div>
-
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">醫事類別</label>
-                        <div class="form-group">
-                          <select class="form-control">
-                            <option selected value="請選擇">- 請選擇 -</option>
-                            <option value="醫學研究部">醫學研究部</option>
-                            <option value="傳統醫學部">傳統醫學部</option>
-                            <option value="家庭醫學部">家庭醫學部</option>
-                            <option value="教學部">教學部</option>
-                            <option value="護理部">護理部</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <select class="form-control">
-                            <option selected value="請選擇">- 請選擇 -</option>
-                            <option value="醫學研究部">醫學研究部</option>
-                            <option value="傳統醫學部">傳統醫學部</option>
-                            <option value="家庭醫學部">家庭醫學部</option>
-                            <option value="教學部">教學部</option>
-                            <option value="護理部">護理部</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox">
-                          </span>
-                          <label class="form-control">缺課紀錄小於
-                            <input type="number" name="" min="1" max="999" placeholder="1-999"> 次
-                          </label>
-                          <span class="input-group-addon">
-                            <input type="checkbox">
-                          </span>
-                          <label class="form-control">非黑名單</label>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <input type="checkbox">
+                              </span>
+                              <label class="form-control">醫事類別</label>
+                              <div class="form-group">
+                                <select class="form-control">
+                                  <option selected value="請選擇">- 請選擇 -</option>
+                                  <option value="醫學研究部">醫學研究部</option>
+                                  <option value="傳統醫學部">傳統醫學部</option>
+                                  <option value="家庭醫學部">家庭醫學部</option>
+                                  <option value="教學部">教學部</option>
+                                  <option value="護理部">護理部</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <select class="form-control">
+                                  <option selected value="請選擇">- 請選擇 -</option>
+                                  <option value="醫學研究部">醫學研究部</option>
+                                  <option value="傳統醫學部">傳統醫學部</option>
+                                  <option value="家庭醫學部">家庭醫學部</option>
+                                  <option value="教學部">教學部</option>
+                                  <option value="護理部">護理部</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox">
+                            </span>
+                            <label class="form-control">缺課紀錄小於
+                              <input type="number" name="" min="1" max="999" placeholder="1-999"> 次
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox">
+                            </span>
+                            <label class="form-control">非黑名單</label>
+                          </div>
+                        </div>
+                      </div>
+
                       <small class="help-block"></small>
                     </div>
                   </div>
@@ -887,11 +970,11 @@
                       <label>其他 </label>
                       <div class="input-group">
                         <span class="input-group-addon">
-                          <input type="radio">
+                          <input type="checkbox">
                         </span>
                         <label class="form-control">報名審核</label>
                         <span class="input-group-addon">
-                          <input type="radio">
+                          <input type="checkbox">
                         </span>
                         <label class="form-control">顯示學員名單</label>
                       </div>
@@ -942,7 +1025,6 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>電話</label>
-                      <!-- <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(99) 9999-9999&quot;" data-mask=""> -->
                       <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999-999-999&quot;" data-mask="">
                       <small class="help-block"></small>
                     </div>
@@ -985,97 +1067,15 @@
                     </div>
                   </div>
                 </div>
-                <!-- /.row -->
               </div>
-              <!-- /.tab-content -->
             </div>
-            <!-- /.box-body -->
             <div class="margin_y_all_child box-footer">
-              <button type="reset" class="btn btn-warning">清除檢索</button>
               <div class="m:float-right">
                 <button type="submit" class="btn btn-info">儲存</button>
               </div>
             </div>
-            <!-- /.box-footer-->
         </div>
-        <!-- /.box -->
 
-        <div class="modal fade" id="period_modal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <form class="form-horizontal" role="form">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">自訂週期</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">頻率</label>
-                    <div class="col-sm-10">
-                      <select class="form-control">
-                        <option selected value="每週">每週</option>
-                        <option value="每二週">每二週</option>
-                      </select>
-                      <div class="margin_x_child-l checkbox">
-                        <label>
-                          <input class="mr-1" type="checkbox">日
-                        </label>
-                        <label>
-                          <input class="mr-1" type="checkbox">一
-                        </label>
-                        <label>
-                          <input class="mr-1" type="checkbox">二
-                        </label>
-                        <label>
-                          <input class="mr-1" type="checkbox">三
-                        </label>
-                        <label>
-                          <input class="mr-1" type="checkbox">四
-                        </label>
-                        <label>
-                          <input class="mr-1" type="checkbox">五
-                        </label>
-                        <label>
-                          <input class="mr-1" type="checkbox">六
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">結束時間</label>
-                    <div class="col-sm-10">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="p-0 radio">
-                            <label>
-                              <input class="mr-1" type="radio" name="endingtime" checked>於
-                            </label>
-                            <input type="text" class="form-control inline-block w-2/3" placeholder="範例：20180101"> 結束
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="p-0 radio">
-                            <label>
-                              <input class="mr-1" type="radio" name="endingtime">重複
-                            </label>
-                            <input type="number" class="form-control inline-block w-2/3" name="times" min="1" max="30" placeholder="請填寫數字1-30"> 次
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="submit" class="btn btn-primary">儲存</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
         <!-- /.modal -->
         <div class="modal fade" id="ratings">
           <div class="modal-dialog">
@@ -1142,6 +1142,84 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
                   <button type="submit" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="modal-assessment">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增評量</h4>
+              </div>
+              <!-- form start -->
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">評量標題</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="評量一">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">評量連結</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="https://www.google.com.tw">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="button" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+                <div class="modal fade" id="modal-question">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增問卷</h4>
+              </div>
+              <!-- form start -->
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">問卷標題</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="問卷一">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label">問卷連結</label>
+
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="https://www.google.com.tw">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="button" class="btn btn-primary">儲存</button>
                 </div>
               </form>
             </div>
@@ -1217,7 +1295,7 @@
       timePickerIncrement: 5,
       timePicker24Hour: true,
       locale: {
-        format: 'MM/DD/YYYY hh:mm',
+        format: 'YYYY-MM-DD hh:mm',
         applyLabel: '確認',
         cancelLabel: '取消',
         fromLabel: '從',
@@ -1231,6 +1309,22 @@
     })
     //Initialize Select2 Elements
     $('.select_prompt').select2()
+
+    $(document).ready(function(){
+      $('#phy_class').click(function(){
+        if($("#phy_class").prop("checked")){
+          $('.div_carry').show();
+          $('.div_digit').hide();
+        }
+      })
+      $('#digit_class').click(function(){
+        if($("#digit_class").prop("checked")){
+          $('.div_digit').show();
+          $('.div_carry').hide();
+        }
+      })
+    })
+
   </script>
 </body>
 

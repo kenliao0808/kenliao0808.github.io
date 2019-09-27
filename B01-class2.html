@@ -325,7 +325,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-5">
                     <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>開辦時間</label>
                       <div class="input-group">
@@ -337,7 +337,7 @@
                       <small class="help-block"></small>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <div class="form-group">
                       <label>班別簡介</label>
                       <textarea class="form-control" rows="3" placeholder=""></textarea>
@@ -370,82 +370,38 @@
                     <div class="form-group">
                       <label>認證資格</label>
                       <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-6">
                           <div class="form-group">
-                            <div class="m-0 checkbox">
-                              <label>
-                                <input class="mr-1" type="checkbox">通過評量
-                              </label>
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <input type="checkbox" id="click_ment">
+                              </span>
+                              <label class="form-control">通過評量</label>
+                              <div class="form-group click_ment_select" style="display: none">
+                                <select class="form-control">
+                                  <option selected value="請選擇">- 請選擇 -</option>
+                                  <option value="所有課程都需要填寫">所有課程都需要填寫</option>
+                                  <option value="只要其中一堂課程填寫即可">只要其中一堂課程填寫即可</option>
+                                </select>
+                              </div>
                             </div>
                             <small class="help-block"></small>
                           </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                           <div class="form-group">
-                            <select class="form-control">
-                              <option selected value="請選擇">- 請選擇 -</option>
-                              <option value="評量一">評量一</option>
-                              <option value="評量二">評量二</option>
-                            </select>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <select class="form-control">
-                              <option selected value="請選擇">- 請選擇 -</option>
-                              <option value="所有課程都需要填寫">所有課程都需要填寫</option>
-                              <option value="只要其中一堂課程填寫即可">只要其中一堂課程填寫即可</option>
-                            </select>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <div class="m-0 checkbox">
-                              <label>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-assessment">新增評量</button>
-                              </label>
-                            </div>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="form-group">
-                            <div class="m-0 checkbox">
-                              <label>
-                                <input class="mr-1" type="checkbox">完成問卷
-                              </label>
-                            </div>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <select class="form-control">
-                              <option selected value="請選擇">- 請選擇 -</option>
-                              <option value="問卷一">問卷一</option>
-                              <option value="問卷二">問卷二</option>
-                            </select>
-                            <small class="help-block"></small>
-                          </div>   
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <select class="form-control">
-                              <option selected value="請選擇">- 請選擇 -</option>
-                              <option value="所有課程都需要填寫">所有課程都需要填寫</option>
-                              <option value="只要其中一堂課程填寫即可">只要其中一堂課程填寫即可</option>
-                            </select>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <div class="m-0 checkbox">
-                              <label>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-question">新增問卷</button>
-                              </label>
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <input type="checkbox" id="click_question">
+                              </span>
+                              <label class="form-control">完成問卷</label>
+                              <div class="form-group click_question_select" style="display: none">
+                                <select class="form-control">
+                                  <option selected value="請選擇">- 請選擇 -</option>
+                                  <option value="所有課程都需要填寫">所有課程都需要填寫</option>
+                                  <option value="只要其中一堂課程填寫即可">只要其中一堂課程填寫即可</option>
+                                </select>
+                              </div>
                             </div>
                             <small class="help-block"></small>
                           </div>
@@ -499,13 +455,13 @@
                           </tr>
                           <tr>
                             <td>審核人員一</td>
-                            <td>2019/7/12 下午 03:41:00</td>
+                            <td>2019-07-12 下午 03:41:00</td>
                             <td><span class="label label-danger">未通過</span></td>
                             <td>缺少附件檔案</td>
                           </tr>
                           <tr>
                             <td>審核人員二</td>
-                            <td>2019/7/30 下午 03:41:00</td>
+                            <td>2019-07-30 下午 03:41:00</td>
                             <td><span class="label label-success">通過</span></td>
                             <td>附件已補齊，通過審查</td>
                           </tr>
@@ -516,6 +472,9 @@
                 </div>
               </div>
               <div class="tab-pane" id="tab_2">
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B02-lesson2.html'"><i class="fa fa-plus-circle"></i> 新增課程</button>
+                </div>
                 <table class="table table-hover">
                   <tbody>
                     <tr>
@@ -553,7 +512,6 @@
           </div>
           <!-- /.box-body -->
           <div class="margin_y_all_child box-footer">
-            <button type="reset" class="btn btn-warning">清除檢索</button>
             <div class="pull-right">
               <button type="button" style="display: none;" class="btn btn-default under_review" disabled>審查中</button>
               <button type="button" class="btn btn-warning send_review">送出行政審查</button>
@@ -562,85 +520,6 @@
           </div>
         </div>
         <!-- /.box -->
-
-        <div class="modal fade" id="modal-assessment">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">新增評量</h4>
-              </div>
-              <!-- form start -->
-              <form class="form-horizontal">
-                <div class="modal-body">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">評量標題</label>
-
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" placeholder="評量一">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPassword3" class="col-sm-2 control-label">評量連結</label>
-
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="https://www.google.com.tw">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary">儲存</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-
-        <div class="modal fade" id="modal-question">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">新增問卷</h4>
-              </div>
-              <!-- form start -->
-              <form class="form-horizontal">
-                <div class="modal-body">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">問卷標題</label>
-
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" placeholder="問卷一">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPassword3" class="col-sm-2 control-label">問卷連結</label>
-
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="https://www.google.com.tw">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary">儲存</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-
       </section>
       <!-- /.content -->
     </div>
@@ -706,7 +585,7 @@
       timePickerIncrement: 5,
       timePicker24Hour: true,
       locale: {
-        format: 'YYYY/MM/DD hh:mm',
+        format: 'YYYY-MM-DD hh:mm',
         applyLabel: '確認',
         cancelLabel: '取消',
         fromLabel: '從',
@@ -720,6 +599,22 @@
     })
 
     $(document).ready(function(){
+      $('#click_ment').click(function(){
+        if($("#click_ment").prop("checked")){
+          $('.click_ment_select').show();
+        }else{
+          $('.click_ment_select').hide();
+        }
+      })
+
+      $('#click_question').click(function(){
+        if($("#click_question").prop("checked")){
+          $('.click_question_select').show();
+        }else{
+          $('.click_question_select').hide();
+        }
+      })
+
       $('#class_type').change(function(){
         var NewClassType = $(this).val()
         if(NewClassType=='全院開課'){

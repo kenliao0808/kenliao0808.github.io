@@ -379,16 +379,19 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-4">
                   <div class="form-group">
                     <label>身分</label>
-                    <div class="m-0 checkbox">
-                      <label>
-                        <input class="mr-1" type="checkbox">公務員
-                      </label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox" disabled>
+                      </span>
+                      <label class="form-control">公務員</label>
                     </div>
                     <small class="help-block"></small>
                   </div>
+                </div>
+                <div class="col-sm-8">
                 </div>
               </div>
               <div class="row">
@@ -630,19 +633,14 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>人員資料異動時間</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="date form-control pull-right">
-                    </div>
+                    <input type="text" class="form-control" placeholder="" disabled>
                     <small class="help-block"></small>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>人員資料異動識別碼</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="" disabled>
                     <small class="help-block"></small>
                   </div>
                 </div>
@@ -723,14 +721,16 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label>是否為管理者</label>
-                    <div class="margin_x_child-l m-0 radio">
-                      <label>
-                        <input class="mr-1" type="radio" name="admin2" value="是" checked>是
-                      </label>
-                      <label>
-                        <input class="mr-1" type="radio" name="admin2" value="否">否
-                      </label>
+                    <label>管理者</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="radio" name="admin2" value="是" checked>
+                      </span>
+                      <label class="form-control">是</label>
+                      <span class="input-group-addon">
+                        <input type="radio" name="admin2" value="否">
+                      </span>
+                      <label class="form-control">否</label>
                     </div>
                     <small class="help-block"></small>
                   </div>
@@ -915,6 +915,7 @@
   <script type="text/javascript">
     //Date picker
     $('#birthdate, #date, .date').datepicker({
+      format: "yyyy-mm-dd",
       autoclose: true,
       language: 'zh-TW'
     })
