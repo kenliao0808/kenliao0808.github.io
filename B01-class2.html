@@ -45,6 +45,28 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    /* 進度條的css */
+    .progress {
+      position:relative; 
+      width:400px; 
+      border: 1px solid #ddd; 
+      padding: 1px; 
+      border-radius: 3px; 
+    }
+    .bar { 
+      background-color: #7cc7ee; 
+      width:0%; 
+      height:20px; 
+      border-radius: 3px; 
+    }
+    .percent { 
+      position:absolute; 
+      display:inline-block; 
+      top:-3px; 
+      left:48%; 
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -250,8 +272,6 @@
                       <select class="form-control">
                         <option selected value="請選擇">- 請選擇 -</option>
                         <option value="草稿">草稿</option>
-                        <option value="發布">發布</option>
-                        <option value="關閉">關閉</option>
                       </select>
                       <small class="help-block"></small>
                     </div>
@@ -285,10 +305,10 @@
                   </div>
                 </div>
                 <div class="row">
-                  <span class="font-bold mb-2 px-5 block"><span class="mr-1 text-danger">*</span>開班單位</span>
-                  <div class="col-sm-4">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <select class="form-control">
+                      <label><span class="mr-1 text-danger">*</span>開班單位</label>
+                      <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
                         <option selected value="請選擇">- 請選擇 -</option>
                         <option value="醫學研究部">醫學研究部</option>
                         <option value="傳統醫學部">傳統醫學部</option>
@@ -299,33 +319,7 @@
                       <small class="help-block"></small>
                     </div>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="實證醫學中心">實證醫學中心</option>
-                        <option value="社團">社團</option>
-                        <option value="教師培育科">教師培育科</option>
-                        <option value="臨床技術訓練科">臨床技術訓練科</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="實證醫學中心">實證醫學中心</option>
-                        <option value="社團">社團</option>
-                        <option value="教師培育科">教師培育科</option>
-                        <option value="臨床技術訓練科">臨床技術訓練科</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>開辦時間</label>
                       <div class="input-group">
@@ -337,36 +331,9 @@
                       <small class="help-block"></small>
                     </div>
                   </div>
-                  <div class="col-md-7">
-                    <div class="form-group">
-                      <label>班別簡介</label>
-                      <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <p class="font-bold mb-2">班別附件</p>
-                      <button type="button" class="btn btn-info">瀏覽檔案</button>
-                      <button type="button" class="btn btn-success">上傳檔案</button>
-                      <button type="button" class="btn btn-warning">清除檔案</button>
-                    </div>
-                    <div class="py-2 alert btn btn-default alert-dismissible">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      檔案名稱
-                    </div>
-                    <div class="py-2 alert btn btn-default alert-dismissible">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      檔案名稱
-                    </div>
-                    <div class="py-2 alert btn btn-default alert-dismissible">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      檔案名稱
-                    </div>
-                  </div>
-                  <div class="col-md-7">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label>認證資格</label>
                       <div class="row">
@@ -406,6 +373,44 @@
                             <small class="help-block"></small>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>班別簡介</label>
+                      <textarea class="form-control" rows="3" placeholder=""></textarea>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <p class="font-bold mb-2">班別附件</p>
+                      <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
+                      <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
+                      <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
+                      <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
+                    </div>
+                    <div class="form-group" id="filePath">
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <p class="font-bold mb-2">已上傳檔案</p>
+                      <div class="py-2 alert btn btn-default alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        檔案名稱
+                      </div>
+                      <div class="py-2 alert btn btn-default alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        檔案名稱
+                      </div>
+                      <div class="py-2 alert btn btn-default alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        檔案名稱
                       </div>
                     </div>
                   </div>
@@ -503,6 +508,13 @@
                       <td>08383FD-3</td>
                       <td>全人照護教育師培課程(全人醫療照護—安寧療護、生死學)</td>
                       <td><time>2019-08-06（二） 17:00</time></td>
+                      <td><span class="label label-default fa fa-exclamation"><strong> 未發佈</strong></span></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>08383FD-4</td>
+                      <td>全人照護教育師培課程(全人醫療照護—安寧療護、生死學)</td>
+                      <td><time>2019-08-06（二） 17:00</time></td>
                       <td><span class="label label-danger fa fa-remove"><strong> 關 閉</strong></span></td>
                     </tr>
                   </tbody>
@@ -584,6 +596,8 @@
       timePicker: true,
       timePickerIncrement: 5,
       timePicker24Hour: true,
+      startDate: moment().startOf('hour'),
+      endDate: moment().startOf('hour').add(50, 'minute'),
       locale: {
         format: 'YYYY-MM-DD hh:mm',
         applyLabel: '確認',
@@ -599,6 +613,38 @@
     })
 
     $(document).ready(function(){
+      var flieUpload = $("#FileUpload1");
+      var filePath = $("#filePath");
+      var button = $("#btnFileUpload");
+      button.click(function(){
+        flieUpload.click();
+      });
+      flieUpload.change(function(){
+
+        var totalFile = $('input[type=file]').get(0).files;
+        var fileHtml = '';
+        for (var i = 0; i < totalFile.length; i++) {
+          fileHtml +=  "<div>" + totalFile[i]['name'] + "<div class='progress' id=\"progress-div\"><div class='bar' id='bar'></div><div class='percent' id='percent'>0%</div></div></div>";
+        }
+        filePath.html("<p class=\"font-bold mb-2\">待上傳檔案</p>" + fileHtml);
+      })
+
+      $("#FileClear").click(function(){
+        flieUpload.val('');
+        filePath.html("");
+      })
+
+      $("#UploadToData").click(function(){
+        var i = 1;
+        var myVar = setInterval(function(){
+          myTimer(i)
+          if(i >= 100){
+            clearInterval(myVar);
+          }
+          i++;
+        },100);
+      })
+
       $('#click_ment').click(function(){
         if($("#click_ment").prop("checked")){
           $('.click_ment_select').show();
@@ -624,12 +670,22 @@
         }
       })
 
+
       $('.send_review').click(function(){
         $('.send_review').hide();
         $('.under_review').show();
       })
-
     })
+
+    function myTimer(ii){
+      $("div[id='percent']").text(ii+"%"); // 進度條百分比文字
+      $("div[id='bar']").width(ii+"%");    // 進度條顏色
+    }
+
+    function open_class_type(myObj){
+      myObj.after('<select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
+    }
+
   </script>
 </body>
 

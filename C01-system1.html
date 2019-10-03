@@ -255,101 +255,8 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol" id="batch_popout"><i class="fa fa-floppy-o"></i> 匯入臨床教師名單</button>
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-primary pull-rightol"><i class="fa fa-plus-circle"></i> 新增</button>
             </div>
-          </div>
-          <div class="box-body">
-            <form role="form">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>燈號</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>姓名</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>單位</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="醫學研究部">醫學研究部</option>
-                      <option value="傳統醫學部">傳統醫學部</option>
-                      <option value="家庭醫學部">家庭醫學部</option>
-                      <option value="教學部">教學部</option>
-                      <option value="護理部">護理部</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>職類</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="西醫">西醫</option>
-                      <option value="牙醫">牙醫</option>
-                      <option value="中醫">中醫</option>
-                      <option value="護理">護理</option>
-                      <option value="藥學">藥學</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>職稱</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="契約行政人員">契約行政人員</option>
-                      <option value="契約住院醫師">契約住院醫師</option>
-                      <option value="進修醫師">進修醫師</option>
-                      <option value="聘用住院醫師">聘用住院醫師</option>
-                      <option value="技士">技士</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>等級</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="院外">院外</option>
-                      <option value="院內">院內</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="啟用">啟用</option>
-                      <option value="未啟用">未啟用</option>
-                      <option value="關閉">關閉</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>管理者</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="1">是</option>
-                      <option value="0">否</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="box-footer">
-                <button type="reset" class="btn btn-warning">清除檢索</button>
-                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-              </div>
-            </form>
           </div>
         </div>
 
@@ -359,98 +266,182 @@
             <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
           </div>
           <div class="box-body">
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-              <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th style="width: 10px">#</th>
-                        <th>燈號</th>
-                        <th>姓名</th>
-                        <th>單位</th>
-                        <th>職類</th>
-                        <th>職稱</th>
-                        <th>等級</th>
-                        <th>管理者</th>
-                        <th>狀態</th>
-                        <th>動作</th>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>fly001</td>
-                        <td>王大明</td>
-                        <td>教師培育科</td>
-                        <td>西醫</td>
-                        <td>契約行政人員</td>
-                        <td>院內</td>
-                        <td><span class="label label-success fa fa-check"> 是</span></td>
-                        <td><span class="label label-success fa fa-check"> 啟用</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
-                            <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>fly002</td>
-                        <td>陳中銘</td>
-                        <td>傳統醫學部</td>
-                        <td>中醫</td>
-                        <td>進修醫師</td>
-                        <td>院外</td>
-                        <td><span class="label label-danger fa fa-remove"> 否</span></td>
-                        <td><span class="label label-warning fa fa-exclamation"> 未啟用</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='A01-users2.html'"></button>
-                            <!-- <button type="button" class="btn btn-warning fa fa-retweet" title="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>fly003</td>
-                        <td>劉曉明</td>
-                        <td>教育部</td>
-                        <td>牙醫</td>
-                        <td>技士</td>
-                        <td>院內</td>
-                        <td><span class="label label-success fa fa-check"> 是</span></td>
-                        <td><span class="label label-danger fa fa-remove"> 關閉</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-info fa fa-pencil" alt="修改" onclick="javascript:location.href='A01-users2.html'"></button>
-                            <!-- <button type="button" class="btn btn-warning fa fa-retweet" alt="切換身分" onclick="alert('前台帳號切換為fly001');"></button> -->
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <table id="example1" class="table table-bordered table-striped table-hover">
+                <tbody><tr>
+                  <th>前台順序 <br><input type="button" class="btn btn-xs btn-warning btn-flat" value="儲存順序" onclick="saveSeq(this)"></th>
+                  <th>名稱</th>
+                  <th>是否使用</th>
+                  <th>動作</th>
+                </tr>
+                </tbody><tbody>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="1" style="width:80px;" data-id="1">
+                  </td>
+                  <td>
+                    <strong><span class="text-blue">輿情回應</span></strong>
+                  </td>
+                  <td>
+                  <span class="text-success">是</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',1,1,'',',01,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,2,'1',',01,','輿情回應')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="9">
+                  </td>
+                  <td>
+                  。正式回應
+                  </td>
+                  <td>
+                  <span class="text-success">是</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',9,2,'1',',01,09,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'9',',01,09,','正式回應')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="10">
+                  </td>
+                  <td>
+                  。模擬回應
+                  </td>
+                  <td>
+                  <span class="text-success">是</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',10,2,'1',',01,10,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'10',',01,10,','模擬回應')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="11">
+                  </td>
+                  <td>
+                  。。法人管理
+                  </td>
+                  <td>
+                  <span class="text-danger">否</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',11,3,'10',',01,10,11,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,4,'11',',01,10,11,','法人管理')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="12">
+                  </td>
+                  <td>
+                  。。。智財授權
+                  </td>
+                  <td>
+                  <span class="text-danger">否</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',12,4,'11',',01,10,11,12,')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="13">
+                  </td>
+                  <td>
+                  。。。法人定位
+                  </td>
+                  <td>
+                  <span class="text-danger">否</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',13,4,'11',',01,10,11,13,')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="14">
+                  </td>
+                  <td>
+                  。科專計畫管理
+                  </td>
+                  <td>
+                  <span class="text-danger">否</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',14,2,'1',',01,14,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'14',',01,14,','科專計畫管理')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="15">
+                  </td>
+                  <td>
+                  。。法人科專計畫
+                  </td>
+                  <td>
+                  <span class="text-danger">否</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',15,3,'14',',01,14,15,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,4,'15',',01,14,15,','法人科專計畫')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="2" style="width:80px;" data-id="3">
+                  </td>
+                  <td>
+                    <strong><span class="text-blue">立法院模擬題庫</span></strong>
+                  </td>
+                  <td>
+                  <span class="text-success">是</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',3,1,'',',03,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,2,'3',',03,','立法院模擬題庫')">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="" style="width:80px;" data-id="29">
+                  </td>
+                  <td>
+                  。年度科專預算編列說明及執行情形
+                  </td>
+                  <td>
+                  <span class="text-success">是</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',29,2,'3',',03,29,')">
+                    
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'29',',03,29,','年度科專預算編列說明及執行情形')">
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td>
+                    <input type="text" maxlength="3" class="seqs" value="7" style="width:80px;" data-id="8">
+                  </td>
+                  <td>
+                    <strong><span class="text-blue">預算相關議題</span></strong>
+                  </td>
+                  <td>
+                  <span class="text-success">是</span>
+                  </td>
+                  <td>
+                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',8,1,'',',08,')">
+                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,2,'8',',08,','預算相關議題')">
+                  </td>
+                </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
         </div>
       </section>
       <!-- /.content -->
@@ -462,35 +453,80 @@
     <div class="control-sidebar-bg"></div>
   </div>
 
-  <!-- [popout] -->
-  <section class="popout" style="display: none">
-    <section class="inbox">
-      <section class="pop_hd">
-        <h2 id="batch_title">匯入資料</h2>
-        <button type="button" class="i_close" id="close_batch" title="close">
-          <i class="fa fa-times"></i>
-        </button>
-      </section>
-      <section class="pop_bd">
-        <section class="formbox">
-          <div class="psbox" id="batch_eg_list">
-            <a href="./clinical_teacher_eg.xlsx">臨床教師名單匯入範例格式</a>
-          </div>
-          <form id="batch_form" name="batch_form" method="POST" action="" enctype="multipart/form-data">
-            <div class="tfbar tfbar01 clearfix">
-              <b>上傳檔案：</b>
-              <span class="mcont">
-                <input type="file" name="upload_file">
-              </span>
+
+  <!-- one form -->
+  <div class="modal fade" id="modal-oneform">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 id="aname" class="modal-title" id="func-title">編輯類別</h4>
+        </div>
+        <form role="form" id="frm1" class="form-horizontal">
+        <div class="modal-body">
+            <div id="f0" class="form-group hidden">
+              <label class="col-md-3 control-label">上層名稱</label>
+              <div class="col-md-9">
+                <div id="f0name"></div>
+              </div>
             </div>
-          </form>
-        </section>
-        <section class="popbtn">
-          <button class="btn btn-success" type="submit">確認送出</button>
-        </section>
-      </section>
-    </section>
-  </section>
+            <div class="form-group">
+              <label for="f1" class="col-md-3 control-label"><span class="text-red">* </span>名稱</label>
+              <div class="col-md-9">
+                <input id="f1" type="text" name="vo.cname" class="form-control" maxlength="20"/>
+              </div>
+            </div>
+            <div id="seqs" class="form-group">
+              <label for="f2" class="col-md-3 control-label">前台顯示順序</label>
+              <div class="col-md-9">
+                <input id="f2" type="text" name="vo.seqs" class="form-control" maxlength="3" placeholder="請輸入數字"/>
+              </div>
+            </div>
+            <div id="islegi" class="form-group hidden">
+              <label for="f6" class="col-md-3 control-label">是否立委提案</label>
+              <div class="col-md-9">
+                <select name="vo.islegi" id="f6" class="form-control">
+                  <option value="1">是</option>
+                  <option value="0">否</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f5" class="col-md-3 control-label">是否使用</label>
+              <div class="col-md-9">
+                <select name="vo.isuse" id="f5" class="form-control">
+                  <option value="1">是</option>
+                  <option value="0">否</option>
+                </select>
+              </div>
+            </div>
+            <div id="upddiv" class="form-group hidden">
+              <label class="col-md-3 control-label">更新者</label>
+              <div class="col-md-9" id="updmgr">
+              </div>
+            </div>
+            <input type="hidden" id="func"/>
+            <input type="hidden" id="pk" name="pk"/>
+            <input type="hidden" id="layer" name="layer"/>
+            <input type="hidden" id="ppid" name="ppid"/>
+            <input type="hidden" id="pids" name="pids"/>
+            <input type="hidden" name="vo.ppid"/>
+            <input type="hidden" name="vo.pids"/>
+            <input type="hidden" name="vo.layer"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+          <button type="submit" class="btn btn-primary" onclick="save()">儲存</button>
+        </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <!-- one form /end -->
 
   <!-- ./wrapper -->
 
@@ -540,7 +576,28 @@
 
   <script src="dist/js/script.js"></script>
   <script>
-    
+    function showModal(func, pk, layer, ppid, pids, pname){
+      $('#modal-oneform').modal({backdrop: 'static', keyboard: false});
+      $('#modal-oneform').modal('show');  
+      $('#func').val(func);
+      $('#pk').val(pk);
+      $('#layer').val(layer);
+      $('#ppid').val(ppid);
+      $('#pids').val(pids);
+      if(layer==1){
+        $('#islegi').removeClass('hidden');
+        //$('#seqs').removeClass('hidden');
+      }
+      else{
+        if(func=='add'){
+          $('#f0').removeClass('hidden');
+          $('#f0name').html(pname);
+        }
+      }
+      if(func=='upd'){
+        oneData(pk, layer, ppid, pids);
+      }
+    }
     $(document).ready(function(){
       $("#batch_popout").on('click',function(e){
         e.preventDefault();

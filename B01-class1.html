@@ -239,6 +239,32 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
+                    <label>行政審查</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="通過">通過</option>
+                      <option value="審查中">審查中</option>
+                      <option value="審查中">待審查</option>
+                      <option value="不通過">不通過</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>狀態</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="草稿">草稿</option>
+                      <option value="發布">發佈</option>
+                      <option value="未發佈">未發佈</option>
+                      <option value="關閉">關閉</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
                     <label>班別代碼</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
@@ -265,7 +291,7 @@
                   </div>
                 </div>
                 <div class="col-md-8">
-                  <label>開課起訖日</label>
+                  <label>開辦起訖日</label>
                   <div class="row">
                     <div class="pseudo_dash col-md-6">
                       <div class="form-group">
@@ -287,30 +313,6 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="草稿">草稿</option>
-                      <option value="發布">發布</option>
-                      <option value="關閉">關閉</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>行政審查</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="通過">通過</option>
-                      <option value="審查中">審查中</option>
-                      <option value="不通過">不通過</option>
-                    </select>
                   </div>
                 </div>
               </div>
@@ -340,7 +342,7 @@
                         <th>班別名稱</th>
                         <th>開班單位</th>
                         <th>班別類型</th>
-                        <th>開課起訖</th>
+                        <th>開辦起訖</th>
                         <th>行政審查</th>
                         <th>狀態</th>
                         <th>附件</th>
@@ -353,8 +355,8 @@
                         <td>教師培育科</td>
                         <td>全院開課</td>
                         <td>2019-09-20 ~ 2019-09-30</td>
-                        <td><span class="label label-success fa fa-check"> 通過</span></td>
-                        <td><span class="label label-success fa fa-check"> 發佈</span></td>
+                        <td><span class="label label-success fa fa-check"> 通 過</span></td>
+                        <td><span class="label label-success fa fa-check"> 發 佈</span></td>
                         <td>是</td>
                         <td>
                           <div class="margin_y_all_child">
@@ -376,7 +378,7 @@
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B01-class2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                       </tr>
@@ -387,13 +389,30 @@
                         <td>教師培育科</td>
                         <td>全院開課</td>
                         <td>2019-09-20 ~ 2019-09-30</td>
+                        <td><span class="label label-default fa fa-exclamation"> 待審查</span></td>
+                        <td><span class="label label-default fa fa-exclamation"> 未發佈</span></td>
+                        <td>是</td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B01-class2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>4</td>
+                        <td>08383FD-4</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>全院開課</td>
+                        <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-danger fa fa-remove"> 不通過</span></td>
                         <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
                         <td>是</td>
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B01-class2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                       </tr>
@@ -434,16 +453,17 @@
                 <div class="modal-body">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">班別代碼</label>
+                      <label for="inputEmail3" class="col-sm-2 control-label">開辦起訖日</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" placeholder="班別代碼">
+                        <input class="form-control pull-right class_popout" id="class_start" type="text">
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="modal-footer">
+                  <input type="hidden" id="copy_html">
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary">儲存</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">儲存</button>
                 </div>
               </form>
             </div>
@@ -510,6 +530,27 @@
       autoclose: true,
       language: 'zh-TW'
     })
+
+    $('.class_popout').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 5,
+      timePicker24Hour: true,
+      startDate: moment().startOf('hour'),
+      endDate: moment().startOf('hour').add(50, 'minute'),
+      locale: {
+        format: 'YYYY-MM-DD hh:mm',
+        applyLabel: '確認',
+        cancelLabel: '取消',
+        fromLabel: '從',
+        toLabel: '到',
+        weekLabel: 'W',
+        customRangeLabel: 'Custom Range',
+        daysOfWeek: ["日", "一", "二", "三", "四", "五", "六"],
+        monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+      },
+      language: 'zh-TW'
+    })
+
     //Money Euro
     $('[data-mask]').inputmask()
 
@@ -521,7 +562,45 @@
         newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
       }
       newHtml = newHtml+"</tr>"
+      $('#copy_html').val(newHtml);
+    }
+
+    function save_copy(){
+      var nowhtml = $('#copy_html').val();
+      var HtmlArray = new Array();
+      HtmlArray = nowhtml.split("<td>");
+      var newHtml = '';
+      for (var i = 0; i < HtmlArray.length; i++) {
+        if(i==0){
+          newHtml = HtmlArray[i];
+        }else{
+          if(i==1){
+            var k = Math.floor(Math.random() * 1000000);
+            var ChangeDataNum = HtmlArray[i].substr(0,5) + k;
+            HtmlArray[i] = ChangeDataNum + "</td>";
+          }
+
+          if(i==5){
+            var SpliTimeArray = new Array();
+            SpliTimeArray = $('#class_start').val().split(" ");
+            SpliTime = SpliTimeArray[0] + " ~ " + SpliTimeArray[3]
+            HtmlArray[i] = SpliTime + "</td>";
+          }
+
+          if(i==6){
+            HtmlArray[i] = '<span class="label label-default fa fa-exclamation"> 待審查</span></td>';
+          }
+
+          if(i==7){
+            HtmlArray[i] = '<span class="label label-default fa fa-exclamation"> 未發佈</span></td>';
+          }
+
+          newHtml += "<td>"+ HtmlArray[i];
+        }        
+      }
       $('.data_top').after(newHtml)
+
+
       var tr_length = $('.table tr').length;
       for (var i = 2; i < tr_length; i++) {
         var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
@@ -535,6 +614,9 @@
       var total_num = $('.total_num').html();
       total_num = parseInt(total_num)+1;
       $('.total_num').html(total_num);
+
+
+      $('#copy_html').val('');
     }
 
   </script>
