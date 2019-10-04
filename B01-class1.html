@@ -186,7 +186,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
+              <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
@@ -463,7 +463,9 @@
                 <div class="modal-footer">
                   <input type="hidden" id="copy_html">
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">儲存</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別與課程</button>
+
                 </div>
               </form>
             </div>
@@ -535,10 +537,12 @@
       timePicker: true,
       timePickerIncrement: 5,
       timePicker24Hour: true,
+
       startDate: moment().startOf('hour'),
       endDate: moment().startOf('hour').add(50, 'minute'),
       locale: {
         format: 'YYYY-MM-DD hh:mm',
+        separator: ' ~ ',
         applyLabel: '確認',
         cancelLabel: '取消',
         fromLabel: '從',
@@ -566,6 +570,7 @@
     }
 
     function save_copy(){
+      if(!confirm("確定要進行班別複製嗎?")) { return false; }
       var nowhtml = $('#copy_html').val();
       var HtmlArray = new Array();
       HtmlArray = nowhtml.split("<td>");

@@ -210,7 +210,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
+              <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
@@ -259,682 +259,688 @@
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
-            <div class="box-body">
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="B02-lesson2.html">課程設定</a></li>
-                <li><a href="#">報名管理</a></li>
-                <li><a href="#">簽到管理</a></li>
-                <li><a href="#">評量管理</a></li>
-                <li><a href="#">問卷管理</a></li>
-                <li><a href="#">修習結果管理</a></li>
-                <li><a href="#">訊息通知管理</a></li>
-              </ul>
-              <div class="tab-content">
-                <div class="margin_y_all_child my-3 clearfix">
-                  <a class="btn btn-default m:float-right" href="B01-class2.html">回到所屬班別</a>
-                </div>
-                <h4 id="caption1" class="bg-gray-300 p-3 my-3">基本資訊</h4>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>狀態</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="草稿">草稿</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
+          <div class="box-body">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="B02-lesson2.html">課程設定</a></li>
+              <li><a href="#">報名管理</a></li>
+              <li><a href="#">簽到管理</a></li>
+              <li><a href="#">評量管理</a></li>
+              <li><a href="#">問卷管理</a></li>
+              <li><a href="#">修習結果管理</a></li>
+              <li><a href="#">訊息通知管理</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="margin_y_all_child my-3 clearfix">
+                <a class="btn btn-default m:float-right" href="B01-class2.html">回到所屬班別</a>
+              </div>
+              <h4 id="caption1" class="bg-gray-300 p-3 my-3">基本資訊</h4>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>狀態</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="草稿">草稿</option>
+                    </select>
+                    <small class="help-block"></small>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>所屬班別</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="醫學研究部">醫學研究部</option>
-                        <option value="傳統醫學部">傳統醫學部</option>
-                        <option value="家庭醫學部">家庭醫學部</option>
-                        <option value="教學部">教學部</option>
-                        <option value="護理部">護理部</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>課程類型</label>
-                      <select class="form-control class_type_select">
-                        <option value="請選擇">- 請選擇 -</option>
-                        <option value="全院開課">全院開課</option>
-                        <option value="單位開課">單位開課</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>開班單位</label>
-                      <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="醫學研究部">醫學研究部</option>
-                        <option value="傳統醫學部">傳統醫學部</option>
-                        <option value="家庭醫學部">家庭醫學部</option>
-                        <option value="教學部">教學部</option>
-                        <option value="護理部">護理部</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>課程代碼</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>課程名稱</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>期別</label>
-                      <input type="number" class="form-control" name="period" min="1" max="999" placeholder="1-999">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>課程主要性質</label>
-                      <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="護理部">護理部</option>
-                        <option value="臨床培育科">臨床培育科</option>
-                        <option value="醫院感染管制委員會">醫院感染管制委員會</option>
-                        <option value="職業安全衛生室">職業安全衛生室</option>
-                        <option value="總務室">總務室</option>
-                        <option value="醫品中心">醫品中心</option>
-                        <option value="臨床技術訓練科">臨床技術訓練科</option>
-                        <option value="人事室">人事室</option>
-                        <option value="資訊室">資訊室</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>招訓人數</label>
-                      <div class="form-inline">
-                        院內
-                        <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
-                        人
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>開課時間</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
                       </div>
-                      <small class="help-block"></small>
+                      <input type="text" class="time form-control pull-right">
                     </div>
-                    <div class="form-group">
-                      <div class="form-inline">
-                        院外
-                        <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
-                        人
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>課程簡介</label>
-                      <textarea class="form-control" rows="4" placeholder=""></textarea>
-                      <small class="help-block"></small>
-                    </div>
+                    <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>所屬班別</label>
+                    <select class="form-control class_option">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="醫學研究部">醫學研究部</option>
+                      <option value="傳統醫學部">傳統醫學部</option>
+                      <option value="家庭醫學部">家庭醫學部</option>
+                      <option value="教學部">教學部</option>
+                      <option value="護理部">護理部</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>班別類型</label>
+                    <select class="form-control class_type_select">
+                      <option value="請選擇">- 請選擇 -</option>
+                      <option value="全院開課">全院開課</option>
+                      <option value="單位開課">單位開課</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>開班單位</label>
+                    <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="醫學研究部">醫學研究部</option>
+                      <option value="傳統醫學部">傳統醫學部</option>
+                      <option value="家庭醫學部">家庭醫學部</option>
+                      <option value="教學部">教學部</option>
+                      <option value="護理部">護理部</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>課程代碼</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>課程名稱</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>期別</label>
+                    <input type="number" class="form-control" name="period" min="1" max="999" placeholder="1-999">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>課程主要性質</label>
+                    <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="護理部">護理部</option>
+                      <option value="臨床培育科">臨床培育科</option>
+                      <option value="醫院感染管制委員會">醫院感染管制委員會</option>
+                      <option value="職業安全衛生室">職業安全衛生室</option>
+                      <option value="總務室">總務室</option>
+                      <option value="醫品中心">醫品中心</option>
+                      <option value="臨床技術訓練科">臨床技術訓練科</option>
+                      <option value="人事室">人事室</option>
+                      <option value="資訊室">資訊室</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>招訓人數</label>
+                    <div class="form-inline">
+                      院內
+                      <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
+                      人
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-inline">
+                      院外
+                      <label class="w-2/3 l:w-3/4"><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
+                      人
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>課程簡介</label>
+                    <textarea class="form-control" rows="4" placeholder=""></textarea>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
 
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>教學方式</label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="radio" name="teaching" id="phy_class" checked>
-                        </span>
-                        <label class="form-control">實體上課</label>
-                        <span class="input-group-addon digital_learn_content" style="display: none;">
-                          <input type="radio" name="teaching" id="digit_class" >
-                        </span>
-                        <label class="form-control digital_learn_title"  style="display: none;">數位學習</label>
-                      </div>
-                      <small class="help-block"></small>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>教學方式</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="radio" name="teaching" id="phy_class" checked>
+                      </span>
+                      <label class="form-control">實體上課</label>
+                      <span class="input-group-addon digital_learn_content" style="display: none;">
+                        <input type="radio" name="teaching" id="digit_class" >
+                      </span>
+                      <label class="form-control digital_learn_title"  style="display: none;">數位學習</label>
                     </div>
+                    <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
 
-                <div class="row div_digit" style="display: none;">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>實施方式</label>
-                      <select class="form-control">
-                        <option selected value="線上數位學習網">線上數位學習網</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>數位學習平台</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="VHS">VHS</option>
-                        <option value="ShareCourse">ShareCourse</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>數位課程代碼</label>
-                      <div class="form-inline leading-none">
-                        <label class="w-3/4"><input type="text" class="w-full form-control" placeholder=""></label>
-                        <a class="text-success inline-block text-4xl px-4 h-10 align-middle" href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
+              <div class="row div_digit" style="display: none;">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>實施方式</label>
+                    <select class="form-control">
+                      <option selected value="線上數位學習網">線上數位學習網</option>
+                    </select>
+                    <small class="help-block"></small>
                   </div>
                 </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>數位學習平台</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="VHS">VHS</option>
+                      <option value="ShareCourse">ShareCourse</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>數位課程代碼</label>
+                    <div class="form-inline leading-none">
+                      <label class="w-3/4"><input type="text" class="w-full form-control" placeholder=""></label>
+                      <a class="text-success inline-block text-4xl px-4 h-10 align-middle" href="#"><i class="fa fa-eye"></i></a>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
 
-                <div class="row div_carry">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>實施方式</label>
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="電視教學">電視教學</option>
-                        <option value="專題講座">專題講座</option>
-                        <option value="工作坊（訓練班）">工作坊（訓練班）</option>
-                        <option value="研討會">研討會</option>
-                        <option value="讀書會">讀書會</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
+              <div class="row div_carry">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>實施方式</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="電視教學">電視教學</option>
+                      <option value="專題講座">專題講座</option>
+                      <option value="工作坊（訓練班）">工作坊（訓練班）</option>
+                      <option value="研討會">研討會</option>
+                      <option value="讀書會">讀書會</option>
+                    </select>
+                    <small class="help-block"></small>
                   </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>上課地點</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>上課地點</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>資料存放</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">存放講義資料庫</label>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <p class="font-bold mb-2">班別附件</p>
+                    <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
+                    <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
+                    <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
+                    <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
+                  </div>
+                  <div class="form-group" id="filePath">
+                    
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <p class="font-bold mb-2">已上傳檔案</p>
+                    <div class="py-2 alert btn btn-default alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      檔案名稱
+                    </div>
+                    <div class="py-2 alert btn btn-default alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      檔案名稱
+                    </div>
+                    <div class="py-2 alert btn btn-default alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      檔案名稱
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>資料存放</label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">存放講義資料庫</label>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <p class="font-bold mb-2">班別附件</p>
-                      <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
-                      <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
-                      <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
-                      <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
-                    </div>
-                    <div class="form-group" id="filePath">
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <p class="font-bold mb-2">已上傳檔案</p>
-                      <div class="py-2 alert btn btn-default alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        檔案名稱
-                      </div>
-                      <div class="py-2 alert btn btn-default alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        檔案名稱
-                      </div>
-                      <div class="py-2 alert btn btn-default alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        檔案名稱
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
 
-                <h4 id="caption2" class="bg-gray-300 p-3 my-3">認證資格</h4>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>評量</label>
-                      <div class="row">
-                        <div class="col-md-8">
-                          <div class="form-group">
-                            <select class="form-control">
-                              <option selected value="請選擇">- 請選擇 -</option>
-                              <option value="評量一">評量一</option>
-                              <option value="評量二">評量二</option>
-                            </select>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-assessment">新增評量</button>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>問卷</label>
-                      <div class="row">
-                        <div class="col-md-8">
-                          <div class="form-group">
-                            <select class="form-control">
-                              <option selected value="請選擇">- 請選擇 -</option>
-                              <option value="問卷一">問卷一</option>
-                              <option value="問卷二">問卷二</option>
-                            </select>
-                            <small class="help-block"></small>
-                          </div>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-question">新增問卷</button>
-                            <small class="help-block"></small>
-                          </div>
+              <h4 id="caption2" class="bg-gray-300 p-3 my-3">認證資格</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>評量</label>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option selected value="請選擇">- 請選擇 -</option>
+                            <option value="評量一">評量一</option>
+                            <option value="評量二">評量二</option>
+                          </select>
+                          <small class="help-block"></small>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <h4 id="caption2" class="bg-gray-300 p-3 my-3">主講人
-                  <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('presenter_list');">
-                    <i class="fa fa-plus"></i>
-                  </a>
-                </h4>
-                <div class="row" id="presenter_list">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="California">California</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Tennessee">Tennessee</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <div class="form-inline">
-                        教學時數
-                        <label><input type="number" class="w-full form-control" style="width: 50px" name="" min="0" max="999" placeholder="0-999"></label>
-                        (小時)
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <div class="form-inline">
-                        教學評分<a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 id="caption2" class="bg-gray-300 p-3 my-3">主持人
-                  <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('host_list');">
-                    <i class="fa fa-plus"></i>
-                  </a>
-                </h4>
-                <div class="row" id="host_list">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="California">California</option>
-                        <option value="Delaware">Delaware</option>
-                        <option value="Tennessee">Tennessee</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <div class="form-inline">
-                        教學時數
-                        <label><input type="number" class="w-full form-control" style="width: 50px" name="" min="0" max="999" placeholder="0-999"></label>
-                        (小時)
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <div class="form-inline">
-                        教學評分<a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 id="caption2" class="bg-gray-300 p-3 my-3 learn_cate_title" style="display: none;">終身學習類別</h4>
-                <div class="row learn_cate_content" style="display: none;">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <select class="form-control" onchange="open_lifelong_type($(this));">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="政策能力訓練">政策能力訓練</option>
-                        <option value="領導力發展">領導力發展</option>
-                        <option value="自我成長及其他">自我成長及其他</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 id="caption2" class="bg-gray-300 p-3 my-3 course_recognition_title" style="display: none;">課程加認性質
-                  <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('course_list');">
-                    <i class="fa fa-plus"></i>
-                  </a>
-                </h4>
-                <div class="row course_recognition_content" id="course_list" style="display: none;">
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      <select class="form-control" onchange="open_class_kind($(this));">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="護理部">護理部</option>
-                        <option value="臨床培育科">臨床培育科</option>
-                        <option value="醫院感染管制委員會">醫院感染管制委員會</option>
-                        <option value="職業安全衛生室">職業安全衛生室</option>
-                        <option value="總務室">總務室</option>
-                        <option value="醫品中心">醫品中心</option>
-                        <option value="臨床技術訓練科">臨床技術訓練科</option>
-                        <option value="人事室">人事室</option>
-                        <option value="資訊室">資訊室</option>
-                      </select>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 id="caption2" class="bg-gray-300 p-3 my-3">報名資訊</h4>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>報名方式</label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">線上報名</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">現場報名</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">推薦報名</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">不開放報名</label>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>報名時間</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">
-                          <i class="fa fa-clock-o"></i>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>問卷</label>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option selected value="請選擇">- 請選擇 -</option>
+                            <option value="問卷一">問卷一</option>
+                            <option value="問卷二">問卷二</option>
+                          </select>
+                          <small class="help-block"></small>
                         </div>
-                        <input type="text" class="time form-control pull-right">
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>認證資格 </label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">需要出席</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">需要通過評量</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">需要完成問卷</label>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                    <div class="form-group">
-                      <label>出席規則 </label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="radio" name="sign_btn">
-                        </span>
-                        <label class="form-control">需要簽退</label>
-                        <span class="input-group-addon">
-                          <input type="radio" name="sign_btn">
-                        </span>
-                        <label class="form-control">不需要簽退</label>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>報名限制</label>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <input type="checkbox" id="click_unit">
-                              </span>
-                              <label class="form-control">單位</label>
-                              <div class="form-group" id="unit_select" style="display: none;">
-                                <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
-                                  <option selected value="請選擇">- 請選擇 -</option>
-                                  <option value="醫學研究部">醫學研究部</option>
-                                  <option value="傳統醫學部">傳統醫學部</option>
-                                  <option value="家庭醫學部">家庭醫學部</option>
-                                  <option value="教學部">教學部</option>
-                                  <option value="護理部">護理部</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <input type="checkbox">
-                              </span>
-                              <label class="form-control">缺課紀錄小於
-                                <input type="number" name="" min="1" max="999" placeholder="1-999"> 次
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <input type="checkbox" id="click_medical">
-                              </span>
-                              <label class="form-control">醫事類別</label>
-                              <div class="form-group" id="medical_select" style="display: none;">
-                                <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
-                                  <option selected value="請選擇">- 請選擇 -</option>
-                                  <option value="醫學研究部">醫學研究部</option>
-                                  <option value="傳統醫學部">傳統醫學部</option>
-                                  <option value="家庭醫學部">家庭醫學部</option>
-                                  <option value="教學部">教學部</option>
-                                  <option value="護理部">護理部</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <input type="checkbox">
-                              </span>
-                              <label class="form-control">非黑名單</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>其他 </label>
-                      <div class="input-group">
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">報名審核</label>
-                        <span class="input-group-addon">
-                          <input type="checkbox">
-                        </span>
-                        <label class="form-control">顯示學員名單</label>
-                      </div>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>報名資格備註</label>
-                      <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>備註</label>
-                      <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>管理者備註</label>
-                      <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      <small class="help-block">(管理員記錄的事項，一般學員無法查看)</small>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.row -->
-                <h4 id="caption3" class="bg-gray-300 p-3 my-3">聯絡資訊</h4>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>聯絡人姓名</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>電子郵件</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>電話</label>
-                      <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999-999-999&quot;" data-mask="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>地址</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 id="caption4" class="bg-gray-300 p-3 my-3">性質審查紀錄</h4>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="box">
-                      <div class="box-body table-responsive no-padding">
-                        <table class="table table-hover">
-                          <tr>
-                            <th>審核人員</th>
-                            <th>時間</th>
-                            <th>狀態</th>
-                            <th>備註</th>
-                          </tr>
-                          <tr>
-                            <td>審核人員一</td>
-                            <td>2019/7/12 下午 03:41:00</td>
-                            <td><span class="label label-danger">未通過</span></td>
-                            <td>缺少附件檔案</td>
-                          </tr>
-                          <tr>
-                            <td>審核人員二</td>
-                            <td>2019/7/30 下午 03:41:00</td>
-                            <td><span class="label label-success">通過</span></td>
-                            <td>附件已補齊，通過審查</td>
-                          </tr>
-                        </table>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="margin_y_all_child box-footer">
-              <div class="m:float-right">
-                <button type="submit" class="btn btn-info">儲存</button>
+
+              <h4 id="caption2" class="bg-gray-300 p-3 my-3">主講人
+                <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('presenter_list');">
+                  <i class="fa fa-plus"></i>
+                </a>
+              </h4>
+              <div class="row" id="presenter_list">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="Alabama">Alabama</option>
+                      <option value="Alaska">Alaska</option>
+                      <option value="California">California</option>
+                      <option value="Delaware">Delaware</option>
+                      <option value="Tennessee">Tennessee</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <div class="form-inline">
+                      教學時數
+                      <label><input type="number" class="w-full form-control" style="width: 50px" name="" min="0" max="999" placeholder="0-999"></label>
+                      (小時)
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <div class="form-inline">
+                      教學評分<a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 id="caption2" class="bg-gray-300 p-3 my-3">主持人
+                <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('host_list');">
+                  <i class="fa fa-plus"></i>
+                </a>
+              </h4>
+              <div class="row" id="host_list">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="Alabama">Alabama</option>
+                      <option value="Alaska">Alaska</option>
+                      <option value="California">California</option>
+                      <option value="Delaware">Delaware</option>
+                      <option value="Tennessee">Tennessee</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <div class="form-inline">
+                      教學時數
+                      <label><input type="number" class="w-full form-control" style="width: 50px" name="" min="0" max="999" placeholder="0-999"></label>
+                      (小時)
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <div class="form-inline">
+                      教學評分<a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 id="caption2" class="bg-gray-300 p-3 my-3 learn_cate_title" style="display: none;">終身學習類別</h4>
+              <div class="row learn_cate_content" style="display: none;">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" onchange="open_lifelong_type($(this));">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="政策能力訓練">政策能力訓練</option>
+                      <option value="領導力發展">領導力發展</option>
+                      <option value="自我成長及其他">自我成長及其他</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+
+              <h4 id="caption2" class="bg-gray-300 p-3 my-3 course_recognition_title" style="display: none;">課程加認性質
+                <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('course_list');">
+                  <i class="fa fa-plus"></i>
+                </a>
+              </h4>
+              <div class="row course_recognition_content" id="course_list" style="display: none;">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" onchange="open_class_kind($(this));">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="護理部">護理部</option>
+                      <option value="臨床培育科">臨床培育科</option>
+                      <option value="醫院感染管制委員會">醫院感染管制委員會</option>
+                      <option value="職業安全衛生室">職業安全衛生室</option>
+                      <option value="總務室">總務室</option>
+                      <option value="醫品中心">醫品中心</option>
+                      <option value="臨床技術訓練科">臨床技術訓練科</option>
+                      <option value="人事室">人事室</option>
+                      <option value="資訊室">資訊室</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <button type="button" class="btn btn-warning" onclick="submit_review($(this));">送出審查</button>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+
+              <h4 id="caption2" class="bg-gray-300 p-3 my-3">報名資訊</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>報名方式</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">線上報名</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">現場報名</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">推薦報名</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">不開放報名</label>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>報名時間</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                      </div>
+                      <input type="text" class="time form-control pull-right">
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>認證資格 </label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">需要出席</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">需要通過評量</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">需要完成問卷</label>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                  <div class="form-group">
+                    <label>出席規則 </label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="radio" name="sign_btn">
+                      </span>
+                      <label class="form-control">需要簽退</label>
+                      <span class="input-group-addon">
+                        <input type="radio" name="sign_btn">
+                      </span>
+                      <label class="form-control">不需要簽退</label>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>報名限制</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="click_unit">
+                            </span>
+                            <label class="form-control">單位</label>
+                            <div class="form-group" id="unit_select" style="display: none;">
+                              <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                                <option selected value="請選擇">- 請選擇 -</option>
+                                <option value="醫學研究部">醫學研究部</option>
+                                <option value="傳統醫學部">傳統醫學部</option>
+                                <option value="家庭醫學部">家庭醫學部</option>
+                                <option value="教學部">教學部</option>
+                                <option value="護理部">護理部</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox">
+                            </span>
+                            <label class="form-control">缺課紀錄小於
+                              <input type="number" name="" min="1" max="999" placeholder="1-999"> 次
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="click_medical">
+                            </span>
+                            <label class="form-control">醫事類別</label>
+                            <div class="form-group" id="medical_select" style="display: none;">
+                              <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                                <option selected value="請選擇">- 請選擇 -</option>
+                                <option value="醫學研究部">醫學研究部</option>
+                                <option value="傳統醫學部">傳統醫學部</option>
+                                <option value="家庭醫學部">家庭醫學部</option>
+                                <option value="教學部">教學部</option>
+                                <option value="護理部">護理部</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox">
+                            </span>
+                            <label class="form-control">非黑名單</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>其他 </label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">報名審核</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
+                      <label class="form-control">顯示學員名單</label>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>報名資格備註</label>
+                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>備註</label>
+                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>管理者備註</label>
+                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                    <small class="help-block">(管理員記錄的事項，一般學員無法查看)</small>
+                  </div>
+                </div>
+              </div>
+              <!-- /.row -->
+              <h4 id="caption3" class="bg-gray-300 p-3 my-3">聯絡資訊</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>聯絡人姓名</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>電子郵件</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>電話</label>
+                    <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999-999-999&quot;" data-mask="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>地址</label>
+                    <input type="text" class="form-control" placeholder="">
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+
+              <h4 id="caption4" class="bg-gray-300 p-3 my-3">性質審查紀錄</h4>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                      <table class="table table-hover">
+                        <tr>
+                          <th>審核人員</th>
+                          <th>時間</th>
+                          <th>狀態</th>
+                          <th>備註</th>
+                        </tr>
+                        <tr>
+                          <td>審核人員一</td>
+                          <td>2019/7/12 下午 03:41:00</td>
+                          <td><span class="label label-danger">未通過</span></td>
+                          <td>缺少附件檔案</td>
+                        </tr>
+                        <tr>
+                          <td>審核人員二</td>
+                          <td>2019/7/30 下午 03:41:00</td>
+                          <td><span class="label label-success">通過</span></td>
+                          <td>附件已補齊，通過審查</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="margin_y_all_child box-footer">
+            <div class="m:float-right">
+              <button type="submit" class="btn btn-info">儲存</button>
+            </div>
+          </div>
         </div>
 
         <!-- /.modal -->
@@ -1001,6 +1007,50 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
                   <button type="submit" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="choose_class">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                  <h4 class="modal-title">選擇所屬班別</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">新增班別</label>
+                    <div class="col-sm-9" style="text-align: center;">
+                      <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i></button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label"></label>
+                    <div class="col-sm-9" style="text-align: center;">
+                      或
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">所屬班別</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" id="modal_option">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="醫學研究部">醫學研究部</option>
+                        <option value="傳統醫學部">傳統醫學部</option>
+                        <option value="家庭醫學部">家庭醫學部</option>
+                        <option value="教學部">教學部</option>
+                        <option value="護理部">護理部</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary submit_class">儲存</button>
                 </div>
               </form>
             </div>
@@ -1080,6 +1130,7 @@
       endDate: moment().startOf('hour').add(50, 'minute'),
       locale: {
         format: 'YYYY-MM-DD hh:mm',
+        separator: ' ~ ',
         applyLabel: '確認',
         cancelLabel: '取消',
         fromLabel: '從',
@@ -1095,6 +1146,22 @@
     $('.select_prompt').select2()
 
     $(document).ready(function(){
+
+      $('.skin-blue').addClass('modal-open')
+      $('#choose_class').addClass('in');
+      $('#choose_class').show();
+
+      $('.submit_class').click(function(){
+        $('.skin-blue').removeClass('modal-open')
+        $('#choose_class').removeClass('in');
+        $('#choose_class').hide();
+
+        var NowOption = $('#modal_option').val();
+        $('.class_option').val(NowOption)
+        $('.class_option').attr('disabled','disabled')
+
+      })
+
       var flieUpload = $("#FileUpload1");
       var filePath = $("#filePath");
       var button = $("#btnFileUpload");
@@ -1184,10 +1251,15 @@
 
     function add_class_kind(ListName){
       if(ListName=='course_list'){
-        $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-5"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div></div>')
+        $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div><div class="col-md-2"><div class="form-group"><button type="button" class="btn btn-warning" onclick="submit_review($(this));">送出審查</button><small class="help-block"></small></div></div></div>')
       }else{
         $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div>' + $('#'+ListName).html() + "</div>")
       }
+    }
+
+    function submit_review(myObj){
+      myObj.parent().parent().parent().find('.close_btn_div').remove()
+      myObj.parent().parent().parent().find('select').attr('disabled','disabled')
     }
 
     function list_close(myObj){

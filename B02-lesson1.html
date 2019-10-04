@@ -186,7 +186,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
+              <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
@@ -380,7 +380,7 @@
                   <td>
                     <div class="margin_y_all_child">
                       <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
                     </div>
                   </td>
                 </tr>
@@ -397,7 +397,7 @@
                   <td>
                     <div class="margin_y_all_child">
                       <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
                     </div>
                   </td>
                 </tr>
@@ -414,7 +414,7 @@
                   <td>
                     <div class="margin_y_all_child">
                       <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
                     </div>
                   </td>
                 </tr>
@@ -431,7 +431,7 @@
                   <td>
                     <div class="margin_y_all_child">
                       <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
                     </div>
                   </td>
                 </tr>
@@ -441,14 +441,14 @@
                   <td>全人照護教育師培系列</td>
                   <td>教師培育科</td>
                   <td>健康保護</td>
-                  <td>全院開課</td>
+                  <td>單位開課</td>
                   <td><time>2020-01-29（三）08:00</time></td>
                   <td>2</td>
                   <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
                   <td>
                     <div class="margin_y_all_child">
                       <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製" onclick="copybtn($(this))"></button>
+                      <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
                     </div>
                   </td>
                 </tr>
@@ -473,6 +473,148 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+    <div class="modal fade" id="period_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form class="form-horizontal" role="form">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">複製課程</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">複製類型</label>
+                <div class="col-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="1">
+                    </span>
+                    <label class="form-control">單筆</label>
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="2">
+                    </span>
+                    <label class="form-control">自訂週期</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" id="single_info" style="display: none;">
+                <label class="col-sm-2 control-label">開課時間</label>
+                <div class="col-sm-10">
+                  <input type="text" class="time form-control inline-block">
+                </div>
+              </div>
+              <div class="form-group" id="frequency_info_1" style="display: none;">
+                <label class="col-sm-2 control-label">頻率</label>
+                <div class="col-sm-10">
+                  <select class="form-control">
+                    <option selected value="每週">每週</option>
+                    <option value="每二週">每二週</option>
+                  </select>
+                  <div class="margin_x_child-l checkbox">
+                    <label>
+                      <input class="mr-1" type="checkbox">日
+                    </label>
+                    <label>
+                      <input class="mr-1" type="checkbox">一
+                    </label>
+                    <label>
+                      <input class="mr-1" type="checkbox">二
+                    </label>
+                    <label>
+                      <input class="mr-1" type="checkbox">三
+                    </label>
+                    <label>
+                      <input class="mr-1" type="checkbox">四
+                    </label>
+                    <label>
+                      <input class="mr-1" type="checkbox">五
+                    </label>
+                    <label>
+                      <input class="mr-1" type="checkbox">六
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" id="frequency_info_2" style="display: none;">
+                <label class="col-sm-2 control-label">結束時間</label>
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="p-0 radio">
+                        <label>
+                          <input class="mr-1" type="radio" name="endingtime" checked>於
+                        </label>
+                        <input type="text" class="date form-control inline-block w-2/3"> 結束
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="p-0 radio">
+                        <label>
+                          <input class="mr-1" type="radio" name="endingtime">重複
+                        </label>
+                        <input type="number" class="form-control inline-block w-2/3" name="times" min="1" max="30" placeholder="請填寫數字1-30"> 次
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">新增班別</label>
+                <div class="col-sm-10" style="text-align: center;">
+                  <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i></button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-10" style="text-align: center;">
+                  或
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">所屬班別</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="modal_option">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="醫學研究部">醫學研究部</option>
+                    <option value="傳統醫學部">傳統醫學部</option>
+                    <option value="家庭醫學部">家庭醫學部</option>
+                    <option value="教學部">教學部</option>
+                    <option value="護理部">護理部</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">其他</label>
+                <div class="col-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <input type="checkbox">
+                    </span>
+                    <label class="form-control">複製主講人</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox">
+                    </span>
+                    <label class="form-control">複製主持人</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox">
+                    </span>
+                    <label class="form-control">複製學員資料</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+              <button type="submit" class="btn btn-primary">儲存</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
 
     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -532,8 +674,44 @@
       autoclose: true,
       language: 'zh-TW'
     })
+
+    $('.time').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 5,
+      timePicker24Hour: true,
+      startDate: moment().startOf('hour'),
+      endDate: moment().startOf('hour').add(50, 'minute'),
+      locale: {
+        format: 'YYYY-MM-DD hh:mm',
+        separator: ' ~ ',
+        applyLabel: '確認',
+        cancelLabel: '取消',
+        fromLabel: '從',
+        toLabel: '到',
+        weekLabel: 'W',
+        customRangeLabel: 'Custom Range',
+        daysOfWeek: ["日", "一", "二", "三", "四", "五", "六"],
+        monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+      },
+      language: 'zh-TW'
+    })
+
     //Money Euro
     $('[data-mask]').inputmask()
+
+    $(document).ready(function(){
+      $('input[type=radio][name=sign_btn]').change(function(){
+        if($(this).val()==1){
+          $('#single_info').show();
+          $('#frequency_info_1').hide();
+          $('#frequency_info_2').hide();
+        }else{
+          $('#single_info').hide();
+          $('#frequency_info_1').show();
+          $('#frequency_info_2').show();
+        }
+      })
+    })
 
     function copybtn(myObj){
       var thisTab = myObj.parent().parent().parent()
@@ -543,20 +721,20 @@
         newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
       }
       newHtml = newHtml+"</tr>"
-      $('.data_top').after(newHtml)
-      var tr_length = $('.table tr').length;
-      for (var i = 2; i < tr_length; i++) {
-        var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
-        if(TrNum==9){
-          $('.table tr:eq('+i+')').remove()
-        }else{
-          var NewNum = parseInt(TrNum)+1;
-          $('.table tr:eq('+i+') td:eq(0)').html(NewNum)
-        }
-      }
-      var total_num = $('.total_num').html();
-      total_num = parseInt(total_num)+1;
-      $('.total_num').html(total_num);
+      // $('.data_top').after(newHtml)
+      // var tr_length = $('.table tr').length;
+      // for (var i = 2; i < tr_length; i++) {
+      //   var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
+      //   if(TrNum==9){
+      //     $('.table tr:eq('+i+')').remove()
+      //   }else{
+      //     var NewNum = parseInt(TrNum)+1;
+      //     $('.table tr:eq('+i+') td:eq(0)').html(NewNum)
+      //   }
+      // }
+      // var total_num = $('.total_num').html();
+      // total_num = parseInt(total_num)+1;
+      // $('.total_num').html(total_num);
     }
 
   </script>
