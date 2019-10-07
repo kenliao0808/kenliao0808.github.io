@@ -207,7 +207,7 @@
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
               <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>職類管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>行政職稱管理</a></li>
@@ -246,6 +246,7 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
+              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>              
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
@@ -255,8 +256,14 @@
               <li><a href="#tab_2" data-toggle="tab">課程列表</a></li>
             </ul>
             <div class="tab-content">
+              <div class="margin_y_all_child my-3 clearfix">
+                <a class="btn btn-default" href="#caption1">基本資訊</a>
+                <a class="btn btn-default" href="#caption2">聯絡資訊</a>
+                <a class="btn btn-default" href="#caption3">行政審查紀錄</a>
+                <button type="button" class="btn btn-primary pull-rightol m:float-right" onclick="javascript:location.href='B02-lesson2.html'"><i class="fa fa-plus-circle"></i> 新增課程</button>
+              </div>
               <div class="tab-pane active" id="tab_1">
-                <h4 class="bg-gray-300 p-3 my-3">基本資訊</h4>
+                <h4 id="caption1" class="bg-gray-300 p-3 my-3">基本資訊</h4>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -283,22 +290,6 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>班別代碼</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label><span class="mr-1 text-danger">*</span>班別名稱</label>
-                      <input type="text" class="form-control" placeholder="">
-                      <small class="help-block"></small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>開班單位</label>
                       <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
                         <option selected value="請選擇">- 請選擇 -</option>
@@ -308,6 +299,25 @@
                         <option value="教學部">教學部</option>
                         <option value="護理部">護理部</option>
                       </select>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>班別代碼<span class="mr-1 text-danger">(單位前2碼+自行填入8碼)</span></label>
+                      <div>
+                        <input type="text" style="width: 17%;display: inline;" class="form-control" placeholder=""> - 
+                        <input type="text" style="width: 79%;display: inline;" class="form-control" placeholder="">
+                      </div>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label><span class="mr-1 text-danger">*</span>班別名稱</label>
+                      <input type="text" class="form-control" placeholder="">
                       <small class="help-block"></small>
                     </div>
                   </div>
@@ -407,25 +417,25 @@
                     </div>
                   </div>
                 </div>
-                <h4 class="bg-gray-300 p-3 my-3">聯絡資訊</h4>
+                <h4 id="caption2" class="bg-gray-300 p-3 my-3">聯絡資訊</h4>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>聯絡人姓名</label>
+                      <label><span class="mr-1 text-danger">*</span>聯絡人姓名</label>
                       <input type="text" class="form-control" placeholder="">
                       <small class="help-block"></small>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>電子郵件</label>
+                      <label><span class="mr-1 text-danger">*</span>電子郵件</label>
                       <input type="text" class="form-control" placeholder="">
                       <small class="help-block"></small>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>電話</label>
+                      <label><span class="mr-1 text-danger">*</span>電話</label>
                       <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999-999-999&quot;" data-mask="">
                       <small class="help-block"></small>
                     </div>
@@ -438,7 +448,7 @@
                     </div>
                   </div>
                 </div>
-                <h4 class="bg-gray-300 p-3 my-3">行政審查紀錄</h4>
+                <h4 id="caption3" class="bg-gray-300 p-3 my-3">行政審查紀錄</h4>
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="box">
@@ -469,9 +479,6 @@
                 </div>
               </div>
               <div class="tab-pane" id="tab_2">
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B02-lesson2.html'"><i class="fa fa-plus-circle"></i> 新增課程</button>
-                </div>
                 <table class="table table-hover">
                   <tbody>
                     <tr>
@@ -517,9 +524,10 @@
           <!-- /.box-body -->
           <div class="margin_y_all_child box-footer">
             <div class="pull-right">
+              <button type="button" style="display: none;" class="btn btn-danger class_upload">發佈課程</button>
               <button type="button" style="display: none;" class="btn btn-default under_review" disabled>審查中</button>
               <button type="button" class="btn btn-warning send_review">送出行政審查</button>
-              <button type="submit" class="btn btn-info">儲存</button>
+              <button type="button" style="display: none;" class="btn btn-primary submit_info">儲存資料</button>
             </div>
           </div>
         </div>
@@ -606,6 +614,10 @@
     })
 
     $(document).ready(function(){
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $("textarea").prop("disabled",true);
+
       var flieUpload = $("#FileUpload1");
       var filePath = $("#filePath");
       var button = $("#btnFileUpload");
@@ -663,12 +675,25 @@
         }
       })
 
-
       $('.send_review').click(function(){
         $('.send_review').hide();
+        $('.info_edit_btn').hide();
         $('.under_review').show();
+        $('.class_upload').show();
       })
+
+      $('.submit_info').click(function(){
+        window.location.href = 'B02-lesson2.html';
+      })
+
     })
+
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+      $("textarea").prop("disabled",false);
+      $(".submit_info").show();
+    }
 
     function myTimer(ii){
       $("div[id='percent']").text(ii+"%"); // 進度條百分比文字

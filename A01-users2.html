@@ -192,7 +192,7 @@
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
               <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>職類管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>行政職稱管理</a></li>
@@ -230,9 +230,10 @@
         <section class="content">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">使用者編輯-基本設定</h3>
+              <h3 class="box-title">基本設定</h3>
 
               <div class="box-tools pull-right">
+                <button type="button" class="btn btn-primary fa fa-pencil" title="編輯" onclick="open_disabled();">編輯</button>
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
               </div>
             </div>
@@ -256,6 +257,7 @@
                           <option selected value="啟用">啟用</option>
                           <option value="未啟用">未啟用</option>
                           <option value="關閉">關閉</option>
+                          <option value="強制啟用">強制啟用</option>
                         </select>
                         <small class="help-block"></small>
                       </div>
@@ -277,13 +279,6 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>人員代碼</label>
-                        <input type="text" class="form-control" placeholder="">
-                        <small class="help-block"></small>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="form-group">
                         <label>中文姓名</label>
                         <input type="text" class="form-control" placeholder="">
                         <small class="help-block"></small>
@@ -292,6 +287,13 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>英文姓名</label>
+                        <input type="text" class="form-control" placeholder="">
+                        <small class="help-block"></small>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>身份證字號</label>
                         <input type="text" class="form-control" placeholder="">
                         <small class="help-block"></small>
                       </div>
@@ -309,13 +311,6 @@
                 </div>
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <label>身份證字號</label>
-                    <input type="text" class="form-control" placeholder="">
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
                     <label>性別</label>
                     <div class="margin_x_child-l m-0 radio">
                       <select class="form-control">
@@ -327,8 +322,6 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>生日</label>
@@ -338,21 +331,20 @@
                       </div>
                       <input type="text" class="date form-control pull-right">
                     </div>
-                    <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>辦公室電話</label>
                     <input type="text" class="form-control" data-inputmask='"mask": "(99) 9999-9999"' data-mask>
-                    <small class="help-block"></small>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>行動電話</label>
                     <input type="text" class="form-control" data-inputmask='"mask": "9999-999-999"' data-mask>
-                    <small class="help-block"></small>
                   </div>
                 </div>
               </div>
@@ -362,7 +354,7 @@
         <!-- /.content -->
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content person_system_info">
           <div class="box box-primary collapsed-box">
             <div class="box-header with-border">
               <h3 class="box-title">人事系統資訊</h3>
@@ -552,13 +544,6 @@
               <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <label>人事系統單位代號</label>
-                    <input type="text" class="form-control" placeholder="" disabled>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
                     <label>人事系統是否在職</label>
                     <input type="text" class="form-control" placeholder="" disabled>
                     <small class="help-block"></small>
@@ -566,23 +551,7 @@
                 </div>
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <label>人事系統職系代號</label>
-                    <input type="text" class="form-control" placeholder="" disabled>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="form-group">
                     <label>人事系統職系名稱</label>
-                    <input type="text" class="form-control" placeholder="" disabled>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label>人事系統工作類別代號</label>
                     <input type="text" class="form-control" placeholder="" disabled>
                     <small class="help-block"></small>
                   </div>
@@ -596,13 +565,6 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label>人事系統職稱代號</label>
-                    <input type="text" class="form-control" placeholder="" disabled>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>人事系統職稱名稱</label>
@@ -845,10 +807,10 @@
           </div>
         </section>
 
-        <section class="content">
+        <section class="content user_info_btn">
           <div class="box box-primary">
             <div class="box-footer">
-              <button type="submit" class="btn btn-info pull-right">資料儲存</button>
+              <button type="submit" class="btn btn-primary pull-right">資料儲存</button>
             </div>
           </div>
         </section>
@@ -915,30 +877,42 @@
       language: 'zh-TW'
     })
 
-    $(function () {
-        var fileupload = $("#FileUpload1");
-        var filePath = $("#spnFilePath");
-        var image = $("#imgFileUpload");
-        image.click(function () {
-            fileupload.click();
-        });
-        fileupload.change(function () {
-            var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
-            filePath.html("<b>上傳檔案: </b>" + fileName);
-        });
+    //Money Euro
+    $('[data-mask]').inputmask()
 
+    $(document).ready(function(){
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $(".user_info_btn").hide();
 
-        $(".person_system_btn").on('click',function(){
-          $(".overlay").show();
-          setTimeout(function(){
-            $(".overlay").hide();
-          },3000);
-        });
+      var fileupload = $("#FileUpload1");
+      var filePath = $("#spnFilePath");
+      var image = $("#imgFileUpload");
+      image.click(function () {
+          fileupload.click();
+      });
+      fileupload.change(function () {
+          var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
+          filePath.html("<b>上傳檔案: </b>" + fileName);
+      });
+
+      $(".person_system_btn").on('click',function(){
+        $(".overlay").show();
+        setTimeout(function(){
+          $(".overlay").hide();
+        },3000);
+      });
 
     });
 
-    //Money Euro
-    $('[data-mask]').inputmask()
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+      $(".person_system_info input").prop("disabled",true);
+      $(".person_system_info select").prop("disabled",true);
+      $(".user_info_btn").show();
+    }
+    
   </script>
 </body>
 

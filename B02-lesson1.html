@@ -187,7 +187,7 @@
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
               <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>職類管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>行政職稱管理</a></li>
@@ -332,148 +332,160 @@
           </div>
           <!-- /.box-body -->
           <div class="margin_y_all_child box-footer">
-            <button type="reset" class="btn btn-warning">清除檢索</button>
-            <button type="submit" class="btn btn-info pull-right">查詢</button>
+            <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
           </div>
           <!-- /.box-footer-->
         </div>
-        <div class="box box-warning">
+        <div class="box box-primary">
           <div class="box-header">
-            <h3 class="box-title">搜尋結果 - 班別列表</h3>
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2 total_num">3</span> 筆</div>
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-primary pull-rightol"><i class="fa fa-share-square-o"></i> 匯出課程</button>
             </div>
           </div>
           <!-- /.box-header -->
-          <div class="box-body table-responsive">
-            <table class="table table-hover">
-              <tbody>
-                <tr class="data_top">
-                  <th style="width: 10px">#</th>
-                  <th>課程代碼</th>
-                  <th>課程名稱</th>
-                  <th>開班單位</th>
-                  <th>課程主要性質</th>
-                  <th>課程類型</th>
-                  <th>開課時間</th>
-                  <th>認證時數</th>
-                  <th>課程狀態</th>
-                  <th>動作</th>
-                </tr>
-                <tr>
-                  <td class='data_num'>1</td>
-                  <td>08383FD-1</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>健康保護</td>
-                  <td>全院開課</td>
-                  <td><time>2020-01-29（三）08:00</time></td>
-                  <td>2</td>
-                  <td><span class="label label-default fa fa-exclamation"> 待審查</span></td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='data_num'>2</td>
-                  <td>08383FD-2</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>健康保護</td>
-                  <td>單位開課</td>
-                  <td><time>2020-01-29（三）08:00</time></td>
-                  <td>2</td>
-                  <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='data_num'>3</td>
-                  <td>08383FD-3</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>健康保護</td>
-                  <td>單位開課</td>
-                  <td><time>2020-01-29（三）08:00</time></td>
-                  <td>2</td>
-                  <td><span class="label label-warning fa fa-exclamation"> 審查中</span></td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='data_num'>4</td>
-                  <td>08383FD-4</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>健康保護</td>
-                  <td>全院開課</td>
-                  <td><time>2020-01-29（三）08:00</time></td>
-                  <td>2</td>
-                  <td><span class="label label-success fa fa-check"> 已發佈</span></td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='data_num'>5</td>
-                  <td>08383FD-5</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>健康保護</td>
-                  <td>全院開課</td>
-                  <td><time>2020-01-29（三）08:00</time></td>
-                  <td>2</td>
-                  <td><span class="label label-success fa fa-check"> 已結算</span></td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class='data_num'>6</td>
-                  <td>08383FD-6</td>
-                  <td>全人照護教育師培系列</td>
-                  <td>教師培育科</td>
-                  <td>健康保護</td>
-                  <td>單位開課</td>
-                  <td><time>2020-01-29（三）08:00</time></td>
-                  <td>2</td>
-                  <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
-                  <td>
-                    <div class="margin_y_all_child">
-                      <button type="button" class="btn btn-info fa fa-pencil" title="修改" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                      <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="margin_y_all_child box-footer">
-            <div class="box-tools">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-              </ul>
+          <div class="box-body">
+            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr class="data_top">
+                        <th style="width: 10px">#</th>
+                        <th>課程代碼</th>
+                        <th>課程名稱</th>
+                        <th>開班單位</th>
+                        <th>課程主要性質</th>
+                        <th>課程類型</th>
+                        <th>開課時間</th>
+                        <th>認證時數</th>
+                        <th>課程狀態</th>
+                        <th>動作</th>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>1</td>
+                        <td>08383FD-1</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>健康保護</td>
+                        <td>全院開課</td>
+                        <td><time>2020-01-29（三）08:00</time></td>
+                        <td>2</td>
+                        <td><span class="label label-default fa fa-exclamation"> 待審查</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>2</td>
+                        <td>08383FD-2</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>健康保護</td>
+                        <td>單位開課</td>
+                        <td><time>2020-01-29（三）08:00</time></td>
+                        <td>2</td>
+                        <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>3</td>
+                        <td>08383FD-3</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>健康保護</td>
+                        <td>單位開課</td>
+                        <td><time>2020-01-29（三）08:00</time></td>
+                        <td>2</td>
+                        <td><span class="label label-warning fa fa-exclamation"> 審查中</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>4</td>
+                        <td>08383FD-4</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>健康保護</td>
+                        <td>全院開課</td>
+                        <td><time>2020-01-29（三）08:00</time></td>
+                        <td>2</td>
+                        <td><span class="label label-success fa fa-check"> 已發佈</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>5</td>
+                        <td>08383FD-5</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>健康保護</td>
+                        <td>全院開課</td>
+                        <td><time>2020-01-29（三）08:00</time></td>
+                        <td>2</td>
+                        <td><span class="label label-success fa fa-check"> 已結算</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class='data_num'>6</td>
+                        <td>08383FD-6</td>
+                        <td>全人照護教育師培系列</td>
+                        <td>教師培育科</td>
+                        <td>健康保護</td>
+                        <td>單位開課</td>
+                        <td><time>2020-01-29（三）08:00</time></td>
+                        <td>2</td>
+                        <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- /.box-body -->
@@ -509,7 +521,7 @@
                       </select>
                     </div>
                     <div class="col-sm-1">
-                      <button type="button" class="btn btn-primary pull-rightol" title="新增班別" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i></button>
+                      <button type="button" class="btn btn-primary pull-rightol" title="新增班別" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增班別</button>
                     </div>
                   </div>
                 </div>
