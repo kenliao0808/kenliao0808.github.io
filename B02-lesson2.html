@@ -563,7 +563,7 @@
               <div class="row" id="presenter_list">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <select class="form-control">
+                    <select class="form-control select_prompt">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="Alabama">Alabama</option>
                       <option value="Alaska">Alaska</option>
@@ -601,7 +601,7 @@
               <div class="row" id="host_list">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <select class="form-control">
+                    <select class="form-control select_prompt">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="Alabama">Alabama</option>
                       <option value="Alaska">Alaska</option>
@@ -1322,7 +1322,15 @@
       if(ListName=='course_list'){
         $('#'+ListName).after('<div class="row" id="'+ListName+'_copy"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div><div class="col-md-2"><div class="form-group"><small class="help-block"></small></div></div></div>')
       }else{
-        $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div>' + $('#'+ListName).html() + "</div>")
+        if(ListName=='host_list' || ListName=='presenter_list'){
+          var HtmlList = $('#'+ListName);
+          HtmlList.find('span').remove();
+          HtmlList.find('.select_prompt').removeClass('select2-hidden-accessible');
+          $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div>' + HtmlList.html() + "</div>")
+          $('.select_prompt').select2()
+        }else{
+          $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div>' + $('#'+ListName).html() + "</div>")
+        }
       }
     }
 

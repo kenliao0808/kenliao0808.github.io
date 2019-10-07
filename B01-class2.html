@@ -306,7 +306,7 @@
                     <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>班別代碼<span class="mr-1 text-danger">(單位前2碼+自行填入8碼)</span></label>
                       <div>
-                        <input type="text" style="width: 17%;display: inline;" class="form-control" placeholder=""> - 
+                        <input type="text" style="width: 17%;display: inline;" class="form-control class_front_num" placeholder="" disabled> - 
                         <input type="text" style="width: 79%;display: inline;" class="form-control" placeholder="">
                       </div>
                       <small class="help-block"></small>
@@ -692,6 +692,7 @@
       $("input").prop("disabled",false);
       $("select").prop("disabled",false);
       $("textarea").prop("disabled",false);
+      $(".class_front_num").prop("disabled",true);
       $(".submit_info").show();
     }
 
