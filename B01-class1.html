@@ -47,6 +47,28 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    /* 進度條的css */
+    .progress {
+      position:relative; 
+      width:400px; 
+      border: 1px solid #ddd; 
+      padding: 1px; 
+      border-radius: 3px; 
+    }
+    .bar { 
+      background-color: #7cc7ee; 
+      width:0%; 
+      height:20px; 
+      border-radius: 3px; 
+    }
+    .percent { 
+      position:absolute; 
+      display:inline-block; 
+      top:-3px; 
+      left:48%; 
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -338,8 +360,8 @@
                         <th>開辦起訖</th>
                         <th>行政審查</th>
                         <th>狀態</th>
-                        <th>附件</th>
                         <th>動作</th>
+                        <th>附件列表</th>
                       </tr>
                       <tr>
                         <td class='data_num'>1</td>
@@ -350,11 +372,15 @@
                         <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-success fa fa-check"> 通 過</span></td>
                         <td><span class="label label-success fa fa-check"> 發 佈</span></td>
-                        <td>是</td>
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
                             <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-file-text" title="列表" data-toggle="modal" data-target="#modal-filelist"></button>
                           </div>
                         </td>
                       </tr>
@@ -367,11 +393,15 @@
                         <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-warning fa fa-exclamation"> 審查中</span></td>
                         <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
-                        <td>是</td>
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
                             <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-file-text" title="列表" data-toggle="modal" data-target="#modal-filelist"></button>
                           </div>
                         </td>
                       </tr>
@@ -384,11 +414,15 @@
                         <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-default fa fa-exclamation"> 待審查</span></td>
                         <td><span class="label label-default fa fa-exclamation"> 未發佈</span></td>
-                        <td>是</td>
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
                             <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-file-text" title="列表" data-toggle="modal" data-target="#modal-filelist"></button>
                           </div>
                         </td>
                       </tr>
@@ -401,11 +435,15 @@
                         <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-danger fa fa-remove"> 不通過</span></td>
                         <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
-                        <td>是</td>
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
                             <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-file-text" title="列表" data-toggle="modal" data-target="#modal-filelist"></button>
                           </div>
                         </td>
                       </tr>
@@ -458,12 +496,52 @@
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
                   <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別</button>
                   <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別與課程</button>
-
                 </div>
               </form>
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="modal-filelist">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">附件列表</h4>
+              </div>
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">檔案列表</label>
+                      <div class="col-sm-10">
+                        <div class="timeline-footer">
+                          <a class="btn btn-primary btn-xs">課程講義</a>
+                          <a class="btn btn-primary btn-xs">教學紀錄</a>
+                          <a class="btn btn-primary btn-xs">班級規章</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">班別附件</label>
+                      <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
+                      <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
+                      <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
+                      <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
+                    </div>
+                    <div class="form-group" style="padding-left: 30px;" id="filePath">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
 
@@ -550,6 +628,45 @@
 
     //Money Euro
     $('[data-mask]').inputmask()
+
+    $(document).ready(function(){
+      var flieUpload = $("#FileUpload1");
+      var filePath = $("#filePath");
+      var button = $("#btnFileUpload");
+      button.click(function(){
+        flieUpload.click();
+      });
+      flieUpload.change(function(){
+
+        var totalFile = $('input[type=file]').get(0).files;
+        var fileHtml = '';
+        for (var i = 0; i < totalFile.length; i++) {
+          fileHtml +=  "<div>" + totalFile[i]['name'] + "<div class='progress' id=\"progress-div\"><div class='bar' id='bar'></div><div class='percent' id='percent'>0%</div></div></div>";
+        }
+        filePath.html(fileHtml);
+      })
+
+      $("#FileClear").click(function(){
+        flieUpload.val('');
+        filePath.html("");
+      })
+
+      $("#UploadToData").click(function(){
+        var i = 1;
+        var myVar = setInterval(function(){
+          myTimer(i)
+          if(i >= 100){
+            clearInterval(myVar);
+          }
+          i++;
+        },100);
+      })
+    })
+
+    function myTimer(ii){
+      $("div[id='percent']").text(ii+"%"); // 進度條百分比文字
+      $("div[id='bar']").width(ii+"%");    // 進度條顏色
+    }
 
     function copybtn(myObj){
       var thisTab = myObj.parent().parent().parent()

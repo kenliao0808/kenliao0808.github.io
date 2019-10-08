@@ -278,29 +278,6 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label><span class="mr-1 text-danger">*</span>狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="草稿">草稿</option>
-                      <option value="未發佈">未發佈</option>
-                    </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label><span class="mr-1 text-danger">*</span>開課時間</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-clock-o"></i>
-                      </div>
-                      <input type="text" class="time form-control pull-right">
-                    </div>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
                     <label><span class="mr-1 text-danger">*</span>所屬班別</label>
                     <select class="form-control class_option" id="class_option">
                       <option selected value="請選擇">- 請選擇 -</option>
@@ -310,17 +287,6 @@
                       <option value="教學部">教學部</option>
                       <option value="護理部">護理部</option>
                     </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label><span class="mr-1 text-danger">*</span>班別代碼</label>
-                    <div>
-                      <input type="text" class="form-control" id="class_code" placeholder="" disabled>
-                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
@@ -346,6 +312,40 @@
                       <option value="教學部">教學部</option>
                       <option value="護理部">護理部</option>
                     </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>班別代碼</label>
+                    <div>
+                      <input type="text" class="form-control" id="class_code" placeholder="" disabled>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>狀態</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="草稿">草稿</option>
+                      <option value="未發佈">未發佈</option>
+                    </select>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label><span class="mr-1 text-danger">*</span>開課時間</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                      </div>
+                      <input type="text" class="time form-control pull-right">
+                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
@@ -758,7 +758,7 @@
                             </span>
                             <label class="form-control">需要通過評量</label>
                             <div class="form-group" id="assessment_select" style="display: none;">
-                              <select class="form-control">
+                              <select class="form-control select_prompt">
                                 <option selected value="請選擇">- 請選擇 -</option>
                                 <option value="評量一">評量一</option>
                                 <option value="評量二">評量二</option>
@@ -775,7 +775,7 @@
                             </span>
                             <label class="form-control">需要完成問卷</label>
                             <div class="form-group" id="question_select" style="display: none;">
-                              <select class="form-control">
+                              <select class="form-control select_prompt">
                                 <option selected value="請選擇">- 請選擇 -</option>
                                 <option value="問卷一">問卷一</option>
                                 <option value="問卷二">問卷二</option>
@@ -1053,7 +1053,7 @@
                           </select>
                         </div>
                         <div class="col-sm-1">
-                          <button type="button" class="btn btn-primary pull-rightol" title="新增班別" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增班別</button>
+                          <button type="button" class="btn btn-primary pull-rightol add_class_btn" title="新增班別" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增班別</button>
                         </div>
                       </div>
                     </div>
@@ -1152,14 +1152,16 @@
       },
       language: 'zh-TW'
     })
-    //Initialize Select2 Elements
-    $('.select_prompt').select2()
-
+    
     $(document).ready(function(){
-
+      //Initialize Select2 Elements
+      $('.select_prompt').select2()
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
       $("textarea").prop("disabled",true);
+      $("#modal_option").prop("disabled",false);
+      $(".add_class_btn").prop("disabled",false);
+      $(".submit_class").prop("disabled",false);
 
       $('.skin-blue').addClass('modal-open')
       $('#choose_class').addClass('in');

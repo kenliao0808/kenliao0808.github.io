@@ -359,6 +359,8 @@
             <div class="box-header with-border">
               <h3 class="box-title">人事系統資訊</h3>
               <button type="button" class="btn btn-primary person_system_btn" style="margin: 0px 10px 0px 40px;">人事系統更新</button>
+              <button type="button" class="btn btn-danger stop_system_update" style="margin: 0px 10px 0px 40px;">停止自動更新人事系統</button>
+              <button type="button" class="btn btn-success start_system_update" style="margin: 0px 10px 0px 40px;display: none;">啟動自動更新人事系統</button>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
               </div>
@@ -903,6 +905,15 @@
         },3000);
       });
 
+      $('.stop_system_update').on('click',function(){
+        $('.start_system_update').show();
+        $('.stop_system_update').hide();
+      })
+
+      $('.start_system_update').on('click',function(){
+        $('.start_system_update').hide();
+        $('.stop_system_update').show();
+      })
     });
 
     function open_disabled(){
