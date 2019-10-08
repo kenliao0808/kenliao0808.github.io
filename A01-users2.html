@@ -37,7 +37,7 @@
 
   <link rel="stylesheet" href="dist/css/tailwind.ukmedia.min.css">
   <link rel="stylesheet" href="dist/css/style.css">
-
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -355,12 +355,13 @@
 
         <!-- Main content -->
         <section class="content person_system_info">
+
           <div class="box box-primary collapsed-box">
             <div class="box-header with-border">
+
               <h3 class="box-title">人事系統資訊</h3>
               <button type="button" class="btn btn-primary person_system_btn" style="margin: 0px 10px 0px 40px;">人事系統更新</button>
-              <button type="button" class="btn btn-danger stop_system_update" style="margin: 0px 10px 0px 40px;">停止自動更新人事系統</button>
-              <button type="button" class="btn btn-success start_system_update" style="margin: 0px 10px 0px 40px;display: none;">啟動自動更新人事系統</button>
+              <input type="checkbox" id="auto_update">
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
               </div>
@@ -384,9 +385,9 @@
                 </div>
               </div>
               <div class="row">
-                <span class="font-bold mb-2 px-5 block">單位</span>
                 <div class="col-sm-4">
                   <div class="form-group">
+                    <label>職類</label>
                     <select class="form-control" disabled>
                       <option value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
@@ -398,32 +399,6 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <select class="form-control" disabled>
-                      <option value="請選擇">- 請選擇 -</option>
-                      <option selected value="實證醫學中心">實證醫學中心</option>
-                      <option value="社團">社團</option>
-                      <option value="教師培育科">教師培育科</option>
-                      <option value="臨床技術訓練科">臨床技術訓練科</option>
-                    </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <select class="form-control" disabled>
-                      <option value="請選擇">- 請選擇 -</option>
-                      <option selected value="實證醫學中心">實證醫學中心</option>
-                      <option value="社團">社團</option>
-                      <option value="教師培育科">教師培育科</option>
-                      <option value="臨床技術訓練科">臨床技術訓練科</option>
-                    </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>職類</label>
@@ -452,6 +427,8 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>等級</label>
@@ -463,8 +440,6 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>工作職稱</label>
@@ -479,6 +454,8 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>人員類別</label>
@@ -486,8 +463,13 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-              </div>
-              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label>卡號</label>
+                    <input type="text" class="form-control" placeholder="" disabled>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>就職狀態</label>
@@ -495,6 +477,8 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>報到日期</label>
@@ -519,15 +503,6 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label>卡號</label>
-                    <input type="text" class="form-control" placeholder="" disabled>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>成本中心代碼</label>
@@ -535,6 +510,8 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>成本中心名稱</label>
@@ -542,8 +519,6 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>人事系統是否在職</label>
@@ -558,6 +533,8 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>人事系統工作類別名稱</label>
@@ -565,8 +542,6 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label>人事系統職稱名稱</label>
@@ -865,6 +840,8 @@
   <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
+  <!-- on-off-switch -->
+  <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
   <!-- InputMask -->
   <script src="plugins/input-mask/jquery.inputmask.js"></script>
   <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
@@ -883,6 +860,25 @@
     $('[data-mask]').inputmask()
 
     $(document).ready(function(){
+
+      $('#auto_update').bootstrapToggle({
+        on: '開啟自動更新',
+        off: '關閉自動更新',
+      });
+
+      $('.toggle').on('click',function(){
+        var BtnType = $(this).attr('class');
+        if(BtnType=='toggle btn btn-default'){
+          $(this).addClass('off');
+          $('#auto_update').removeAttr('checked');
+        }else{
+          $(this).removeClass('off');
+          $('#auto_update').attr('checked',"checked");
+        }
+      })
+
+
+
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
       $(".user_info_btn").hide();
@@ -904,16 +900,6 @@
           $(".overlay").hide();
         },3000);
       });
-
-      $('.stop_system_update').on('click',function(){
-        $('.start_system_update').show();
-        $('.stop_system_update').hide();
-      })
-
-      $('.start_system_update').on('click',function(){
-        $('.start_system_update').hide();
-        $('.stop_system_update').show();
-      })
     });
 
     function open_disabled(){

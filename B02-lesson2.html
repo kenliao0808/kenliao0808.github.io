@@ -748,6 +748,13 @@
                             </span>
                             <label class="form-control">需要出席</label>
                           </div>
+                          <div class="form-group" id="attend_select" style="display: none;">
+                            <select class="form-control">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="需要簽退">需要簽退</option>
+                              <option value="不需要簽退">不需要簽退</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -757,14 +764,14 @@
                               <input type="checkbox" id="assessment_check">
                             </span>
                             <label class="form-control">需要通過評量</label>
-                            <div class="form-group" id="assessment_select" style="display: none;">
+                          </div>
+                          <div class="form-group" id="assessment_select" style="display: none;">
                               <select class="form-control select_prompt">
                                 <option selected value="請選擇">- 請選擇 -</option>
                                 <option value="評量一">評量一</option>
                                 <option value="評量二">評量二</option>
                               </select>
                             </div>
-                          </div>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -774,13 +781,13 @@
                               <input type="checkbox" id="question_check">
                             </span>
                             <label class="form-control">需要完成問卷</label>
-                            <div class="form-group" id="question_select" style="display: none;">
-                              <select class="form-control select_prompt">
-                                <option selected value="請選擇">- 請選擇 -</option>
-                                <option value="問卷一">問卷一</option>
-                                <option value="問卷二">問卷二</option>
-                              </select>
-                            </div>
+                          </div>
+                          <div class="form-group" id="question_select" style="display: none;">
+                            <select class="form-control select_prompt">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="問卷一">問卷一</option>
+                              <option value="問卷二">問卷二</option>
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -799,16 +806,16 @@
                               <input type="checkbox" id="click_unit">
                             </span>
                             <label class="form-control">單位</label>
-                            <div class="form-group" id="unit_select" style="display: none;">
-                              <select class="form-control" onchange="open_class_type($(this));">
-                                <option selected value="請選擇">- 請選擇 -</option>
-                                <option value="醫學研究部">醫學研究部</option>
-                                <option value="傳統醫學部">傳統醫學部</option>
-                                <option value="家庭醫學部">家庭醫學部</option>
-                                <option value="教學部">教學部</option>
-                                <option value="護理部">護理部</option>
-                              </select>
-                            </div>
+                          </div>
+                          <div class="form-group" id="unit_select" style="display: none;">
+                            <select class="form-control" onchange="open_class_type($(this));">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="醫學研究部">醫學研究部</option>
+                              <option value="傳統醫學部">傳統醫學部</option>
+                              <option value="家庭醫學部">家庭醫學部</option>
+                              <option value="教學部">教學部</option>
+                              <option value="護理部">護理部</option>
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -819,16 +826,16 @@
                               <input type="checkbox" id="click_medical">
                             </span>
                             <label class="form-control">職類</label>
-                            <div class="form-group" id="medical_select" style="display: none;">
-                              <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
-                                <option selected value="請選擇">- 請選擇 -</option>
-                                <option value="醫學研究部">醫學研究部</option>
-                                <option value="傳統醫學部">傳統醫學部</option>
-                                <option value="家庭醫學部">家庭醫學部</option>
-                                <option value="教學部">教學部</option>
-                                <option value="護理部">護理部</option>
-                              </select>
-                            </div>
+                          </div>
+                          <div class="form-group" id="medical_select" style="display: none;">
+                            <select class="form-control" onchange="open_class_type($(this));">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="醫學研究部">醫學研究部</option>
+                              <option value="傳統醫學部">傳統醫學部</option>
+                              <option value="家庭醫學部">家庭醫學部</option>
+                              <option value="教學部">教學部</option>
+                              <option value="護理部">護理部</option>
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -840,20 +847,6 @@
 
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group" id="attend_radio" style="display: none;">
-                    <label>出席規則 </label>
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <input type="radio" name="sign_btn">
-                      </span>
-                      <label class="form-control">需要簽退</label>
-                      <span class="input-group-addon">
-                        <input type="radio" name="sign_btn">
-                      </span>
-                      <label class="form-control">不需要簽退</label>
-                    </div>
-                    <small class="help-block"></small>
-                  </div>
                   <div class="form-group">
                     <label>其他 </label>
                     <div class="input-group">
@@ -872,7 +865,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>備註</label>
-                    <textarea class="form-control" rows="5" placeholder=""></textarea>
+                    <textarea class="form-control" rows="3" placeholder=""></textarea>
                     <small class="help-block"></small>
                   </div>
                 </div>
@@ -1155,7 +1148,7 @@
     
     $(document).ready(function(){
       //Initialize Select2 Elements
-      $('.select_prompt').select2()
+      $('.select_prompt').select2({ width: '100%' })
       $("#modal_option").select2({ width: '100%' }); 
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
@@ -1269,9 +1262,9 @@
       //認證資格
       $('#attend_check').click(function(){
         if($("#attend_check").prop("checked")){
-          $('#attend_radio').show();
+          $('#attend_select').show();
         }else{
-          $('#attend_radio').hide();
+          $('#attend_select').hide();
         }
       })
 
@@ -1355,7 +1348,7 @@
     }
 
     function open_class_type(myObj){
-      myObj.after('<select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
+      myObj.after('<select class="form-control" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
     }
 
   </script>
