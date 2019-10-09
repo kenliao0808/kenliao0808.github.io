@@ -1,9 +1,10 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900|Noto+Serif+TC|Poppins|Material+Icons&display=swap&subset=chinese-traditional");
+/*@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900|Noto+Serif+TC|Poppins|Material+Icons&display=swap&subset=chinese-traditional");*/
 
 *, *::before, *::after {box-sizing: border-box;}
 body *:not(small) {
-  font-family: "Noto Sans TC", sans-serif;
+  /*font-family: "Noto Sans TC", sans-serif;*/
+  font-family: sans-serif;
   /* font-weight: 100; */
   font-size: 16px;
   /* color: #665e5e; */
