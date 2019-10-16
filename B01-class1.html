@@ -130,7 +130,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
+              <li><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
@@ -145,9 +145,9 @@
             <ul class="treeview-menu">
               <li class="active"><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
               <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
+              <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
+              <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
+              <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
             </ul>
           </li>
@@ -256,18 +256,6 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>行政審查</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="通過">通過</option>
-                      <option value="審查中">審查中</option>
-                      <option value="審查中">待審查</option>
-                      <option value="不通過">不通過</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
                     <label>狀態</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
@@ -278,23 +266,21 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>班別代碼</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>班別名稱</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>開班單位</label>
                     <select class="form-control">
@@ -307,7 +293,9 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-8">
+              </div>
+              <div class="row">
+                <div class="col-md-12">
                   <label>開辦起訖日</label>
                   <div class="row">
                     <div class="pseudo_dash col-md-6">
@@ -352,25 +340,23 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr class="data_top">
-                        <th style="width: 10px">#</th>
+                        <th style="width: 10px"></th>
                         <th>班別代碼</th>
                         <th>班別名稱</th>
                         <th>開班單位</th>
                         <th>班別類型</th>
                         <th>開辦起訖</th>
-                        <th>行政審查</th>
                         <th>狀態</th>
                         <th>動作</th>
                         <th>附件列表</th>
                       </tr>
                       <tr>
-                        <td class='data_num'>1</td>
+                        <td></td>
                         <td>08383FD-1</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
                         <td>全院開課</td>
                         <td>2019-09-20 ~ 2019-09-30</td>
-                        <td><span class="label label-success fa fa-check"> 通 過</span></td>
                         <td><span class="label label-success fa fa-check"> 發 佈</span></td>
                         <td>
                           <div class="margin_y_all_child">
@@ -385,13 +371,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class='data_num'>2</td>
+                        <td></td>
                         <td>08383FD-2</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
                         <td>單位開課</td>
                         <td>2019-09-20 ~ 2019-09-30</td>
-                        <td><span class="label label-warning fa fa-exclamation"> 審查中</span></td>
                         <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
                         <td>
                           <div class="margin_y_all_child">
@@ -406,13 +391,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class='data_num'>3</td>
+                        <td></td>
                         <td>08383FD-3</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
                         <td>全院開課</td>
                         <td>2019-09-20 ~ 2019-09-30</td>
-                        <td><span class="label label-default fa fa-exclamation"> 待審查</span></td>
                         <td><span class="label label-default fa fa-exclamation"> 未發佈</span></td>
                         <td>
                           <div class="margin_y_all_child">
@@ -427,13 +411,12 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class='data_num'>4</td>
+                        <td></td>
                         <td>08383FD-4</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
                         <td>全院開課</td>
                         <td>2019-09-20 ~ 2019-09-30</td>
-                        <td><span class="label label-danger fa fa-remove"> 不通過</span></td>
                         <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
                         <td>
                           <div class="margin_y_all_child">
@@ -671,7 +654,7 @@
     function copybtn(myObj){
       var thisTab = myObj.parent().parent().parent()
       var thisTD = thisTab.find('td');
-      var newHtml = "<tr><td class='data_num'>1</td>";
+      var newHtml = "<tr><td class='data_num'></td>";
       for (var i = 1; i < thisTD.length; i++) {
         newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
       }

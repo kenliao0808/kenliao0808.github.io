@@ -37,7 +37,7 @@
 
   <link rel="stylesheet" href="dist/css/tailwind.ukmedia.min.css">
   <link rel="stylesheet" href="dist/css/style.css">
-
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -45,33 +45,13 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
   <style type="text/css">
-
-  .btn-search{color: #fff;background-color: #ef0000;border-color: #ef0000;}
-
-  /*==【popout】==*/
-  .popout{display:none;z-index:9999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.55);}
-  .popout .inbox{
-    background:#fff;width:600px;;position:absolute;left:50%;top:0;margin:0 0 0 -300px;
-    -webkit-box-shadow:2px 2px 10px rgba(0,0,0,0.2);-moz-box-shadow:2px 2px 10px rgba(0,0,0,0.2);box-shadow:2px 2px 10px rgba(0,0,0,0.2);
-  }
-  .pop_hd{background:#f9f9f9;padding:15px 20px;border-bottom:1px solid #eee;position:relative;}
-    .pop_hd h2{font-weight:bold;}
-    .i_close{position:absolute;right:15px;top:13px;background:none;border:0;cursor:pointer;padding:5px;margin-top:-2px;opacity:0.25;color:#000;font-size:21px;font-weight:bold;line-height:1;}
-    .i_close:hover{opacity:4;}
-  .pop_bd{padding:30px 20px;}
-    .psbox{text-align:center;padding:10px;border:1px dashed #ddd;margin:0 0 20px;}
-    .psbox a{color: #337ab7}
-    .psbox small{font-size:10px;}
-    .jquery-filestyle input{width:50% !important;}
-    .popbtn{padding:30px 0 0;text-align:right;margin-bottom:-15px}
-  .popout .chosen-container{width:20% !important;}
-  input[type=file] {display: unset;}
+    .content {min-height: 0px; padding:15px 0px 0px 0px;}
+    .box-default {margin-bottom:0px;}
   </style>
 
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -132,8 +112,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
-              <li><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
+              <li><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
+              <li class="active"><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
@@ -243,7 +223,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>單位管理</h1>
+        <h1>黑名單新增/編輯</h1>
       </section>
 
       <!-- Main content -->
@@ -251,162 +231,141 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-primary fa fa-pencil" title="編輯" onclick="open_disabled();">編輯</button>
             </div>
           </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">使用者</label>
+
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="input_User">
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary pull-right fa fa-search search_edit"> 查詢</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">限制使用單位</label>
+
+                <div class="col-sm-5">
+                  <select class="form-control" id="select_type">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="醫學研究部">醫學研究部</option>
+                    <option value="傳統醫學部">傳統醫學部</option>
+                    <option value="家庭醫學部">家庭醫學部</option>
+                    <option value="教學部">教學部</option>
+                    <option value="護理部">護理部</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">限制時間開始</label>
+
+                <div class="col-sm-5">
+                  <input type="text" class="date form-control" id="input_TimeStart" autocomplete="off">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">限制時間結束</label>
+
+                <div class="col-sm-5">
+                  <input type="text" class="date form-control" id="input_TimeEnd" autocomplete="off">
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary pull-right">資料儲存</button>
+            </div>
+            <!-- /.box-footer -->
+          </form>
         </div>
 
-        <!-- table contect list -->
-        <div class="box box-warning">
-          <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-          </div>
-          <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped table-hover">
-                <tbody><tr>
-                  <th>名稱</th>
-                  <th>是否使用</th>
-                  <th>動作</th>
-                </tr>
-                </tbody><tbody>
-                <tr>
-                  <td>
-                    <strong><span class="text-blue">輿情回應</span></strong>
-                  </td>
-                  <td>
-                  <span class="text-success">是</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',1,1,'',',01,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,2,'1',',01,','輿情回應')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。正式回應
-                  </td>
-                  <td>
-                  <span class="text-success">是</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',9,2,'1',',01,09,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'9',',01,09,','正式回應')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。模擬回應
-                  </td>
-                  <td>
-                  <span class="text-success">是</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',10,2,'1',',01,10,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'10',',01,10,','模擬回應')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。。法人管理
-                  </td>
-                  <td>
-                  <span class="text-danger">否</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',11,3,'10',',01,10,11,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,4,'11',',01,10,11,','法人管理')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。。。智財授權
-                  </td>
-                  <td>
-                  <span class="text-danger">否</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',12,4,'11',',01,10,11,12,')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。。。法人定位
-                  </td>
-                  <td>
-                  <span class="text-danger">否</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',13,4,'11',',01,10,11,13,')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。科專計畫管理
-                  </td>
-                  <td>
-                  <span class="text-danger">否</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',14,2,'1',',01,14,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'14',',01,14,','科專計畫管理')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。。法人科專計畫
-                  </td>
-                  <td>
-                  <span class="text-danger">否</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',15,3,'14',',01,14,15,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,4,'15',',01,14,15,','法人科專計畫')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong><span class="text-blue">立法院模擬題庫</span></strong>
-                  </td>
-                  <td>
-                  <span class="text-success">是</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',3,1,'',',03,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,2,'3',',03,','立法院模擬題庫')">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                  。年度科專預算編列說明及執行情形
-                  </td>
-                  <td>
-                  <span class="text-success">是</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',29,2,'3',',03,29,')">
-                    
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,3,'29',',03,29,','年度科專預算編列說明及執行情形')">
-                  </td>
-                </tr>
-                
-                <tr>
-                  <td>
-                    <strong><span class="text-blue">預算相關議題</span></strong>
-                  </td>
-                  <td>
-                  <span class="text-success">是</span>
-                  </td>
-                  <td>
-                    <input type="button" value="修改" class="btn btn-xs btn-default btn-flat" onclick="showModal('upd',8,1,'',',08,')">
-                    <input type="button" value="子類別" class="btn btn-xs btn-info btn-flat" onclick="showModal('add',0,2,'8',',08,','預算相關議題')">
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+        <div class="modal fade" id="search_user">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                  <button type="button" class="close edit_show" style="display: none;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">查詢使用者</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="col-sm-1 control-label"></label>
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" name="user" id="search_info">
+                          <small class="help-block">(請輸入電子郵件 / 手機 / 手機簡碼 / 姓名 / 身分證字號查詢)</small>
+                        </div>
+                        <div class="col-sm-1">
+                          <button type="button" class="btn btn-primary pull-rightol search_user_btn" title="查詢"><i class="fa fa-search"></i> 查詢</button>
+                        </div>
+                      </div>
+                      <div class="form-group search_list" style="display: none;">
+                        <table class="table table-bordered text-center">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >大名</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >小名</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >王納新銀</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >匿名</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >暱稱</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >王納新銀</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >陳大天</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >陳中天</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >大中天</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >天大中</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >中天大</button>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >小中天</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
         </div>
       </section>
-      <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
@@ -414,76 +373,6 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-
-
-  <!-- one form -->
-  <div class="modal fade" id="modal-oneform">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span></button>
-          <h4 id="aname" class="modal-title" id="func-title">編輯類別</h4>
-        </div>
-        <form role="form" id="frm1" class="form-horizontal">
-        <div class="modal-body">
-            <div id="f0" class="form-group hidden">
-              <label class="col-md-3 control-label">上層名稱</label>
-              <div class="col-md-9">
-                <div id="f0name"></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="f1" class="col-md-3 control-label"><span class="text-red">* </span>名稱</label>
-              <div class="col-md-9">
-                <input id="f1" type="text" name="vo.cname" class="form-control" maxlength="20"/>
-              </div>
-            </div>
-            <div id="islegi" class="form-group hidden">
-              <label for="f6" class="col-md-3 control-label">是否立委提案</label>
-              <div class="col-md-9">
-                <select name="vo.islegi" id="f6" class="form-control">
-                  <option value="1">是</option>
-                  <option value="0">否</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="f5" class="col-md-3 control-label">是否使用</label>
-              <div class="col-md-9">
-                <select name="vo.isuse" id="f5" class="form-control">
-                  <option value="1">是</option>
-                  <option value="0">否</option>
-                </select>
-              </div>
-            </div>
-            <div id="upddiv" class="form-group hidden">
-              <label class="col-md-3 control-label">更新者</label>
-              <div class="col-md-9" id="updmgr">
-              </div>
-            </div>
-            <input type="hidden" id="func"/>
-            <input type="hidden" id="pk" name="pk"/>
-            <input type="hidden" id="layer" name="layer"/>
-            <input type="hidden" id="ppid" name="ppid"/>
-            <input type="hidden" id="pids" name="pids"/>
-            <input type="hidden" name="vo.ppid"/>
-            <input type="hidden" name="vo.pids"/>
-            <input type="hidden" name="vo.layer"/>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-          <button type="submit" class="btn btn-primary" onclick="save()">儲存</button>
-        </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-  <!-- one form /end -->
-
   <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
@@ -525,49 +414,66 @@
   <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
+  <!-- on-off-switch -->
+  <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
   <!-- InputMask -->
   <script src="plugins/input-mask/jquery.inputmask.js"></script>
   <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
   <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
   <script src="dist/js/script.js"></script>
-  <script>
-    function showModal(func, pk, layer, ppid, pids, pname){
-      $('#modal-oneform').modal({backdrop: 'static', keyboard: false});
-      $('#modal-oneform').modal('show');  
-      $('#func').val(func);
-      $('#pk').val(pk);
-      $('#layer').val(layer);
-      $('#ppid').val(ppid);
-      $('#pids').val(pids);
-      if(layer==1){
-        $('#islegi').removeClass('hidden');
-        //$('#seqs').removeClass('hidden');
-      }
-      else{
-        if(func=='add'){
-          $('#f0').removeClass('hidden');
-          $('#f0name').html(pname);
-        }
-      }
-      if(func=='upd'){
-        oneData(pk, layer, ppid, pids);
-      }
-    }
-    $(document).ready(function(){
-      $("#batch_popout").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').show();
-      })
-      $("#close_batch").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').hide();
-      })
+  <script type="text/javascript">
+    //Date picker
+    $('#date, .date').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose: true,
+      language: 'zh-TW'
     })
+
     //Money Euro
     $('[data-mask]').inputmask()
+
+    $(document).ready(function(){
+
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $("#search_info").prop("disabled",false);
+
+      $('.skin-blue').addClass('modal-open')
+      $('#search_user').addClass('in');
+      $('#search_user').show();
+
+      $('.search_user_btn').click(function(){
+        $('.search_list').show();
+      })
+
+      $('.search_edit').click(function(){
+        $('.skin-blue').addClass('modal-open')
+        $('#search_user').addClass('in');
+        $('#search_user').show();
+        $('.edit_show').show();
+      })
+
+      $('.edit_show').click(function(){
+        $('.skin-blue').removeClass('modal-open')
+        $('#search_user').removeClass('in');
+        $('#search_user').hide();
+      })
+    })
+
+    function sel_name(obj){
+      $('.skin-blue').removeClass('modal-open')
+      $('#search_user').removeClass('in');
+      $('#search_user').hide();
+
+      $('#input_User').val(obj.html());
+    }
+
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+    }
+
   </script>
 </body>
 
