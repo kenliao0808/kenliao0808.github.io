@@ -35,7 +35,6 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
 
-  <link rel="stylesheet" href="dist/css/tailwind.ukmedia.min.css">
   <link rel="stylesheet" href="dist/css/style.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -271,7 +270,12 @@
       <section class="content">
         <div class="box box-primary">
           <div class="box-header with-border">
+            <h3 class="box-title">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</h3>
+          </div>
+          <div class="box-header with-border">
             <div class="box-tools pull-right">
+              <button type="button" class="btn btn-success">資料載入卡鐘</button>
+              <button type="button" class="btn btn-success" id="batch_popout">匯入報名表</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
@@ -285,135 +289,113 @@
               <li><a href="B02-lesson7.html">修習結果管理</a></li>
               <li><a href="B02-lesson8.html">訊息通知管理</a></li>
             </ul>
-            <div class="my-3 tab-content">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>等級</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="院內">院內</option>
-                      <option value="院外">院外</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>狀態</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <select class="form-control">
-                          <option selected value="請選擇">- 請選擇 -</option>
-                          <option value="等待審核">等待審核</option>
-                          <option value="已審核">已審核</option>
-                          <option value="資料缺損，請使用者補件">資料缺損，請使用者補件</option>
-                          <option value="審核失敗">審核失敗</option>
-                          <option value="取消報名">取消報名</option>
-                          <option value="正式名單">正式名單</option>
-                          <option value="候補名單">候補名單</option>
-                        </select>
-                      </div>
-                      <div class="col-md-2">
-                        <button type="submit" class="w-full btn btn-primary fa fa-search"> 查詢</button>
-                      </div>
-                    </div>
-                  </div>
+            <div class="tab-content">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>等級</label>
+                  <select class="form-control">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="院內">院內</option>
+                    <option value="院外">院外</option>
+                  </select>
                 </div>
               </div>
-              <!-- /.row -->
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>報名管理</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <select class="form-control">
-                          <option selected value="請選擇">- 請選擇 -</option>
-                          <option value="等待審核">等待審核</option>
-                          <option value="已審核">已審核</option>
-                          <option value="資料缺損，請使用者補件">資料缺損，請使用者補件</option>
-                          <option value="審核失敗">審核失敗</option>
-                          <option value="取消報名">取消報名</option>
-                          <option value="正式名單">正式名單</option>
-                          <option value="候補名單">候補名單</option>
-                        </select>
-                      </div>
-                      <div class="col-md-2">
-                        <button type="button" class="w-full btn btn-primary">套用</button>
-                      </div>
-                    </div>
-                  </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>狀態</label>
+                  <select class="form-control">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="等待審核">等待審核</option>
+                    <option value="已審核">已審核</option>
+                    <option value="資料缺損，請使用者補件">資料缺損，請使用者補件</option>
+                    <option value="審核失敗">審核失敗</option>
+                    <option value="取消報名">取消報名</option>
+                    <option value="正式名單">正式名單</option>
+                    <option value="候補名單">候補名單</option>
+                  </select>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>通知</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <select class="form-control">
-                          <option selected value="寄信給">- 寄信給 -</option>
-                          <option value="課程報名成功">課程報名成功</option>
-                          <option value="勾選的人 ">勾選的人 </option>
-                        </select>
-                      </div>
-                      <div class="col-md-2">
-                        <button type="button" class="w-full btn btn-primary">發送</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <div class="box-footer">
+              	<button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
               </div>
               <!-- /.row -->
             </div>
           </div>
         </div>
         <div class="box box-primary">
-          <div class="box-header with-border">
-            <div class="dataTables_info s:inline-block" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-            <div class="s:float-right margin_y_all_child">
-              <button type="button" class="btn btn-warning">資料載入卡鐘</button>
-              <button type="button" class="btn btn-warning" id="batch_popout">匯入報名表</button>
+					<div class="box-header">
+          	<h3 class="box-title">共 <span class="text-light-blue">3</span> 筆</h3>
+						<div class="box-tools pull-right">
               <button type="button" class="btn btn-warning">匯出報名表</button>
-            </div>
-          </div>
+            </div>          
+          </div>          
           <div class="box-body">
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+            <div id="example2_wrapper" class="">
               <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th style="width: 10px"></th>
-                        <th><input type="checkbox"></th>
-                        <th>姓名</th>
-                        <th>單位</th>
-                        <th>職類</th>
-                        <th>職稱</th>
-                        <th>身份證字號</th>
-                        <th>院內 / 院外</th>
-                        <th>狀態</th>
-                        <th>報名時間</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td><input type="checkbox"></td>
-                        <td>許小飛</td>
-                        <td>細胞病理科</td>
-                        <td>西醫</td>
-                        <td>醫師兼科主任</td>
-                        <td>A12322****</td>
-                        <td>院內</td>
-                        <td>正式名單</td>
-                        <td><time>2019/7/30 10:13</time></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              <div class="row" style="text-align: center;">
+                <div class="form-inline">
+                	<div class="col-md-6">
+	                  <div class="form-group">
+                    	修改狀態：
+                      <select class="form-control">
+                        <option selected value="請選擇">- 請選擇 -</option>
+                        <option value="等待審核">等待審核</option>
+                        <option value="已審核">已審核</option>
+                        <option value="資料缺損，請使用者補件">資料缺損，請使用者補件</option>
+                        <option value="審核失敗">審核失敗</option>
+                        <option value="取消報名">取消報名</option>
+                        <option value="正式名單">正式名單</option>
+                        <option value="候補名單">候補名單</option>
+                      </select>
+                    	<button type="button" class="btn btn-primary">套用</button>
+	                  </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      通知：
+                        <select class="form-control">
+                          <option selected value="寄信給">- 寄信給 -</option>
+                          <option value="課程報名成功">課程報名成功</option>
+                          <option value="勾選的人 ">勾選的人 </option>
+                        </select>
+                        <button type="button" class="btn btn-primary">發送</button>
+                    </div>
+                  </div>
+                </div>         
+              </div></br>
+              <!-- /.row -->
+              
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th style="width: 10px"></th>
+                    <th><input type="checkbox"></th>
+                    <th>姓名</th>
+                    <th>單位</th>
+                    <th>職類</th>
+                    <th>職稱</th>
+                    <th>身份證字號</th>
+                    <th>院內 / 院外</th>
+                    <th>狀態</th>
+                    <th>報名時間</th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input type="checkbox"></td>
+                    <td>許小飛</td>
+                    <td>細胞病理科</td>
+                    <td>西醫</td>
+                    <td>醫師兼科主任</td>
+                    <td>A12322****</td>
+                    <td>院內</td>
+                    <td>正式名單</td>
+                    <td><time>2019/7/30 10:13</time></td>
+                  </tr>
+                </tbody>
+              </table>
               <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+              <div class="box-footer clearfix">
+                <div class="pull-right">
                     <ul class="pagination">
                       <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
                       <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
@@ -424,7 +406,7 @@
                       <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
                       <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
                     </ul>
-                  </div>
+                  
                 </div>
               </div>
             </div>

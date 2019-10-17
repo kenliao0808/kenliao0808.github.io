@@ -265,7 +265,7 @@
             <form role="form">
               <div class="row">
                 <div class="col-md-12">
-                  <label>課程起訖日</label>
+                  <label>班別起訖日</label>
                   <div class="row">
                     <div class="pseudo_dash col-md-6">
                       <div class="form-group">
@@ -293,7 +293,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>開課單位</label>
+                    <label>開班單位</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
@@ -306,8 +306,8 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>課程系統編號 OR 課程名稱</label>
-                    <input type="text" class="form-control" placeholder="請輸入課程系統編號、課程名稱">
+                    <label>班別代碼 OR 班別名稱</label>
+                    <input type="text" class="form-control" placeholder="請輸入班別代碼、班別名稱">
                   </div>
                 </div>
               </div>
@@ -332,24 +332,24 @@
                     <tbody>
                       <tr>
                         <th style="width: 10px"></th>
-                        <th>課程代碼</th>
-                        <th>課程名稱</th>
-                        <th>課程起訖時間</th>
-                        <th>課程時數</th>
+                        <th>班別代碼</th>
+                        <th>班別名稱</th>
+                        <th>班別起訖時間</th>
+                        <th>班別時數</th>
                         <th>送審時間</th>
                         <th>其他功能</th>
                       </tr>
                       <tr>
                         <td></td>
                         <td>8619</td>
-                        <td><a class="class_link" href="B02-lesson2.html">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</a></td>
+                        <td><a class="class_link" href="B01-class2.html">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</a></td>
                         <td><time>2020-01-29（三）08:00~2020-01-29（三）09:00</time></td>
                         <td>2</td>
                         <td><time>2019-08-27（二） 11:46</time></td>
                         <td>
                           <div class="margin_y_all_child">
                             <button type="submit" class="btn btn-success">通過</button>
-                            <button type="submit" class="btn btn-danger">不通過</button>
+                            <button type="button" class="btn btn-danger failed_btn" data-toggle="modal" data-target="#failed_info" data-keyboard="true">不通過</button>
                           </div>
                         </td>
                       </tr>
@@ -377,6 +377,36 @@
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="failed_info">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">審查備註</h4>
+              </div>
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">原因</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" rows="3" placeholder=""></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <input type="hidden" id="copy_html">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
       </section>
       <!-- /.content -->
     </div>
