@@ -767,6 +767,8 @@
   <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
   <!-- FastClick -->
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- Select2 -->
+  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
@@ -810,7 +812,7 @@
     $('[data-mask]').inputmask()
 
     $(document).ready(function(){
-
+      $("#modal_option").select2({ width: '100%' }); 
       var flieUpload = $("#FileUpload1");
       var filePath = $("#filePath");
       var button = $("#btnFileUpload");

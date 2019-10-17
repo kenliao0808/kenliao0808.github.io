@@ -250,19 +250,18 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button> 
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>
             </div>
           </div>
           <div class="box-body">
             <ul class="nav nav-tabs">
               <li class="active"><a href="B02-lesson2.html">課程設定</a></li>
-              <li><a href="#">報名管理</a></li>
-              <li><a href="#">簽到管理</a></li>
-              <li><a href="#">評量管理</a></li>
-              <li><a href="#">問卷管理</a></li>
-              <li><a href="#">修習結果管理</a></li>
-              <li><a href="#">訊息通知管理</a></li>
+              <li><a href="B02-lesson3.html">報名管理</a></li>
+              <li><a href="B02-lesson4.html">簽到管理</a></li>
+              <li><a href="B02-lesson5.html">評量管理</a></li>
+              <li><a href="B02-lesson6.html">問卷管理</a></li>
+              <li><a href="B02-lesson7.html">修習結果管理</a></li>
+              <li><a href="B02-lesson8.html">訊息通知管理</a></li>
             </ul>
             <div class="tab-content">
               <div class="margin_y_all_child my-3 clearfix">
@@ -668,6 +667,9 @@
                     </select>
                     <small class="help-block"></small>
                   </div>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-warning">送審</button>
                 </div>
               </div>
 
@@ -1319,7 +1321,7 @@
 
     function add_class_kind(ListName){
       if(ListName=='course_list'){
-        $('#'+ListName).after('<div class="row" id="'+ListName+'_copy"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div><div class="col-md-2"><div class="form-group"><small class="help-block"></small></div></div></div>')
+        $('#'+ListName).after('<div class="row" id="'+ListName+'_copy"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div><div class="col-md-2"><button type="button" class="btn btn-warning">送審</button></div></div>')
       }else{
         if(ListName=='host_list' || ListName=='presenter_list'){
           var HtmlList = $('#'+ListName);

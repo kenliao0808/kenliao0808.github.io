@@ -246,11 +246,15 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>缺課紀錄查詢</h1>
+        <h1>性質審查管理</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="B03-kind1.html">待審查課程</a></li>
+          <li><a href="B03-kind2.html">審查紀錄</a></li>
+        </ul>
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
@@ -260,7 +264,34 @@
           <div class="box-body">
             <form role="form">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12">
+                  <label>課程起訖日</label>
+                  <div class="row">
+                    <div class="pseudo_dash col-md-6">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input class="date form-control pull-right" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input class="date form-control pull-right" type="text">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>開課單位</label>
                     <select class="form-control">
@@ -273,21 +304,10 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>學員姓名</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>課程開始時間</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input class="date form-control pull-right" type="text">
-                    </div>
+                    <label>課程系統編號 OR 課程名稱</label>
+                    <input type="text" class="form-control" placeholder="請輸入課程系統編號、課程名稱">
                   </div>
                 </div>
               </div>
@@ -312,45 +332,26 @@
                     <tbody>
                       <tr>
                         <th style="width: 10px"></th>
-                        <th>學員姓名</th>
-                        <th>開課單位</th>
+                        <th>課程代碼</th>
                         <th>課程名稱</th>
-                        <th>課程開始時間</th>
-                        <th>動作</th>
+                        <th>課程起訖時間</th>
+                        <th>課程時數</th>
+                        <th>審查性質</th>
+                        <th>送審時間</th>
+                        <th>其他功能</th>
                       </tr>
                       <tr>
                         <td></td>
-                        <td>王大明</td>
-                        <td>教育培養科</td>
-                        <td><a class="class_link" href="B02-lesson1.html">緩和臨床決策之倫理原則</a></td>
-                        <td>2019-06-22（六） 13:00</td>
+                        <td>8619</td>
+                        <td><a class="class_link" href="B02-lesson2.html">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</a></td>
+                        <td><time>2020-01-29（三）08:00~2020-01-29（三）09:00</time></td>
+                        <td>2</td>
+                        <td>跨領域團隊合作照護課程</td>
+                        <td><time>2019-08-27（二） 11:46</time></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-plus-circle" title="加入黑名單" onclick="javascript:location.href='A02-block2.html'">加入黑名單</button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>王大明</td>
-                        <td>事務組</td>
-                        <td><a class="class_link" href="B02-lesson1.html">1081007火災因應措施應變流程訓練</a></td>
-                        <td>2019-05-03（五） 13:00</td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-plus-circle" title="加入黑名單" onclick="javascript:location.href='A02-block2.html'">加入黑名單</button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>刁云</td>
-                        <td>輸血醫學科</td>
-                        <td><a class="class_link" href="B02-lesson1.html">輸血成份種類與注意事項</a></td>
-                        <td>2019-08-09（五） 15:00</td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-plus-circle" title="加入黑名單" onclick="javascript:location.href='A02-block2.html'">加入黑名單</button>
+                            <button type="submit" class="btn btn-success">通過</button>
+                            <button type="submit" class="btn btn-danger">不通過</button>
                           </div>
                         </td>
                       </tr>
@@ -443,18 +444,6 @@
       language: 'zh-TW'
     })
 
-    $(document).ready(function(){
-      $("#batch_popout").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').show();
-      })
-      $("#close_batch").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').hide();
-      })
-    })
     //Money Euro
     $('[data-mask]').inputmask()
   </script>

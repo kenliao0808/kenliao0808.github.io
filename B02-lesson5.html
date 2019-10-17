@@ -47,36 +47,54 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    /* 進度條的css */
+    .progress {
+      position:relative; 
+      width:400px; 
+      border: 1px solid #ddd; 
+      padding: 1px; 
+      border-radius: 3px; 
+    }
+    .bar { 
+      background-color: #7cc7ee; 
+      width:0%; 
+      height:20px; 
+      border-radius: 3px; 
+    }
+    .percent { 
+      position:absolute; 
+      display:inline-block; 
+      top:-3px; 
+      left:48%; 
+    }
 
-  <style type="text/css">
+    .btn-search{color: #fff;background-color: #ef0000;border-color: #ef0000;}
 
-  .btn-search{color: #fff;background-color: #ef0000;border-color: #ef0000;}
+    /*==【popout】==*/
+    .popout{display:none;z-index:9999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.55);}
+    .popout .inbox{
+      background:#fff;width:600px;;position:absolute;left:50%;top:0;margin:0 0 0 -300px;
+      -webkit-box-shadow:2px 2px 10px rgba(0,0,0,0.2);-moz-box-shadow:2px 2px 10px rgba(0,0,0,0.2);box-shadow:2px 2px 10px rgba(0,0,0,0.2);
+    }
+    .pop_hd{background:#f9f9f9;padding:15px 20px;border-bottom:1px solid #eee;position:relative;}
+      .pop_hd h2{font-weight:bold;}
+      .i_close{position:absolute;right:15px;top:13px;background:none;border:0;cursor:pointer;padding:5px;margin-top:-2px;opacity:0.25;color:#000;font-size:21px;font-weight:bold;line-height:1;}
+      .i_close:hover{opacity:4;}
+    .pop_bd{padding:30px 20px;}
+      .psbox{text-align:center;padding:10px;border:1px dashed #ddd;margin:0 0 20px;}
+      .psbox a{color: #337ab7}
+      .psbox small{font-size:10px;}
+      .jquery-filestyle input{width:50% !important;}
+      .popbtn{padding:30px 0 0;text-align:right;margin-bottom:-15px}
+    .popout .chosen-container{width:20% !important;}
+    input[type=file] {display: unset;}
 
-  /*==【popout】==*/
-  .popout{display:none;z-index:9999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.55);}
-  .popout .inbox{
-    background:#fff;width:600px;;position:absolute;left:50%;top:0;margin:0 0 0 -300px;
-    -webkit-box-shadow:2px 2px 10px rgba(0,0,0,0.2);-moz-box-shadow:2px 2px 10px rgba(0,0,0,0.2);box-shadow:2px 2px 10px rgba(0,0,0,0.2);
-  }
-  .pop_hd{background:#f9f9f9;padding:15px 20px;border-bottom:1px solid #eee;position:relative;}
-    .pop_hd h2{font-weight:bold;}
-    .i_close{position:absolute;right:15px;top:13px;background:none;border:0;cursor:pointer;padding:5px;margin-top:-2px;opacity:0.25;color:#000;font-size:21px;font-weight:bold;line-height:1;}
-    .i_close:hover{opacity:4;}
-  .pop_bd{padding:30px 20px;}
-    .psbox{text-align:center;padding:10px;border:1px dashed #ddd;margin:0 0 20px;}
-    .psbox a{color: #337ab7}
-    .psbox small{font-size:10px;}
-    .jquery-filestyle input{width:50% !important;}
-    .popbtn{padding:30px 0 0;text-align:right;margin-bottom:-15px}
-  .popout .chosen-container{width:20% !important;}
-  input[type=file] {display: unset;}
-  .class_link {
-    color: #367fa9;
-  }
   </style>
-
 </head>
-
+<style type="text/css">
+  .form-control{height:auto;}
+</style>
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -150,9 +168,9 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
-              <li class="active"><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
+              <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
             </ul>
@@ -246,15 +264,11 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>行政審查管理</h1>
+        <h1>課程編輯</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="B04-strative1.html">待審查班別</a></li>
-          <li><a href="B04-strative2.html">審查紀錄</a></li>
-        </ul>
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
@@ -262,38 +276,20 @@
             </div>
           </div>
           <div class="box-body">
-            <form role="form">
+            <ul class="nav nav-tabs">
+              <li><a href="B02-lesson2.html">課程設定</a></li>
+              <li><a href="B02-lesson3.html">報名管理</a></li>
+              <li><a href="B02-lesson4.html">簽到管理</a></li>
+              <li class="active"><a href="B02-lesson5.html">評量管理</a></li>
+              <li><a href="B02-lesson6.html">問卷管理</a></li>
+              <li><a href="B02-lesson7.html">修習結果管理</a></li>
+              <li><a href="B02-lesson8.html">訊息通知管理</a></li>
+            </ul>
+            <div class="my-3 tab-content">
               <div class="row">
-                <div class="col-md-12">
-                  <label>課程起訖日</label>
-                  <div class="row">
-                    <div class="pseudo_dash col-md-6">
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input class="date form-control pull-right" type="text">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input class="date form-control pull-right" type="text">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <div class="form-group">
-                    <label>開課單位</label>
+                    <label>單位</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
@@ -304,24 +300,43 @@
                     </select>
                   </div>
                 </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>職類</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="西醫">西醫</option>
+                      <option value="牙醫">牙醫</option>
+                      <option value="中醫">中醫</option>
+                      <option value="護理">護理</option>
+                      <option value="藥學">藥學</option>
+                    </select>
+                  </div>
+                </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>課程系統編號 OR 課程名稱</label>
-                    <input type="text" class="form-control" placeholder="請輸入課程系統編號、課程名稱">
+                    <label>姓名</label>
+                    <div class="row margin_y_child">
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-
-        <!-- table contect list -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+            <div class="dataTables_info s:inline-block" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+            <div class="s:float-right margin_y_all_child">
+              <button type="button" class="btn btn-warning">匯出選項統計</button>
+              <button type="button" class="btn btn-warning">匯出評量明細</button>
+            </div>
           </div>
           <div class="box-body">
             <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -332,24 +347,25 @@
                     <tbody>
                       <tr>
                         <th style="width: 10px"></th>
-                        <th>課程代碼</th>
-                        <th>課程名稱</th>
-                        <th>課程起訖時間</th>
-                        <th>課程時數</th>
-                        <th>送審時間</th>
-                        <th>其他功能</th>
+                        <th>姓名</th>
+                        <th>單位</th>
+                        <th>職類</th>
+                        <th>最新分數紀錄</th>
+                        <th>是否通過</th>
+                        <th>報名時間</th>
+                        <th>動作</th>
                       </tr>
                       <tr>
                         <td></td>
-                        <td>8619</td>
-                        <td><a class="class_link" href="B02-lesson2.html">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</a></td>
-                        <td><time>2020-01-29（三）08:00~2020-01-29（三）09:00</time></td>
-                        <td>2</td>
-                        <td><time>2019-08-27（二） 11:46</time></td>
+                        <td>許小飛</td>
+                        <td>細胞病理科</td>
+                        <td>西醫</td>
+                        <td>80</td>
+                        <td>是</td>
+                        <td><time>2019/7/30 10:13</time></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="submit" class="btn btn-success">通過</button>
-                            <button type="submit" class="btn btn-danger">不通過</button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視"></button>
                           </div>
                         </td>
                       </tr>
@@ -386,7 +402,6 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-
   <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
@@ -418,12 +433,16 @@
   <!-- datepicker -->
   <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-TW.min.js"></script>
+  <!-- bootstrap time picker -->
+  <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
   <!-- Bootstrap WYSIHTML5 -->
   <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
   <!-- Slimscroll -->
   <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
   <!-- FastClick -->
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- Select2 -->
+  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
@@ -435,13 +454,6 @@
 
   <script src="dist/js/script.js"></script>
   <script>
-  
-    $('#date, .date').datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      language: 'zh-TW'
-    })
-
     //Money Euro
     $('[data-mask]').inputmask()
   </script>
