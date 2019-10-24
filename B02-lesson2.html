@@ -434,8 +434,16 @@
                       <span class="input-group-addon digital_learn_content" style="display: none;">
                         <input type="radio" name="teaching" id="digit_class" >
                       </span>
-                      <label class="form-control digital_learn_title"  style="display: none;">數位學習</label>
+                      <label class="form-control digital_learn_title" style="display: none;">數位學習</label>
                     </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-4 cert_hours" style="display: none;">
+                  <div class="form-group">
+                    <label>認證時數</label>
+                    <input type="number" class="w-full form-control" style="width: 50px" name="" min="0" max="999" placeholder="0-999">
+                      (小時)
                     <small class="help-block"></small>
                   </div>
                 </div>
@@ -859,6 +867,10 @@
                       <span class="input-group-addon">
                         <input type="checkbox">
                       </span>
+                      <label class="form-control">候補報名</label>
+                      <span class="input-group-addon">
+                        <input type="checkbox">
+                      </span>
                       <label class="form-control">顯示學員名單</label>
                     </div>
                     <small class="help-block"></small>
@@ -866,14 +878,48 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>備註</label>
-                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                    <label>設定報名表</label>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="radio" name="registration_radio" value=1 checked>
+                            </span>
+                            <label class="form-control">預設</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="radio" name="registration_radio" value=2>
+                            </span>
+                            <label class="form-control">自訂</label>
+                          </div>
+                          <div class="form-group" id="registration_select" style="display: none;">
+                            <select class="form-control">
+                              <option selected value="請選擇">- 請選擇 -</option>
+                              <option value="報名表一">報名表一</option>
+                              <option value="報名表二">報名表二</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
               </div>
               <div class="row">
-                
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>備註</label>
+                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>管理者備註</label>
@@ -1177,6 +1223,14 @@
 
       })
 
+      $("input[name='registration_radio']").click(function(){
+        if($(this).val()==1){
+          $('#registration_select').hide();
+        }else{
+          $('#registration_select').show();
+        }
+      })
+
       var flieUpload = $("#FileUpload1");
       var filePath = $("#filePath");
       var button = $("#btnFileUpload");
@@ -1248,6 +1302,7 @@
           $('.course_recognition_content').show();
           $('.digital_learn_title').show();
           $('.digital_learn_content').show();
+          $('.cert_hours').show();
         }else{
           $('.div_carry').show();
           $('.div_digit').hide();
@@ -1261,6 +1316,7 @@
           $('.course_recognition_content').hide();
           $('.digital_learn_title').hide();
           $('.digital_learn_content').hide();
+          $('.cert_hours').hide();
         }
       })
 

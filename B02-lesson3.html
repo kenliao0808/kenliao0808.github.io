@@ -347,7 +347,7 @@
                         <option value="正式名單">正式名單</option>
                         <option value="候補名單">候補名單</option>
                       </select>
-                    	<button type="button" class="btn btn-primary">套用</button>
+                    	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change_status">套用</button>
 	                  </div>
                   </div>
                   <div class="col-md-6">
@@ -452,6 +452,36 @@
       </section>
     </section>
   </section>
+
+  <div class="modal fade" id="change_status">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">審核回覆</h4>
+        </div>
+        <form class="form-horizontal">
+          <div class="modal-body">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>審核備註</label>
+                <div class="col-sm-10">
+                  <div class="timeline-footer">
+                    <textarea class="form-control" rows="3" placeholder=""></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+            <button type="submit" class="btn btn-primary">儲存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- jQuery 3 -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
