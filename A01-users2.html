@@ -48,6 +48,11 @@
   <style type="text/css">
     .content {min-height: 0px; padding:15px 0px 0px 0px;}
     .box-default {margin-bottom:0px;}
+    @media (max-width: 1360px) {
+      .input-group .form-control{
+        float: none;
+      }
+    }
   </style>
 
   <!-- Google Font -->
@@ -669,114 +674,629 @@
                     <small class="help-block"></small>
                   </div>
                 </div>
-                <div class="col-sm-6">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>管理者類型</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="系統管理者">系統管理者</option>
-                      <option value="性質管理者">性質管理者</option>
-                      <option value="課程管理者">課程管理者</option>
-                    </select>
+                    <label>權限相關設定 </label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">使用者管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">黑名單管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">外部講師管理</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <span class="font-bold mb-2 px-5 block">性質權限</span>
-                <div class="col-sm-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="護理部">護理部</option>
-                      <option value="臨床培育科">臨床培育科</option>
-                      <option value="醫院感染管制委員會">醫院感染管制委員會</option>
-                      <option value="職業安全衛生室">職業安全衛生室</option>
-                      <option value="總務室">總務室</option>
-                      <option value="醫品中心">醫品中心</option>
-                      <option value="臨床技術訓練科">臨床技術訓練科</option>
-                      <option value="人事室">人事室</option>
-                      <option value="資訊室">資訊室</option>
-                    </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="一般醫學能力">一般醫學能力</option>
-                      <option value="教學能力">教學能力</option>
-                    </select>
+                    <label>課程相關管理 </label>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="class_table" onchange="showTable('class_table');">
+                            </span>
+                            <label class="form-control">班別管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="course_table" onchange="showTable('course_table');">
+                            </span>
+                            <label class="form-control">課程管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="nature_review" onchange="showTable('nature_review');">
+                            </span>
+                            <label class="form-control">性質審查管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="strative_review" onchange="showTable('strative_review');">
+                            </span>
+                            <label class="form-control">行政審查管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">缺課紀錄管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">院外課程管理</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <span class="font-bold mb-2 px-5 block">單位權限</span>
-                <div class="col-sm-4">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="醫學研究部">醫學研究部</option>
-                      <option value="傳統醫學部">傳統醫學部</option>
-                      <option value="家庭醫學部">家庭醫學部</option>
-                      <option value="教學部">教學部</option>
-                      <option value="護理部">護理部</option>
-                    </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="實證醫學中心">實證醫學中心</option>
-                      <option value="社團">社團</option>
-                      <option value="教師培育科">教師培育科</option>
-                      <option value="臨床技術訓練科">臨床技術訓練科</option>
-                    </select>
-                    <small class="help-block"></small>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="實證醫學中心">實證醫學中心</option>
-                      <option value="社團">社團</option>
-                      <option value="教師培育科">教師培育科</option>
-                      <option value="臨床技術訓練科">臨床技術訓練科</option>
-                    </select>
+                    <label>紀錄查詢與報表下載 </label>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">學習記錄查詢</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">教學記錄查詢</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">開課時數統計表</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">必修時數統計</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">必修時數達成率</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">臨床教師達成報表</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">護理部在職教育</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">單位團體護理指導</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">在職進修成績彙整</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">護理人員在職教育時數</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <span class="font-bold mb-2 px-5 block">職類權限</span>
-                <div class="col-sm-6">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="西醫">西醫</option>
-                      <option value="牙醫">牙醫</option>
-                      <option value="中醫">中醫</option>
-                      <option value="護理">護理</option>
-                      <option value="藥學">藥學</option>
-                    </select>
+                    <label>問卷/評量管理 </label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">問卷設定</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">評量設定</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_checkmanage_check">
+                            </span>
+                            <label class="form-control">報名表管理</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <small class="help-block"></small>
                   </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-md-3">
                   <div class="form-group">
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="主治醫師">主治醫師</option>
-                      <option value="住院醫師">住院醫師</option>
-                      <option value="PGY">PGY</option>
-                      <option value="實習醫學生">實習醫學生</option>
-                    </select>
+                    <label>訊息管理</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox" id="manage_check">
+                      </span>
+                      <label class="form-control">訊息管理</label>
+                    </div>
                     <small class="help-block"></small>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>公佈欄管理</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <input type="checkbox" id="manage_check">
+                      </span>
+                      <label class="form-control">公佈欄管理</label>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>系統參數設定 </label>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">必修時數管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">單位管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">職類管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">全院課程性質管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">單位課程性質管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">行政職稱管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">實施方式管理</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">臨床教師資格設定</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>系統稽核與監控 </label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">帳號測試入口</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">聯絡我們紀錄</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <span class="input-group-addon">
+                              <input type="checkbox" id="manage_check">
+                            </span>
+                            <label class="form-control">報名表卡鐘匯入紀錄管理</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <small class="help-block"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content">
+          <div class="row">
+            <div class="col-md-6 class_table" style="display: none;">
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">班別管理</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <div class="form-group">
+                    <label>開班單位：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 course_table" style="display: none;">
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">課程管理</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <div class="form-group">
+                    <label>開班單位：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 nature_review" style="display: none;">
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">性質審查管理</h3>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  <div class="form-group">
+                    <label>階層：</label>
+                    <label><input type="number" class="w-full form-control" name="" min="1" max="999" placeholder="1-999"></label>
+                  </div>
+
+                  <div class="form-group">
+                    <label>開班單位：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>職類：</label>
+                    <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
+                            style="width: 100%;">
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -811,6 +1331,8 @@
   </script>
   <!-- Bootstrap 3.3.7 -->
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Select2 -->
+  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
   <!-- DataTables -->
   <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -861,6 +1383,8 @@
 
     $(document).ready(function(){
 
+      $('.select2').select2()
+
       $('#auto_update').bootstrapToggle({
         on: '開啟自動更新',
         off: '關閉自動更新'
@@ -906,6 +1430,14 @@
       $(".person_system_info input").prop("disabled",true);
       $(".person_system_info select").prop("disabled",true);
       $(".user_info_btn").show();
+    }
+
+    function showTable(TableName){
+      if($('#'+TableName).prop('checked')){
+        $('.'+TableName).show()
+      }else{
+        $('.'+TableName).hide()
+      }
     }
     
   </script>

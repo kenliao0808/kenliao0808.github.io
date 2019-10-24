@@ -566,6 +566,8 @@
                 <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('presenter_list');">
                   <i class="fa fa-plus"></i>
                 </a>
+                <button type="button" class="btn btn-warning pull-right btn-sm" style="margin: -6px 0px 0px 0px;" data-toggle="modal" data-target="#create_teacher" data-keyboard="true">
+                  <i class="fa fa-plus"> 新增外部講師</i></button>
               </h4>
               <div class="row" id="presenter_list">
                 <div class="col-md-4">
@@ -1113,6 +1115,52 @@
           <!-- /.modal-dialog -->
         </div>
 
+        <div class="modal fade" id="create_teacher">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">建立外部講師</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">教師姓名</label>
+                    <div class="col-md-9">
+                      <input type="text" class="mr-1 inline-block w-auto form-control" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">EMail</label>
+                    <div class="col-md-9">
+                      <input type="text" class="mr-1 inline-block w-auto form-control" placeholder="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">身分證字號</label>
+                    <div class="col-md-9">
+                      <input type="text" class="mr-1 inline-block w-auto form-control" placeholder="">
+                      <small class="help-block">外國人請輸入護照號碼</small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">學經歷簡介</label>
+                    <div class="col-md-9">
+                      <textarea class="form-control" rows="5" placeholder=""></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="submit" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
         <!-- /.modal -->
       </section>
       <!-- /.content -->
