@@ -287,7 +287,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>主要性質</label>
-                    <select class="form-control">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="護理部">護理部</option>
                       <option value="臨床培育科">臨床培育科</option>
@@ -304,7 +304,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>開班單位</label>
-                    <select class="form-control">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
                       <option value="傳統醫學部">傳統醫學部</option>
@@ -556,7 +556,7 @@
                 <div class="col-sm-10">
                   <div class="form-group">
                     <div class="col-sm-8">
-                      <select class="form-control" id="modal_option">
+                      <select class="form-control select_option" style="width: 100%;">
                         <option selected value="請選擇">- 請選擇 -</option>
                         <option value="醫學研究部">醫學研究部</option>
                         <option value="傳統醫學部">傳統醫學部</option>
@@ -780,7 +780,9 @@
     })
 
     $(document).ready(function(){
-      $("#modal_option").select2({ width: '100%' }); 
+      
+      $(".select_option").select2();
+
       var flieUpload = $("#FileUpload1");
       var filePath = $("#filePath");
       var button = $("#btnFileUpload");

@@ -285,7 +285,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label><span class="mr-1 text-danger">*</span>開班單位</label>
-                      <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                      <select class="form-control select_option" style="width: 100%;">
                         <option selected value="請選擇">- 請選擇 -</option>
                         <option value="醫學研究部">醫學研究部</option>
                         <option value="傳統醫學部">傳統醫學部</option>
@@ -587,6 +587,9 @@
     })
 
     $(document).ready(function(){
+      
+      $(".select_option").select2();
+
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
       $("textarea").prop("disabled",true);
@@ -674,9 +677,9 @@
       $("div[id='bar']").width(ii+"%");    // 進度條顏色
     }
 
-    function open_class_type(myObj){
-      myObj.after('<select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
-    }
+    // function open_class_type(myObj){
+    //   myObj.after('<select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
+    // }
 
   </script>
 </body>

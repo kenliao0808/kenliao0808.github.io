@@ -240,7 +240,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>單位</label>
-                    <select class="form-control">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
                       <option value="傳統醫學部">傳統醫學部</option>
@@ -253,7 +253,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>職類</label>
-                    <select class="form-control">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="西醫">西醫</option>
                       <option value="牙醫">牙醫</option>
@@ -266,7 +266,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>職稱</label>
-                    <select class="form-control">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="契約行政人員">契約行政人員</option>
                       <option value="契約住院醫師">契約住院醫師</option>
@@ -469,6 +469,9 @@
   <script>
     
     $(document).ready(function(){
+
+      $(".select_option").select2();
+
       $("#batch_popout").on('click',function(e){
         e.preventDefault();
         e.stopPropagation();

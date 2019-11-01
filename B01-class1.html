@@ -275,7 +275,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>開班單位</label>
-                    <select class="form-control">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
                       <option value="傳統醫學部">傳統醫學部</option>
@@ -586,6 +586,9 @@
     $('[data-mask]').inputmask()
 
     $(document).ready(function(){
+      
+      $(".select_option").select2();
+
       var flieUpload = $("#FileUpload1");
       var filePath = $("#filePath");
       var button = $("#btnFileUpload");

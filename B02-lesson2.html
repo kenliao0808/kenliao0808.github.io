@@ -269,7 +269,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label><span class="mr-1 text-danger">*</span>所屬班別</label>
-                    <select class="form-control class_option" id="class_option">
+                    <select class="form-control class_option">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
                       <option value="傳統醫學部">傳統醫學部</option>
@@ -294,7 +294,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label><span class="mr-1 text-danger">*</span>開班單位</label>
-                    <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="醫學研究部">醫學研究部</option>
                       <option value="傳統醫學部">傳統醫學部</option>
@@ -370,7 +370,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label><span class="mr-1 text-danger">*</span>課程主要性質</label>
-                    <select class="form-control" style="margin-bottom:2px" onchange="open_class_type($(this));">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="護理部">護理部</option>
                       <option value="臨床培育科">臨床培育科</option>
@@ -563,7 +563,7 @@
               <div class="row" id="presenter_list">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <select class="form-control select_prompt">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="Alabama">Alabama</option>
                       <option value="Alaska">Alaska</option>
@@ -601,7 +601,7 @@
               <div class="row" id="host_list">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <select class="form-control select_prompt">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="Alabama">Alabama</option>
                       <option value="Alaska">Alaska</option>
@@ -633,9 +633,9 @@
 
               <h4 id="caption2" class="bg-gray-300 p-3 my-3 learn_cate_title" style="display: none;">終身學習類別</h4>
               <div class="row learn_cate_content" style="display: none;">
-                <div class="col-md-4">
+                <div class="col-md-8">
                   <div class="form-group">
-                    <select class="form-control" onchange="open_lifelong_type($(this));">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="政策能力訓練">政策能力訓練</option>
                       <option value="領導力發展">領導力發展</option>
@@ -652,9 +652,9 @@
                 </a>
               </h4>
               <div class="row course_recognition_content" id="course_list" style="display: none;">
-                <div class="col-md-4">
+                <div class="col-md-8">
                   <div class="form-group">
-                    <select class="form-control" onchange="open_class_kind($(this));">
+                    <select class="form-control select_option" style="width: 100%;">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="護理部">護理部</option>
                       <option value="臨床培育科">臨床培育科</option>
@@ -769,7 +769,7 @@
                             <label class="form-control">需要通過評量</label>
                           </div>
                           <div class="form-group" id="assessment_select" style="display: none;">
-                              <select class="form-control select_prompt">
+                              <select class="form-control select_option" style="width: 100%;">
                                 <option selected value="請選擇">- 請選擇 -</option>
                                 <option value="評量一">評量一</option>
                                 <option value="評量二">評量二</option>
@@ -786,7 +786,7 @@
                             <label class="form-control">需要完成問卷</label>
                           </div>
                           <div class="form-group" id="question_select" style="display: none;">
-                            <select class="form-control select_prompt">
+                            <select class="form-control select_option" style="width: 100%;">
                               <option selected value="請選擇">- 請選擇 -</option>
                               <option value="問卷一">問卷一</option>
                               <option value="問卷二">問卷二</option>
@@ -811,7 +811,7 @@
                             <label class="form-control">單位</label>
                           </div>
                           <div class="form-group" id="unit_select" style="display: none;">
-                            <select class="form-control" onchange="open_class_type($(this));">
+                            <select class="form-control select_option" style="width: 100%;">
                               <option selected value="請選擇">- 請選擇 -</option>
                               <option value="醫學研究部">醫學研究部</option>
                               <option value="傳統醫學部">傳統醫學部</option>
@@ -831,7 +831,7 @@
                             <label class="form-control">職類</label>
                           </div>
                           <div class="form-group" id="medical_select" style="display: none;">
-                            <select class="form-control" onchange="open_class_type($(this));">
+                            <select class="form-control select_option" style="width: 100%;">
                               <option selected value="請選擇">- 請選擇 -</option>
                               <option value="醫學研究部">醫學研究部</option>
                               <option value="傳統醫學部">傳統醫學部</option>
@@ -892,7 +892,7 @@
                             <label class="form-control">自訂</label>
                           </div>
                           <div class="form-group" id="registration_select" style="display: none;">
-                            <select class="form-control">
+                            <select class="form-control select_option" style="width: 100%;">
                               <option selected value="請選擇">- 請選擇 -</option>
                               <option value="報名表一">報名表一</option>
                               <option value="報名表二">報名表二</option>
@@ -1215,7 +1215,7 @@
     
     $(document).ready(function(){
       //Initialize Select2 Elements
-      $('.select_prompt').select2({ width: '100%' })
+      $('.select_option').select2();
       $("#modal_option").select2({ width: '100%' }); 
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
@@ -1381,7 +1381,7 @@
       $("textarea").prop("disabled",false);
 
 
-      $("#class_option").prop("disabled",true);
+      $(".class_option").prop("disabled",true);
       $("#class_code").prop("disabled",true);
       $("#course_code_1").prop("disabled",true);
     }
@@ -1393,17 +1393,12 @@
 
     function add_class_kind(ListName){
       if(ListName=='course_list'){
-        $('#'+ListName).after('<div class="row" id="'+ListName+'_copy"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div><div class="col-md-2"><button type="button" class="btn btn-warning">送審</button></div></div>')
+        $('#'+ListName).after('<div class="row" id="'+ListName+'_copy"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-7"><div class="form-group"><select class="form-control select_option" style="width: 100%;"><option selected value="請選擇">- 請選擇 -</option><option value="護理部">護理部</option><option value="臨床培育科">臨床培育科</option><option value="醫院感染管制委員會">醫院感染管制委員會</option><option value="職業安全衛生室">職業安全衛生室</option><option value="總務室">總務室</option><option value="醫品中心">醫品中心</option><option value="臨床技術訓練科">臨床技術訓練科</option><option value="人事室">人事室</option><option value="資訊室">資訊室</option></select><small class="help-block"></small></div></div><div class="col-md-2"><button type="button" class="btn btn-warning">送審</button></div></div>')
+        $('.select_option').select2()
       }else{
-        if(ListName=='host_list' || ListName=='presenter_list'){
-          var HtmlList = $('#'+ListName);
-          HtmlList.find('span').remove();
-          HtmlList.find('.select_prompt').removeClass('select2-hidden-accessible');
-          $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div>' + HtmlList.html() + "</div>")
-          $('.select_prompt').select2()
-        }else{
-          $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div>' + $('#'+ListName).html() + "</div>")
-        }
+        var HtmlList = $('#'+ListName);
+        $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-4"><div class="form-group"><select class="form-control select_option" style="width: 100%;"><option selected value="請選擇">- 請選擇 -</option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="California">California</option><option value="Delaware">Delaware</option><option value="Tennessee">Tennessee</option></select><small class="help-block"></small></div></div><div class="col-md-5"><div class="form-group"><div class="form-inline"> 教學時數 <label><input type="number" class="w-full form-control" style="width: 50px" name="" min="0" max="999" placeholder="0-999"></label> (小時)</div><small class="help-block"></small></div></div><div class="col-md-2"><div class="form-group"><div class="form-inline"> 教學評分 <a class="text-primary text-3xl px-4 leading-none" href="#" data-toggle="modal" data-target="#ratings" data-keyboard="true"><i class="fa fa-pencil"></i></a></div></div></div></div>');
+        $('.select_option').select2()
       }
     }
 
@@ -1416,17 +1411,17 @@
       myObj.parent().parent().remove()
     }
 
-    function open_class_kind(myObj){
-      myObj.parent().parent().after('<div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="消費者保護">消費者保護</option><option value="生物多樣性">生物多樣性</option><option value="永續發展課程">永續發展課程</option><option value="天然災害講習">天然災害講習</option><option value="全民國防教育">全民國防教育</option><option value="環境教育">環境教育</option><option value="性別主流化基礎課程">性別主流化基礎課程</option></select><small class="help-block"></small></div></div>');
-    }
+    // function open_class_kind(myObj){
+    //   myObj.parent().parent().after('<div class="col-md-3"><div class="form-group"><select class="form-control" onchange="open_class_kind($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="消費者保護">消費者保護</option><option value="生物多樣性">生物多樣性</option><option value="永續發展課程">永續發展課程</option><option value="天然災害講習">天然災害講習</option><option value="全民國防教育">全民國防教育</option><option value="環境教育">環境教育</option><option value="性別主流化基礎課程">性別主流化基礎課程</option></select><small class="help-block"></small></div></div>');
+    // }
 
-    function open_lifelong_type(myObj){
-      myObj.parent().parent().after('<div class="col-md-4"><div class="form-group"><select class="form-control" onchange="open_lifelong_type($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="消費者保護">消費者保護</option><option value="生物多樣性">生物多樣性</option><option value="永續發展課程">永續發展課程</option><option value="天然災害講習">天然災害講習</option><option value="全民國防教育">全民國防教育</option><option value="環境教育">環境教育</option><option value="性別主流化基礎課程">性別主流化基礎課程</option></select><small class="help-block"></small></div></div>');
-    }
+    // function open_lifelong_type(myObj){
+    //   myObj.parent().parent().after('<div class="col-md-4"><div class="form-group"><select class="form-control" onchange="open_lifelong_type($(this));"><option selected value="請選擇">- 請選擇 -</option><option value="消費者保護">消費者保護</option><option value="生物多樣性">生物多樣性</option><option value="永續發展課程">永續發展課程</option><option value="天然災害講習">天然災害講習</option><option value="全民國防教育">全民國防教育</option><option value="環境教育">環境教育</option><option value="性別主流化基礎課程">性別主流化基礎課程</option></select><small class="help-block"></small></div></div>');
+    // }
 
-    function open_class_type(myObj){
-      myObj.after('<select class="form-control" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
-    }
+    // function open_class_type(myObj){
+    //   myObj.after('<select class="form-control" onchange="open_class_type($(this))"><option selected value="請選擇">- 請選擇 -</option><option value="實證醫學中心">實證醫學中心</option><option value="社團">社團</option><option value="教師培育科">教師培育科</option><option value="臨床技術訓練科">臨床技術訓練科</option></select>');
+    // }
 
   </script>
 </body>
