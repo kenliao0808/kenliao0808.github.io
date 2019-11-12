@@ -136,11 +136,11 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
-              <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
+              <li class="active"><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
             </ul>
           </li>
           <li class="treeview">
@@ -228,11 +228,10 @@
       <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>課程管理</h1>
+        <h1>班別管理</h1>
       </section>
 
       <!-- Main content -->
@@ -240,68 +239,40 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B02-lesson2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
             <form role="form">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>課程狀態</label>
+                    <label>狀態</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
                       <option value="草稿">草稿</option>
-                      <option value="待審查">待審查</option>
-                      <option value="已發佈">已發佈</option>
-                      <option value="已結算">已結算</option>
+                      <option value="發布">發佈</option>
+                      <option value="未發佈">未發佈</option>
                       <option value="關閉">關閉</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>課程代碼</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>課程名稱</label>
+                    <label>班別代碼</label>
                     <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>課程類型</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="全院開課">全院開課</option>
-                      <option value="單位開課">單位開課</option>
-                    </select>
+                    <label>班別名稱</label>
+                    <input type="text" class="form-control" placeholder="">
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>主要性質</label>
-                    <select class="form-control select_option" style="width: 100%;">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="護理部">護理部</option>
-                      <option value="臨床培育科">臨床培育科</option>
-                      <option value="醫院感染管制委員會">醫院感染管制委員會</option>
-                      <option value="職業安全衛生室">職業安全衛生室</option>
-                      <option value="總務室">總務室</option>
-                      <option value="醫品中心">醫品中心</option>
-                      <option value="臨床技術訓練科">臨床技術訓練科</option>
-                      <option value="人事室">人事室</option>
-                      <option value="資訊室">資訊室</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>開班單位</label>
                     <select class="form-control select_option" style="width: 100%;">
@@ -317,7 +288,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <label>開課起訖日</label>
+                  <label>開辦起訖日</label>
                   <div class="row">
                     <div class="pseudo_dash col-md-6">
                       <div class="form-group">
@@ -342,22 +313,18 @@
                   </div>
                 </div>
               </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+              </div>
             </form>
           </div>
-          <!-- /.box-body -->
-          <div class="margin_y_all_child box-footer">
-            <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-          </div>
-          <!-- /.box-footer-->
         </div>
+
+        <!-- table contect list -->
         <div class="box box-primary">
-          <div class="box-header">
+          <div class="box-header with-border">
             <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2 total_num">3</span> 筆</div>
-            <div class="box-tools pull-right">
-              <button type="button" class="btn btn-warning pull-rightol"> 匯出課程</button>
-            </div>
           </div>
-          <!-- /.box-header -->
           <div class="box-body">
             <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
               <div class="row">
@@ -365,32 +332,28 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr class="data_top">
-                        <th style="width: 10px">#</th>
-                        <th>課程代碼</th>
-                        <th>課程名稱</th>
+                        <th style="width: 10px"></th>
+                        <th>班別代碼</th>
+                        <th>班別名稱</th>
                         <th>開班單位</th>
-                        <th>課程主要性質</th>
-                        <th>課程類型</th>
-                        <th>開課時間</th>
-                        <th>認證時數</th>
-                        <th>課程狀態</th>
+                        <th>班別類型</th>
+                        <th>開辦起訖</th>
+                        <th>狀態</th>
                         <th>動作</th>
                         <th>附件列表</th>
                       </tr>
                       <tr>
-                        <td class='data_num'>1</td>
+                        <td></td>
                         <td>08383FD-1</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
-                        <td>健康保護</td>
                         <td>全院開課</td>
-                        <td><time>2020-01-29（三）08:00</time></td>
-                        <td>2</td>
-                        <td><span class="label label-default fa fa-exclamation"> 待審查</span></td>
+                        <td>2019-09-20 ~ 2019-09-30</td>
+                        <td><span class="label label-success fa fa-check"> 發 佈</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -400,19 +363,17 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class='data_num'>2</td>
+                        <td></td>
                         <td>08383FD-2</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
-                        <td>健康保護</td>
                         <td>單位開課</td>
-                        <td><time>2020-01-29（三）08:00</time></td>
-                        <td>2</td>
+                        <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-warning fa fa-exclamation"> 草 稿</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -422,19 +383,17 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class='data_num'>3</td>
+                        <td></td>
                         <td>08383FD-3</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
-                        <td>健康保護</td>
-                        <td>單位開課</td>
-                        <td><time>2020-01-29（三）08:00</time></td>
-                        <td>2</td>
-                        <td><span class="label label-warning fa fa-exclamation"> 審查中</span></td>
+                        <td>全院開課</td>
+                        <td>2019-09-20 ~ 2019-09-30</td>
+                        <td><span class="label label-default fa fa-exclamation"> 未發佈</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -444,63 +403,17 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class='data_num'>4</td>
+                        <td></td>
                         <td>08383FD-4</td>
                         <td>全人照護教育師培系列</td>
                         <td>教師培育科</td>
-                        <td>健康保護</td>
                         <td>全院開課</td>
-                        <td><time>2020-01-29（三）08:00</time></td>
-                        <td>2</td>
-                        <td><span class="label label-success fa fa-check"> 已發佈</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-file-text" title="列表" data-toggle="modal" data-target="#modal-filelist"></button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class='data_num'>5</td>
-                        <td>08383FD-5</td>
-                        <td>全人照護教育師培系列</td>
-                        <td>教師培育科</td>
-                        <td>健康保護</td>
-                        <td>全院開課</td>
-                        <td><time>2020-01-29（三）08:00</time></td>
-                        <td>2</td>
-                        <td><span class="label label-success fa fa-check"> 已結算</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製到班別" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-file-text" title="列表" data-toggle="modal" data-target="#modal-filelist"></button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class='data_num'>6</td>
-                        <td>08383FD-6</td>
-                        <td>全人照護教育師培系列</td>
-                        <td>教師培育科</td>
-                        <td>健康保護</td>
-                        <td>單位開課</td>
-                        <td><time>2020-01-29（三）08:00</time></td>
-                        <td>2</td>
+                        <td>2019-09-20 ~ 2019-09-30</td>
                         <td><span class="label label-danger fa fa-remove"> 關 閉</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
-                            <button type="button" class="btn btn-warning fa fa-copy" title="複製課程" data-toggle="modal" data-target="#period_modal" onclick="copybtn($(this))"></button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B01-class2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -513,7 +426,6 @@
                   </table>
                 </div>
               </div>
-              
               <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
               <div class="row">
                 <div class="col-sm-12">
@@ -533,189 +445,79 @@
               </div>
             </div>
           </div>
-          <!-- /.box-body -->
         </div>
-        <!-- /.box -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
 
-    <div class="modal fade" id="period_modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form class="form-horizontal" role="form">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">複製課程</h4>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">所屬班別</label>
-                <div class="col-sm-10">
-                  <div class="form-group">
-                    <div class="col-sm-8">
-                      <select class="form-control select_option" style="width: 100%;">
-                        <option selected value="請選擇">- 請選擇 -</option>
-                        <option value="醫學研究部">醫學研究部</option>
-                        <option value="傳統醫學部">傳統醫學部</option>
-                        <option value="家庭醫學部">家庭醫學部</option>
-                        <option value="教學部">教學部</option>
-                        <option value="護理部">護理部</option>
-                      </select>
-                    </div>
-                    <div class="col-sm-1">
-                      <button type="button" class="btn btn-primary pull-rightol" title="新增班別" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增班別</button>
-                    </div>
-                  </div>
-                </div>
+        <div class="modal fade" id="modal-class">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">複製班別</h4>
               </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">複製類型</label>
-                <div class="col-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="radio" name="sign_btn" id="copy_rad" value="1">
-                    </span>
-                    <label class="form-control">單筆</label>
-                    <span class="input-group-addon">
-                      <input type="radio" name="sign_btn" id="copy_rad" value="2">
-                    </span>
-                    <label class="form-control">自訂週期</label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group" id="single_info" style="display: none;">
-                <label class="col-sm-2 control-label">開課時間</label>
-                <div class="col-sm-10">
-                  <input type="text" class="time form-control inline-block">
-                </div>
-              </div>
-              <div class="form-group" id="frequency_info_1" style="display: none;">
-                <label class="col-sm-2 control-label">頻率</label>
-                <div class="col-sm-10">
-                  <select class="form-control">
-                    <option selected value="每週">每週</option>
-                    <option value="每二週">每二週</option>
-                  </select>
-                  <div class="margin_x_child-l checkbox">
-                    <label>
-                      <input class="mr-1" type="checkbox">日
-                    </label>
-                    <label>
-                      <input class="mr-1" type="checkbox">一
-                    </label>
-                    <label>
-                      <input class="mr-1" type="checkbox">二
-                    </label>
-                    <label>
-                      <input class="mr-1" type="checkbox">三
-                    </label>
-                    <label>
-                      <input class="mr-1" type="checkbox">四
-                    </label>
-                    <label>
-                      <input class="mr-1" type="checkbox">五
-                    </label>
-                    <label>
-                      <input class="mr-1" type="checkbox">六
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group" id="frequency_info_2" style="display: none;">
-                <label class="col-sm-2 control-label">結束時間</label>
-                <div class="col-sm-10">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="p-0 radio">
-                        <label>
-                          <input class="mr-1" type="radio" name="endingtime" checked>於
-                        </label>
-                        <input type="text" class="date form-control inline-block w-2/3"> 結束
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="p-0 radio">
-                        <label>
-                          <input class="mr-1" type="radio" name="endingtime">重複
-                        </label>
-                        <input type="number" class="form-control inline-block w-2/3" name="times" min="1" max="30" placeholder="請填寫數字1-30"> 次
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">開辦起訖日</label>
+                      <div class="col-sm-10">
+                        <input class="form-control pull-right class_popout" id="class_start" type="text">
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">其他</label>
-                <div class="col-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="checkbox">
-                    </span>
-                    <label class="form-control">複製主講人</label>
-                    <span class="input-group-addon">
-                      <input type="checkbox">
-                    </span>
-                    <label class="form-control">複製主持人</label>
-                    <span class="input-group-addon">
-                      <input type="checkbox">
-                    </span>
-                    <label class="form-control">複製學員資料</label>
-                  </div>
+                <div class="modal-footer">
+                  <input type="hidden" id="copy_html">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別與課程</button>
                 </div>
-              </div>
+              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-              <button type="submit" class="btn btn-primary">儲存</button>
-            </div>
-          </form>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-
-    <div class="modal fade" id="modal-filelist">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">附件列表</h4>
           </div>
-          <form class="form-horizontal">
-            <div class="modal-body">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">檔案列表</label>
-                  <div class="col-sm-10">
-                    <div class="timeline-footer">
-                      <a class="btn btn-primary btn-xs">課程講義</a>
-                      <a class="btn btn-primary btn-xs">教學紀錄</a>
-                      <a class="btn btn-primary btn-xs">班級規章</a>
+        </div>
+
+        <div class="modal fade" id="modal-filelist">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">附件列表</h4>
+              </div>
+              <form class="form-horizontal">
+                <div class="modal-body">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">檔案列表</label>
+                      <div class="col-sm-10">
+                        <div class="timeline-footer">
+                          <a class="btn btn-primary btn-xs">課程講義</a>
+                          <a class="btn btn-primary btn-xs">教學紀錄</a>
+                          <a class="btn btn-primary btn-xs">班級規章</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">班別附件</label>
+                      <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
+                      <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
+                      <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
+                      <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
+                    </div>
+                    <div class="form-group" style="padding-left: 30px;" id="filePath">
                     </div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">班別附件</label>
-                  <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
-                  <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
-                  <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
-                  <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
                 </div>
-                <div class="form-group" style="padding-left: 30px;" id="filePath">
-                </div>
-              </div>
+              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
+
+      </section>
     </div>
 
     <!-- Add the sidebar's background. This div must be placed
@@ -758,10 +560,11 @@
       language: 'zh-TW'
     })
 
-    $('.time').daterangepicker({
+    $('.class_popout').daterangepicker({
       timePicker: true,
       timePickerIncrement: 5,
       timePicker24Hour: true,
+
       startDate: moment().startOf('hour'),
       endDate: moment().startOf('hour').add(50, 'minute'),
       locale: {
@@ -778,6 +581,9 @@
       },
       language: 'zh-TW'
     })
+
+    //Money Euro
+    $('[data-mask]').inputmask()
 
     $(document).ready(function(){
       
@@ -814,18 +620,6 @@
           i++;
         },100);
       })
-
-      $('input[type=radio][name=sign_btn]').change(function(){
-        if($(this).val()==1){
-          $('#single_info').show();
-          $('#frequency_info_1').hide();
-          $('#frequency_info_2').hide();
-        }else{
-          $('#single_info').hide();
-          $('#frequency_info_1').show();
-          $('#frequency_info_2').show();
-        }
-      })
     })
 
     function myTimer(ii){
@@ -836,25 +630,63 @@
     function copybtn(myObj){
       var thisTab = myObj.parent().parent().parent()
       var thisTD = thisTab.find('td');
-      var newHtml = "<tr><td class='data_num'>1</td>";
+      var newHtml = "<tr><td class='data_num'></td>";
       for (var i = 1; i < thisTD.length; i++) {
         newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
       }
       newHtml = newHtml+"</tr>"
-      // $('.data_top').after(newHtml)
-      // var tr_length = $('.table tr').length;
-      // for (var i = 2; i < tr_length; i++) {
-      //   var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
-      //   if(TrNum==9){
-      //     $('.table tr:eq('+i+')').remove()
-      //   }else{
-      //     var NewNum = parseInt(TrNum)+1;
-      //     $('.table tr:eq('+i+') td:eq(0)').html(NewNum)
-      //   }
-      // }
-      // var total_num = $('.total_num').html();
-      // total_num = parseInt(total_num)+1;
-      // $('.total_num').html(total_num);
+      $('#copy_html').val(newHtml);
+    }
+
+    function save_copy(){
+      if(!confirm("確定要進行班別複製嗎?")) { return false; }
+      var nowhtml = $('#copy_html').val();
+      var HtmlArray = new Array();
+      HtmlArray = nowhtml.split("<td>");
+      var newHtml = '';
+      for (var i = 0; i < HtmlArray.length; i++) {
+        if(i==0){
+          newHtml = HtmlArray[i];
+        }else{
+          if(i==1){
+            var k = Math.floor(Math.random() * 1000000);
+            var ChangeDataNum = HtmlArray[i].substr(0,5) + k;
+            HtmlArray[i] = ChangeDataNum + "</td>";
+          }
+
+          if(i==5){
+            var SpliTimeArray = new Array();
+            SpliTimeArray = $('#class_start').val().split(" ");
+            SpliTime = SpliTimeArray[0] + " ~ " + SpliTimeArray[3]
+            HtmlArray[i] = SpliTime + "</td>";
+          }
+
+          if(i==6){
+            HtmlArray[i] = '<span class="label label-default fa fa-exclamation"> 未發佈</span></td>';
+          }
+
+          newHtml += "<td>"+ HtmlArray[i];
+        }        
+      }
+      $('.data_top').after(newHtml)
+
+
+      var tr_length = $('.table tr').length;
+      for (var i = 2; i < tr_length; i++) {
+        var TrNum = $('.table tr:eq('+i+') td:eq(0)').text();
+        if(TrNum==9){
+          $('.table tr:eq('+i+')').remove()
+        }else{
+          var NewNum = parseInt(TrNum)+1;
+          $('.table tr:eq('+i+') td:eq(0)').html(NewNum)
+        }
+      }
+      var total_num = $('.total_num').html();
+      total_num = parseInt(total_num)+1;
+      $('.total_num').html(total_num);
+
+
+      $('#copy_html').val('');
     }
 
   </script>

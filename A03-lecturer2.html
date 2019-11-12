@@ -39,6 +39,16 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <style type="text/css">
+    .content {min-height: 0px; padding:15px 0px 0px 0px;}
+    .box-default {margin-bottom:0px;}
+    @media (max-width: 1360px) {
+      .input-group .form-control{
+        float: none;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -90,7 +100,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <!-- <li class="header">MAIN NAVIGATION</li> -->
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-dashboard"></i>
               <span>權限相關管理</span>
@@ -101,10 +111,10 @@
             <ul class="treeview-menu">
               <li><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
               <li><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
-              <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
+              <li class="active"><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span>課程相關管理</span>
@@ -115,7 +125,7 @@
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
               <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
-              <li class="active"><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
+              <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
               <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
@@ -210,155 +220,93 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>性質審查管理</h1>
+        <h1>外部講師編輯</h1>
       </section>
+      <form>
+        <!-- Main content -->
+        <section class="content">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">基本設定</h3>
 
-      <!-- Main content -->
-      <section class="content">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="B03-kind1.html" class="tab_text_color">待審查課程</a></li>
-          <li><a href="B03-kind3.html" class="tab_text_color">院外課程審查</a></li>
-          <li><a href="B03-kind2.html" class="tab_text_color">審查紀錄</a></li>
-        </ul>
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <div class="box-tools pull-right">
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-primary fa fa-pencil" title="編輯" onclick="open_disabled();">編輯</button>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
             </div>
-          </div>
-          <div class="box-body">
-            <form role="form">
+            <!-- /.box-header -->
+            <div class="box-body">
               <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>課程代碼 OR 課程名稱</label>
-                    <input type="text" class="form-control" placeholder="請輸入課程系統編號、課程名稱">
+                <div class="col-sm-2">
+                  <div class="form-group" style="text-align: center;display: table;height: 150px">
+                    <label>照片</label>
+                    <img class="mb-2 mx-0 profile-user-img img-responsive img-circle" id="imgFileUpload" src="dist/img/man-user.svg" style="margin:auto;" alt="User profile picture" title="Select File" >
+                    <span id="spnFilePath"></span>
+                    <input type="file" id="FileUpload1" style="display: none" />
                   </div>
                 </div>
-                <div class="col-md-8">
-                  <label>課程起訖日</label>
+                <div class="col-sm-10">
                   <div class="row">
-                    <div class="pseudo_dash col-md-6">
+                    <div class="col-sm-6">
                       <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input class="date form-control pull-right" type="text">
-                        </div>
+                        <label>狀態</label>
+                        <select class="form-control">
+                          <option selected value="啟用">啟用</option>
+                          <option value="停用">停用</option>
+                        </select>
+                        <small class="help-block"></small>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group has-error">
+                        <label>教師姓名</label>
+                        <input type="text" class="form-control" placeholder="">
+                        <small class="help-block">Warning Text</small>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
                       <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input class="date form-control pull-right" type="text">
-                        </div>
+                        <label>Email</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>身分證字號</label>
+                        <input type="text" class="form-control" placeholder="">
+                        <small class="help-block"></small>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>聯絡電話</label>
+                        <input type="text" class="form-control" data-inputmask='"mask": "9999-999-999"' data-mask>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>學經歷簡介</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="box box-primary">
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- table contect list -->
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-          </div>
-          <div class="box-body">
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-              <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th style="width: 10px"></th>
-                        <th>課程代碼</th>
-                        <th>課程名稱</th>
-                        <th>課程起訖時間</th>
-                        <th>課程時數</th>
-                        <th>審查性質</th>
-                        <th>送審時間</th>
-                        <th>其他功能</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>8619</td>
-                        <td><a class="class_link" href="B02-lesson2.html">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</a></td>
-                        <td><time>2020-01-29（三）08:00~2020-01-29（三）09:00</time></td>
-                        <td>2</td>
-                        <td>跨領域團隊合作照護課程</td>
-                        <td><time>2019-08-27（二） 11:46</time></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="submit" class="btn btn-success">通過</button>
-                            <button type="submit" class="btn btn-danger failed_btn" data-toggle="modal" data-target="#failed_info" data-keyboard="true">不通過</button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                    </ul>
-                  </div>
-                </div>
+                <button type="submit" class="btn btn-primary pull-right">資料儲存</button>
               </div>
             </div>
           </div>
-        </div>
-        <div class="modal fade" id="failed_info">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">審查備註</h4>
-              </div>
-              <form class="form-horizontal">
-                <div class="modal-body">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">原因</label>
-                      <div class="col-sm-10">
-                        <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <input type="hidden" id="copy_html">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /.content -->
+        </section>
+      </form>
     </div>
     <!-- /.content-wrapper -->
 
@@ -366,7 +314,6 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-
   <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
@@ -395,14 +342,50 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
-  <script>
-  
-    $('#date, .date').datepicker({
+  <script type="text/javascript">
+    //Date picker
+    $('#birthdate, #date, .date').datepicker({
       format: "yyyy-mm-dd",
       autoclose: true,
       language: 'zh-TW'
     })
 
+
+    $(document).ready(function(){
+
+      $('.select2').select2()
+
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $("textarea").prop("disabled",true);
+
+      var fileupload = $("#FileUpload1");
+      var filePath = $("#spnFilePath");
+      var image = $("#imgFileUpload");
+      image.click(function () {
+          fileupload.click();
+      });
+      fileupload.change(function () {
+          var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
+          filePath.html("<b>上傳檔案: </b>" + fileName);
+      });
+
+      $(".person_system_btn").on('click',function(){
+        $(".overlay").show();
+        setTimeout(function(){
+          $(".overlay").hide();
+        },3000);
+      });
+    });
+
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+      $(".person_system_info input").prop("disabled",true);
+      $(".person_system_info select").prop("disabled",true);
+      $("textarea").prop("disabled",false);
+    }
+    
   </script>
 </body>
 
