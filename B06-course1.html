@@ -239,7 +239,7 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B01-class2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='B06-course2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
@@ -300,6 +300,7 @@
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B06-course2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -317,6 +318,7 @@
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B06-course2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -334,6 +336,7 @@
                         <td>
                           <div class="margin_y_all_child">
                             <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B06-course2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-copy" title="複製" data-toggle="modal" data-target="#modal-class" onclick="copybtn($(this))"></button>
                           </div>
                         </td>
                         <td>
@@ -545,6 +548,17 @@
     function myTimer(ii){
       $("div[id='percent']").text(ii+"%"); // 進度條百分比文字
       $("div[id='bar']").width(ii+"%");    // 進度條顏色
+    }
+
+    function copybtn(myObj){
+      var thisTab = myObj.parent().parent().parent()
+      var thisTD = thisTab.find('td');
+      var newHtml = "<tr><td class='data_num'></td>";
+      for (var i = 1; i < thisTD.length; i++) {
+        newHtml = newHtml + "<td>" + thisTD[i].innerHTML + "</td>"
+      }
+      newHtml = newHtml+"</tr>"
+      $('#copy_html').val(newHtml);
     }
 
     function save_copy(){
