@@ -392,8 +392,7 @@
                 <div class="modal-footer">
                   <input type="hidden" id="copy_html">
                   <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製班別與課程</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="save_copy();">複製</button>
                 </div>
               </form>
             </div>
@@ -571,20 +570,8 @@
         if(i==0){
           newHtml = HtmlArray[i];
         }else{
-          if(i==1){
-            var k = Math.floor(Math.random() * 1000000);
-            var ChangeDataNum = HtmlArray[i].substr(0,5) + k;
-            HtmlArray[i] = ChangeDataNum + "</td>";
-          }
 
-          if(i==5){
-            var SpliTimeArray = new Array();
-            SpliTimeArray = $('#class_start').val().split(" ");
-            SpliTime = SpliTimeArray[0] + " ~ " + SpliTimeArray[3]
-            HtmlArray[i] = SpliTime + "</td>";
-          }
-
-          if(i==6){
+          if(i==4){
             HtmlArray[i] = '<span class="label label-default fa fa-exclamation"> 未發佈</span></td>';
           }
 
