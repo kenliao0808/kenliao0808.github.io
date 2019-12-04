@@ -38,6 +38,29 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+  <style>
+    /* 進度條的css */
+    .progress {
+      position:relative; 
+      width:80%; 
+      border: 1px solid #ddd; 
+      padding: 1px; 
+      border-radius: 3px; 
+    }
+    .bar { 
+      background-color: #7cc7ee; 
+      width:0%; 
+      height:20px; 
+      border-radius: 3px; 
+    }
+    .percent { 
+      position:absolute; 
+      display:inline-block; 
+      top:-3px; 
+      left:48%; 
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -141,7 +164,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-file-text"></i>
               <span>問卷/評量管理</span>
@@ -150,7 +173,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
+              <li class="active"><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
             </ul>
@@ -167,7 +190,7 @@
               <span>公佈欄管理</span>
             </a>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-gear"></i>
               <span>系統參數設定</span>
@@ -176,7 +199,7 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="C00-compulsory1.html"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
+              <li><a href="C00-compulsory1.html"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
               <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>職類管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
@@ -209,7 +232,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>必修時數編輯</h1>
+        <h1>問卷編輯</h1>
       </section>
 
       <!-- Main content -->
@@ -218,153 +241,143 @@
           <div class="box-header with-border">
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
-            <h4 id="caption3" class="bg-gray-300 p-3 my-3">課程性質</h4>
-            <div class="row" id="host_list">
+            <h4 id="caption1" class="bg-gray-300 p-3 my-3">問卷設定</h4>
+            <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <select class="form-control select_option" style="width: 100%;">
+                  <label><span class="mr-1 text-danger">*</span>狀態</label>
+                  <select class="form-control">
                     <option selected value="請選擇">- 請選擇 -</option>
-                    <option value="Alabama">Alabama</option>
-                    <option value="Alaska">Alaska</option>
-                    <option value="California">California</option>
-                    <option value="Delaware">Delaware</option>
-                    <option value="Tennessee">Tennessee</option>
+                    <option value="啟用">啟用</option>
+                    <option value="未啟用">未啟用</option>
                   </select>
                   <small class="help-block"></small>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <div class="form-inline">
-                    總共： 
-                    <label><input type="number" class="form-control" style="width: 150px" name="" min="0" max="999" placeholder="時數"></label> (小時)
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <div class="form-inline">
-                    實體：
-                    <label><input type="number" class="form-control" style="width: 150px" name="" min="0" max="999" placeholder="實體時數"></label> (小時)
-                  </div>
+                  <label><span class="mr-1 text-danger">*</span>問卷名稱</label>
+                  <input type="text" class="form-control" placeholder="">
                   <small class="help-block"></small>
                 </div>
               </div>
             </div>
-            <h4 id="caption3" class="bg-gray-300 p-3 my-3">課程子性質
-              <a class="text-primary text-3xl px-4 leading-none" href="javascript:;" onclick="add_class_kind('sub_nature');">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>開始時間</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                    <input type="text" class="time form-control pull-right">
+                  </div>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>結束時間</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                    <input type="text" class="time form-control pull-right">
+                  </div>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>說明</label>
+                  <textarea class="form-control" rows="3" placeholder=""></textarea>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <h4 id="caption2" class="bg-gray-300 p-3 my-3">問卷表單
+              <a class="text-primary text-3xl px-4 leading-none" href="#" title="新增題目" data-toggle="modal" data-target="#choose_class" data-keyboard="true">
                 <i class="fa fa-plus"></i>
               </a>
             </h4>
-            <div class="row" id="sub_nature">
-            </div>
-            <h4 id="caption3" class="bg-gray-300 p-3 my-3">基本設定</h4>
             <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label><span class="mr-1 text-danger">*</span>適用年度</label>
-                  <div class="form-group">
-                    <input type="text" class="form-control pull-right">
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
               <div class="col-md-8">
                 <div class="form-group">
-                  <label>有效時限</label>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input type="text" class="time form-control pull-right" placeholder="起日">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input type="text" class="time form-control pull-right" placeholder="迄日">
-                      </div>
-                    </div>
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label><span class="mr-1 text-danger">*</span>適用單位</label>
-                  <div class="form-group">
-                    <select class="form-control select_option" multiple="multiple" style="width: 100%;">
-                      <option value="請選擇">- 請選擇 -</option>
-                      <option value="Alabama">Alabama</option>
-                      <option value="Alaska">Alaska</option>
-                      <option value="California">California</option>
-                      <option value="Delaware">Delaware</option>
-                      <option value="Tennessee">Tennessee</option>
-                    </select>
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label><span class="mr-1 text-danger">*</span>適用職類</label>
-                  <div class="form-group">
-                    <select class="form-control select_option" multiple="multiple" style="width: 100%;">
-                      <option value="請選擇">- 請選擇 -</option>
-                      <option value="Alabama">Alabama</option>
-                      <option value="Alaska">Alaska</option>
-                      <option value="California">California</option>
-                      <option value="Delaware">Delaware</option>
-                      <option value="Tennessee">Tennessee</option>
-                    </select>
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label><span class="mr-1 text-danger">*</span>適用臨床教師</label>
-                  <div class="form-group">
-                    <select class="form-control select_option" style="width: 100%;">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="新進臨床教師">新進臨床教師</option>
-                      <option value="臨床教師">臨床教師</option>
-                    </select>
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label>資歷</label>
-                  <div class="form-inline"> 
-                    <label><input type="number" class="form-control" style="width: 150px" name="" min="0" max="999" placeholder="起"></label> 月 ~ 
-                    <label><input type="number" class="form-control" style="width: 150px" name="" min="0" max="999" placeholder="迄"></label> 月
-                  </div>
-                  <small class="help-block"></small>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label><span class="mr-1 text-danger">*</span>公務員</label>
+                  <label>1.單選題 
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <input type="radio" name="teaching" id="phy_class" checked>
+                      <input type="radio" name="sign_btn" id="copy_rad" value="1" checked>
                     </span>
                     <label class="form-control">是</label>
                     <span class="input-group-addon">
-                      <input type="radio" name="teaching" id="phy_class" checked>
+                      <input type="radio" name="sign_btn" id="copy_rad" value="2">
                     </span>
                     <label class="form-control">否</label>
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="3">
+                    </span>
+                    <label class="form-control">?</label>
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="4">
+                    </span>
+                    <label class="form-control">其他</label>
                   </div>
-                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>2.多選題 
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="sign_btn" id="copy_rad" value="1" checked>
+                    </span>
+                    <label class="form-control">是</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="sign_btn" id="copy_rad" value="2">
+                    </span>
+                    <label class="form-control">否</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="sign_btn" id="copy_rad" value="3">
+                    </span>
+                    <label class="form-control">?</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="sign_btn" id="copy_rad" value="4">
+                    </span>
+                    <label class="form-control">其他</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>3.填充題 
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <input type="text" class="form-control" name="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>4.問答題 
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <textarea class="form-control" rows="3" placeholder=""></textarea>
                 </div>
               </div>
             </div>
@@ -375,6 +388,125 @@
               <button type="button" class="btn btn-primary submit_info">儲存資料</button>
             </div>
           </div>
+        </div>
+
+        <div class="modal fade" id="choose_class">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                  <h4 class="modal-title">新增題目</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>必填</label>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="radio" name="sign_btn" id="copy_rad" value="1" checked>
+                        </span>
+                        <label class="form-control">是</label>
+                        <span class="input-group-addon">
+                          <input type="radio" name="sign_btn" id="copy_rad" value="2">
+                        </span>
+                        <label class="form-control">否</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>題型</label>
+                    <div class="col-sm-4">
+                      <select class="form-control question_type" style="width: 100%;">
+                        <option selected value="">- 請選擇 -</option>
+                        <option value="1">單選題</option>
+                        <option value="2">多選題</option>
+                        <option value="3">填充題(單行)</option>
+                        <option value="4">問答題(多行)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>題目</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" placeholder="">
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">題目順序</label>
+                    <div class="col-sm-4">
+                      <input type="number" class="form-control inline-block" min="1" placeholder="請填寫數字">
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">參考圖片</label>
+                    <div class="col-sm-8">
+                      <button type="button" class="btn btn-info" id="btnFileUpload">瀏覽檔案</button>
+                      <input type="file" name="FileUpload[]" id="FileUpload1" multiple style="display: none" />
+                      <button type="button" class="btn btn-success" id="UploadToData">上傳檔案</button>
+                      <button type="button" class="btn btn-warning" id="FileClear">清除檔案</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-8" id="filePath">
+                      
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">圖片說明</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" placeholder="">
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                  <div class="form-group option_list">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>選項</label>
+                    <div class="col-sm-8">
+                      <table class="table table-hover">
+                        <tbody class="option_list_add">
+                          <tr class="bg-gray-300">
+                            <th style="width: 45%;">選項名稱<span class="mr-1 text-danger">*</span></th>
+                            <th style="width: 20%;">順序</th>
+                            <th style="width: 25%;">是否為其他</th>
+                            <th style="width: 10%;"></th>
+                          </tr>
+                          <tr>
+                            <td><input type="text" id="" class="form-control"></td>
+                            <td><input type="number" class="form-control inline-block" min="1"></td>
+                            <td>
+                              <select class="form-control" style="width: 100%;">
+                                <option value="1">是</option>
+                                <option selected value="2">否</option>
+                              </select>
+                            </td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <small class="help-block"></small>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary pull-rightol add_class_btn" title="新增選項" onclick="option_add();"><i class="fa fa-plus-circle"></i> 新增選項</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">備註</label>
+                    <div class="col-sm-8">
+                      <textarea class="form-control" rows="3" placeholder=""></textarea>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary submit_class">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
         </div>
         <!-- /.box -->
       </section>
@@ -423,35 +555,74 @@
     })
 
     $(document).ready(function(){
-      
-      $(".select_option").select2();
 
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
       $("textarea").prop("disabled",true);
 
-      $('.submit_info').click(function(){
-        window.location.href = 'C00-compulsory1.html';
+      var flieUpload = $("#FileUpload1");
+      var filePath = $("#filePath");
+      var button = $("#btnFileUpload");
+      button.click(function(){
+        flieUpload.click();
+      });
+      flieUpload.change(function(){
+
+        var totalFile = $('input[type=file]').get(0).files;
+        var fileHtml = '';
+        for (var i = 0; i < totalFile.length; i++) {
+          fileHtml +=  "<div>" + totalFile[i]['name'] + "<div class='progress' id=\"progress-div\"><div class='bar' id='bar'></div><div class='percent' id='percent'>0%</div></div></div>";
+        }
+        filePath.html(fileHtml);
       })
 
+      $("#FileClear").click(function(){
+        flieUpload.val('');
+        filePath.html("");
+      })
+
+      $("#UploadToData").click(function(){
+        var i = 1;
+        var myVar = setInterval(function(){
+          myTimer(i)
+          if(i >= 100){
+            clearInterval(myVar);
+          }
+          i++;
+        },100);
+      })
+
+      $('.question_type').change(function(){
+        var qt_num = $(this).val()
+        if(qt_num > 2){
+          $('.option_list').hide();
+        }else{
+          $('.option_list').show();
+        }
+      })
+
+      $('.submit_class').click(function(){
+
+      })
     })
+
+    function myTimer(ii){
+      $("div[id='percent']").text(ii+"%"); // 進度條百分比文字
+      $("div[id='bar']").width(ii+"%");    // 進度條顏色
+    }
 
     function open_disabled(){
       $("input").prop("disabled",false);
       $("select").prop("disabled",false);
       $("textarea").prop("disabled",false);
-      $(".class_front_num").prop("disabled",true);
-      $(".submit_info").show();
     }
 
-    function add_class_kind(ListName){
-        var HtmlList = $('#'+ListName);
-        $('#'+ListName).after('<div class="row" id="'+ListName+'"><div class="col-md-1 close_btn_div"><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="list_close($(this));"><i class="fa fa-close"></i></a></div><div class="col-md-6"><div class="form-group"><select class="form-control select_option" style="width: 100%;"><option selected value="請選擇">- 請選擇 -</option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="California">California</option><option value="Delaware">Delaware</option><option value="Tennessee">Tennessee</option></select><small class="help-block"></small></div></div><div class="col-md-5"><div class="form-group"><div class="form-inline"><label><input type="number" class="form-control" style="width: 150px" name="" min="0" max="999" placeholder="時數"></label> (小時)</div><small class="help-block"></small></div></div></div>');
-        $('.select_option').select2()
+    function option_add(){
+      $('.option_list_add').append('<tr><td><input type="text" class="form-control"></td><td><input type="text" class="form-control"></td><td><select class="form-control" style="width: 100%;"><option value="1">是</option><option selected value="2">否</option></select></td><td><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="option_close($(this));"><i class="fa fa-close"></i></a></td></tr>');
     }
 
-    function list_close(myObj){
-      myObj.parent().parent().remove()
+    function option_close(obj){
+      obj.closest('tr').remove();
     }
 
   </script>
