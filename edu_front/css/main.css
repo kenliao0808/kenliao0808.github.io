@@ -56,6 +56,7 @@ a:active {color: darkgrey;}
 .line_height1_lInherit {line-height: 1rem !important;}
 .line_height1 {line-height: 1rem !important;}
 .line_height1_5 {line-height: 1.5rem !important;}
+.line_height_btn {line-height: 34px;}
 
 /* Text align */
 [class*=text_center] {text-align: center;}
@@ -7213,6 +7214,12 @@ textarea {min-height: 100px;}
     .block_LinlineBlock {display: inline-block;}
     .line_height1_lInherit {line-height: inherit !important;}
     .widthAutoL {width: auto !important;}
+    .truncateL {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .truncateL>* {display: inline;}
 }
 
 
