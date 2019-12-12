@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
 
   <link rel="stylesheet" href="dist/css/style.css">
-  
+
   <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,11 +38,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <style type="text/css">
-    .content {min-height: 0px; padding:15px 0px 0px 0px;}
-    .box-default {margin-bottom:0px;}
-  </style>
 
 </head>
 
@@ -95,7 +90,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <!-- <li class="header">MAIN NAVIGATION</li> -->
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-dashboard"></i>
               <span>權限相關管理</span>
@@ -105,7 +100,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
-              <li class="active"><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
+              <li><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
@@ -119,7 +114,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
@@ -147,7 +142,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-file-text"></i>
               <span>問卷/評量管理</span>
@@ -157,7 +152,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
-              <li><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
+              <li class="active"><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
             </ul>
           </li>
@@ -215,7 +210,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>黑名單新增/編輯</h1>
+        <h1>評量設定</h1>
       </section>
 
       <!-- Main content -->
@@ -223,117 +218,135 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary fa fa-pencil" title="編輯" onclick="open_disabled();">編輯</button>
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='Q02-evaluation2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
-          <!-- /.box-header -->
-          <!-- form start -->
-          <form class="form-horizontal">
-            <div class="box-body">
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">使用者</label>
-
-                <div class="col-sm-6">
-                  <div class="row">
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="input_User">
-                    </div>
-                    <div class="col-sm-2">
-                      <button type="button" class="btn btn-primary pull-right fa fa-search search_edit"> 查詢</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">限制使用單位</label>
-
-                <div class="col-sm-5">
-                  <select class="form-control select_option" style="width: 100%;">
-                    <option selected value="請選擇">- 請選擇 -</option>
-                    <option value="醫學研究部">醫學研究部</option>
-                    <option value="傳統醫學部">傳統醫學部</option>
-                    <option value="家庭醫學部">家庭醫學部</option>
-                    <option value="教學部">教學部</option>
-                    <option value="護理部">護理部</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">限制時間開始</label>
-
-                <div class="col-sm-5">
-                  <input type="text" class="date form-control" id="input_TimeStart" autocomplete="off">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">限制時間結束</label>
-
-                <div class="col-sm-5">
-                  <input type="text" class="date form-control" id="input_TimeEnd" autocomplete="off">
-                </div>
-              </div>
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-              <button type="submit" class="btn btn-primary pull-right">資料儲存</button>
-            </div>
-            <!-- /.box-footer -->
-          </form>
-        </div>
-
-        <div class="modal fade" id="search_user">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <form class="form-horizontal" role="form">
-                <div class="modal-header">
-                  <button type="button" class="close edit_show" style="display: none;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">查詢使用者</h4>
-                </div>
-                <div class="modal-body">
+          <div class="box-body">
+            <div class="my-3 tab-content">
+              <div class="row">
+                <div class="col-md-3">
                   <div class="form-group">
-                    <label class="col-sm-1 control-label"></label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" name="user" id="search_info">
-                          <small class="help-block">(請輸入燈號 / 姓名 / 身分證字號查詢)</small>
-                        </div>
-                        <div class="col-sm-1">
-                          <button type="button" class="btn btn-primary pull-rightol search_user_btn" title="查詢"><i class="fa fa-search"></i> 查詢</button>
-                        </div>
+                    <label>狀態</label>
+                    <select class="form-control">
+                      <option selected value="請選擇">- 請選擇 -</option>
+                      <option value="啟用">啟用</option>
+                      <option value="未啟用">未啟用</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <label>評量名稱</label>
+                    <div class="row margin_y_child">
+                      <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="">
                       </div>
-                      <div class="form-group search_list" style="display: none;">
-                        <table class="table table-bordered text-center">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >wess@gmail.com 大名 院外單位</button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >784540444 陳大天 護理科</button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >sdfsf@gmail.com 大名 院外單位</button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >01564894123 小名 醫護科</button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
-            <!-- /.modal-content -->
           </div>
-          <!-- /.modal-dialog -->
+        </div>
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+            <div class="pull-right margin_y_all_child">
+            </div>
+          </div>
+          <div class="box-body">
+            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <!-- /.box-body -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th style="width: 10px"></th>
+                        <th>評量名稱</th>
+                        <th>及格分數</th>
+                        <th>可補考次數</th>
+                        <th>答案是否顯示</th>
+                        <th>開始時間</th>
+                        <th>結束時間</th>
+                        <th>狀態</th>
+                        <th>動作</th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>傳染病認知</td>
+                        <td>70</td>
+                        <td>3</td>
+                        <td>不顯示</td>
+                        <td><time>2019-07-30</time></td>
+                        <td><time>2019-08-30</time></td>
+                        <td><span class="label label-success fa fa-check"> 啟 用</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q02-evaluation2.html'"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>職安評量</td>
+                        <td>60</td>
+                        <td>2</td>
+                        <td>顯示</td>
+                        <td><time>2019-07-30</time></td>
+                        <td><time>2019-08-30</time></td>
+                        <td><span class="label label-default fa fa-exclamation"> 未啟用</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q02-evaluation2.html'"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>流感評量</td>
+                        <td>70</td>
+                        <td>3</td>
+                        <td>達到及格分數後顯示</td>
+                        <td><time>2019-07-30</time></td>
+                        <td><time>2019-08-30</time></td>
+                        <td><span class="label label-default fa fa-exclamation"> 未啟用</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q02-evaluation2.html'"></button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+      <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
@@ -369,58 +382,6 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
-  <script type="text/javascript">
-    //Date picker
-    $('#date, .date').datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      language: 'zh-TW'
-    })
-
-    $(document).ready(function(){
-
-      $(".select_option").select2();
-      
-      $("input").prop("disabled",true);
-      $("select").prop("disabled",true);
-      $("#search_info").prop("disabled",false);
-
-      $('.skin-blue').addClass('modal-open')
-      $('#search_user').addClass('in');
-      $('#search_user').show();
-
-      $('.search_user_btn').click(function(){
-        $('.search_list').show();
-      })
-
-      $('.search_edit').click(function(){
-        $('.skin-blue').addClass('modal-open')
-        $('#search_user').addClass('in');
-        $('#search_user').show();
-        $('.edit_show').show();
-      })
-
-      $('.edit_show').click(function(){
-        $('.skin-blue').removeClass('modal-open')
-        $('#search_user').removeClass('in');
-        $('#search_user').hide();
-      })
-    })
-
-    function sel_name(obj){
-      $('.skin-blue').removeClass('modal-open')
-      $('#search_user').removeClass('in');
-      $('#search_user').hide();
-
-      $('#input_User').val(obj.html());
-    }
-
-    function open_disabled(){
-      $("input").prop("disabled",false);
-      $("select").prop("disabled",false);
-    }
-
-  </script>
 </body>
 
 </html>
