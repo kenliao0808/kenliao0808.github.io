@@ -20,8 +20,10 @@
   <link rel="stylesheet" href="css/components/slider.min.css">
   <link rel="stylesheet" href="css/components/slidenav.min.css">
   <link rel="stylesheet" href="css/components/slideshow.min.css">
-  <link rel="stylesheet" href="css/fontawesome-5.2.0-all.min.css">
-  <link rel="stylesheet" href="css/fontawesome-5.2.0-svg-with-js.min.css">
+  <link rel="stylesheet" href="css/components/tooltip.almost-flat.min.css">
+  <link rel="stylesheet" href="css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="css/fontawesome-svg-with-js.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.min.css">
   <link rel="stylesheet" href="css/select2.min.css">
   <link rel="stylesheet" href="css/animate-3.6.css">
   <link rel="stylesheet" href="css/main.css">
@@ -31,45 +33,30 @@
 
 <body id="top" class="min_height100vh bg_grey p-0">
   <div class="gotoTop uk-visible-small" data-uk-sticky="{top:-250, animation: 'uk-animation-slide-top'}"><a href="#top" title="Go to top"><i class="fas fa-chevron-up fa-fw"></i></a></div>
-  <header id="header" class="bg_primary">
-    <!-- <header id="header" class="bg_white" data-uk-sticky="{top:-50, animation: 'uk-animation-slide-bottom', media: '(max-width: 959px)'}"> -->
-    <div class="p-0 uk-container uk-container-center">
-      <div class="uk-grid uk-grid-collapse" data-uk-grid-margin>
-        <div class="bg_primary p-2 uk-width-large-1-4">
-          <!-- <div class="bg_primary opacity90 uk-overlay-panel"></div> -->
-          <div class="h-100 uk-grid uk-grid-small" data-uk-grid-margin>
-            <div class="uk-width-2-3 uk-width-medium-2-6 uk-width-large-1-1 uk-vertical-align">
-              <div class="text-lg-center uk-width-1-1 uk-vertical-align-middle">
-                <h1 class="uk-margin-remove"><a class="logo pr-2 uk-width-1-1" href="dashboard.html"><img class="mw-100" alt="logo" title="logo" src="img/logo.png"></a></h1>
-              </div>
-            </div>
-            <div class="uk-width-medium-3-6 uk-vertical-align uk-visible-medium">
-              <div class="uk-vertical-align-middle">
-                <h2 class="fontSizeH1 color_white font-weight-bold m-0">全院開課系統</h2>
-              </div>
-            </div>
-            <div class="uk-width-1-3 uk-width-medium-1-6 uk-vertical-align uk-text-right uk-hidden-large">
-              <div class="uk-vertical-align-middle"><a href="#" aria-label="menu" aria-labelledby="#offcanvas" data-uk-offcanvas="{target:'#offcanvas', mode:'slide'}"><i class="uk-icon-bars uk-icon-medium color_white"></i></a></div>
-            </div>
+  <header id="header" class="bg_primary" data-uk-sticky="{top:-50, animation: 'uk-animation-slide-bottom'}">
+    <div class="p-2 px-lg-0 uk-container uk-container-center">
+      <div class="h-100 uk-grid uk-grid-small" data-uk-grid-margin>
+        <div class="uk-width-2-6 uk-width-large-1-4 uk-vertical-align">
+          <div class="text-lg-center uk-width-1-1 uk-vertical-align-middle">
+            <h1 class="uk-margin-remove"><a class="logo pr-2 uk-width-1-1" href="dashboard.html"><img class="mw-100" alt="logo" title="logo" src="img/logo.png"></a></h1>
           </div>
         </div>
-        <div class="pl-md-3 py-md-2 uk-width-large-3-4 uk-hidden-medium">
-          <div class="h-100 uk-grid uk-grid-small" data-uk-grid-margin>
-            <div class="uk-width-large-1-2 uk-vertical-align">
-              <div class="w-100 uk-vertical-align-middle">
-                <h2 class="fontSizeH1 color_white font-weight-bold m-0 text-center text-md-left py-1">全院開課系統</h2>
-              </div>
-            </div>
-            <div class="uk-width-large-1-2">
-              <nav>
-                <ul class="topList list_horizontal list_vline uk-text-right uk-visible-large">
-                  <li><a class="hover_color_secondary color_white" href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
-                  <li><a class="hover_color_secondary color_white" href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
-                  <li><a class="hover_color_secondary color_white" href="#logout" data-uk-modal="{center:true}">登出</a></li>
-                </ul>
-              </nav>
-            </div>
+        <div class="uk-width-3-6 uk-width-large-1-4 uk-vertical-align">
+          <div class="uk-vertical-align-middle">
+            <h2 class="fontSizeH1 color_white font-weight-bold m-0">全院開課系統</h2>
           </div>
+        </div>
+        <div class="uk-width-3-6 uk-width-large-2-4 uk-vertical-align uk-visible-large">
+          <nav class="w-100 uk-vertical-align-middle">
+            <ul class="topList list_horizontal list_vline uk-text-right">
+              <li><a class="hover_color_secondary color_white" href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
+              <li><a class="hover_color_secondary color_white" href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
+              <li><a class="hover_color_secondary color_white" href="account.html">王大明<img class="ml-2 uk-border-circle" width="30" src="img/man-user.svg" alt="個人照片"></a><a class="hover_color_secondary color_white" href="#logout" data-uk-modal="{center:true}">登出</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="uk-width-1-6 uk-vertical-align uk-text-right uk-hidden-large">
+          <div class="uk-vertical-align-middle"><a href="#" aria-label="menu" aria-labelledby="#offcanvas" data-uk-offcanvas="{target:'#offcanvas', mode:'slide'}"><i class="uk-icon-bars uk-icon-medium color_white"></i></a></div>
         </div>
       </div>
     </div>
@@ -93,9 +80,10 @@
           <li class="uk-nav-divider"></li>
           <li><a href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
           <li><a href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
+          <li><a href="#register" title="註冊" data-uk-modal="{center:true}" hidden>註冊</a></li>
+          <li><a href="account.html">王大明<img class="ml-2 uk-border-circle" width="30" src="img/man-user.svg" alt="個人照片"></a></li>
           <li><a href="#logout" data-uk-modal="{center:true}">登出</a></li>
-          <li><a href="#register" title="註冊" data-uk-modal="{center:true}">註冊</a></li>
-          <li><a href="#">帳號：<span>a123</span></a></li>
+          <!-- <li><a href="#">帳號：<span>a123</span></a></li> -->
         </ul>
       </nav>
     </div>
@@ -151,11 +139,16 @@
       <h3 class="mt-0 mb-2">課程瀏覽</h3>
       <form class="px-0 py-2 uk-form">
         <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-          <div class="uk-width-5-6">
+          <div class="uk-width-small-2-6">
             <input class="uk-width-1-1" type="text" placeholder="請輸入課程名稱">
           </div>
-          <div class="uk-width-1-6">
-            <a class="fontSizeM1_4 btn_primary w-100 h-100 uk-button uk-button-primary" href="#" title="搜尋" aria-label="search" role="button"><i class="h-100 fas fa-search"></i></a>
+          <div class="uk-width-1-2 uk-width-small-1-6"><input class="form_date uk-input" type="text" placeholder="起始日期"></div>
+          <div class="uk-width-1-2 uk-width-small-1-6"><input class="form_date uk-input" type="text" placeholder="結束日期"></div>
+          <div class="uk-width-1-2 uk-width-small-1-6">
+            <a class="btn_primary line_height_btn w-100 uk-button uk-button-primary" href="#" title="搜尋" aria-label="search" role="button"><i class="mr-1 fas fa-search"></i>搜尋</a>
+          </div>
+          <div class="uk-width-1-2 uk-width-small-1-6">
+            <a class="btn_primary line_height_btn w-100 uk-button uk-button-primary" href="#" title="輸出" aria-label="export" role="button"><i class="mr-1 fas fa-file-export"></i>輸出</a>
           </div>
           <div class="widthAutoL uk-width-1-1"><label class="d-block d-md-inline-block">進階篩選：</label></div>
           <div>
@@ -188,15 +181,6 @@
               <option>藥學部</option>
             </select>
           </div>
-          <div>
-            <select class="select2">
-              <option>-日期搜尋-</option>
-              <option>本日課程</option>
-              <option>3日內課程</option>
-              <option>一週內課程</option>
-              <option>一個月的課程</option>
-            </select>
-          </div>
         </div>
       </form>
       <div class="pagination uk-form uk-margin">
@@ -223,47 +207,53 @@
         </div>
       </div>
       <ul class="uk-list uk-list-line">
-        <li class="uk-hidden-small">
+        <li class="p-2 m-0 uk-hidden-small">
           <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-            <div class="uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">課程起訖</small></div>
-            <div class="uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
-            <div class="uk-width-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">課程地點</small></div>
-            <div class="uk-width-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">課程性質</small></div>
+            <div class="uk-width-medium-2-10">
+              <a class="bg_blackOpacity08 remove_underline badge text-secondary" href="#" onclick="toggleAllShow(findChildren(this, '.sort')); return false;" title="點擊排序">課程起訖<i class="sort ml-2 fas fa-sort-alpha-up"></i><i class="sort ml-2 fas fa-sort-alpha-down-alt" hidden></i></a>
+            </div>
+            <div class="uk-width-medium-3-10">
+              <a class="bg_blackOpacity08 remove_underline badge text-secondary" href="#" onclick="toggleAllShow(findChildren(this, '.sort')); return false;" title="點擊排序">課程名稱<i class="sort ml-2 fas fa-sort-alpha-up"></i><i class="sort ml-2 fas fa-sort-alpha-down-alt" hidden></i></a>
+              <!-- <small class="bg_blackOpacity08 badge text-secondary">課程名稱</small> -->
+            </div>
+            <div class="uk-width-1-2 uk-width-medium-3-10"><small class="bg_blackOpacity08 badge text-secondary">課程主要/加認性質</small>
+            </div>
             <div class="uk-width-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
             <div class="uk-width-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">狀態</small></div>
-            <div class="uk-width-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">其它操作</small></div>
           </div>
         </li>
-        <li class="p-2 py-3" data-uk-alert>
-          <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+        <li class="p-2 m-0" data-uk-alert>
+          <div class="uk-grid uk-grid-small" data-uk-grid-margin onmouseover="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;" onmouseout="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;">
             <div class="uk-width-medium-2-10">
-              <!-- <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">課程起訖時間</small> -->
-              <time class="tilde">2019-05-06（一）19:30</time><time class="tilde">2019-05-06（一）21:30</time>
+              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">課程起訖時間</small> -->
+              <time class="tilde" data-uk-tooltip title="2019-05-06（一）19:30～2019-05-06（一）20:30">2019-05-06（一）19:30</time>
             </div>
-            <div class="uk-width-medium-2-10">
-              <!-- <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">標題</small> -->
+            <div class="toggle_truncate truncateL uk-width-medium-3-10">
+              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">標題</small> -->
               <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
             </div>
-            <div class="uk-width-1-2 uk-width-medium-1-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">課程地點</small>
-              <span>醫學科技大樓會議室/孝威館一樓/致四會議室</span>
-            </div>
-            <div class="uk-width-1-2 uk-width-medium-2-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">課程性質</small>
-              <span>實證醫學/感染管制</span>
+            <div class="toggle_truncate truncateL uk-width-1-2 uk-width-medium-3-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">課程性質</small>
+              <span class="d-inline mr-1 mb-1 mb-lg-0">實證醫學/感染管制、行政中心、醫事倫理與法律</span>
+              <small class="mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">審查中</small>
             </div>
             <div class="uk-width-1-2 uk-width-medium-1-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">時數</small>
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">時數</small>
               <span>2</span>
             </div>
-            <div class="uk-width-1-2 uk-width-medium-1-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">狀態</small>
-              <small>不報名</small>
+            <div class="toggle_truncate truncateL uk-width-1-2 uk-width-medium-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">狀態</small>
+              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
+              <small class="mr-2 mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">現場報名</small>
             </div>
-            <div class="uk-width-1-2 uk-width-medium-1-10">
+            <!-- <div class="uk-width-1-2 uk-width-medium-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">狀態</small>
+              <small class="mr-2 mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">現場報名</small>
+              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
+            </div> -->
+            <!-- <div class="uk-width-1-2 uk-width-medium-1-10">
               <button class="btn_secondary mb-2 px-1 uk-button" data-uk-modal="{target: '#remove1', center:true}">取消報名</button>
-              <a class="btn_primary mb-2 px-1 uk-button" href="classdetail.html">檢視課程</a>
-            </div>
+            </div> -->
           </div>
           <div id="remove1" class="uk-modal">
             <div class="uk-modal-dialog">
@@ -278,36 +268,31 @@
             </div>
           </div>
         </li>
-        <li class="p-2 py-3" data-uk-alert>
-          <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+        <li class="p-2 m-0" data-uk-alert>
+          <div class="uk-grid uk-grid-small" data-uk-grid-margin onmouseover="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;" onmouseout="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;">
             <div class="uk-width-medium-2-10">
-              <!-- <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">課程起訖時間</small> -->
-              <time class="tilde">2019-05-06（一）19:30</time><time class="tilde">2019-05-06（一）21:30</time>
+              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">課程起訖時間</small> -->
+              <time class="tilde" data-uk-tooltip title="2019-05-06（一）19:30～2019-05-06（一）20:30">2019-05-06（一）19:30</time>
             </div>
-            <div class="uk-width-medium-2-10">
-              <!-- <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">標題</small> -->
+            <div class="toggle_truncate truncateL uk-width-medium-3-10">
+              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">標題</small> -->
               <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
             </div>
-            <div class="uk-width-1-2 uk-width-medium-1-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">課程地點</small>
-              <span>醫學科技大樓會議室/孝威館一樓/致四會議室</span>
-            </div>
-            <div class="uk-width-1-2 uk-width-medium-2-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">課程性質</small>
-              <span>實證醫學/感染管制</span>
+            <div class="toggle_truncate truncateL uk-width-1-2 uk-width-medium-3-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">課程性質</small>
+              <span class="d-inline mr-1 mb-1 mb-lg-0">實證醫學/感染管制、行政中心、醫事倫理與法律</span>
             </div>
             <div class="uk-width-1-2 uk-width-medium-1-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">時數</small>
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">時數</small>
               <span>2</span>
             </div>
-            <div class="uk-width-1-2 uk-width-medium-1-10">
-              <small class="bg_blackOpacity08 badge text-secondary d-block uk-visible-small">狀態</small>
-              <small>開始報名</small>
+            <div class="toggle_truncate truncateL uk-width-1-2 uk-width-medium-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-visible-small">狀態</small>
+              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
             </div>
-            <div class="uk-width-1-2 uk-width-medium-1-10">
+            <!-- <div class="uk-width-1-2 uk-width-medium-1-10">
               <button class="btn_secondary mb-2 px-1 uk-button" data-uk-modal="{target: '#remove2', center:true}">取消報名</button>
-              <a class="btn_primary mb-2 px-1 uk-button" href="classdetail.html">檢視課程</a>
-            </div>
+            </div> -->
           </div>
           <div id="remove2" class="uk-modal">
             <div class="uk-modal-dialog">
@@ -506,12 +491,23 @@
   <script src="js/components/slideset.min.js "></script>
   <script src="js/components/slideshow.min.js "></script>
   <script src="js/components/slideshow-fx.min.js "></script>
-  <script src="js/fontawesome-5.2.0-all.min.js "></script>
+  <script src="js/components/tooltip.min.js "></script>
+  <script src="js/fontawesome-all.min.js "></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/bootstrap-datepicker.zh-TW.min.js"></script>
   <script src="js/select2.min.js "></script>
   <script src="js/select2.zh-TW.js "></script>
   <script src="js/script.js "></script>
   <script>
-    $('.select2').select2({language: 'zh-TW'});
+    $('.select2').select2({
+      language: 'zh-TW'
+    });
+    //datepicker
+    $('.form_date').datepicker({
+      language: "zh-TW",
+      autoclose: true,
+      todayHighlight: true
+    });
   </script>
 </body>
 
