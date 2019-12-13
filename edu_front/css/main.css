@@ -252,6 +252,7 @@ ol.listDecimalCh {list-style-type: cjk-ideographic;}
 .fullWidth {width: 100%;}
 .minWidth50 {min-width: 50px;}
 .minWidth70 {min-width: 70px;}
+.minWidth80 {min-width: 80px;}
 .minWidth100 {min-width: 100px;}
 .minWidth1000 {min-width: 1000px;}
 .min_height100vh {min-height: 100vh}
@@ -6895,6 +6896,8 @@ ol.listDecimalCh {list-style-type: cjk-ideographic;}
 /* Pseudo */
 .afterVLine:after {content: "│";}
 .comma:not(:last-child):after {content: ","; padding-right: 10px;}
+.commaCH {margin-right: 0 !important;}
+.commaCH:not(:first-child) {margin-left: -3px;}
 .commaCH:not(:last-child):after {content: "、";}
 .comma_dot:not(:last-child):after {content: "·"; margin-left: 5px; margin-right: 10px; -moz-transform: scale(1.5) translate(1px, -1px); -o-transform: scale(1.5) translate(1px, -1px); -webkit-transform: scale(1.5) translate(1px, -1px); display: inline-block; transform: scale(1.5) translate(1px, -1px); display: inline-block;}
 .item_stick:before {content: "▍"; padding-right: 5px;}
