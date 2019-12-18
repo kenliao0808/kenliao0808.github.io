@@ -5,7 +5,7 @@
 .link a:link, .link a:visited, .link a:focus, .uk-breadcrumb a:link, .uk-breadcrumb a:visited, .uk-breadcrumb a:focus, a.color_primary:hover, a.color_primary:hover>*, .color_primary a:hover {color: #619e1e !important;}
 
 .color_secondary, .color_secondary>*, .hover_color_secondary:focus, .hover_color_secondary:hover, ul.hover_color_secondary>li>a:focus, ul.hover_color_secondary>li>a:hover, nav:not(.bg_white).color_secondary>.uk-button-dropdown>a:hover, nav:not(.bg_white).color_secondary>.uk-button-dropdown>a.active, nav.color_secondary_dark .uk-button-dropdown.uk-open>a, nav.color_secondary_dark .uk-button-dropdown>a:hover {color: #FF9800 !important;}
-a.color_secondary:hover, a.color_secondary:hover>*, .color_secondary_dark a:hover, .color_secondary_dark :hover {color: #ec8d00 !important;}
+a.color_secondary:hover, a.color_secondary:hover>*, .color_secondary_dark a:hover, a.color_secondary_dark :hover {color: #ec8d00 !important;}
 .color_secondary_dark  {color: #ec8d00 !important;}
 
 .bg_hover_white_color_primary:focus, .bg_hover_white_color_primary:hover {color: #6bae21 !important; background-color: white;}

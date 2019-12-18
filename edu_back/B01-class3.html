@@ -21,10 +21,10 @@
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
@@ -39,6 +39,28 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <style>
+    /* 進度條的css */
+    .progress {
+      position:relative; 
+      width:400px; 
+      border: 1px solid #ddd; 
+      padding: 1px; 
+      border-radius: 3px; 
+    }
+    .bar { 
+      background-color: #7cc7ee; 
+      width:0%; 
+      height:20px; 
+      border-radius: 3px; 
+    }
+    .percent { 
+      position:absolute; 
+      display:inline-block; 
+      top:-3px; 
+      left:48%; 
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -178,8 +200,8 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="C00-compulsory1.html"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
-              <li><a href="#"><i class="list_dot fa fa-circle"></i>醫事類別管理</a></li>
+              <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>職類管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>行政職稱管理</a></li>
@@ -210,23 +232,15 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>課程相關管理</h1>
-        <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">課程相關管理</a></li>
-          <li><a href="#">班別管理</a></li>
-          <li class="active">班別編輯</li>
-        </ol>
+        <h1>班別編輯</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">班別編輯</h3>
-            <div class="box-tools pull-right">
-              <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-keyboard="true">新增</button> -->
-              <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="收合/展開"><i class="fa fa-minus"></i></button>
+            <div class="box-tools pull-right">     
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
@@ -235,44 +249,81 @@
               <li class="active"><a href="B01-class3.html">課程列表</a></li>
             </ul>
             <div class="tab-content">
-              <form role="form">
-                <h2 class="text-center border-0 page-header"><a class="btn btn-primary btn-lg w-1/2 l:w-1/4" href="#">新增課程</a></h2>
-                <table class="table table-hover">
-                  <tbody>
-                    <tr>
-                      <th style="width: 10px">#</th>
-                      <th>課程代碼</th>
-                      <th>課程名稱</th>
-                      <th>開課時間</th>
-                      <th>狀態</th>
-                      <th>動作</th>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>08383FD</td>
-                      <td>全人照護教育師培課程(全人醫療照護—安寧療護、生死學)</td>
-                      <td><time>2019-08-06（二） 17:00</time></td>
-                      <td><strong>草稿/發佈</strong></td>
-                      <td>
-                        <div class="margin_y_all_child">
-                          <button type="submit" class="btn btn-info">修改</button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form>
+              <div class="margin_y_all_child my-3 clearfix">
+                <button type="button" class="btn btn-primary pull-right" onclick="javascript:location.href='B02-lesson2.html'"><i class="fa fa-plus-circle"></i> 新增課程</button>
+              </div>
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th style="width: 10px">#</th>
+                    <th>課程代碼</th>
+                    <th>課程名稱</th>
+                    <th>開課時間</th>
+                    <th>狀態</th>
+                    <th>動作</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>08383FD-1</td>
+                    <td>全人照護教育師培系列</td>
+                    <td><time>2019-08-06（二） 17:00</time></td>
+                    <td><span class="label label-success fa fa-check"><strong> 發 佈</strong></span></td>
+                    <td>
+                      <div class="margin_y_all_child">
+                        <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>08383FD-2</td>
+                    <td>全人照護教育師培課程(全人醫療照護—安寧療護)</td>
+                    <td><time>2019-08-06（二） 17:00</time></td>
+                    <td><span class="label label-warning fa fa-exclamation"><strong> 草 稿</strong></span></td>
+                    <td>
+                      <div class="margin_y_all_child">
+                        <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>08383FD-3</td>
+                    <td>全人照護教育師培課程(全人醫療照護—安寧療護、生死學)</td>
+                    <td><time>2019-08-06（二） 17:00</time></td>
+                    <td><span class="label label-default fa fa-exclamation"><strong> 未發佈</strong></span></td>
+                    <td>
+                      <div class="margin_y_all_child">
+                        <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>08383FD-4</td>
+                    <td>全人照護教育師培課程(全人醫療照護—安寧療護、生死學)</td>
+                    <td><time>2019-08-06（二） 17:00</time></td>
+                    <td><span class="label label-danger fa fa-remove"><strong> 關 閉</strong></span></td>
+                    <td>
+                      <div class="margin_y_all_child">
+                        <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='B02-lesson2.html'"></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <!-- /.tab-content -->
           </div>
           <!-- /.box-body -->
           <div class="margin_y_all_child box-footer">
-            <button type="button" class="btn btn-default">關閉</button>
+            <div class="pull-right">
+              <button type="button" style="display: none;" class="btn btn-danger class_upload">發佈課程</button>
+              <button type="button" style="display: none;" class="btn btn-default under_review" disabled>審查中</button>
+              <button type="button" class="btn btn-warning send_review">送出行政審查</button>
+            </div>
           </div>
-          <!-- /.box-footer-->
         </div>
         <!-- /.box -->
-
       </section>
       <!-- /.content -->
     </div>
@@ -310,24 +361,20 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
-  <script>
-    //Date range picker with time picker
-    $('.time').daterangepicker({
-      timePicker: true,
-      timePickerIncrement: 30,
-      timePicker24Hour: true,
-      locale: {
-        format: 'MM/DD/YYYY hh:mm',
-        applyLabel: '確認',
-        cancelLabel: '取消',
-        fromLabel: '從',
-        toLabel: '到',
-        weekLabel: 'W',
-        customRangeLabel: 'Custom Range',
-        daysOfWeek: ["日", "一", "二", "三", "四", "五", "六"],
-        monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-      },
-      language: 'zh-TW'
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $('.send_review').click(function(){
+        $('.send_review').hide();
+        $('.under_review').show();
+        $('.class_upload').show();
+      })
+
+      $('.submit_info').click(function(){
+        window.location.href = 'B02-lesson2.html';
+      })
+
     })
   </script>
 </body>
