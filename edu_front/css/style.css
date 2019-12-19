@@ -296,14 +296,14 @@ footer.bg_darkGrey_dotPattern {
 .menuBar {min-height: 40px;}
 .min_height1 {min-height: 537px;}
 .min_height2 {min-height: 410px;}
-.toggle_truncate.truncateL:last-child>.uk-badge {
+.toggle_truncate.truncateL .uk-badge {
   background-color: transparent !important;
 }
-.toggle_truncate:last-child>.uk-badge {
+.toggle_truncate .uk-badge {
   background-color: #FF9800 !important;
   /* display: inline-block !important; */
 }
-.toggle_truncate:last-child>.uk-button {
+.toggle_truncate .uk-button {
   display: inline-block;
 }
 

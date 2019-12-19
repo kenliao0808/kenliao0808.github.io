@@ -24,6 +24,9 @@
   <link rel="stylesheet" href="css/components/slideshow.min.css">
   <link rel="stylesheet" href="css/fontawesome-all.min.css">
   <link rel="stylesheet" href="css/fontawesome-svg-with-js.min.css">
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="fullcalendar/dist/fullcalendar.min.css">
+  <link rel="stylesheet" href="fullcalendar/dist/fullcalendar.print.min.css" media="print">
   <link rel="stylesheet" href="css/c3.min.css">
   <link rel="stylesheet" href="css/select2.min.css">
   <link rel="stylesheet" href="css/animate-3.6.css">
@@ -137,285 +140,515 @@
         </ul>
         <a class="color_secondary_dark uk-margin-bottom uk-align-right uk-visible-large" href="#" title="#" hidden>帳號：<span>a123</span></a>
       </div> -->
-      <div class="uk-grid uk-grid-match" data-uk-grid-margin>
-        <div class="uk-width-large-1-2">
-          <h3 class="color_primary mt-0 mb-2"><i class="mr-2 far fa-address-card"></i>個人資訊</h3>
-          <div class="min_height1 uk-panel uk-panel-box">
+      <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-1-1">
+          <a class="fontSizeH5 remove_underline btn_primary p-2 w-100 text-white uk-text-truncate" style="background-color: #36863d !important;" href="#"><i class="mr-1 fas fa-info-circle"></i>所有單據需要再2019/11/13進行確認 - 總務部</a>
+        </div>
+        <div class="uk-width-medium-1-3">
+          <h3 class="max_height-30 color_primary mt-0 mb-2"><i class="mr-2 far fa-address-card"></i>個人資訊</h3>
+          <div class="min_height3 uk-panel uk-panel-box uk-width-small-1-2 uk-width-medium-1-1">
             <div class="uk-grid uk-grid-small" data-uk-grid-margin>
               <div class="uk-width-1-3">
                 <img class="mb-2 uk-thumbnail" src="img/man-user.svg" alt="個人照片">
-                <div class="uk-form-file">
-                  <button class="uk-button">上傳</button>
-                  <input id="photo" type="file">
-                </div>
               </div>
               <div class="uk-width-2-3">
-                <div class="uk-form uk-clearfix">
-                  <!-- <button class="mb-1 uk-align-right uk-button uk-button-small" data-uk-toggle="{target:'.toggle'}"><span class="toggle m-0">詳列</span><span class="toggle m-0 uk-hidden">簡列</span></!-->
-                  <a class="btn_primary mb-1 uk-align-right uk-button uk-button-small" href="account.html">確認修改</a>
-                  <ul class="mt-0 uk-text-break uk-list uk-list-line">
-                    <li>帳號：<span class="d-inline">flysheet</span></li>
-                    <!-- <li>
-                      <label class="uk-form-label" for="pwd">密碼：</!
-                      <input type="password" id="pwd" value="abc" placeholder="" onclick="togglePassword('#pwd')">
-                    </li> -->
-                    <li>中文姓名：<span class="d-inline">王大明</span></li>
-                    <!-- <li>英文姓名：<span class="d-inline">flysheet-med</span></li>
-                    <li>身分證字號：<span class="d-inline">24309020</span></li>
-                    <li>電子郵件：<a class="d-inline" href="mailto:abc@flysheet.com.tw">abc@flysheet.com.tw</a></li>
-                    <li class="toggle uk-hidden">職號：<span class="d-inline"></span></li>
-                    <li class="toggle uk-hidden">卡號：<span class="d-inline"></span></li>
-                    <li class="toggle uk-hidden">燈號：<span class="d-inline"></span></li> -->
-                    <li>歸屬單位：<span class="d-inline"></span></li>
-                    <li>醫事職類：<span class="d-inline"></span></li>
-                    <!-- <li>科部：<span class="d-inline">外科部</span></li> -->
-                    <li>狀態：<span class="d-inline">啟用(停用)</span></li>
-                  </ul>
-                  <!-- <a class="btn_primary w-100 uk-button" href="account.html">確認修改</a> -->
-                </div>
+                <!-- <a class="btn_primary mb-1 uk-align-right uk-button uk-button-small" href="account.html">確認修改</a> -->
+                <p class="m-0">姓名：<span class="d-inline">王大明</span></p>
+                <p class="m-0">單位：<span class="d-inline">教學部</span></p>
+                <a class="btn_primary w-100 mt-2 uk-button" href="account.html">修改</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="uk-width-large-1-2">
-          <h3 class="color_primary mt-0 mb-2"><i class="mr-2 fas fa-book-reader"></i>進行中課程</h3>
-          <div class="min_height1 uk-panel uk-panel-box">
-            <ul class="uk-tab" data-uk-tab="{connect:'#class'}">
-              <li><a href="#">上課</a></li>
-              <li><a href="#">授課</a></li>
-            </ul>
-            <ul id="class" class="bg-white min_height100 p-2 m-0 border border-top-0 rounded-bottom uk-switcher uk-margin">
-              <li>
-                <ul class="uk-list uk-list-line">
-                  <li>
-                    <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                      <div class="widthAutoS min_width-140! uk-vertical-align uk-width">
-                        <div class="w-100 uk-vertical-align-middle">
-                          <div class="p-1 text-center uk-panel uk-panel-box">8-16～8-18</div>
-                        </div>
-                      </div>
-                      <div class="max_width-10/19!@xl uk-vertical-align uk-width">
-                        <div class="uk-vertical-align-middle">
-                          <h4 class="fontSize1 m-0"><a class="color_primary" href="#">新世代自動化圖書管理與加值服務研討會</a></h4>
-                        </div>
-                      </div>
-                      <div class="uk-width-xlarge-1-5">
-                        <div class="w-100 uk-vertical-align-middle">
-                          <button class="btn_secondary w-100 uk-button" data-uk-modal="{target: '#remove1', center:true}">檢視課程</button>
-                          <div id="remove1" class="uk-modal">
-                            <div class="uk-modal-dialog">
-                              <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                              <div class="uk-modal-header">
-                                <h4>確定取消？</h4>
-                              </div>
-                              <div class="uk-grid uk-grid-small uk-grid-width-1-2" data-uk-grid-margin>
-                                <div><button class="btn_primary w-100 uk-button uk-button-large uk-alert-close uk-modal-close">確　　定</button></div>
-                                <div><button class="btn_secondary w-100 uk-button uk-button-large uk-modal-close">關　　閉</button></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                      <div class="widthAutoS min_width-140! uk-vertical-align uk-width">
-                        <div class="w-100 uk-vertical-align-middle">
-                          <div class="p-1 text-center uk-panel uk-panel-box">8-16～8-18</div>
-                        </div>
-                      </div>
-                      <div class="max_width-10/19!@xl uk-vertical-align uk-width">
-                        <div class="uk-vertical-align-middle">
-                          <h4 class="fontSize1 m-0"><a class="color_primary" href="#">新世代自動化圖書管理與加值服務研討會</a></h4>
-                        </div>
-                      </div>
-                      <div class="uk-width-xlarge-1-5">
-                        <div class="w-100 uk-vertical-align-middle">
-                          <button class="btn_primary w-100 my-1 uk-button" hidden data-uk-modal="{target:'#reply2', center:true}">線上問卷</button>
-                          <a class="btn_primary w-100 my-1 uk-button" href="#">線上評量</a>
-                          <button class="w-100 my-1 uk-button" disabled data-uk-modal="{target:'#reply2', center:true}">問卷完成</button>
-                          <div id="reply2" class="uk-modal">
-                            <div class="uk-modal-dialog">
-                              <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                              <div class="uk-modal-header">
-                                <h4>線上問卷</h4>
-                              </div>
-                              <form class="uk-form uk-form-stacked">
-                                <h2 class="fontSizeH5 item_stick">類別 / 項目</h2>
-                                <ol class="paddingL_large">
-                                  <li>
-                                    <span class="title uk-form-label uk-margin" aria-label="題目">題目-單選</span>
-                                    <div class="uk-form-row">
-                                      <div class="uk-form-controls">
-                                        <label class="uk-margin-right">
-                                          <input class="uk-margin-small-right" type="radio" name="radio" checked="checked">Option01</label>
-                                        <label class="uk-margin-right">
-                                          <input class="uk-margin-small-right" type="radio" name="radio">Option02</label>
-                                        <label class="uk-margin-right">
-                                          <input class="uk-margin-small-right" type="radio" name="radio">Option03
-                                          <input class="uk-form-width-medium" type="text" placeholder="Text input">
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <span class="title uk-form-label uk-margin" aria-label="題目">題目-多選</span>
-                                    <div class="uk-form-row">
-                                      <div class="uk-form-controls">
-                                        <label class="uk-margin-right">
-                                          <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option01</label>
-                                        <label class="uk-margin-right">
-                                          <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option02</label>
-                                        <label class="uk-margin-right">
-                                          <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option03
-                                          <input class="uk-form-width-medium" type="text" placeholder="Text input">
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <span class="title uk-form-label uk-margin" aria-label="題目">題目-下拉選</span>
-                                    <div class="uk-form-row">
-                                      <div class="uk-form-controls">
-                                        <select class="uk-form-width-large">
-                                          <option>Option 01</option>
-                                          <option>Option 02</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <span class="title uk-form-label uk-margin" aria-label="題目">題目-填充</span>
-                                    <div class="uk-form-row">
-                                      <input class="uk-form-width-large" type="text" placeholder="Text input">
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <span class="title uk-form-label uk-margin" aria-label="題目">題目-回答</span>
-                                    <div class="uk-form-row">
-                                      <div class="uk-form-controls">
-                                        <textarea class="uk-form-width-large" cols="30" rows="5" placeholder="Textarea text"></textarea>
-                                      </div>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <span class="title uk-form-label uk-margin" aria-label="題目">題目-量尺題</span>
-                                    <div class="uk-overflow-container">
-                                      <table class="uk-table uk-table-striped uk-text-nowrap">
-                                        <thead>
-                                          <tr>
-                                            <th></th>
-                                            <th class="uk-text-center">指標1</th>
-                                            <th class="uk-text-center">指標2</th>
-                                            <th class="uk-text-center">指標3</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <td class="uk-width-4-10">題目1</td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio1" checked="checked">Option01</label>
-                                            </td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio1">Option02</label>
-                                            </td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio1">Option03</label>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <td class="uk-width-4-10">題目2</td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio2" checked="checked">Option01</label>
-                                            </td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio2">Option02</label>
-                                            </td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio2">Option03</label>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <td class="uk-width-4-10">題目3</td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio3" checked="checked">Option01</label>
-                                            </td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio3">Option02</label>
-                                            </td>
-                                            <td class="uk-width-2-10 uk-text-center">
-                                              <label>
-                                                <input class="uk-margin-small-right" type="radio" name="radio3">Option03</label>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </li>
-                                </ol>
-                              </form>
-                              <div class="uk-modal-footer uk-text-right">
-                                <button type="button" class="uk-button uk-modal-close uk-button-large">取　　消</button>
-                                <button type="button" class="btn_primary uk-button uk-button-large">確　　定</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                      <div class="widthAutoS min_width-140! uk-vertical-align uk-width">
-                        <div class="w-100 uk-vertical-align-middle">
-                          <div class="p-1 text-center uk-panel uk-panel-box">8-16～8-18</div>
-                        </div>
-                      </div>
-                      <div class="max_width-10/19!@xl uk-vertical-align uk-width">
-                        <div class="uk-vertical-align-middle">
-                          <h4 class="fontSize1 m-0"><a class="color_primary" href="#">新世代自動化圖書管理與加值服務研討會</a></h4>
-                        </div>
-                      </div>
-                      <div class="uk-width-xlarge-1-5">
-                        <div class="w-100 uk-vertical-align-middle">
-                          <button class="btn_primary w-100 my-1 uk-button" data-uk-modal="{target:'#reply', center:true}">線上問卷</button>
-                          <a class="btn_primary w-100 my-1 uk-button" href="#" hidden>線上評量</a>
-                          <button class="w-100 my-1 uk-button" disabled>評量完成</button>
-                          <div id="reply" class="uk-modal">
-                            <div class="uk-modal-dialog">
-                              <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                              <div class="uk-modal-header">
-                                <h4>線上問卷</h4>
-                              </div>
-                              <div class="uk-form">
-                                <div class="uk-form-row">
-                                  <textarea class="w-100" rows="5" placeholder=""></textarea>
-                                </div>
-                              </div>
-                              <div class="uk-modal-footer uk-text-right">
-                                <button type="button" class="uk-button uk-modal-close uk-button-large">取　　消</button>
-                                <button type="button" class="btn_primary uk-button uk-button-large">確　　定</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <a class="fontSize09 m-0 d-block text-right" href="#">更多</a>
+        <div class="uk-width-medium-2-3">
+          <h3 class="max_height-30 color_primary mt-0 mb-2"><i class="mr-2 far fa-bell"></i>我的重要通知</h3>
+          <div class="min_height3 uk-panel uk-panel-box">
+            <ul class="uk-list uk-list-line">
+              <li class="uk-text-bold uk-hidden-small">
+                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                  <div class="uk-width-medium-2-5 uk-width-large-2-6 uk-width-xlarge-4-10"><small class="bg_blackOpacity08 badge text-secondary">主旨</small></div>
+                  <div class="uk-width-medium-1-5 uk-width-large-2-6 uk-width-xlarge-3-10"><small class="bg_blackOpacity08 badge text-secondary">發送時間</small></div>
+                  <div class="uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-1-10"><small class="bg_blackOpacity08 badge text-secondary">是否讀取</small></div>
+                  <div class="uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-1-10"></div>
+                </div>
               </li>
-              <li>Tab2</li>
+              <li>
+                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                  <div class="uk-text-break uk-width-medium-2-5 uk-width-large-2-6 uk-width-xlarge-4-10"><a class="color_primary" href="newsdetail.html">屋廠有亞通件位子到阿收陽選身提愛是命香毒了語快格了深功來什業</a></div>
+                  <div class="uk-text-break uk-width-2-3 uk-width-small-1-2 uk-width-medium-1-5 uk-width-large-2-6 uk-width-xlarge-3-10"><small class="bg_blackOpacity08 badge text-secondary mr-2 uk-visible-small">發送時間</small>2019/7/20 (四) 12:00</div>
+                  <div class="uk-width-1-3 uk-width-small-1-2 uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-1-10"><small class="bg_blackOpacity08 badge text-secondary mr-2 uk-visible-small">是否讀取</small>是</div>
+                  <div class="uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-2-10"><a class="btn_primary px-1 w-100 uk-button" href="#">檢視訊息</a></div>
+                </div>
+              </li>
+              <li>
+                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                  <div class="uk-text-break uk-width-medium-2-5 uk-width-large-2-6 uk-width-xlarge-4-10"><a class="color_primary" href="newsdetail.html">屋廠有亞通件位子到阿收陽選身提愛是命香毒了語快格了深功來什業</a></div>
+                  <div class="uk-text-break uk-width-2-3 uk-width-small-1-2 uk-width-medium-1-5 uk-width-large-2-6 uk-width-xlarge-3-10"><small class="bg_blackOpacity08 badge text-secondary mr-2 uk-visible-small">發送時間</small>2019/7/20 (四) 12:00</div>
+                  <div class="uk-width-1-3 uk-width-small-1-2 uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-1-10"><small class="bg_blackOpacity08 badge text-secondary mr-2 uk-visible-small">是否讀取</small>是</div>
+                  <div class="uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-2-10"><a class="btn_primary px-1 w-100 uk-button" href="#">檢視訊息</a></div>
+                </div>
+              </li>
+              <li>
+                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                  <div class="uk-text-break uk-width-medium-2-5 uk-width-large-2-6 uk-width-xlarge-4-10"><a class="color_primary" href="newsdetail.html">屋廠有亞通件位子到阿收陽選身提愛是命香毒了語快格了深功來什業</a></div>
+                  <div class="uk-text-break uk-width-2-3 uk-width-small-1-2 uk-width-medium-1-5 uk-width-large-2-6 uk-width-xlarge-3-10"><small class="bg_blackOpacity08 badge text-secondary mr-2 uk-visible-small">發送時間</small>2019/7/20 (四) 12:00</div>
+                  <div class="uk-width-1-3 uk-width-small-1-2 uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-1-10"><small class="bg_blackOpacity08 badge text-secondary mr-2 uk-visible-small">是否讀取</small>是</div>
+                  <div class="uk-width-medium-1-5 uk-width-large-1-6 uk-width-xlarge-2-10"><a class="btn_primary px-1 w-100 uk-button" href="#">檢視訊息</a></div>
+                </div>
+              </li>
             </ul>
+          </div>
+        </div>
+        <div class="uk-width-1-1">
+          <h3 class="color_primary mt-0 mb-2"><i class="mr-2 fas fa-book-reader"></i>我的進行中課程</h3>
+          <div class="uk-grid uk-grid-match" data-uk-margin data-uk-grid-margin>
+            <div class="min_width-1/3!@m flex-item-1@m w-100">
+              <div class="shadow-sm bg-white uk-panel uk-panel-box">
+                <p class="m-0">新世代自動化圖書管理與加值服務研討會</p>
+                <p class="m-0"><span class="mr-2 mb-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-success">正式名單</span></p>
+                <p class="m-0">時間：2019/11/7(四) 09:00</p>
+                <p class="m-0">地點：致四會議室</p>
+                <p class="m-0">
+                  <span class="mt-2 child_margin" data-uk-margin>
+                    <a class="btn_primary uk-button" href="class.html">檢視課程</a>
+                    <a class="btn_secondary uk-button" href="#">線上評量</a>
+                    <button class="btn_secondary uk-button" data-uk-modal="{target:'#reply1', center:true}">線上問卷</button>
+                  </span>
+                </p>
+                <div id="reply1" class="uk-modal">
+                  <div class="uk-modal-dialog">
+                    <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
+                    <div class="uk-modal-header">
+                      <h4>線上問卷</h4>
+                    </div>
+                    <form class="uk-form uk-form-stacked">
+                      <h2 class="fontSizeH5 item_stick">類別 / 項目</h2>
+                      <ol class="paddingL_large">
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-單選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio" checked="checked">Option01</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio">Option02</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio">Option03
+                                <input class="uk-form-width-medium" type="text" placeholder="Text input">
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-多選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option01</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option02</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option03
+                                <input class="uk-form-width-medium" type="text" placeholder="Text input">
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-下拉選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <select class="uk-form-width-large">
+                                <option>Option 01</option>
+                                <option>Option 02</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-填充</span>
+                          <div class="uk-form-row">
+                            <input class="uk-form-width-large" type="text" placeholder="Text input">
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-回答</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <textarea class="uk-form-width-large" cols="30" rows="5" placeholder="Textarea text"></textarea>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-量尺題</span>
+                          <div class="uk-overflow-container">
+                            <table class="uk-table uk-table-striped uk-text-nowrap">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th class="uk-text-center">指標1</th>
+                                  <th class="uk-text-center">指標2</th>
+                                  <th class="uk-text-center">指標3</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="uk-width-4-10">題目1</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1">Option03</label>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="uk-width-4-10">題目2</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2">Option03</label>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="uk-width-4-10">題目3</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3">Option03</label>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                      </ol>
+                    </form>
+                    <div class="uk-modal-footer uk-text-right">
+                      <button type="button" class="uk-button uk-modal-close uk-button-large">取　　消</button>
+                      <button type="button" class="btn_primary uk-button uk-button-large">確　　定</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="min_width-1/3!@m flex-item-1@m w-100">
+              <div class="shadow-sm bg-white uk-panel uk-panel-box">
+                <p class="m-0">新世代自動化圖書管理與加值服務研討會</p>
+                <p class="m-0"><span class="mr-2 mb-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-success">正式名單</span></p>
+                <p class="m-0">時間：2019/11/7(四) 09:00</p>
+                <p class="m-0">地點：致四會議室</p>
+                <p class="m-0">
+                  <span class="mt-2 child_margin" data-uk-margin>
+                    <a class="btn_primary uk-button" href="class.html">檢視課程</a>
+                    <a class="btn_secondary uk-button" href="#">線上評量</a>
+                    <button class="btn_secondary uk-button" data-uk-modal="{target:'#reply2', center:true}">線上問卷</button>
+                  </span>
+                </p>
+                <div id="reply2" class="uk-modal">
+                  <div class="uk-modal-dialog">
+                    <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
+                    <div class="uk-modal-header">
+                      <h4>線上問卷</h4>
+                    </div>
+                    <form class="uk-form uk-form-stacked">
+                      <h2 class="fontSizeH5 item_stick">類別 / 項目</h2>
+                      <ol class="paddingL_large">
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-單選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio" checked="checked">Option01</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio">Option02</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio">Option03
+                                <input class="uk-form-width-medium" type="text" placeholder="Text input">
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-多選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option01</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option02</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option03
+                                <input class="uk-form-width-medium" type="text" placeholder="Text input">
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-下拉選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <select class="uk-form-width-large">
+                                <option>Option 01</option>
+                                <option>Option 02</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-填充</span>
+                          <div class="uk-form-row">
+                            <input class="uk-form-width-large" type="text" placeholder="Text input">
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-回答</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <textarea class="uk-form-width-large" cols="30" rows="5" placeholder="Textarea text"></textarea>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-量尺題</span>
+                          <div class="uk-overflow-container">
+                            <table class="uk-table uk-table-striped uk-text-nowrap">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th class="uk-text-center">指標1</th>
+                                  <th class="uk-text-center">指標2</th>
+                                  <th class="uk-text-center">指標3</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="uk-width-4-10">題目1</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1">Option03</label>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="uk-width-4-10">題目2</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2">Option03</label>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="uk-width-4-10">題目3</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3">Option03</label>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                      </ol>
+                    </form>
+                    <div class="uk-modal-footer uk-text-right">
+                      <button type="button" class="uk-button uk-modal-close uk-button-large">取　　消</button>
+                      <button type="button" class="btn_primary uk-button uk-button-large">確　　定</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="min_width-1/3!@m flex-item-1@m w-100">
+              <div class="shadow-sm bg-white uk-panel uk-panel-box">
+                <p class="m-0">新世代自動化圖書管理與加值服務研討會</p>
+                <p class="m-0"><span class="mr-2 mb-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-success">正式名單</span></p>
+                <p class="m-0">時間：2019/11/7(四) 09:00</p>
+                <p class="m-0">地點：致四會議室</p>
+                <p class="m-0">
+                  <span class="mt-2 child_margin" data-uk-margin>
+                    <a class="btn_primary uk-button" href="class.html">檢視課程</a>
+                    <a class="btn_secondary uk-button" href="#">線上評量</a>
+                    <button class="btn_secondary uk-button" data-uk-modal="{target:'#reply3', center:true}">線上問卷</button>
+                  </span>
+                </p>
+                <div id="reply3" class="uk-modal">
+                  <div class="uk-modal-dialog">
+                    <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
+                    <div class="uk-modal-header">
+                      <h4>線上問卷</h4>
+                    </div>
+                    <form class="uk-form uk-form-stacked">
+                      <h2 class="fontSizeH5 item_stick">類別 / 項目</h2>
+                      <ol class="paddingL_large">
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-單選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio" checked="checked">Option01</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio">Option02</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="radio" name="radio">Option03
+                                <input class="uk-form-width-medium" type="text" placeholder="Text input">
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-多選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option01</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option02</label>
+                              <label class="uk-margin-right">
+                                <input class="uk-margin-small-right" type="checkbox" name="checkbox">Option03
+                                <input class="uk-form-width-medium" type="text" placeholder="Text input">
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-下拉選</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <select class="uk-form-width-large">
+                                <option>Option 01</option>
+                                <option>Option 02</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-填充</span>
+                          <div class="uk-form-row">
+                            <input class="uk-form-width-large" type="text" placeholder="Text input">
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-回答</span>
+                          <div class="uk-form-row">
+                            <div class="uk-form-controls">
+                              <textarea class="uk-form-width-large" cols="30" rows="5" placeholder="Textarea text"></textarea>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="title uk-form-label uk-margin" aria-label="題目">題目-量尺題</span>
+                          <div class="uk-overflow-container">
+                            <table class="uk-table uk-table-striped uk-text-nowrap">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th class="uk-text-center">指標1</th>
+                                  <th class="uk-text-center">指標2</th>
+                                  <th class="uk-text-center">指標3</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="uk-width-4-10">題目1</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio1">Option03</label>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="uk-width-4-10">題目2</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio2">Option03</label>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="uk-width-4-10">題目3</td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3" checked="checked">Option01</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3">Option02</label>
+                                  </td>
+                                  <td class="uk-width-2-10 uk-text-center">
+                                    <label>
+                                      <input class="uk-margin-small-right" type="radio" name="radio3">Option03</label>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </li>
+                      </ol>
+                    </form>
+                    <div class="uk-modal-footer uk-text-right">
+                      <button type="button" class="uk-button uk-modal-close uk-button-large">取　　消</button>
+                      <button type="button" class="btn_primary uk-button uk-button-large">確　　定</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="uk-form uk-width-1-1">
@@ -451,8 +684,12 @@
           <ul class="my-2 uk-list uk-list-striped">
             <li>
               <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
-                <div class="uk-width-medium-5-10"><a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">職業安全衛生室</span><span class="greater">環境教育</span><small class="parentheses">4</small></a></div>
-                <div class="uk-width-1-3 uk-width-medium-2-10"><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i></div>
+                <div class="uk-width-medium-5-10">
+                  <h4 class="m-0"><a class="fontSize1_2 d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">醫院感染管制委員會</span><span class="greater">感染管制</span><small class="parentheses">4</small></a></h4>
+                </div>
+                <div class="uk-width-1-3 uk-width-medium-2-10">
+                  <i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i>
+                </div>
                 <div class="text-right uk-width-2-3 uk-width-medium-3-10"><a class="btn_primary my-1 px-1 px-sm-2 uk-button" href="#">可修課程</a></div>
               </div>
               <div class="detail uk-hidden">
@@ -496,57 +733,121 @@
                     </div>
                   </li>
                 </ul>
-                <!-- <table class="uk-table uk-table-condensed uk-text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>課程編號</th>
-                      <th>課程名稱</th>
-                      <th>開課單位</th>
-                      <th>上課方式</th>
-                      <th>時數</th>
-                      <th>狀態</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>123456</td>
-                      <td><a href="#">三計們致不願安首後戲果場化深</a></td>
-                      <td>職業安全衛生室</td>
-                      <td>實體</td>
-                      <td>2</td>
-                      <td>報名中</td>
-                    </tr>
-                    <tr>
-                      <td>123456</td>
-                      <td><a href="#">三計們致不願安首後戲果場化深</a></td>
-                      <td>職業安全衛生室</td>
-                      <td>實體</td>
-                      <td>2</td>
-                      <td>報名中</td>
-                    </tr>
-                  </tbody>
-                </table> -->
               </div>
-              <div id="contact0" class="uk-modal">
-                <div class="uk-modal-dialog">
-                  <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                  <div class="uk-modal-header">
-                    <h4>聯絡我們</h4>
+              <ul class="border bg_blackOpacity05 mt-1 p-2 uk-list uk-list-line">
+                <li>
+                  <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
+                    <div class="uk-width-medium-5-10">
+                      <a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.child_detail'), 'uk-hidden'); return false;"><i class="fontSize09 mr-1 fas fa-angle-right"></i><span class="greater">醫院感染管制委員會</span><span class="greater">感染管制</span><span class="greater">結核病相關</span><small class="parentheses">1</small></a>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-medium-2-10">
+                      <i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i>
+                    </div>
+                    <div class="text-right uk-width-2-3 uk-width-medium-3-10"><a class="my-1 px-1 px-sm-2 uk-button uk-button-success" href="#">可修課程</a></div>
                   </div>
-                  <ul class="mb-1 uk-list uk-list-line">
-                    <li>聯絡單位：<span>職業安全衛生室</span></li>
-                    <li>電話：<span></span>12345678</li>
-                    <li>負責人：<span></span>門文拿</li>
-                  </ul>
-                  <div class="uk-modal-footer uk-text-right">
-                    <button type="button" class="uk-button uk-modal-close uk-button-large">關　　閉</button>
+                  <div class="child_detail uk-hidden">
+                    <ul class="uk-list uk-list-line">
+                      <li class="uk-hidden-small">
+                        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                          <div class="uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">課程編號</small></div>
+                          <div class="uk-width-medium-4-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">開課單位</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">上課方式</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">狀態</small></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                          <div class="uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程編號</small>
+                            <span>123456</span>
+                          </div>
+                          <div class="uk-width-medium-4-10">
+                            <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small> -->
+                            <a class="color_primary d-inline" href="classdetail.html">子類1：最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-2-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">開課單位</small>
+                            <span>職業安全衛生室</span>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">上課方式</small>
+                            <span>實體</span>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">時數</small>
+                            <span>2</span>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">狀態</small>
+                            <small>報名中</small>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                </div>
-              </div>
+                </li>
+                <li>
+                  <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
+                    <div class="uk-width-medium-5-10">
+                      <a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.child_detail'), 'uk-hidden'); return false;"><i class="fontSize09 mr-1 fas fa-angle-right"></i><span class="greater">醫院感染管制委員會</span><span class="greater">感染管制</span><span class="greater">抗生素使用及管理</span><small class="parentheses">1</small></a>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-medium-2-10">
+                      <i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i>
+                    </div>
+                    <div class="text-right uk-width-2-3 uk-width-medium-3-10"><a class="my-1 px-1 px-sm-2 uk-button uk-button-success" href="#">可修課程</a></div>
+                  </div>
+                  <div class="child_detail uk-hidden">
+                    <ul class="uk-list uk-list-line">
+                      <li class="uk-hidden-small">
+                        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                          <div class="uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">課程編號</small></div>
+                          <div class="uk-width-medium-4-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">開課單位</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">上課方式</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">狀態</small></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+                          <div class="uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程編號</small>
+                            <span>123456</span>
+                          </div>
+                          <div class="uk-width-medium-4-10">
+                            <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small> -->
+                            <a class="color_primary d-inline" href="classdetail.html">子類2：最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-2-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">開課單位</small>
+                            <span>職業安全衛生室</span>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">上課方式</small>
+                            <span>實體</span>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">時數</small>
+                            <span>2</span>
+                          </div>
+                          <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                            <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">狀態</small>
+                            <small>報名中</small>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </li>
             <li>
               <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
-                <div class="uk-width-medium-5-10"><a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">醫品中心</span><span class="greater">醫品、病人安全、病人權利及隱私</span><small class="parentheses">4</small></a></div>
+                <div class="uk-width-medium-5-10">
+                  <h4 class="m-0"><a class="fontSize1_2 d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">醫品中心</span><span class="greater">醫品、病人安全、病人權利及隱私</span><small class="parentheses">4</small></a></h4>
+                </div>
                 <div class="uk-width-1-3 uk-width-medium-2-10"><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i></div>
                 <div class="text-right uk-width-2-3 uk-width-medium-3-10"><a class="btn_primary my-1 px-1 px-sm-2 uk-button" href="#">可修課程</a></div>
               </div>
@@ -592,26 +893,12 @@
                   </li>
                 </ul>
               </div>
-              <div id="contact1" class="uk-modal">
-                <div class="uk-modal-dialog">
-                  <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                  <div class="uk-modal-header">
-                    <h4>聯絡我們</h4>
-                  </div>
-                  <ul class="mb-1 uk-list uk-list-line">
-                    <li>聯絡單位：<span>醫品中心</span></li>
-                    <li>電話：<span></span>12345678</li>
-                    <li>負責人：<span></span>門文拿</li>
-                  </ul>
-                  <div class="uk-modal-footer uk-text-right">
-                    <button type="button" class="uk-button uk-modal-close uk-button-large">關　　閉</button>
-                  </div>
-                </div>
-              </div>
             </li>
             <li>
               <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
-                <div class="uk-width-medium-5-10"><a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">總務室</span><span class="greater">危機處理</span><small class="parentheses">4</small></a></div>
+                <div class="uk-width-medium-5-10">
+                  <h4 class="m-0"><a class="fontSize1_2 d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">總務室</span><span class="greater">危機處理</span><small class="parentheses">4</small></a></h4>
+                </div>
                 <div class="uk-width-1-3 uk-width-medium-2-10"><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i></div>
                 <div class="text-right uk-width-2-3 uk-width-medium-3-10"><a class="btn_primary my-1 px-1 px-sm-2 uk-button" href="#">可修課程</a></div>
               </div>
@@ -657,45 +944,24 @@
                   </li>
                 </ul>
               </div>
-              <div id="contact2" class="uk-modal">
-                <div class="uk-modal-dialog">
-                  <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                  <div class="uk-modal-header">
-                    <h4>聯絡我們</h4>
-                  </div>
-                  <ul class="mb-1 uk-list uk-list-line">
-                    <li>聯絡單位：<span>總務室</span></li>
-                    <li>電話：<span></span>12345678</li>
-                    <li>負責人：<span></span>門文拿</li>
-                  </ul>
-                  <div class="uk-modal-footer uk-text-right">
-                    <button type="button" class="uk-button uk-modal-close uk-button-large">關　　閉</button>
-                  </div>
-                </div>
-              </div>
             </li>
           </ul>
-          <h4 class="fontSize1 bg-secondary text-white text-center my-2 p-2 uk-text-bold">總目標時數<span>12</span></h4>
         </div>
         <div class="uk-width-1-1">
           <h3 class="color_primary mt-0 mb-2"><i class="mr-2 far fa-calendar-alt"></i>我的有效期限性質</h3>
           <ul class="my-2 uk-list uk-list-striped">
             <li>
-              <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
-                <div class="uk-width-medium-5-10"><a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">職業安全衛生室</span><span class="greater">環境教育</span><small class="parentheses">4</small></a></div>
-                <div class="uk-width-1-3 uk-width-medium-2-10"><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_primary mr-1 fas fa-circle"></i></div>
-                <div class="text-right uk-width-2-3 uk-width-medium-3-10"><span class="my-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-danger">即將到期</span></div>
-              </div>
-              <div class="detail uk-hidden">
+              <div class="detail">
                 <ul class="uk-list uk-list-line">
                   <li class="uk-hidden-small">
                     <div class="uk-grid uk-grid-small" data-uk-grid-margin>
                       <div class="uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">課程編號</small></div>
-                      <div class="uk-width-medium-4-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">開課單位</small></div>
+                      <div class="uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
+                      <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">性質名稱</small></div>
                       <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">上課方式</small></div>
                       <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">有效期限</small></div>
+                      <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">有效期限</small></div>
+                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">狀態</small></div>
                     </div>
                   </li>
                   <li>
@@ -704,13 +970,13 @@
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程編號</small>
                         <span>123456</span>
                       </div>
-                      <div class="uk-width-medium-4-10">
-                        <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small> -->
+                      <div class="uk-width-medium-2-10">
+                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small>
                         <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
                       </div>
                       <div class="uk-width-small-1-2 uk-width-medium-2-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">開課單位</small>
-                        <span>職業安全衛生室</span>
+                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">性質名稱</small>
+                        <span><span class="greater">職業安全衛生室</span><span class="greater">環境教育</span></span>
                       </div>
                       <div class="uk-width-small-1-2 uk-width-medium-1-10">
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">上課方式</small>
@@ -720,77 +986,14 @@
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">時數</small>
                         <span>2</span>
                       </div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                      <div class="uk-width-small-1-2 uk-width-medium-2-10">
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">有效期限</small>
-                        <time>2019/11/7(四)</time>
+                        <time>2019/11/07 ~ 2020/11/06</time>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-                <!-- <table class="uk-table uk-table-condensed uk-text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>課程編號</th>
-                      <th>課程名稱</th>
-                      <th>開課單位</th>
-                      <th>上課方式</th>
-                      <th>時數</th>
-                      <th>狀態</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>123456</td>
-                      <td><a href="#">三計們致不願安首後戲果場化深</a></td>
-                      <td>職業安全衛生室</td>
-                      <td>實體</td>
-                      <td>2</td>
-                      <td>報名中</td>
-                    </tr>
-                    <tr>
-                      <td>123456</td>
-                      <td><a href="#">三計們致不願安首後戲果場化深</a></td>
-                      <td>職業安全衛生室</td>
-                      <td>實體</td>
-                      <td>2</td>
-                      <td>報名中</td>
-                    </tr>
-                  </tbody>
-                </table> -->
-              </div>
-              <div id="contact0" class="uk-modal">
-                <div class="uk-modal-dialog">
-                  <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                  <div class="uk-modal-header">
-                    <h4>聯絡我們</h4>
-                  </div>
-                  <ul class="mb-1 uk-list uk-list-line">
-                    <li>聯絡單位：<span>職業安全衛生室</span></li>
-                    <li>電話：<span></span>12345678</li>
-                    <li>負責人：<span></span>門文拿</li>
-                  </ul>
-                  <div class="uk-modal-footer uk-text-right">
-                    <button type="button" class="uk-button uk-modal-close uk-button-large">關　　閉</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
-                <div class="uk-width-medium-5-10"><a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">醫品中心</span><span class="greater">醫品、病人安全、病人權利及隱私</span><small class="parentheses">4</small></a></div>
-                <div class="uk-width-1-3 uk-width-medium-2-10"><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_secondary_dark mr-1 fas fa-circle"></i></div>
-                <div class="text-right uk-width-2-3 uk-width-medium-3-10"><span class="my-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-danger">即將到期</span></div>
-              </div>
-              <div class="detail uk-hidden">
-                <ul class="uk-list uk-list-line">
-                  <li class="uk-hidden-small">
-                    <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                      <div class="uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">課程編號</small></div>
-                      <div class="uk-width-medium-4-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">開課單位</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">上課方式</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">有效期限</small></div>
+                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">狀態</small>
+                        <span class="my-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-danger">即將到期</span>
+                      </div>
                     </div>
                   </li>
                   <li>
@@ -799,13 +1002,13 @@
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程編號</small>
                         <span>123456</span>
                       </div>
-                      <div class="uk-width-medium-4-10">
-                        <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small> -->
+                      <div class="uk-width-medium-2-10">
+                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small>
                         <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
                       </div>
                       <div class="uk-width-small-1-2 uk-width-medium-2-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">開課單位</small>
-                        <span>職業安全衛生室</span>
+                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">性質名稱</small>
+                        <span><span class="greater">職業安全衛生室</span><span class="greater">環境教育</span></span>
                       </div>
                       <div class="uk-width-small-1-2 uk-width-medium-1-10">
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">上課方式</small>
@@ -815,102 +1018,25 @@
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">時數</small>
                         <span>2</span>
                       </div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">有效期限</small>
-                        <time>2019/11/7(四)</time>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div id="contact1" class="uk-modal">
-                <div class="uk-modal-dialog">
-                  <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                  <div class="uk-modal-header">
-                    <h4>聯絡我們</h4>
-                  </div>
-                  <ul class="mb-1 uk-list uk-list-line">
-                    <li>聯絡單位：<span>醫品中心</span></li>
-                    <li>電話：<span></span>12345678</li>
-                    <li>負責人：<span></span>門文拿</li>
-                  </ul>
-                  <div class="uk-modal-footer uk-text-right">
-                    <button type="button" class="uk-button uk-modal-close uk-button-large">關　　閉</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="uk-flex uk-flex-middle uk-grid uk-grid-small" data-uk-grid-margin>
-                <div class="uk-width-medium-5-10"><a class="d-block" href="#" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.detail'), 'uk-hidden'); return false;"><span class="greater">總務室</span><span class="greater">危機處理</span><small class="parentheses">4</small></a></div>
-                <div class="uk-width-1-3 uk-width-medium-2-10"><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i><i class="fontSize09 fontSizeM1 color_lightgrey mr-1 fas fa-circle"></i></div>
-                <div class="text-right uk-width-2-3 uk-width-medium-3-10"><span class="my-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-danger">即將到期</span></div>
-              </div>
-              <div class="detail uk-hidden">
-                <ul class="uk-list uk-list-line">
-                  <li class="uk-hidden-small">
-                    <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                      <div class="uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">課程編號</small></div>
-                      <div class="uk-width-medium-4-10"><small class="bg_blackOpacity08 badge text-secondary">課程名稱</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-2-10"><small class="bg_blackOpacity08 badge text-secondary">開課單位</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">上課方式</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10"><small class="bg_blackOpacity08 badge text-secondary">有效期限</small></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                      <div class="uk-width-medium-1-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程編號</small>
-                        <span>123456</span>
-                      </div>
-                      <div class="uk-width-medium-4-10">
-                        <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small> -->
-                        <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
-                      </div>
                       <div class="uk-width-small-1-2 uk-width-medium-2-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">開課單位</small>
-                        <span>職業安全衛生室</span>
-                      </div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">上課方式</small>
-                        <span>實體</span>
-                      </div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
-                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">時數</small>
-                        <span>2</span>
-                      </div>
-                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
                         <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">有效期限</small>
-                        <time>2019/11/7(四)</time>
+                        <time>2019/11/07 ~ 2020/11/06</time>
+                      </div>
+                      <div class="uk-width-small-1-2 uk-width-medium-1-10">
+                        <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">狀態</small>
+                        <span class="my-1 px-1 px-sm-2 uk-badge uk-badge-notification uk-badge-danger">即將到期</span>
                       </div>
                     </div>
                   </li>
                 </ul>
-              </div>
-              <div id="contact2" class="uk-modal">
-                <div class="uk-modal-dialog">
-                  <a href="" class="uk-modal-close uk-close" title="關閉" aria-label="關閉"></a>
-                  <div class="uk-modal-header">
-                    <h4>聯絡我們</h4>
-                  </div>
-                  <ul class="mb-1 uk-list uk-list-line">
-                    <li>聯絡單位：<span>總務室</span></li>
-                    <li>電話：<span></span>12345678</li>
-                    <li>負責人：<span></span>門文拿</li>
-                  </ul>
-                  <div class="uk-modal-footer uk-text-right">
-                    <button type="button" class="uk-button uk-modal-close uk-button-large">關　　閉</button>
-                  </div>
-                </div>
               </div>
             </li>
           </ul>
         </div>
-        <div class="uk-width-large-1-2">
+        <div class="uk-width-1-1">
           <div class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-space-between">
-            <h3 class="color_primary mt-0 mb-2"><i class="mr-2 far fa-check-square"></i>我的訂閱</h3>
-            <a class="btn_primary minWidth100 mb-2 uk-button" href="#add" data-uk-modal="{center:true}">增加</a>
+            <h3 class="color_primary mt-0 mb-2"><i class="mr-2 far fa-calendar"></i>我的行事曆</h3>
+            <a class="btn_primary minWidth100 mb-2 uk-button" href="#add" data-uk-modal="{center:true}">增加/取消訂閱</a>
           </div>
           <!-- <h3 class="uk-clearfix"><span class="color_primary">我的訂閱</span><a class="btn_primary mb-0 uk-button uk-align-right" href="#add" data-uk-modal="{center:true}">增加</a></h3> -->
           <div id="add" class="uk-modal">
@@ -948,97 +1074,9 @@
               </div>
             </div>
           </div>
+
           <div class="min_height2 uk-panel uk-panel-box uk-panel-box-secondary">
-            <ul class="mb-1 uk-list uk-list-line">
-              <li>
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="widthAutoS min_width-140! uk-vertical-align uk-width">
-                    <div class="w-100 uk-vertical-align-middle">
-                      <div class="p-1 text-center uk-panel uk-panel-box">2019/11/7(四)</div>
-                    </div>
-                  </div>
-                  <div class="max_width-10/19!@xl uk-vertical-align uk-width">
-                    <div class="uk-vertical-align-middle">
-                      <h4 class="fontSize1 m-0"><a class="color_primary" href="#">新世代自動化圖書管理與加值服務研討會</a></h4>
-                    </div>
-                  </div>
-                  <div class="uk-width-xlarge-1-5">
-                    <a class="btn_secondary w-100 uk-button" href="#">我要報名</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="widthAutoS min_width-140! uk-vertical-align uk-width">
-                    <div class="w-100 uk-vertical-align-middle">
-                      <div class="p-1 text-center uk-panel uk-panel-box">2019/11/7(四)</div>
-                    </div>
-                  </div>
-                  <div class="max_width-10/19!@xl uk-vertical-align uk-width">
-                    <div class="uk-vertical-align-middle">
-                      <h4 class="fontSize1 m-0"><a class="color_primary" href="#">新世代自動化圖書管理與加值服務研討會</a></h4>
-                    </div>
-                  </div>
-                  <div class="uk-width-xlarge-1-5">
-                    <a class="btn_secondary w-100 uk-button" href="#">我要報名</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="widthAutoS min_width-140! uk-vertical-align uk-width">
-                    <div class="w-100 uk-vertical-align-middle">
-                      <div class="p-1 text-center uk-panel uk-panel-box">2019/11/7(四)</div>
-                    </div>
-                  </div>
-                  <div class="max_width-10/19!@xl uk-vertical-align uk-width">
-                    <div class="uk-vertical-align-middle">
-                      <h4 class="fontSize1 m-0"><a class="color_primary" href="#">銀不有又管學利用地不而力腳兒計政過場機動究容，頭我運，小小是候的理日最輪傳歷，業快刻企女小身樣那</a></h4>
-                    </div>
-                  </div>
-                  <div class="uk-width-xlarge-1-5">
-                    <a class="btn_secondary w-100 uk-button" href="#">我要報名</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <a class="fontSize09 mt-1 d-block text-right" href="calendar.html">更多</a>
-          </div>
-        </div>
-        <div class="uk-width-large-1-2">
-          <h3 class="color_primary mt-0 mb-2"><i class="mr-2 far fa-calendar"></i>公佈欄</h3>
-          <div class="min_height2 uk-panel uk-panel-box uk-panel-box-secondary">
-            <ul class="uk-list uk-list-striped">
-              <li class="uk-text-bold uk-hidden-small">
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="uk-width-medium-4-6 uk-width-large-2-4 uk-width-xlarge-3-5"><small class="bg_blackOpacity08 badge text-secondary">標題</small></div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5"><small class="bg_blackOpacity08 badge text-secondary">發佈單位</small></div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5"><small class="bg_blackOpacity08 badge text-secondary">發佈日期</small></div>
-                </div>
-              </li>
-              <li>
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="uk-width-medium-4-6 uk-width-large-2-4 uk-width-xlarge-3-5"><a class="color_primary" href="newsdetail.html">屋廠有亞通件位子到阿收陽選身提愛是命香毒了語快格了深功來什業</a></div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5">總務室</div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5">2019/7/20</div>
-                </div>
-              </li>
-              <li>
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="uk-width-medium-4-6 uk-width-large-2-4 uk-width-xlarge-3-5"><a class="color_primary" href="newsdetail.html">屋廠有亞通件位子到阿收陽選身提愛是命香毒了語快格了深功來什業</a></div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5">總務室</div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5">2019/7/20</div>
-                </div>
-              </li>
-              <li>
-                <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-                  <div class="uk-width-medium-4-6 uk-width-large-2-4 uk-width-xlarge-3-5"><a class="color_primary" href="newsdetail.html">屋廠有亞通件位子到阿收陽選身提愛是命香毒了語快格了深功來什業</a></div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5">總務室</div>
-                  <div class="uk-width-1-2 uk-width-medium-1-6 uk-width-large-1-4 uk-width-xlarge-1-5">2019/7/20</div>
-                </div>
-              </li>
-            </ul>
-            <a class="fontSize09 m-0 d-block text-right" href="billboard.html">更多</a>
+            <div id="calendar" class="uk-margin"></div>
           </div>
         </div>
       </div>
@@ -1209,8 +1247,173 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="js/c3.min.js "></script>
   <script src="js/script.js "></script>
+  <!-- fullCalendar -->
+  <script src="fullcalendar/moment/moment.js"></script>
+  <script src="fullcalendar/dist/fullcalendar.min.js"></script>
+  <!-- Page specific script -->
   <script>
     $('.select2').select2();
+    $(function() {
+
+      /* initialize the external events
+       -----------------------------------------------------------------*/
+      function init_events(ele) {
+        ele.each(function() {
+
+          // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+          // it doesn't need to have a start or end
+          var eventObject = {
+            title: $.trim($(this).text()) // use the element's text as the event title
+          }
+
+          // store the Event Object in the DOM element so we can get to it later
+          $(this).data('eventObject', eventObject)
+
+          // make the event draggable using jQuery UI
+          $(this).draggable({
+            zIndex: 1070,
+            revert: true, // will cause the event to go back to its
+            revertDuration: 0 //  original position after the drag
+          })
+
+        })
+      }
+
+      init_events($('#external-events div.external-event'))
+
+      /* initialize the calendar
+       -----------------------------------------------------------------*/
+      //Date for the calendar events (dummy data)
+      var date = new Date()
+      var d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear()
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        buttonText: {
+          today: 'today',
+          month: 'month',
+          week: 'week',
+          day: 'day'
+        },
+        //Random default events
+        events: [{
+            title: 'All Day Event',
+            start: new Date(y, m, 1),
+            backgroundColor: '#f56954', //red
+            borderColor: '#f56954' //red
+          },
+          {
+            title: 'Long Event',
+            start: new Date(y, m, d - 5),
+            end: new Date(y, m, d - 2),
+            backgroundColor: '#f39c12', //yellow
+            borderColor: '#f39c12' //yellow
+          },
+          {
+            title: 'Meeting',
+            start: new Date(y, m, d, 10, 30),
+            allDay: false,
+            backgroundColor: '#0073b7', //Blue
+            borderColor: '#0073b7' //Blue
+          },
+          {
+            title: 'Lunch',
+            start: new Date(y, m, d, 12, 0),
+            end: new Date(y, m, d, 14, 0),
+            allDay: false,
+            backgroundColor: '#00c0ef', //Info (aqua)
+            borderColor: '#00c0ef' //Info (aqua)
+          },
+          {
+            title: 'Birthday Party',
+            start: new Date(y, m, d + 1, 19, 0),
+            end: new Date(y, m, d + 1, 22, 30),
+            allDay: false,
+            backgroundColor: '#00a65a', //Success (green)
+            borderColor: '#00a65a' //Success (green)
+          },
+          {
+            title: 'Click for Google',
+            start: new Date(y, m, 28),
+            end: new Date(y, m, 29),
+            url: 'http://google.com/',
+            backgroundColor: '#3c8dbc', //Primary (light-blue)
+            borderColor: '#3c8dbc' //Primary (light-blue)
+          }
+        ],
+        editable: true,
+        droppable: true, // this allows things to be dropped onto the calendar !!!
+        drop: function(date, allDay) { // this function is called when something is dropped
+
+          // retrieve the dropped element's stored Event Object
+          var originalEventObject = $(this).data('eventObject')
+
+          // we need to copy it, so that multiple events don't have a reference to the same object
+          var copiedEventObject = $.extend({}, originalEventObject)
+
+          // assign it the date that was reported
+          copiedEventObject.start = date
+          copiedEventObject.allDay = allDay
+          copiedEventObject.backgroundColor = $(this).css('background-color')
+          copiedEventObject.borderColor = $(this).css('border-color')
+
+          // render the event on the calendar
+          // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+          $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)
+
+          // is the "remove after drop" checkbox checked?
+          if ($('#drop-remove').is(':checked')) {
+            // if so, remove the element from the "Draggable Events" list
+            $(this).remove()
+          }
+
+        }
+      })
+
+      /* ADDING EVENTS */
+      var currColor = '#3c8dbc' //Red by default
+      //Color chooser button
+      var colorChooser = $('#color-chooser-btn')
+      $('#color-chooser > li > a').click(function(e) {
+        e.preventDefault()
+        //Save color
+        currColor = $(this).css('color')
+        //Add color effect to button
+        $('#add-new-event').css({
+          'background-color': currColor,
+          'border-color': currColor
+        })
+      })
+      $('#add-new-event').click(function(e) {
+        e.preventDefault()
+        //Get value and make sure it is not null
+        var val = $('#new-event').val()
+        if (val.length == 0) {
+          return
+        }
+
+        //Create events
+        var event = $('<div />')
+        event.css({
+          'background-color': currColor,
+          'border-color': currColor,
+          'color': '#fff'
+        }).addClass('external-event')
+        event.html(val)
+        $('#external-events').prepend(event)
+
+        //Add draggable funtionality
+        init_events(event)
+
+        //Remove event from text input
+        $('#new-event').val('')
+      })
+    })
   </script>
 </body>
 

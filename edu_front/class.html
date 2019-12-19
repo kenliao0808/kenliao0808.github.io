@@ -20,8 +20,11 @@
   <link rel="stylesheet" href="css/components/slider.min.css">
   <link rel="stylesheet" href="css/components/slidenav.min.css">
   <link rel="stylesheet" href="css/components/slideshow.min.css">
+  <link rel="stylesheet" href="css/components/tooltip.almost-flat.min.css">
   <link rel="stylesheet" href="css/fontawesome-all.min.css">
   <link rel="stylesheet" href="css/fontawesome-svg-with-js.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.min.css">
+  <link rel="stylesheet" href="css/select2.min.css">
   <link rel="stylesheet" href="css/animate-3.6.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/delay.css">
@@ -100,7 +103,7 @@
           </div>
         </div>
         <div class="uk-button-dropdown" data-uk-dropdown>
-          <a class="active fontSize1_2 font-weight-bold px-3 py-2" href="#" title="#">課程瀏覽</a>
+          <a class="active fontSize1_2 font-weight-bold px-3 py-2" href="class.html" title="#">課程瀏覽</a>
         </div>
         <div class="uk-button-dropdown" data-uk-dropdown>
           <a class="fontSize1_2 font-weight-bold px-3 py-2" href="myclass.html" title="#">我的報名課程</a>
@@ -123,44 +126,6 @@
     <!-- .menuBar -->
   </header>
   <div class="bg_img">
-    <div class="bg-light uk-container uk-container-center">
-      <form class="px-0 py-2 position-relative uk-form">
-        <div class="uk-grid uk-flex uk-flex-space-between uk-grid-collapse" data-uk-grid-margin>
-          <div class="uk-width-5-6">
-            <input id="search" class="border-0 uk-width-1-1" type="text" placeholder="請輸入課程名稱、上課地點或開課單位">
-          </div>
-          <div class="uk-width-1-6">
-            <div class="w-100 h-100 uk-flex">
-              <a class="fontSizeM1_2 color_secondary_dark bg-white rounded-right px-2 uk-flex uk-flex-middle uk-flex-center" href="#" title="進階篩選" aria-label="plus" role="button" data-uk-toggle="{target:'.toggle'}"><span class="toggle m-0"><i class="fas fa-plus-square"></i></span><span class="toggle m-0 uk-hidden"><i class="fas fa-minus-square"></i></span></a>
-              <a class="fontSizeM1_4 color_secondary px-1 px-sm-3 uk-flex uk-flex-middle uk-flex-center" href="#" title="搜尋" aria-label="search" role="button"><i class="fas fa-search"></i></a>
-            </div>
-          </div>
-          <div class="uk-width-1-1">
-            <div class="toggle mt-2 w-100 uk-flex uk-flex-wrap uk-hidden" data-uk-margin>
-              <div class="mr-3">
-                <span class="uk-form-label">類別1</span>
-                <div class="uk-form-controls" data-uk-margin>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                </div>
-              </div>
-              <div class="mr-3">
-                <span class="uk-form-label">類別2</span>
-                <div class="uk-form-controls" data-uk-margin>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                  <label class="mr-2"><input class="mr-1" type="checkbox">option</label>
-                </div>
-              </div>
-              <div class="mr-3"><button class="btn_secondary uk-button" type="reset" value="Reset">清除所選</button></div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
     <div class="min_height100vh py-3 bg_white uk-container uk-container-center">
       <div class="uk-clearfix">
         <ul class="uk-breadcrumb uk-align-left uk-visible-large">
@@ -171,276 +136,171 @@
         </ul>
         <a class="color_secondary_dark uk-margin-bottom uk-align-right uk-visible-large" href="#" title="#" hidden>帳號：<span>a123</span></a>
       </div>
-      <div class="uk-grid" data-uk-grid-margin>
-        <div class="uk-hidden-small uk-width-medium-3-10 uk-width-large-1-4 uk-width-xlarge-3-10">
-          <nav class="listTabs listTabs_secondary listTabs_noborder">
-            <ul class="uk-nav uk-nav-parent-icon uk-margin-remove" data-uk-nav="{multiple:true}">
-              <li class="uk-parent uk-margin-remove uk-padding-remove uk-active">
-                <a class="uk-text-bold" href="#"><i class="mr-1 fas fa-book-open fa-fw"></i>課程類型</a>
-                <ul class="uk-nav-sub uk-padding-remove">
-                  <li class="uk-active"><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>全院開課 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>單位開課 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li>
-                    <a class="listMore btnMore uk-text-small uk-text-right" href="#" title="#" onclick="toggleAllClass(findChildren(findParent(this, 'UL'), '.listMore'), 'uk-hidden'); return false;">More</a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li class="uk-parent uk-margin-remove uk-padding-remove">
-                <a class="uk-text-bold" href="#"><i class="mr-1 fas fa-book-reader fa-fw"></i>教學方式</a>
-                <ul class="uk-nav-sub uk-padding-remove">
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>實體上課 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>數位學習 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li>
-                    <a class="listMore btnMore uk-text-small uk-text-right" href="#" title="#" onclick="toggleAllClass(findChildren(findParent(this, 'UL'), '.listMore'), 'uk-hidden'); return false;">More</a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li class="uk-parent uk-margin-remove uk-padding-remove">
-                <a class="uk-text-bold" href="#"><i class="mr-1 fas fa-th fa-fw"></i>課程性質</a>
-                <ul class="uk-nav-sub uk-padding-remove">
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>護理部 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>教師培育科 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>醫院感染管制委員會 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li>
-                    <a class="listMore btnMore uk-text-small uk-text-right" href="#" title="#" onclick="toggleAllClass(findChildren(findParent(this, 'UL'), '.listMore'), 'uk-hidden'); return false;">More</a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li class="uk-parent uk-margin-remove uk-padding-remove">
-                <a class="uk-text-bold" href="#"><i class="mr-1 fas fa-file fa-fw"></i>開課單位</a>
-                <ul class="uk-nav-sub uk-padding-remove">
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>教學部 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>護理部 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>藥學部 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li>
-                    <a class="listMore btnMore uk-text-small uk-text-right" href="#" title="#" onclick="toggleAllClass(findChildren(findParent(this, 'UL'), '.listMore'), 'uk-hidden'); return false;">More</a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li class="uk-parent uk-margin-remove uk-padding-remove">
-                <a class="uk-text-bold" href="#"><i class="mr-1 fas fa-calendar-check fa-fw"></i>日期搜尋</a>
-                <ul class="uk-nav-sub uk-padding-remove">
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>本日課程 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>3日內課程 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>一週內課程 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li><a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>一個月的課程 <span class="parentheses uk-text-small">10</span></a></li>
-                  <li>
-                    <a class="listMore btnMore uk-text-small uk-text-right" href="#" title="#" onclick="toggleAllClass(findChildren(findParent(this, 'UL'), '.listMore'), 'uk-hidden'); return false;">More</a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                  <li class="listMore uk-hidden">
-                    <a href="#"><i class="uk-icon-justify uk-icon-angle-double-right"></i>Tab <span class="parentheses uk-text-small">10</span></a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+      <h3 class="mt-0 mb-2">課程瀏覽</h3>
+      <form class="px-0 py-2 uk-form">
+        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+          <div class="uk-width-small-3-6">
+            <input class="uk-width-1-1" type="text" placeholder="請輸入課程名稱">
+          </div>
+          <div class="uk-width-1-2 uk-width-small-1-6"><input class="form_date uk-input" type="text" placeholder="起始日期"></div>
+          <div class="uk-width-1-2 uk-width-small-1-6"><input class="form_date uk-input" type="text" placeholder="結束日期"></div>
+          <div class="uk-width-1-2 uk-width-small-1-6">
+            <a class="btn_primary line_height_btn w-100 uk-button uk-button-primary" href="#" title="搜尋" aria-label="search" role="button"><i class="mr-1 fas fa-search"></i>搜尋</a>
+          </div>
+          <div class="widthAutoL uk-width-1-1"><label class="d-block d-md-inline-block">進階篩選：</label></div>
+          <div>
+            <select class="select2">
+              <option>-課程類型-</option>
+              <option>全院開課</option>
+              <option>單位開課</option>
+            </select>
+          </div>
+          <div>
+            <select class="select2">
+              <option>-教學方式-</option>
+              <option>實體課程</option>
+              <option>數位課程</option>
+            </select>
+          </div>
+          <div>
+            <select class="select2">
+              <option>-課程性質-</option>
+              <option>教學能力</option>
+              <option>感染管制</option>
+              <option>職業安全</option>
+            </select>
+          </div>
+          <div>
+            <select class="select2">
+              <option>-開課單位-</option>
+              <option>教學部</option>
+              <option>護理部</option>
+              <option>藥學部</option>
+            </select>
+          </div>
         </div>
-        <div class="uk-width-medium-7-10 uk-width-large-3-4 uk-width-xlarge-7-10">
-          <div class="uk-grid uk-grid-small uk-grid-width-1-3 uk-visible-small" data-uk-grid-margin>
-            <div>
-              <div class="w-100 uk-button-dropdown" data-uk-dropdown>
-                <button class="line_height1 w-100 py-1 uk-button">課程類型 <i class="uk-icon-caret-down"></i></button>
-                <div class="uk-dropdown uk-dropdown-small">
-                  <ul class="nav_secondary uk-nav uk-nav-dropdown">
-                    <li class="uk-active"><a href="#">全院開課</a></li>
-                    <li><a href="#">單位開課</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="w-100 uk-button-dropdown" data-uk-dropdown>
-                <button class="line_height1 w-100 py-1 uk-button">教學方式 <i class="uk-icon-caret-down"></i></button>
-                <div class="uk-dropdown uk-dropdown-small">
-                  <ul class="nav_secondary uk-nav uk-nav-dropdown">
-                    <li><a href="#">實體上課</a></li>
-                    <li><a href="#">數位學習</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="w-100 uk-button-dropdown" data-uk-dropdown>
-                <button class="line_height1 w-100 py-1 uk-button">課程性質 <i class="uk-icon-caret-down"></i></button>
-                <div class="uk-dropdown uk-dropdown-small">
-                  <ul class="nav_secondary uk-nav uk-nav-dropdown">
-                    <li><a href="#">護理部</a></li>
-                    <li><a href="#">教師培育科</a></li>
-                    <li><a href="#">醫院感染管制委員會</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="w-100 uk-button-dropdown" data-uk-dropdown>
-                <button class="line_height1 w-100 py-1 uk-button">開課單位 <i class="uk-icon-caret-down"></i></button>
-                <div class="uk-dropdown uk-dropdown-small">
-                  <ul class="nav_secondary uk-nav uk-nav-dropdown">
-                    <li><a href="#">教學部</a></li>
-                    <li><a href="#">護理部</a></li>
-                    <li><a href="#">藥學部</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="w-100 uk-button-dropdown" data-uk-dropdown>
-                <button class="line_height1 w-100 py-1 uk-button">日期搜尋 <i class="uk-icon-caret-down"></i></button>
-                <div class="uk-dropdown uk-dropdown-small">
-                  <ul class="nav_secondary uk-nav uk-nav-dropdown">
-                    <li><a href="#">本日課程</a></li>
-                    <li><a href="#">3日內課程</a></li>
-                    <li><a href="#">一週內課程</a></li>
-                    <li><a href="#">一個月的課程</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+      </form>
+      <div class="pagination uk-form uk-margin">
+        <div class="m-auto uk-width-medium-2-3 uk-flex uk-flex-space-between uk-flex-middle uk-flex-center">
+          <div>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-double-left fa-fw"></i></span>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-left fa-fw"></i></span>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i></a>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i></a>
           </div>
-          <div class="pagination uk-form uk-margin">
-            <div class="m-auto uk-width-medium-2-3 uk-flex uk-flex-space-between uk-flex-middle uk-flex-center">
-              <div>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-double-left fa-fw"></i></span>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-left fa-fw"></i></span>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i></a>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i></a>
-              </div>
-              <div>
-                <select>
-                  <option selected>1</option>
-                  <option>2</option>
-                </select>
-                <span class="mx-1">/<span class="pl-1">20</span></span>
-              </div>
-              <div>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="下一頁"><i class="fas fa-angle-right fa-fw"></i></a>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="末頁"><i class="fas fa-angle-double-right fa-fw"></i></a>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-right fa-fw"></i></span>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-double-right fa-fw"></i></span>
-              </div>
-            </div>
+          <div>
+            <select>
+              <option selected>1</option>
+              <option>2</option>
+            </select>
+            <span class="mx-1">/<span class="pl-1">20</span></span>
           </div>
-          <ul class="list_dotline list_marginM uk-list uk-list-line">
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
-            <li>
-              <a class="remove_underline bg_hover_blackOpacity05 w-100" href="classdetail.html" title="#">
-                <h3 class="fontSizeH3 color_secondary_dark font-weight-bold uk-margin-small">CbD教學評量-護理經驗分享</h3>
-                <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29（二） 12:15 至 2019-02-25（一） 09:00</h4>
-                <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p>
-              </a>
-            </li>
+          <div>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="下一頁"><i class="fas fa-angle-right fa-fw"></i></a>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="末頁"><i class="fas fa-angle-double-right fa-fw"></i></a>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-right fa-fw"></i></span>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-double-right fa-fw"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="position-relative uk-hidden-large" data-uk-dropdown>
+        <button class="uk-button">排序 <i class="uk-icon-caret-down"></i></button>
+        <div class="uk-dropdown">
+          <ul class="uk-nav uk-nav-dropdown">
+            <li><a href="#">課程起訖↑</a></li>
+            <li><a href="#">課程起訖↓</a></li>
+            <li><a href="#">課程名稱↑</a></li>
+            <li><a href="#">課程名稱↓</a></li>
+            <li><a href="#">課程名稱↓</a></li>
           </ul>
-          <div class="pagination uk-form uk-margin">
-            <div class="m-auto uk-width-medium-2-3 uk-flex uk-flex-space-between uk-flex-middle uk-flex-center">
-              <div>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-double-left fa-fw"></i></span>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-left fa-fw"></i></span>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i></a>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i></a>
-              </div>
-              <div>
-                <select>
-                  <option selected>1</option>
-                  <option>2</option>
-                </select>
-                <span class="mx-1">/<span class="pl-1">20</span></span>
-              </div>
-              <div>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="下一頁"><i class="fas fa-angle-right fa-fw"></i></a>
-                <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="末頁"><i class="fas fa-angle-double-right fa-fw"></i></a>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-right fa-fw"></i></span>
-                <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-double-right fa-fw"></i></span>
-              </div>
+        </div>
+      </div>
+      <ul class="uk-list uk-list-line">
+        <li class="p-2 m-0 uk-visible-large">
+          <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+            <div class="uk-width-large-2-10">
+              <a class="bg_blackOpacity08 remove_underline badge text-secondary" href="#" onclick="toggleAllShow(findChildren(this, '.sort')); return false;" title="點擊排序">課程起訖<i class="sort ml-2 fas fa-sort-alpha-up"></i><i class="sort ml-2 fas fa-sort-alpha-down-alt" hidden></i></a>
             </div>
+            <div class="uk-width-large-3-10">
+              <a class="bg_blackOpacity08 remove_underline badge text-secondary" href="#" onclick="toggleAllShow(findChildren(this, '.sort')); return false;" title="點擊排序">課程名稱<i class="sort ml-2 fas fa-sort-alpha-up"></i><i class="sort ml-2 fas fa-sort-alpha-down-alt" hidden></i></a>
+              <!-- <small class="bg_blackOpacity08 badge text-secondary">課程名稱</small> -->
+            </div>
+            <div class="uk-width-1-2 uk-width-large-3-10"><small class="bg_blackOpacity08 badge text-secondary">課程性質</small>
+            </div>
+            <div class="uk-width-1-2 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
+            <div class="uk-width-1-2 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">狀態</small></div>
+          </div>
+        </li>
+        <li class="p-2 m-0" data-uk-alert>
+          <div class="uk-grid uk-grid-small" data-uk-grid-margin onmouseover="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;" onmouseout="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;">
+            <div class="toggle_truncate truncateL uk-width-large-2-10">
+              <!-- <time class="tilde" data-uk-tooltip title="2019-05-06（一）19:30～2019-05-06（一）20:30">2019-05-06（一）19:30～2019-05-06（一）20:30</time> -->
+              <time class="tilde">2019-05-06（一）19:30～2019-05-06（一）20:30</time>
+            </div>
+            <div class="toggle_truncate truncateL uk-width-large-3-10">
+              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">標題</small> -->
+              <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
+            </div>
+            <div class="toggle_truncate truncateL uk-width-medium-1-2 uk-width-large-3-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">課程性質</small>
+              <span class="d-inline mr-1 mb-1 mb-lg-0">實證醫學、感染管制、行政中心、醫事倫理與法律</span>
+              <small class="mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">審查中</small>
+            </div>
+            <div class="uk-width-1-3 uk-width-medium-1-4 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">時數</small>
+              <span>2</span>
+            </div>
+            <div class="toggle_truncate truncateL uk-width-2-3 uk-width-medium-1-4 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">狀態</small>
+              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
+              <small class="mr-2 mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">現場報名</small>
+            </div>
+          </div>
+        </li>
+        <li class="p-2 m-0" data-uk-alert>
+          <div class="uk-grid uk-grid-small" data-uk-grid-margin onmouseover="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;" onmouseout="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;">
+            <div class="toggle_truncate truncateL uk-width-large-2-10">
+              <time class="tilde">2019-05-06（一）19:30～2019-05-06（一）20:30</time>
+            </div>
+            <div class="toggle_truncate truncateL uk-width-large-3-10">
+              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">標題</small> -->
+              <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
+            </div>
+            <div class="toggle_truncate truncateL uk-width-medium-1-2 uk-width-large-3-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">課程性質</small>
+              <span class="d-inline mr-1 mb-1 mb-lg-0">實證醫學、感染管制、行政中心、醫事倫理與法律</span>
+            </div>
+            <div class="uk-width-1-3 uk-width-medium-1-4 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">時數</small>
+              <span>2</span>
+            </div>
+            <div class="toggle_truncate truncateL uk-width-2-3 uk-width-medium-1-4 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">狀態</small>
+              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="pagination uk-form uk-margin">
+        <div class="m-auto uk-width-medium-2-3 uk-flex uk-flex-space-between uk-flex-middle uk-flex-center">
+          <div>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-double-left fa-fw"></i></span>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted"><i class="fas fa-angle-left fa-fw"></i></span>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="首頁" hidden><i class="fas fa-angle-double-left fa-fw"></i></a>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="上一頁" hidden><i class="fas fa-angle-left fa-fw"></i></a>
+          </div>
+          <div>
+            <select>
+              <option selected>1</option>
+              <option>2</option>
+            </select>
+            <span class="mx-1">/<span class="pl-1">20</span></span>
+          </div>
+          <div>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="下一頁"><i class="fas fa-angle-right fa-fw"></i></a>
+            <a class="py-1 px-2 px-md-3 px-xl-4 m-0 text-secondary" href="#" title="末頁"><i class="fas fa-angle-double-right fa-fw"></i></a>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-right fa-fw"></i></span>
+            <span class="py-1 px-2 px-md-3 px-xl-4 m-0 uk-text-muted" hidden><i class="fas fa-chevron-double-right fa-fw"></i></span>
           </div>
         </div>
       </div>
@@ -595,7 +455,6 @@
   <script src="js/core/smooth-scroll.min.js "></script>
   <script src="js/core/dropdown.min.js"></script>
   <script src="js/core/modal.min.js"></script>
-  <script src="js/core/nav.min.js"></script>
   <script src="js/core/tab.min.js"></script>
   <script src="js/components/accordion.min.js"></script>
   <script src="js/components/grid.min.js"></script>
@@ -605,8 +464,24 @@
   <script src="js/components/slideset.min.js "></script>
   <script src="js/components/slideshow.min.js "></script>
   <script src="js/components/slideshow-fx.min.js "></script>
+  <script src="js/components/tooltip.min.js "></script>
   <script src="js/fontawesome-all.min.js "></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/bootstrap-datepicker.zh-TW.min.js"></script>
+  <script src="js/select2.min.js "></script>
+  <script src="js/select2.zh-TW.js "></script>
   <script src="js/script.js "></script>
+  <script>
+    $('.select2').select2({
+      language: 'zh-TW'
+    });
+    //datepicker
+    $('.form_date').datepicker({
+      language: "zh-TW",
+      autoclose: true,
+      todayHighlight: true
+    });
+  </script>
 </body>
 
 </html>

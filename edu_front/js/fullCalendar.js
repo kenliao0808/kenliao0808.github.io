@@ -43,24 +43,24 @@ document.addEventListener('DOMContentLoaded', function() {
     events: [{
         title: 'All Day Event',
         url: 'https://www.google.com/',
-        start: '2019-11-14',
+        start: '2019-12-23',
         backgroundColor: '#ee7502'
       },
       {
         title: 'Long Event',
-        start: '2019-11-20',
-        end: '2019-11-22',
+        start: '2019-12-24',
+        end: '2019-12-26',
         backgroundColor: '#28a745'
       },
       {
         title: 'Event',
-        start: '2019-11-23',
-        end: '2019-11-25',
+        start: '2020-1-6',
+        end: '2020-1-8',
         backgroundColor: '#dc3545'
       },
       {
         title: 'Event',
-        start: '2019-11-30',
+        start: '2020-1-8',
       }
     ],
     eventClick: function(info) {
