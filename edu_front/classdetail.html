@@ -49,6 +49,7 @@
             <ul class="topList list_horizontal list_vline uk-text-right">
               <li><a class="hover_color_secondary color_white" href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
               <li><a class="hover_color_secondary color_white" href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
+              <li><a class="hover_color_secondary color_white" href="inform.html">通知</a></li>
               <li><a class="hover_color_secondary color_white" href="account.html">王大明<img class="ml-2 uk-border-circle" width="30" src="img/man-user.svg" alt="個人照片"></a><a class="hover_color_secondary color_white" href="#logout" data-uk-modal="{center:true}">登出</a></li>
             </ul>
           </nav>
@@ -78,7 +79,8 @@
           <li class="uk-nav-divider"></li>
           <li><a href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
           <li><a href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
-          <li><a href="#register" title="註冊" data-uk-modal="{center:true}" hidden>註冊</a></li>
+          <li><a href="inform.html" title="通知">通知</a></li>
+          <!-- <li><a href="#register" title="註冊" data-uk-modal="{center:true}" hidden>註冊</a></li> -->
           <li><a href="account.html">王大明<img class="ml-2 uk-border-circle" width="30" src="img/man-user.svg" alt="個人照片"></a></li>
           <li><a href="#logout" data-uk-modal="{center:true}">登出</a></li>
           <!-- <li><a href="#">帳號：<span>a123</span></a></li> -->
@@ -134,7 +136,7 @@
         </ul>
         <a class="color_secondary_dark uk-margin-bottom uk-align-right uk-visible-large" href="#" title="#" hidden>帳號：<span>a123</span></a>
       </div>
-      <div id="content" class="uk-panel uk-panel-box">
+      <div id="content" class="mb-2 uk-panel uk-panel-box">
         <h3 class="fontSizeH3 color_secondary_dark font-weight-bold d-flex align-items-end uk-margin-small">CbD教學評量-護理經驗分享<span style="width: 5px;"></span> <span class="fontSize1 px-1 badge-secondary">全院</span></h3>
         <h4 class="fontSizeH5 font-weight-bold uk-margin-small">2019-01-29(二)12:15 ~ 2019-02-25(一)09:00</h4>
         <!-- <p class="urlFix uk-text-truncate uk-margin-small"><small class="mr-1 badge badge-pill badge-secondary">課程性質</small>評估技巧</p> -->
@@ -169,7 +171,8 @@
         </ul>
         <div class="child_margin child_y_margin_all text-right mt-4 m-md-0"><button class="widthautoM w-100 px-md-5 uk-button uk-button-large" data-uk-tooltip title="報名時間：2019-01-29（二）12:15～2019-02-25（一）09:00">報名尚未開始</button><a class="btn_secondary widthautoM w-100 px-md-5 uk-button uk-button-large" href="#" data-uk-modal="{target:'#signup', center:true}" data-uk-tooltip title="報名時間：2019-01-29（二）12:15～2019-02-25（一）09:00">報　　名</a></div>
       </div>
-      <dl class="dl_columns uk-description-list-horizontal uk-margin uk-grid uk-grid-small uk-grid-width-small-1-2" data-uk-grid-margin>
+      <button class="w-100 mb-2 uk-button" data-uk-toggle="{target:'.toggle'}">聯絡資訊<span class="toggle ml-2"><i class="uk-icon-angle-right"></i></span><span class="toggle ml-2 uk-hidden"><i class="uk-icon-angle-down"></i></span></button>
+      <dl class="toggle dl_columns uk-description-list-horizontal uk-margin uk-grid uk-grid-small uk-grid-width-small-1-2 uk-hidden" data-uk-grid-margin>
         <div>
           <dt class="border px-1 mb-1 font-weight-normal">開課單位</dt>
           <dd class="urlFix">教師培育科</dd>
@@ -191,8 +194,8 @@
           <dd class="urlFix">11217臺北市北投區石牌路二段201號</dd>
         </div>
       </dl>
-      <button class="w-100 uk-button" data-uk-toggle="{target:'.toggle'}">課程詳細資料<span class="toggle ml-2"><i class="uk-icon-angle-right"></i></span><span class="toggle ml-2 uk-hidden"><i class="uk-icon-angle-down"></i></span></button>
-      <dl class="toggle dl_columns uk-description-list-horizontal uk-margin uk-grid uk-grid-small uk-grid-width-small-1-2 uk-hidden" data-uk-grid-margin>
+      <button class="w-100 mb-2 uk-button" data-uk-toggle="{target:'.detail'}">課程詳細資料<span class="detail ml-2"><i class="uk-icon-angle-right"></i></span><span class="detail ml-2 uk-hidden"><i class="uk-icon-angle-down"></i></span></button>
+      <dl class="detail dl_columns uk-description-list-horizontal uk-margin uk-grid uk-grid-small uk-grid-width-small-1-2 uk-hidden" data-uk-grid-margin>
         <div>
           <dt class="border px-1 mb-1 font-weight-normal">課程代碼</dt>
           <dd class="urlFix">123456</dd>

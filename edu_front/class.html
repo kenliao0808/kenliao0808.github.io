@@ -51,6 +51,7 @@
             <ul class="topList list_horizontal list_vline uk-text-right">
               <li><a class="hover_color_secondary color_white" href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
               <li><a class="hover_color_secondary color_white" href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
+              <li><a class="hover_color_secondary color_white" href="inform.html">通知</a></li>
               <li><a class="hover_color_secondary color_white" href="account.html">王大明<img class="ml-2 uk-border-circle" width="30" src="img/man-user.svg" alt="個人照片"></a><a class="hover_color_secondary color_white" href="#logout" data-uk-modal="{center:true}">登出</a></li>
             </ul>
           </nav>
@@ -80,7 +81,8 @@
           <li class="uk-nav-divider"></li>
           <li><a href="https://www.vghtpe.gov.tw/Index.action" target="_blank">醫院首頁</a></li>
           <li><a href="https://wd.vghtpe.gov.tw/medu/Index.action" target="_blank">教學部首頁</a></li>
-          <li><a href="#register" title="註冊" data-uk-modal="{center:true}" hidden>註冊</a></li>
+          <li><a href="inform.html" title="通知">通知</a></li>
+          <!-- <li><a href="#register" title="註冊" data-uk-modal="{center:true}" hidden>註冊</a></li> -->
           <li><a href="account.html">王大明<img class="ml-2 uk-border-circle" width="30" src="img/man-user.svg" alt="個人照片"></a></li>
           <li><a href="#logout" data-uk-modal="{center:true}">登出</a></li>
           <!-- <li><a href="#">帳號：<span>a123</span></a></li> -->
@@ -221,11 +223,11 @@
             <div class="uk-width-large-2-10">
               <a class="bg_blackOpacity08 remove_underline badge text-secondary" href="#" onclick="toggleAllShow(findChildren(this, '.sort')); return false;" title="點擊排序">課程起訖<i class="sort ml-2 fas fa-sort-alpha-up"></i><i class="sort ml-2 fas fa-sort-alpha-down-alt" hidden></i></a>
             </div>
-            <div class="uk-width-large-3-10">
+            <div class="uk-width-large-4-10">
               <a class="bg_blackOpacity08 remove_underline badge text-secondary" href="#" onclick="toggleAllShow(findChildren(this, '.sort')); return false;" title="點擊排序">課程名稱<i class="sort ml-2 fas fa-sort-alpha-up"></i><i class="sort ml-2 fas fa-sort-alpha-down-alt" hidden></i></a>
               <!-- <small class="bg_blackOpacity08 badge text-secondary">課程名稱</small> -->
             </div>
-            <div class="uk-width-1-2 uk-width-large-3-10"><small class="bg_blackOpacity08 badge text-secondary">課程性質</small>
+            <div class="uk-width-1-2 uk-width-large-2-10"><small class="bg_blackOpacity08 badge text-secondary">課程性質</small>
             </div>
             <div class="uk-width-1-2 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">時數</small></div>
             <div class="uk-width-1-2 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">狀態</small></div>
@@ -235,48 +237,48 @@
           <div class="uk-grid uk-grid-small" data-uk-grid-margin onmouseover="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;" onmouseout="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;">
             <div class="toggle_truncate truncateL uk-width-large-2-10">
               <!-- <time class="tilde" data-uk-tooltip title="2019-05-06（一）19:30～2019-05-06（一）20:30">2019-05-06（一）19:30～2019-05-06（一）20:30</time> -->
-              <time class="tilde">2019-05-06(一)19:30~20:30</time>
+              <time class="tilde">2019-05-06（一）19:30～2019-05-06（一）20:30</time>
             </div>
-            <div class="toggle_truncate truncateL uk-width-large-3-10">
-              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">標題</small> -->
+            <div class="toggle_truncate truncateL uk-width-large-4-10">
+              <!-- <small class="bg_blackOpacity08 mr-2 mb-2 badge text-secondary uk-hidden-large">標題</small> -->
               <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
             </div>
-            <div class="toggle_truncate truncateL uk-width-medium-1-2 uk-width-large-3-10">
-              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">課程性質</small>
+            <div class="toggle_truncate truncateL uk-width-medium-1-2 uk-width-large-2-10">
+              <small class="bg_blackOpacity08 mr-2 mb-2 badge text-secondary uk-hidden-large">課程性質</small>
               <span class="d-inline mr-1 mb-1 mb-lg-0">實證醫學、感染管制、行政中心、醫事倫理與法律</span>
-              <small class="mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">審查中</small>
+              <small class="mr-2 mb-2 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-text-nowrap uk-badge uk-badge-notification">審查中</small>
             </div>
-            <div class="uk-width-1-3 uk-width-medium-1-4 uk-width-large-1-10">
-              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">時數</small>
+            <div class="d-flex d-lg-block align-items-start uk-width-1-3 uk-width-medium-1-6 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mr-2 badge text-secondary uk-hidden-large">時數</small>
               <span>2</span>
             </div>
-            <div class="toggle_truncate truncateL uk-width-2-3 uk-width-medium-1-4 uk-width-large-1-10">
-              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">狀態</small>
-              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
-              <small class="mr-2 mb-1 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-badge uk-badge-notification">現場報名</small>
+            <div class="toggle_truncate truncateL d-flex d-lg-block align-items-start uk-width-2-3 uk-width-medium-2-6 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mr-2 mb-2 mr-2 badge text-secondary uk-hidden-large">狀態</small>
+              <a class="btn_primary mb-2 mr-2 px-1 uk-text-nowrap uk-button" href="#">線上報名</a>
+              <small class="mr-2 mb-2 mb-lg-0 px-1 px-sm-2 bg_secondary border-0 uk-text-nowrap uk-badge uk-badge-notification">現場報名</small>
             </div>
           </div>
         </li>
         <li class="p-2 m-0" data-uk-alert>
           <div class="uk-grid uk-grid-small" data-uk-grid-margin onmouseover="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;" onmouseout="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle_truncate'), 'truncateL'); return false;">
             <div class="toggle_truncate truncateL uk-width-large-2-10">
-              <time class="tilde">2019-05-06(一)19:30~20:30</time>
+              <time class="tilde">2019-05-06（一）19:30～2019-05-06（一）20:30</time>
             </div>
-            <div class="toggle_truncate truncateL uk-width-large-3-10">
-              <!-- <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">標題</small> -->
+            <div class="toggle_truncate truncateL uk-width-large-4-10">
+              <!-- <small class="bg_blackOpacity08 mr-2 mb-2 badge text-secondary uk-hidden-large">標題</small> -->
               <a class="color_primary d-inline" href="classdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
             </div>
-            <div class="toggle_truncate truncateL uk-width-medium-1-2 uk-width-large-3-10">
-              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">課程性質</small>
+            <div class="toggle_truncate truncateL uk-width-medium-1-2 uk-width-large-2-10">
+              <small class="bg_blackOpacity08 mr-2 mb-2 badge text-secondary uk-hidden-large">課程性質</small>
               <span class="d-inline mr-1 mb-1 mb-lg-0">實證醫學、感染管制、行政中心、醫事倫理與法律</span>
             </div>
-            <div class="uk-width-1-3 uk-width-medium-1-4 uk-width-large-1-10">
-              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">時數</small>
+            <div class="d-flex d-lg-block align-items-start uk-width-1-3 uk-width-medium-1-6 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mr-2 badge text-secondary uk-hidden-large">時數</small>
               <span>2</span>
             </div>
-            <div class="toggle_truncate truncateL uk-width-2-3 uk-width-medium-1-4 uk-width-large-1-10">
-              <small class="bg_blackOpacity08 mb-2 badge text-secondary d-block uk-hidden-large">狀態</small>
-              <a class="btn_primary mb-2 mb-lg-0 px-1 uk-button" href="#">線上報名</a>
+            <div class="toggle_truncate truncateL d-flex d-lg-block align-items-start uk-width-2-3 uk-width-medium-2-6 uk-width-large-1-10">
+              <small class="bg_blackOpacity08 mr-2 mb-2 mr-2 badge text-secondary uk-hidden-large">狀態</small>
+              <a class="btn_primary mb-2 mr-2 px-1 uk-text-nowrap uk-button" href="#">線上報名</a>
             </div>
           </div>
         </li>
