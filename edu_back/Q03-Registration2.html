@@ -39,11 +39,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <style type="text/css">
-    .content {min-height: 0px; padding:15px 0px 0px 0px;}
-    .box-default {margin-bottom:0px;}
-  </style>
-
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -95,7 +90,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <!-- <li class="header">MAIN NAVIGATION</li> -->
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-dashboard"></i>
               <span>權限相關管理</span>
@@ -105,7 +100,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
-              <li class="active"><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
+              <li><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
@@ -147,7 +142,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-file-text"></i>
               <span>問卷/評量管理</span>
@@ -158,7 +153,7 @@
             <ul class="treeview-menu">
               <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
               <li><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
-              <li><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
+              <li class="active"><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
             </ul>
           </li>
           <li>
@@ -215,7 +210,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>黑名單新增/編輯</h1>
+        <h1>報名表編輯</h1>
       </section>
 
       <!-- Main content -->
@@ -223,109 +218,239 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary fa fa-pencil" title="編輯" onclick="open_disabled();">編輯</button>
+              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>
             </div>
           </div>
-          <!-- /.box-header -->
-          <!-- form start -->
-          <form class="form-horizontal">
-            <div class="box-body">
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">使用者</label>
-
-                <div class="col-sm-6">
-                  <div class="row">
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="input_User">
+          <div class="box-body">
+            <h4 id="caption1" class="bg-gray-300 p-3 my-3">報名表設定</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>狀態</label>
+                  <select class="form-control">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="啟用">啟用</option>
+                    <option value="未啟用">未啟用</option>
+                  </select>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>報名表名稱</label>
+                  <input type="text" class="form-control" placeholder="">
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>開始時間</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
                     </div>
-                    <div class="col-sm-2">
-                      <button type="button" class="btn btn-primary pull-right fa fa-search search_edit"> 查詢</button>
+                    <input type="text" class="time form-control pull-right">
+                  </div>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>結束時間</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
                     </div>
+                    <input type="text" class="time form-control pull-right">
+                  </div>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>說明</label>
+                  <textarea class="form-control" rows="3" placeholder=""></textarea>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <h4 id="caption2" class="bg-gray-300 p-3 my-3">報名表列表
+              <a class="text-primary text-3xl px-4 leading-none" href="#" title="新增題目" data-toggle="modal" data-target="#choose_class" data-keyboard="true">
+                <i class="fa fa-plus"></i>
+              </a>
+            </h4>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>單行文字
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" data-toggle="modal" data-target="#choose_class" data-keyboard="true" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <input type="text" class="form-control" name="ni" value="@中文姓名">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>多行文字
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <textarea class="form-control" rows="3" placeholder=""></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>單選題
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="1" checked>
+                    </span>
+                    <label class="form-control">是</label>
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="2">
+                    </span>
+                    <label class="form-control">否</label>
+                    <span class="input-group-addon">
+                      <input type="radio" name="sign_btn" id="copy_rad" value="3">
+                    </span>
+                    <label class="form-control">其他</label>
                   </div>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">限制使用單位</label>
-
-                <div class="col-sm-5">
-                  <select class="form-control select_option" style="width: 100%;">
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>多選題
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="multi_btn" id="multi_rad" value="1" checked>
+                    </span>
+                    <label class="form-control">是</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="multi_btn" id="multi_rad" value="2">
+                    </span>
+                    <label class="form-control">否</label>
+                    <span class="input-group-addon">
+                      <input type="checkbox" name="multi_btn" id="multi_rad" value="3">
+                    </span>
+                    <label class="form-control">其他</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>下拉式選單 
+                    <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯"></button>
+                    <button type="button" class="btn btn-danger fa fa-trash info_edit_btn" title="刪除"></button>
+                  </label>
+                  <select class="form-control">
                     <option selected value="請選擇">- 請選擇 -</option>
-                    <option value="醫學研究部">醫學研究部</option>
-                    <option value="傳統醫學部">傳統醫學部</option>
-                    <option value="家庭醫學部">家庭醫學部</option>
-                    <option value="教學部">教學部</option>
-                    <option value="護理部">護理部</option>
+                    <option value="選單一">選單一</option>
+                    <option value="選單二">選單二</option>
                   </select>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">限制時間開始</label>
-
-                <div class="col-sm-5">
-                  <input type="text" class="date form-control" id="input_TimeStart" autocomplete="off">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">限制時間結束</label>
-
-                <div class="col-sm-5">
-                  <input type="text" class="date form-control" id="input_TimeEnd" autocomplete="off">
-                </div>
-              </div>
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-              <button type="submit" class="btn btn-primary pull-right">資料儲存</button>
+          </div>
+          <!-- /.box-body -->
+          <div class="margin_y_all_child box-footer">
+            <div class="pull-right">
+              <button type="button" class="btn btn-primary submit_info">儲存資料</button>
             </div>
-            <!-- /.box-footer -->
-          </form>
+          </div>
         </div>
 
-        <div class="modal fade" id="search_user">
+        <div class="modal fade" id="choose_class">
           <div class="modal-dialog">
             <div class="modal-content">
               <form class="form-horizontal" role="form">
                 <div class="modal-header">
-                  <button type="button" class="close edit_show" style="display: none;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">查詢使用者</h4>
+                  <h4 class="modal-title">新增項目</h4>
                 </div>
                 <div class="modal-body">
                   <div class="form-group">
-                    <label class="col-sm-1 control-label"></label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" name="user" id="search_info">
-                          <small class="help-block">(請輸入燈號 / 姓名 / 身分證字號查詢)</small>
-                        </div>
-                        <div class="col-sm-1">
-                          <button type="button" class="btn btn-primary pull-rightol search_user_btn" title="查詢"><i class="fa fa-search"></i> 查詢</button>
-                        </div>
-                      </div>
-                      <div class="form-group search_list" style="display: none;">
-                        <table class="table table-bordered text-center">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >wess@gmail.com 大名 院外單位</button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >784540444 陳大天 護理科</button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >sdfsf@gmail.com 大名 院外單位</button>
-                              </td>
-                              <td>
-                                <button type="button" class="btn btn-block btn-primary btn-sm" onclick="sel_name($(this));" >01564894123 小名 醫護科</button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>必填</label>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="radio" name="sign_btn" id="copy_rad" value="1" checked>
+                        </span>
+                        <label class="form-control">是</label>
+                        <span class="input-group-addon">
+                          <input type="radio" name="sign_btn" id="copy_rad" value="2">
+                        </span>
+                        <label class="form-control">否</label>
                       </div>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>問題類型</label>
+                    <div class="col-sm-4">
+                      <select class="form-control question_type" style="width: 100%;">
+                        <option selected value="">- 請選擇 -</option>
+                        <option value="1">單行文字</option>
+                        <option value="2">多行文字</option>
+                        <option value="3">單選題</option>
+                        <option value="4">多選題</option>
+                        <option value="5">下拉式選單</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>標題</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" placeholder="">
+                      <small class="help-block">請輸入標題</small>
+                    </div>
+                  </div>
+                  <div class="form-group option_list">
+                    <label class="col-sm-2 control-label"><span class="mr-1 text-danger">*</span>選項</label>
+                    <div class="col-sm-8">
+                      <table class="table table-hover">
+                        <tbody class="option_list_add">
+                          <tr class="bg-gray-300">
+                            <th style="width: 10%;">#</th>
+                            <th style="width: 80%;">選項名稱<span class="mr-1 text-danger">*</span></th>
+                            <th style="width: 10%;"></th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td><input type="text" id="" class="form-control"></td>
+                            <td><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="option_close($(this));"><i class="fa fa-close"></i></a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <small class="help-block"></small>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary pull-rightol add_class_btn" title="新增選項" onclick="option_add();"><i class="fa fa-plus-circle"></i> 新增選項</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">備註</label>
+                    <div class="col-sm-8">
+                      <textarea class="form-control" rows="3" placeholder=""></textarea>
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary submit_class">儲存</button>
                 </div>
               </form>
             </div>
@@ -333,7 +458,9 @@
           </div>
           <!-- /.modal-dialog -->
         </div>
+        <!-- /.box -->
       </section>
+      <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
@@ -369,9 +496,9 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
-  <script type="text/javascript">
-    //Date picker
-    $('#date, .date').datepicker({
+  <script>
+    //Date range picker with time picker
+    $('.time').datepicker({
       format: "yyyy-mm-dd",
       autoclose: true,
       language: 'zh-TW'
@@ -379,45 +506,43 @@
 
     $(document).ready(function(){
 
-      $(".select_option").select2();
-      
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
-      $("#search_info").prop("disabled",false);
+      $("textarea").prop("disabled",true);
 
-      $('.skin-blue').addClass('modal-open')
-      $('#search_user').addClass('in');
-      $('#search_user').show();
-
-      $('.search_user_btn').click(function(){
-        $('.search_list').show();
+      $('.question_type').change(function(){
+        var qt_num = $(this).val()
+        if(qt_num > 2){
+          $('.option_list').show();
+        }else{
+          $('.option_list').hide();
+        }
       })
 
-      $('.search_edit').click(function(){
-        $('.skin-blue').addClass('modal-open')
-        $('#search_user').addClass('in');
-        $('#search_user').show();
-        $('.edit_show').show();
-      })
+      $('.submit_class').click(function(){
 
-      $('.edit_show').click(function(){
-        $('.skin-blue').removeClass('modal-open')
-        $('#search_user').removeClass('in');
-        $('#search_user').hide();
       })
     })
-
-    function sel_name(obj){
-      $('.skin-blue').removeClass('modal-open')
-      $('#search_user').removeClass('in');
-      $('#search_user').hide();
-
-      $('#input_User').val(obj.html());
-    }
 
     function open_disabled(){
       $("input").prop("disabled",false);
       $("select").prop("disabled",false);
+      $("textarea").prop("disabled",false);
+    }
+
+    function option_add(){
+
+      var TrNum = $('.option_list_add').find('tr').length
+
+      $('.option_list_add').append('<tr><td>'+TrNum+'</td><td><input type="text" class="form-control"></td><td><a class="text-danger inline-block text-4xl px-4 h-10 align-middle" href="javascript:;" onclick="option_close($(this));"><i class="fa fa-close"></i></a></td></tr>');
+    }
+
+    function option_close(obj){
+      obj.closest('tr').remove();
+      var TrNum = $('.option_list_add').find('tr').length
+      for (var i = 1; i < TrNum; i++) {
+        $('.option_list_add').find('tr')[i].children[0].innerHTML = i;
+      }
     }
 
   </script>

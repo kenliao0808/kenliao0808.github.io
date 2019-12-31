@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
 
   <link rel="stylesheet" href="dist/css/style.css">
-
+  
   <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,29 +39,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <style>
-    /* 進度條的css */
-    .progress {
-      position:relative; 
-      width:400px; 
-      border: 1px solid #ddd; 
-      padding: 1px; 
-      border-radius: 3px; 
-    }
-    .bar { 
-      background-color: #7cc7ee; 
-      width:0%; 
-      height:20px; 
-      border-radius: 3px; 
-    }
-    .percent { 
-      position:absolute; 
-      display:inline-block; 
-      top:-3px; 
-      left:48%; 
-    }
-
-  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -127,7 +104,7 @@
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span>課程相關管理</span>
@@ -137,11 +114,11 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
-              <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
+              <li class="active"><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
             </ul>
           </li>
           <li class="treeview">
@@ -185,7 +162,7 @@
               <span>訊息管理</span>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="I01-billboard1.html">
               <i class="fa fa-clipboard"></i>
               <span>公佈欄管理</span>
@@ -233,138 +210,132 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>課程編輯</h1>
+        <h1>公佈欄編輯</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</h3>
-          </div>
-          <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>
             </div>
           </div>
           <div class="box-body">
-            <ul class="nav nav-tabs">
-              <li><a href="B02-lesson2.html" class="tab_text_color">課程設定</a></li>
-              <li><a href="B02-lesson3.html" class="tab_text_color">報名管理</a></li>
-              <li><a href="B02-lesson4.html" class="tab_text_color">簽到管理</a></li>
-              <li class="active"><a href="B02-lesson5.html" class="tab_text_color">評量管理</a></li>
-              <li><a href="B02-lesson6.html" class="tab_text_color">問卷管理</a></li>
-              <li><a href="B02-lesson7.html" class="tab_text_color">修習結果管理</a></li>
-              <li><a href="B02-lesson8.html" class="tab_text_color">訊息通知管理</a></li>
-            </ul>
-            <div class="my-3 tab-content">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>單位</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="醫學研究部">醫學研究部</option>
-                      <option value="傳統醫學部">傳統醫學部</option>
-                      <option value="家庭醫學部">家庭醫學部</option>
-                      <option value="教學部">教學部</option>
-                      <option value="護理部">護理部</option>
-                    </select>
-                  </div>
+            <h4 id="caption1" class="bg-gray-300 p-3 my-3">基本資訊</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>狀態</label>
+                  <select class="form-control">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="啟用">啟用</option>
+                    <option value="未啟用">未啟用</option>
+                  </select>
+                  <small class="help-block"></small>
                 </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>職類</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="西醫">西醫</option>
-                      <option value="牙醫">牙醫</option>
-                      <option value="中醫">中醫</option>
-                      <option value="護理">護理</option>
-                      <option value="藥學">藥學</option>
-                    </select>
-                  </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>公告類型</label>
+                  <select class="form-control select_option" style="width: 100%;">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="公告">公告</option>
+                    <option value="一般">一般</option>
+                  </select>
+                  <small class="help-block"></small>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>姓名</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="">
-                      </div>
-                      <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-                      </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>公告標題</label>
+                  <input type="text" class="form-control" placeholder="">
+                  <small class="help-block"></small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>單位</label>
+                  <select class="form-control select_option">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="604">C3101 一般行政</option>
+                    <option value="599">760A 耳鼻喉頭頸部＊</option>
+                    <option value="531">940A 職業安全衛生室</option>
+                    <option value="528">9500 品質管理中心</option>
+                    <option value="527">720A 精神醫學部</option>
+                    <option value="463">6004 社工室社工組</option>
+                  </select>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>相關連結</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>職類</label>
+                  <select class="form-control select_option">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="1">不指定</option>
+                    <option value="7">西醫</option>
+                    <option value="13">中醫</option>
+                    <option value="19">牙醫</option>
+                    <option value="25">護理</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>發佈時間</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
                     </div>
+                    <input type="text" class="time form-control pull-right">
                   </div>
+                  <small class="help-block"></small>
                 </div>
               </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>結束時間</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                    <input type="text" class="time form-control pull-right">
+                  </div>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>公告內容</label>
+                  <textarea class="form-control" id="editor1" name="editor1" rows="10" cols="80"></textarea>
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="margin_y_all_child box-footer">
+            <div class="pull-right">
+              <button type="button" class="btn btn-primary submit_info">儲存資料</button>
             </div>
           </div>
         </div>
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-            <div class="pull-right margin_y_all_child">
-              <button type="button" class="btn btn-warning">匯出選項統計</button>
-              <button type="button" class="btn btn-warning">匯出評量明細</button>
-            </div>
-          </div>
-          <div class="box-body">
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-              <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th style="width: 10px"></th>
-                        <th>姓名</th>
-                        <th>單位</th>
-                        <th>職類</th>
-                        <th>最高分數</th>
-                        <th>是否通過</th>
-                        <th>報名時間</th>
-                        <th>動作</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>許小飛</td>
-                        <td>細胞病理科</td>
-                        <td>西醫</td>
-                        <td>80</td>
-                        <td>是</td>
-                        <td><time>2019/7/30 10:13</time></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視"></button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- /.box -->
       </section>
       <!-- /.content -->
     </div>
@@ -400,8 +371,37 @@
   <script src="dist/js/adminlte.min.js"></script>
   <!-- on-off-switch -->
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
+  <!-- CK Editor -->
+  <script src="bower_components/ckeditor/ckeditor.js"></script>
 
   <script src="dist/js/script.js"></script>
+  <script>
+    //Date range picker with time picker
+    $('.time').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose: true,
+      language: 'zh-TW'
+    })
+
+    $(document).ready(function(){
+
+      $(".select_option").select2();
+
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $("textarea").prop("disabled",true);
+
+    })
+
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+      $("textarea").prop("disabled",false);
+      CKEDITOR.replace('editor1')
+    }
+
+
+  </script>
 </body>
 
 </html>

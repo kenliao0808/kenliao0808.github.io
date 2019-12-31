@@ -39,29 +39,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <style>
-    /* 進度條的css */
-    .progress {
-      position:relative; 
-      width:400px; 
-      border: 1px solid #ddd; 
-      padding: 1px; 
-      border-radius: 3px; 
-    }
-    .bar { 
-      background-color: #7cc7ee; 
-      width:0%; 
-      height:20px; 
-      border-radius: 3px; 
-    }
-    .percent { 
-      position:absolute; 
-      display:inline-block; 
-      top:-3px; 
-      left:48%; 
-    }
-
-  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -127,7 +104,7 @@
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span>課程相關管理</span>
@@ -165,7 +142,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-file-text"></i>
               <span>問卷/評量管理</span>
@@ -176,7 +153,7 @@
             <ul class="treeview-menu">
               <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
               <li><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
-              <li><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
+              <li class="active"><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
             </ul>
           </li>
           <li>
@@ -233,61 +210,34 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>課程編輯</h1>
+        <h1>報名表設定</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</h3>
-          </div>
-          <div class="box-header with-border">
             <div class="box-tools pull-right">
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='Q03-Registration2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
-            <ul class="nav nav-tabs">
-              <li><a href="B02-lesson2.html" class="tab_text_color">課程設定</a></li>
-              <li><a href="B02-lesson3.html" class="tab_text_color">報名管理</a></li>
-              <li><a href="B02-lesson4.html" class="tab_text_color">簽到管理</a></li>
-              <li class="active"><a href="B02-lesson5.html" class="tab_text_color">評量管理</a></li>
-              <li><a href="B02-lesson6.html" class="tab_text_color">問卷管理</a></li>
-              <li><a href="B02-lesson7.html" class="tab_text_color">修習結果管理</a></li>
-              <li><a href="B02-lesson8.html" class="tab_text_color">訊息通知管理</a></li>
-            </ul>
             <div class="my-3 tab-content">
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label>單位</label>
+                    <label>狀態</label>
                     <select class="form-control">
                       <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="醫學研究部">醫學研究部</option>
-                      <option value="傳統醫學部">傳統醫學部</option>
-                      <option value="家庭醫學部">家庭醫學部</option>
-                      <option value="教學部">教學部</option>
-                      <option value="護理部">護理部</option>
+                      <option value="啟用">啟用</option>
+                      <option value="未啟用">未啟用</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-9">
                   <div class="form-group">
-                    <label>職類</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="西醫">西醫</option>
-                      <option value="牙醫">牙醫</option>
-                      <option value="中醫">中醫</option>
-                      <option value="護理">護理</option>
-                      <option value="藥學">藥學</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>姓名</label>
+                    <label>報名表名稱</label>
                     <div class="row margin_y_child">
                       <div class="col-md-10">
                         <input type="text" class="form-control" placeholder="">
@@ -304,10 +254,8 @@
         </div>
         <div class="box box-primary">
           <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">2</span> 筆</div>
             <div class="pull-right margin_y_all_child">
-              <button type="button" class="btn btn-warning">匯出選項統計</button>
-              <button type="button" class="btn btn-warning">匯出評量明細</button>
             </div>
           </div>
           <div class="box-body">
@@ -319,25 +267,33 @@
                     <tbody>
                       <tr>
                         <th style="width: 10px"></th>
-                        <th>姓名</th>
-                        <th>單位</th>
-                        <th>職類</th>
-                        <th>最高分數</th>
-                        <th>是否通過</th>
-                        <th>報名時間</th>
+                        <th>報名表名稱</th>
+                        <th>開始時間</th>
+                        <th>結束時間</th>
+                        <th>狀態</th>
                         <th>動作</th>
                       </tr>
                       <tr>
                         <td></td>
-                        <td>許小飛</td>
-                        <td>細胞病理科</td>
-                        <td>西醫</td>
-                        <td>80</td>
-                        <td>是</td>
-                        <td><time>2019/7/30 10:13</time></td>
+                        <td>傳染病認知</td>
+                        <td><time>2019-07-30</time></td>
+                        <td><time>2019-08-30</time></td>
+                        <td><span class="label label-success fa fa-check"> 啟 用</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視"></button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q03-Registration2.html'"></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>職安問卷</td>
+                        <td><time>2019-07-30</time></td>
+                        <td><time>2019-08-30</time></td>
+                        <td><span class="label label-default fa fa-exclamation"> 未啟用</span></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q03-Registration2.html'"></button>
                           </div>
                         </td>
                       </tr>
