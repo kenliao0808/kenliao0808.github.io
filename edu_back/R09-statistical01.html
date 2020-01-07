@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="dist/css/style.css">
 
   <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/respond/css/responsive-tables.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -39,29 +41,8 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <style>
-    /* 進度條的css */
-    .progress {
-      position:relative; 
-      width:400px; 
-      border: 1px solid #ddd; 
-      padding: 1px; 
-      border-radius: 3px; 
-    }
-    .bar { 
-      background-color: #7cc7ee; 
-      width:0%; 
-      height:20px; 
-      border-radius: 3px; 
-    }
-    .percent { 
-      position:absolute; 
-      display:inline-block; 
-      top:-3px; 
-      left:48%; 
-    }
-  </style>
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -125,7 +106,7 @@
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span>課程相關管理</span>
@@ -135,14 +116,14 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
               <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-file-archive-o"></i>
               <span>紀錄查詢與報表下載</span>
@@ -159,7 +140,7 @@
               <li><a href="R06-statistical01.html"><i class="list_dot fa fa-circle"></i>臨床教師達成報表</a></li>
               <li><a href="R07-statistical01.html"><i class="list_dot fa fa-circle"></i>護理部在職教育</a></li>
               <li><a href="R08-statistical01.html"><i class="list_dot fa fa-circle"></i>單位團體護理指導</a></li>
-              <li><a href="R09-statistical01.html"><i class="list_dot fa fa-circle"></i>在職進修成績彙整</a></li>
+              <li class="active"><a href="R09-statistical01.html"><i class="list_dot fa fa-circle"></i>在職進修成績彙整</a></li>
               <li><a href="R10-statistical01.html"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
@@ -231,114 +212,72 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>課程編輯</h1>
+        <h1>在職進修成績彙整</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</h3>
-          </div>
-          <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-success" id="batch_popout">匯入修習結果</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
-            <ul class="nav nav-tabs">
-              <li><a href="B02-lesson2.html" class="tab_text_color">課程設定</a></li>
-              <li><a href="B02-lesson3.html" class="tab_text_color">報名管理</a></li>
-              <li><a href="B02-lesson4.html" class="tab_text_color">簽到管理</a></li>
-              <li><a href="B02-lesson5.html" class="tab_text_color">評量管理</a></li>
-              <li><a href="B02-lesson6.html" class="tab_text_color">問卷管理</a></li>
-              <li class="active"><a href="B02-lesson7.html" class="tab_text_color">修習結果管理</a></li>
-              <li><a href="B02-lesson8.html" class="tab_text_color">訊息通知管理</a></li>
-            </ul>
-            <div class="my-3 tab-content">
+            <form role="form">
               <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>修習狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="1">合格</option>
-                      <option value="0">不合格</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>出席狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="不用出席">不用出席</option>
-                      <option value="已出席">已出席</option>
-                      <option value="未出席">未出席</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>問卷狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="不用出席">不用填寫</option>
-                      <option value="已填寫">已填寫</option>
-                      <option value="未填寫">未填寫</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- /.row -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>評量狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="不用出席">不用填寫</option>
-                      <option value="通過">通過</option>
-                      <option value="不通過">不通過</option>
-                    </select>
-                  </div>
-                </div>
                 <div class="col-md-8">
-                  <div class="form-group">
-                    <label>編號 OR 姓名</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="">
+                  <label>起訖日</label>
+                  <div class="row">
+                    <div class="pseudo_dash col-md-6">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input class="date form-control pull-right" type="text">
+                        </div>
                       </div>
-                      <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input class="date form-control pull-right" type="text">
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>單位</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option selected value="請選擇隸屬單位">- 請選擇隸屬單位 -</option>
+                      <option value="醫學研究部">醫學研究部</option>
+                      <option value="傳統醫學部">傳統醫學部</option>
+                      <option value="家庭醫學部">家庭醫學部</option>
+                      <option value="教學部">教學部</option>
+                      <option value="護理部">護理部</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-              <!-- /.row -->
-            </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+              </div>
+            </form>
           </div>
         </div>
+
+        <!-- table contect list -->
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-            <div class="pull-right margin_y_all_child">
-              <div class="btn-group">
-                  <button type="button" class="btn btn-warning">匯出</button>
-                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                    <span class="sr-only"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">匯出合格名單</a></li>
-                    <li><a href="#">匯出合格名單(包含課程資料)</a></li>
-                  </ul>
-                </div>
-              <button type="button" class="btn btn-danger">刪除 VHS 的修習結果</button> 
-              <button type="button" class="btn btn-danger">刪除手動上傳 EXCEL 匯入的修習結果</button>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-warning pull-rightol"> 匯出查詢紀錄</button>
             </div>
           </div>
           <div class="box-body">
@@ -346,121 +285,57 @@
               <!-- /.box-body -->
               <div class="row">
                 <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>編號</th>
-                      <th>中文姓名</th>
-                      <th>隸屬單位</th>
-                      <th>狀態</th>
-                      <th>出席狀態</th>
-                      <th>問卷狀態</th>
-                      <th>評量狀態</th>
-                      <th>建立方式</th>
-                      <th>管理</th>
-                    </tr>
+                  <table class="table table-hover respond">
+                    <thead>
+                      <tr>
+                        <th style="width: 10px"></th>
+                        <th>單位</th>
+                        <th>職稱</th>
+                        <th>中文姓名</th>
+                        <th>認證機構名稱</th>
+                        <th>班別名稱</th>
+                        <th>期別</th>
+                        <th>課程開始日期</th>
+                        <th>課程結束日期</th>
+                        <th>訓練總數</th>
+                        <th>訓練總數單位</th>
+                        <th>費用種類</th>
+                        <th>委辦單位是否已申請時數</th>
+                        <th>備註</th>
+                      </tr>
+                    </thead>
                     <tbody>
                       <tr>
-                        <td>60668848</td>
-                        <td>黃禎瑛　</td>
-                        <td>門診小兒科</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
+                        <td></td>
+                        <td>教師培育科</td>
+                        <td>西醫</td>
+                        <td>王大明</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2019-12-31</td>
+                        <td>2020-01-07</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td>60668857</td>
-                        <td>黃禎瑛　</td>
-                        <td>門診小兒科</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>手動匯入Excel</td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-trash" title="刪除">刪除</button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>60668849</td>
-                        <td>羅儷先　</td>
-                        <td>秘書組</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
-                      </tr>
-                      <tr>
-                        <td>60668850</td>
-                        <td>程雅琳　</td>
-                        <td>臨床技術訓練科</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
-                      </tr>
-                      <tr>
-                        <td>60668851</td>
-                        <td>林筱萱　</td>
-                        <td>微生物科</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
-                      </tr>
-                      <tr>
-                        <td>60668852</td>
-                        <td>周筱妘　</td>
-                        <td>醫療費用組</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
-                      </tr>
-                      <tr>
-                        <td>60668853</td>
-                        <td>鄭秀蓮　</td>
-                        <td>耳科</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
-                      </tr>
-                      <tr>
-                        <td>60668854</td>
-                        <td>林芷蔚　</td>
-                        <td>兒童醫學部</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
-                      </tr>
-                      <tr>
-                        <td>60668855</td>
-                        <td>陳楚涵　</td>
-                        <td>核醫部</td>
-                        <td>合格</td>
-                        <td>已出席</td>
-                        <td>不用填寫</td>
-                        <td>不用填寫</td>
-                        <td>系統自動產生</td>
-                        <td>無法刪除</td>
+                        <td></td>
+                        <td>教師培育科</td>
+                        <td>西醫</td>
+                        <td>王大明</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2019-12-31</td>
+                        <td>2020-01-07</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
                     </tbody>
                   </table>
@@ -495,37 +370,8 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-  <!-- ./wrapper -->
 
-    <!-- [popout] -->
-  <section class="popout" style="display: none">
-    <section class="inbox">
-      <section class="pop_hd">
-        <h2 id="batch_title">匯入修習結果</h2>
-        <button type="button" class="i_close" id="close_batch" title="close">
-          <i class="fa fa-times"></i>
-        </button>
-      </section>
-      <section class="pop_bd">
-        <section class="formbox">
-          <div class="psbox" id="batch_eg_list">
-            <a href="./clinical_teacher_eg.xlsx">修習結果匯入範例格式</a>
-          </div>
-          <form id="batch_form" name="batch_form" method="POST" action="" enctype="multipart/form-data">
-            <div class="tfbar tfbar01 clearfix">
-              <b>上傳檔案：</b>
-              <span class="mcont">
-                <input type="file" name="upload_file">
-              </span>
-            </div>
-          </form>
-        </section>
-        <section class="popbtn">
-          <button class="btn btn-success" type="submit">確認送出</button>
-        </section>
-      </section>
-    </section>
-  </section>
+  <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -553,19 +399,22 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
+
+  <script type="text/javascript" src="bower_components/respond/js/jquery.responsive-tables.min.js"></script>
   <script>
     
     $(document).ready(function(){
-      $("#batch_popout").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').show();
+
+      $.responsiveTables('850px');
+
+      $(".select_option").select2();
+
+      $('#date, .date').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        language: 'zh-TW'
       })
-      $("#close_batch").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').hide();
-      })
+
     })
 
   </script>
