@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
 
   <link rel="stylesheet" href="dist/css/style.css">
-
+  
   <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -114,11 +114,11 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
-              <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
+              <li class="active"><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
             </ul>
           </li>
           <li class="treeview">
@@ -142,7 +142,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-file-text"></i>
               <span>問卷/評量管理</span>
@@ -151,12 +151,12 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
+              <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
               <li><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
               <li><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
             </ul>
           </li>
-          <li>
+          <li class="active">
             <a href="M01-message1.html">
               <i class="fa fa-commenting"></i>
               <span>訊息管理</span>
@@ -210,7 +210,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>問卷設定</h1>
+        <h1>訊息編輯</h1>
       </section>
 
       <!-- Main content -->
@@ -218,109 +218,87 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='Q01-quest2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>
             </div>
           </div>
           <div class="box-body">
-            <div class="my-3 tab-content">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="啟用">啟用</option>
-                      <option value="未啟用">未啟用</option>
-                    </select>
-                  </div>
+            <h4 id="caption1" class="bg-gray-300 p-3 my-3">基本資訊</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>狀態</label>
+                  <select class="form-control">
+                    <option selected value="請選擇">- 請選擇 -</option>
+                    <option value="啟用">啟用</option>
+                    <option value="未啟用">未啟用</option>
+                  </select>
+                  <small class="help-block"></small>
                 </div>
-                <div class="col-md-9">
-                  <div class="form-group">
-                    <label>問卷名稱</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="">
-                      </div>
-                      <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-                      </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>訊息名稱</label>
+                  <input type="text" class="form-control" placeholder="">
+                  <small class="help-block"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>訊息內容</label>
+                  <textarea class="form-control" id="editor1" name="editor1" rows="10" cols="80">
+                    <div>
+                      <h2>課程內容 - 123</h2>
+                      <table border="1" cellpadding="3" cellspacing="3">
+                        <tbody>
+                          <tr>
+                            <th>課程代碼</th>
+                            <td>5628a6f4757d3</td>
+                          </tr>
+                          <tr>
+                            <th>課程名稱</th>
+                            <td>123</td>
+                          </tr>
+                          <tr>
+                            <th>開辦日期</th>
+                            <td>從 2015-10-22（四） 17:05 至 2015-10-22（四） 18:05</td>
+                          </tr>
+                          <tr>
+                            <th>教學方式</th>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <th>上課地址</th>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <th>上課地點</th>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <th>備註</th>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                  </div>
+                  </textarea>
+                  <small class="help-block"></small>
                 </div>
               </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="margin_y_all_child box-footer">
+            <div class="pull-right">
+              <button type="button" class="btn btn-primary submit_info" onclick="javascript:location.href='M01-message1.html'">儲存資料</button>
             </div>
           </div>
         </div>
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">2</span> 筆</div>
-            <div class="pull-right margin_y_all_child">
-            </div>
-          </div>
-          <div class="box-body">
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-              <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th style="width: 10px"></th>
-                        <th>問卷名稱</th>
-                        <th>開始時間</th>
-                        <th>結束時間</th>
-                        <th>狀態</th>
-                        <th>動作</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>傳染病認知</td>
-                        <td><time>2019-07-30</time></td>
-                        <td><time>2019-08-30</time></td>
-                        <td><span class="label label-success fa fa-check"> 啟 用</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q01-quest2.html'"></button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>職安問卷</td>
-                        <td><time>2019-07-30</time></td>
-                        <td><time>2019-08-30</time></td>
-                        <td><span class="label label-default fa fa-exclamation"> 未啟用</span></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q01-quest2.html'"></button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- /.box -->
       </section>
       <!-- /.content -->
     </div>
@@ -356,8 +334,30 @@
   <script src="dist/js/adminlte.min.js"></script>
   <!-- on-off-switch -->
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
+  <!-- CK Editor -->
+  <script src="bower_components/ckeditor/ckeditor.js"></script>
 
   <script src="dist/js/script.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      $(".select_option").select2();
+
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $("textarea").prop("disabled",true);
+
+    })
+
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+      $("textarea").prop("disabled",false);
+      CKEDITOR.replace('editor1')
+    }
+
+
+  </script>
 </body>
 
 </html>

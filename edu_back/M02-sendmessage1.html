@@ -142,7 +142,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-file-text"></i>
               <span>問卷/評量管理</span>
@@ -151,12 +151,12 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active"><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
+              <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
               <li><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
-              <li><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
+              <li class="active"><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
             </ul>
           </li>
-          <li>
+          <li class="active">
             <a href="M01-message1.html">
               <i class="fa fa-commenting"></i>
               <span>訊息管理</span>
@@ -210,7 +210,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>問卷設定</h1>
+        <h1>訊息管理</h1>
       </section>
 
       <!-- Main content -->
@@ -218,38 +218,32 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='Q01-quest2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
+              <button type="button" class="btn btn-primary pull-rightol" onclick="javascript:location.href='M02-sendmessage2.html'"><i class="fa fa-plus-circle"></i> 新增</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
-            <div class="my-3 tab-content">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>狀態</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="啟用">啟用</option>
-                      <option value="未啟用">未啟用</option>
-                    </select>
+            <form>
+              <div class="my-3 tab-content">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Mail主題</label>
+                      <input type="text" class="form-control" placeholder="">
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-9">
-                  <div class="form-group">
-                    <label>問卷名稱</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="">
-                      </div>
-                      <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-                      </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>發送對象</label>
+                      <input type="text" class="form-control" placeholder="">
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+              </div>
+            </form>
           </div>
         </div>
         <div class="box box-primary">
@@ -267,33 +261,29 @@
                     <tbody>
                       <tr>
                         <th style="width: 10px"></th>
-                        <th>問卷名稱</th>
-                        <th>開始時間</th>
-                        <th>結束時間</th>
-                        <th>狀態</th>
+                        <th>Mail主題</th>
+                        <th>發送對象</th>
+                        <th>寄送總數</th>
+                        <th>使用訊息</th>
+                        <th>寄發時間</th>
                         <th>動作</th>
                       </tr>
                       <tr>
                         <td></td>
-                        <td>傳染病認知</td>
-                        <td><time>2019-07-30</time></td>
-                        <td><time>2019-08-30</time></td>
-                        <td><span class="label label-success fa fa-check"> 啟 用</span></td>
+                        <td>乳癌多專科討論會 上課提醒通知</td>
+                        <td>[ 課程 ] - 乳癌多專科討論會</td>
+                        <td>0</td>
+                        <td><a href='M02-sendmessage2.html'>乳癌多專科討論會 上課提醒通知</a> 系統產生</td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q01-quest2.html'"></button>
+                            <button type="button" class="btn btn-warning" title="測試信寄發" data-toggle="modal" data-target="#SendMessage_Test" data-keyboard="true">測試信寄發</button>
+                            <button type="button" class="btn btn-info fa fa-send" title="寄發"></button>
                           </div>
                         </td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>職安問卷</td>
-                        <td><time>2019-07-30</time></td>
-                        <td><time>2019-08-30</time></td>
-                        <td><span class="label label-default fa fa-exclamation"> 未啟用</span></td>
                         <td>
                           <div class="margin_y_all_child">
-                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='Q01-quest2.html'"></button>
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='M02-sendmessage2.html'"></button>
+                            <button type="button" class="btn btn-danger fa fa-trash" title="刪除"></button>
                           </div>
                         </td>
                       </tr>
@@ -321,6 +311,35 @@
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="SendMessage_Test">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                  <button type="button" class="close edit_show" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">測試信寄發</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">收件人信箱</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" name="send_email" id="send_email">
+                      <small class="help-block"></small>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
+                  <button type="submit" class="btn btn-primary">儲存</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
       </section>
       <!-- /.content -->
     </div>
@@ -358,6 +377,15 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
+  <script>
+    
+    $(document).ready(function(){
+
+      $(".select_option").select2();
+
+    })
+
+  </script>
 </body>
 
 </html>
