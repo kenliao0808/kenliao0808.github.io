@@ -212,7 +212,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>護理人員在職教育時數統計</h1>
+        <h1>教學記錄查詢</h1>
       </section>
 
       <!-- Main content -->
@@ -251,18 +251,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>學習結果</label>
-                    <select class="form-control select_option" id="type_option" name="type_option" style="width: 100%;">
-                      <option value="" selected="selected">請選擇學習結果狀態</option>
-                      <option value="1">合格</option>
-                      <option value="0">不合格</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>單位</label>
@@ -485,13 +473,15 @@
                     </select>
                   </div>
                 </div>
+              </div>
+              <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>職稱</label>
                     <select class="form-control select_option" style="width: 100%;">
-                      <option value="0">未選擇使用者醫事類別</option>
+                      <option value="0">請選擇職稱</option>
                       <option value="1">不指定</option>
-                      <option selected="" value="7">西醫</option>
+                      <option value="7">西醫</option>
                       <option value="13">中醫</option>
                       <option value="19">牙醫</option>
                       <option value="25">護理</option>
@@ -514,9 +504,267 @@
                   <div class="form-group">
                     <label>臨床教師</label>
                     <select class="form-control select_option" style="width: 100%;">
-                      <option value="">未選擇臨床教師職位</option>
-                      <option selected="" value="63">新進臨床教師</option>
+                      <option value="">請選擇臨床教師職位</option>
+                      <option value="63">新進臨床教師</option>
                       <option value="64">臨床教師</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>身份</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="">請選擇身份</option>
+                      <option value="0">院外</option>
+                      <option value="9">院內</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>隸屬單位</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="301">8200 護理部</option>
+                      <option value="526">82NPIN 感染科專科護理師</option>
+                      <option value="598">82APNL 整合照護服務中心護理</option>
+                      <option value="601">82APND 日照中心護理師</option>
+                      <option value="475">82CRC 癌篩中心</option>
+                      <option value="437">82HC 血友病整合治療中心</option>
+                      <option value="441">82SBR 新生兒病房</option>
+                      <option value="442">82A064 Ａ０６４病房</option>
+                      <option value="445">82SICU 腦中風加護中心</option>
+                      <option value="457">82PHDU 小兒洗腎室</option>
+                      <option value="431">82RCUA 胸腔重症加護室Ａ</option>
+                      <option value="351">82W6 第６病房</option>
+                      <option value="300">82TPN 全靜脈小組</option>
+                      <option value="299">82STDY 國內外進修或借調</option>
+                      <option value="298">82SNSP 專科護理師</option>
+                      <option value="524">82NPGI 胃腸肝膽科專科護理師</option>
+                      <option value="525">82NPRC 呼吸照護中心專科護理</option>
+                      <option value="522">82NPHE 血液科專科護理師</option>
+                      <option value="521">82NFAN 神外手術專責護理師</option>
+                      <option value="473">82RNFA 手術專責護理師</option>
+                      <option value="485">82NPOG 婦產科專科護理師</option>
+                      <option value="486">82NPGU 泌尿外科專科護理師</option>
+                      <option value="487">82NFAS 外科部手術專責護理師</option>
+                      <option value="489">82NPRS 直腸外科專科護理師</option>
+                      <option value="481">82NPCV 心臟內科專科護理師</option>
+                      <option value="480">82NPNS 神經外科專科護理師</option>
+                      <option value="479">82NPGS 一般外科專科護理師</option>
+                      <option value="476">82NPVS 心臟外科專科護理師</option>
+                      <option value="490">82APNI 護理資訊管理護理師</option>
+                      <option value="491">82NPHW ＨW專科護理師</option>
+                      <option value="493">82NPPS 整形外科專科護理師</option>
+                      <option value="494">82NFAO 骨科手術專責護理師</option>
+                      <option value="496">82NFAU 泌尿外科手術專責護理</option>
+                      <option value="497">82APNC 安寧共同照護護理師</option>
+                      <option value="498">82NPRT 胸腔部呼吸科專科護理</option>
+                      <option value="499">82NPER 急診內外科專科護理師</option>
+                      <option value="501">82NPON 腫瘤科專科護理師</option>
+                      <option value="502">82NPPD 兒童醫學部專科護理師</option>
+                      <option value="503">82NPNR 神經修復科專科護理師</option>
+                      <option value="504">82APNH 居家安寧護理師</option>
+                      <option value="505">82APNW 傷造口護理師</option>
+                      <option value="507">82NFAG 婦科手術專責護理師</option>
+                      <option value="488">82NPCM 胸腔部內科專科護理師</option>
+                      <option value="483">82NPOR 骨科專科護理師</option>
+                      <option value="511">82NPCS 胸腔外科專科護理師</option>
+                      <option value="512">82NPTS 移植外科專科護理師</option>
+                      <option value="513">82NPPN 小兒神經外科專科護理</option>
+                      <option value="518">82NPGE 高齡醫學專科護理師</option>
+                      <option value="297">82SNCU 神經外科加護病房</option>
+                      <option value="296">82SCU 腦中風加護中心</option>
+                      <option value="294">82RJUP 留職停薪</option>
+                      <option value="293">82RDCC 罕病治療中心</option>
+                      <option value="292">82RD 放射線</option>
+                      <option value="422">82RCUB 胸腔重症加護室Ｂ</option>
+                      <option value="291">82RCU 胸腔內外科加護中心</option>
+                      <option value="290">82QAC 醫療品質審議委員會</option>
+                      <option value="289">82PMR 復健科</option>
+                      <option value="288">82OTNS 器官移植小組</option>
+                      <option value="287">82OPDP 門診公共衛生</option>
+                      <option value="286">82OPDO 門診眼科</option>
+                      <option value="285">82OPDH 門診家醫科</option>
+                      <option value="284">82OPDG 門診婦產科</option>
+                      <option value="283">82OPDF 家庭訪視</option>
+                      <option value="282">82OPDE 門診耳鼻喉科</option>
+                      <option value="281">82OPDD 門診牙科</option>
+                      <option value="280">82OPDB 門診小兒科</option>
+                      <option value="279">82NSD 護士宿舍</option>
+                      <option value="276">82NRQC 護理品質管制</option>
+                      <option value="278">82NR2 神經修復病房Ｂ</option>
+                      <option value="277">82NR1 神經修復病房Ａ</option>
+                      <option value="275">82NM 核醫</option>
+                      <option value="274">82NICU 新生兒加護病房</option>
+                      <option value="273">82NICC 醫院傳管會</option>
+                      <option value="272">82NEH 護理館</option>
+                      <option value="271">82NDR 護理研究小組</option>
+                      <option value="270">82NDFN 總夜班及機動護士</option>
+                      <option value="269">82NCU 神經加護中心</option>
+                      <option value="268">82NC 國會聯絡組</option>
+                      <option value="267">82NBR 新生兒病房</option>
+                      <option value="266">82MGI 腸胃</option>
+                      <option value="337">82MERI 急診加護中心</option>
+                      <option value="361">82MCVF 心臟功能</option>
+                      <option value="265">82MCT 臨床毒物</option>
+                      <option value="264">82MATL 育嬰假</option>
+                      <option value="263">82LRL 白血病小組</option>
+                      <option value="262">82IMC 國際醫療中心</option>
+                      <option value="353">82IITC 胰島素加護中心</option>
+                      <option value="261">82ICCU 冠狀動脈加護中心</option>
+                      <option value="260">82GNDU 關渡院區</option>
+                      <option value="360">82GCRC 新藥臨床試驗中心病房</option>
+                      <option value="259">82GAMA 神經外科伽傌刀</option>
+                      <option value="256">82ERCU 急診加護中心</option>
+                      <option value="255">82ER 急診</option>
+                      <option value="254">82EDSC 內視鏡中心</option>
+                      <option value="258">82E035 Ｅ０３５（骨髓移植）</option>
+                      <option value="257">82E005 同位素治療病房</option>
+                      <option value="249">82DR 產房</option>
+                      <option value="248">82DOMA 醫務轉診</option>
+                      <option value="253">82D040 Ｄ０４０病房</option>
+                      <option value="252">82D030 Ｄ０３０病房</option>
+                      <option value="251">82D020 Ｄ０２０病房</option>
+                      <option value="250">82D010 Ｄ０１０病房</option>
+                      <option value="354">82CVSI 心血管外科加護中心</option>
+                      <option value="239">82CVSB 思源心外加護Ｂ</option>
+                      <option value="238">82CVSA 思源恢復心外加護Ａ</option>
+                      <option value="237">82CTC 癌病中心</option>
+                      <option value="236">82CMRN 個案管理師</option>
+                      <option value="484">82APNB 肺結核個案管理護理師</option>
+                      <option value="482">82ONGU 泌尿癌個案管理護理師</option>
+                      <option value="478">82ONLU 肺癌個案管理護理師</option>
+                      <option value="477">82ONGI 肝癌個案管理護理師</option>
+                      <option value="492">82ONCR 大腸癌個案管理護理師</option>
+                      <option value="495">82ONOR 口頭頸癌個案管理護理</option>
+                      <option value="500">82ONON 淋巴癌個案管理護理師</option>
+                      <option value="506">82APNA 氣喘個案管理護理師</option>
+                      <option value="508">82ONGS 乳癌胃癌個案管理護理</option>
+                      <option value="509">82APNK 慢性腎臟病管理護理師</option>
+                      <option value="510">82ONCS 食道癌個案管理護理師</option>
+                      <option value="514">82ONGY 婦癌個案管理護理師</option>
+                      <option value="515">82ONPN 兒癌個案管理護理師</option>
+                      <option value="516">82ONNS 腦癌個案管理護理師</option>
+                      <option value="517">82APNS 腦中風個案管理護理師</option>
+                      <option value="519">82APNG 高齡個案管理護理師</option>
+                      <option value="247">82C099 Ｃ０９９病房</option>
+                      <option value="246">82C089 Ｃ０８９病房</option>
+                      <option value="245">82C079 Ｃ０７９病房</option>
+                      <option value="244">82C069 Ｃ０６９病房</option>
+                      <option value="243">82C059 Ｃ０５９病房</option>
+                      <option value="242">82C049 Ｃ０４９病房</option>
+                      <option value="241">82C039 Ｃ０３９病房</option>
+                      <option value="240">82C029 Ｃ０２９病房</option>
+                      <option value="356">82C019 Ｃ０１９病房</option>
+                      <option value="221">82BU 燒傷中心</option>
+                      <option value="220">82BRCC 呼吸照護中心</option>
+                      <option value="350">82BOS 產病假</option>
+                      <option value="235">82B118 Ｂ１１８病房</option>
+                      <option value="234">82B117 Ｂ１１７病房</option>
+                      <option value="233">82B108 Ｂ１０８病房</option>
+                      <option value="232">82B107 Ｂ１０７病房</option>
+                      <option value="231">82B098 Ｂ０９８病房</option>
+                      <option value="230">82B097 Ｂ０９７病房</option>
+                      <option value="229">82B088 Ｂ０８８病房</option>
+                      <option value="228">82B087 Ｂ０８７病房</option>
+                      <option value="227">82B078 Ｂ０７８病房</option>
+                      <option value="226">82B077 Ｂ０７７病房</option>
+                      <option value="225">82B068 Ｂ０６８病房</option>
+                      <option value="224">82B067 Ｂ０６７病房</option>
+                      <option value="223">82B058 Ｂ０５８病房</option>
+                      <option value="222">82B047 Ｂ０４７（臨床新藥試</option>
+                      <option value="168">82APN 進階護理師</option>
+                      <option value="167">82AIR 過敏免疫風濕科</option>
+                      <option value="219">82A212 Ａ２１２病房</option>
+                      <option value="218">82A211 Ａ２１１（安寧）病房</option>
+                      <option value="217">82A194 Ａ１９４病房</option>
+                      <option value="216">82A193 Ａ１９３病房</option>
+                      <option value="215">82A192 Ａ１９２病房</option>
+                      <option value="214">82A191 Ａ１９１病房</option>
+                      <option value="213">82A184 Ａ１８４病房</option>
+                      <option value="212">82A183 Ａ１８３病房</option>
+                      <option value="211">82A182 Ａ１８２病房</option>
+                      <option value="355">82A181 Ａ１８１病房</option>
+                      <option value="210">82A173 Ａ１７３病房</option>
+                      <option value="209">82A172 Ａ１７２病房</option>
+                      <option value="208">82A171 Ａ１７１病房</option>
+                      <option value="207">82A163 Ａ１６３病房</option>
+                      <option value="206">82A162 Ａ１６２病房</option>
+                      <option value="205">82A161 Ａ１６１病房</option>
+                      <option value="204">82A154 Ａ１５４病房</option>
+                      <option value="203">82A153 Ａ１５３體檢病房</option>
+                      <option value="202">82A152 Ａ１５２體檢病房</option>
+                      <option value="201">82A151 Ａ１５１體檢病房</option>
+                      <option value="200">82A144 Ａ１４４病房</option>
+                      <option value="199">82A142 Ａ１４２病房</option>
+                      <option value="198">82A141 Ａ１４１病房</option>
+                      <option value="197">82A134 Ａ１３４病房</option>
+                      <option value="196">82A124 Ａ１２４病房</option>
+                      <option value="195">82A123 Ａ１２３病房</option>
+                      <option value="194">82A122 Ａ１２２病房</option>
+                      <option value="193">82A121 Ａ１２１病房</option>
+                      <option value="192">82A114 Ａ１１４病房</option>
+                      <option value="191">82A113 Ａ１１３病房</option>
+                      <option value="190">82A112 Ａ１１２病房</option>
+                      <option value="189">82A111 Ａ１１１病房</option>
+                      <option value="188">82A104 Ａ１０４病房</option>
+                      <option value="187">82A103 Ａ１０３病房</option>
+                      <option value="186">82A102 Ａ１０２病房</option>
+                      <option value="185">82A101 Ａ１０１病房</option>
+                      <option value="184">82A094 Ａ０９４病房（小兒加</option>
+                      <option value="183">82A093 Ａ０９３病房</option>
+                      <option value="182">82A092 Ａ０９２病房</option>
+                      <option value="181">82A091 Ａ０９１病房</option>
+                      <option value="180">82A083 Ａ０８３病房（嬰兒室</option>
+                      <option value="179">82A082 Ａ０８２病房</option>
+                      <option value="178">82A081 Ａ０８１病房</option>
+                      <option value="177">82A073 Ａ０７３病房</option>
+                      <option value="176">82A072 Ａ０７２病房</option>
+                      <option value="175">82A071 Ａ０７１病房</option>
+                      <option value="174">82A063 Ａ０６３病房</option>
+                      <option value="173">82A062 Ａ０６２病房</option>
+                      <option value="172">82A061 Ａ０６１病房</option>
+                      <option value="171">82A052 Ａ０５２病房</option>
+                      <option value="170">82A051 Ａ０５１病房</option>
+                      <option value="169">82A021 醫護加強中心</option>
+                      <option value="349">827354 婦幼門診</option>
+                      <option value="310">827352 內外科門診</option>
+                      <option value="309">826116 人工腎臟室</option>
+                      <option value="308">823POR 婦幼恢復室</option>
+                      <option value="307">823OR 婦幼手術室</option>
+                      <option value="306">822POR 思源樓恢復室</option>
+                      <option value="305">822OR 思源樓手術室</option>
+                      <option value="352">822CSR 第二供應中心</option>
+                      <option value="304">821POR 中正樓恢復室</option>
+                      <option value="303">821OR 中正樓手術室</option>
+                      <option value="302">821CSR 第一供應中心</option>
+                      <option value="474">82BC 乳房醫學中心門診</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>學習結果</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="" >請選擇學習結果狀態</option>
+                      <option value="1">合格</option>
+                      <option value="0">不合格</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>課程性質</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="">請選擇課程性質</option>
+                      <option value="52">8200 護理部</option>
+                      <option value="53">&nbsp;&nbsp;&nbsp;&nbsp;nur1 病人權利</option>
+                      <option value="54">&nbsp;&nbsp;&nbsp;&nbsp;nur2 病人安全</option>
+                      <option value="55">&nbsp;&nbsp;&nbsp;&nbsp;nur3 護理倫理</option>
+                      <option value="56">&nbsp;&nbsp;&nbsp;&nbsp;nur4 全人醫療</option>
+                      <option value="57">&nbsp;&nbsp;&nbsp;&nbsp;nur5 感染管制（護）</option>
                     </select>
                   </div>
                 </div>
@@ -544,54 +792,58 @@
                   <table class="table table-hover respond">
                     <thead>
                       <tr>
-                        <th width="15%">單位</th>
-                        <th>病人權利</th>
-                        <th>病人安全</th>
-                        <th>護理倫理</th>
-                        <th>全人醫療</th>
-                        <th>感染管制（護）</th>
-                        <th>危機處理（護）</th>
-                        <th>急重症照護</th>
-                        <th>生命末期照護</th>
-                        <th>總計</th>
+                        <th style="width: 10px"></th>
+                        <th>中文姓名</th>
+                        <th>隸屬單位</th>
+                        <th>職稱</th>
+                        <th>課程代碼</th>
+                        <th>開課單位</th>
+                        <th>課程名稱</th>
+                        <th>課程類型</th>
+                        <th>課程時間</th>
+                        <th>教學時數</th>
+                        <th>教學結果</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>感染科專科護理師</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>22</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>24</td>
+                        <td></td>
+                        <td><a href="https://edu.vghtpe.gov.tw/user/profile_view/43a43v250f1">張清貿　</a></td>
+                        <td>傳統醫學部</td>
+                        <td>中醫</td>
+                        <td>5ddcdbd20d15c</td>
+                        <td>傳統醫學部</td>
+                        <td><a href="https://edu.vghtpe.gov.tw/course/view/5ddcdbd20d567">中醫針灸科教學門診</a></td>
+                        <td>單位開課</td>
+                        <td>2019-12-27（五） 14:00<br>~<br>2019-12-27（五） 17:00</td>
+                        <td>3.00</td>
+                        <td>合格</td>
                       </tr>
                       <tr>
-                        <td>整合照護服務中心護理</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>12</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>4</td>
-                        <td>0</td>
-                        <td>16</td>
+                        <td></td>
+                        <td><a href="https://edu.vghtpe.gov.tw/user/profile_view/a902tdyuhf8">陳方佩　</a></td>
+                        <td>傳統醫學部</td>
+                        <td>中醫</td>
+                        <td class="hidden-phone">5ddcdc00a2543</td>
+                        <td class="hidden-phone">傳統醫學部</td>
+                        <td><a href="https://edu.vghtpe.gov.tw/course/view/5ddcdc00a2932">醫學倫理暨醫療法律案例探討</a></td>
+                        <td class="hidden-phone">單位開課</td>
+                        <td class="hidden-phone">2019-12-24（二） 11:00<br>~<br>2019-12-24（二） 12:00</td>
+                        <td>1.00</td>
+                        <td>合格    </td>
                       </tr>
                       <tr>
-                        <td>日照中心護理師</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>4</td>
+                        <td></td>
+                        <td><a href="https://edu.vghtpe.gov.tw/user/profile_view/lc3m3cpfsde">龔彥穎　</a></td>
+                        <td>整合醫學科</td>
+                        <td>中醫</td>
+                        <td class="hidden-phone">5ddcdba24c0b0</td>
+                        <td class="hidden-phone">傳統醫學部</td>
+                        <td><a href="https://edu.vghtpe.gov.tw/course/view/5ddcdba24c88f">常見中醫內兒科疾病症狀之中西醫診治</a></td>
+                        <td class="hidden-phone">單位開課</td>
+                        <td class="hidden-phone">2019-12-23（一） 11:00<br>~<br>2019-12-23（一） 12:00</td>
+                        <td>1.00</td>
+                        <td>合格    </td>
                       </tr>
                     </tbody>
                   </table>
@@ -660,14 +912,6 @@
   <script>
     
     $(document).ready(function(){
-
-      $('#type_option').change(function()   {
-        if($(this).val()==='職稱'){
-          $('#unit_select').hide();
-        }else{
-          $('#unit_select').show();
-        }
-      });
 
       $.responsiveTables('850px');
 
