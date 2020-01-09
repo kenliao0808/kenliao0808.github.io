@@ -248,7 +248,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>訊息內容</label>
+                  <label><span class="mr-1 text-danger">*</span>訊息內容</label>
                   <textarea class="form-control" id="editor1" name="editor1" rows="10" cols="80">
                     <div>
                       <h2>課程內容 - 123</h2>
@@ -290,11 +290,206 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label><span class="mr-1 text-danger">*</span>發送對象</label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="insite_check" id="insite_check" value="1">
+                          </span>
+                          <label class="form-control">院內帳號</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="outsite_check" id="outsite_check" value="2">
+                          </span>
+                          <label class="form-control">院外帳號</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="success_check" id="success_check" onclick="show_select('class');" value="3">
+                          </span>
+                          <label class="form-control">課程報名成功</label>
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="signin_check" id="signin_check" onclick="show_select('class');" value="4">
+                          </span>
+                          <label class="form-control">課程已簽到的學員</label>
+                        </div>
+                        <div class="form-group select_top" id="class_select" style="display: none;">
+                          <select class="form-control select_option">
+                            <option selected value="請選擇">- 請選擇 -</option>
+                            <option value="0">[0041556]10902跨領域全人教育暨SDM前之衛教諮詢應用推廣課程</option>
+                            <option value="0">[1ASDW14]10902跨領域全人教育暨SDM前之衛教諮詢應用推廣課程</option>
+                            <option value="1">  描述性世代研究與發生密度</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label></label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="type_check" id="type_check" onclick="show_select('type');" value="5">
+                          </span>
+                          <label class="form-control">單位(隸屬單位的人員)</label>
+                        </div>
+                        <div class="form-group select_top" id="type_select" style="display: none;">
+                          <select class="form-control select_option">
+                            <option value="">選擇單位</option>
+                            <option value="604">C3101 一般行政</option>
+                            <option value="599">760A 耳鼻喉頭頸部＊</option>
+                            <option value="531">940A 職業安全衛生室</option>
+                            <option value="528">9500 品質管理中心</option>
+                            <option value="527">720A 精神醫學部</option>
+                            <option value="463">6004 社工室社工組</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="category_check" id="category_check" onclick="show_select('category');" value="6">
+                          </span>
+                          <label class="form-control">職類</label>
+                        </div>
+                        <div class="form-group select_top" id="category_select" style="display: none;">
+                          <select class="form-control select_option">
+                            <option value="">選擇職類</option>
+                            <option value="1">不指定</option>
+                            <option value="7">西醫</option>
+                            <option value="13">中醫</option>
+                            <option value="19">牙醫</option>
+                            <option value="25">護理</option>
+                            <option value="29">醫事放射</option>
+                            <option value="30">醫事檢驗</option>
+                            <option value="31">藥事</option>
+                            <option value="32">營養</option>
+                            <option value="33">呼吸治療</option>
+                            <option value="34">物理治療</option>
+                            <option value="35">職能治療</option>
+                            <option value="36">臨床心理</option>
+                            <option value="37">語言治療</option>
+                            <option value="38">聽力治療</option>
+                            <option value="39">牙體技術</option>
+                            <option value="40">其他</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <input type="checkbox" name="excel_check" id="excel_check" onclick="show_select('excel');" value="7">
+                          </span>
+                          <label class="form-control">EXCEL 清單</label>
+                        </div>
+                        <div class="form-group select_top" id="excel_select" style="display: none;">
+                          <a href="javascript:;">下載範例檔</a>
+                          <input type="file" name="excel_list">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- /.box-body -->
           <div class="margin_y_all_child box-footer">
             <div class="pull-right">
               <button type="button" class="btn btn-primary submit_info" onclick="javascript:location.href='M01-message1.html'">儲存資料</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <!-- /.box-body -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th style="width: 10px"></th>
+                        <th>姓名</th>
+                        <th>E-mail</th>
+                        <th>發送狀態</th>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>周筱妘</td>
+                        <td>hychou9@vghtpe.gov.tw</td>
+                        <td><span class="label label-success fa fa-check"> 成 功</span></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>林世群</td>
+                        <td>sclin18@vghtpe.gov.tw</td>
+                        <td><span class="label label-danger fa fa-remove"> 失 敗</span></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>王冠瑜</td>
+                        <td>kywang3@vghtpe.gov.tw</td>
+                        <td><span class="label label-success fa fa-check"> 成 功</span></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>尹紹安</td>
+                        <td>sayin@vghtpe.gov.tw</td>
+                        <td><span class="label label-danger fa fa-remove"> 失 敗</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -341,7 +536,9 @@
   <script>
     $(document).ready(function(){
 
-      $(".select_option").select2();
+      $(".select_option").select2({
+        width: '100%'
+      });
 
       $("input").prop("disabled",true);
       $("select").prop("disabled",true);
@@ -356,6 +553,23 @@
       CKEDITOR.replace('editor1')
     }
 
+    function show_select(obj){
+      if(obj){
+        if($('#'+obj+'_check').prop('checked')){
+          $('#'+obj+'_select').show();
+        }else{
+          if(obj=='class'){
+            if($('#success_check').prop('checked') || $('#signin_check').prop('checked')){
+              $('#'+obj+'_select').show();
+            }else{
+              $('#'+obj+'_select').hide();
+            }
+          }else{
+            $('#'+obj+'_select').hide();
+          }
+        }
+      }
+    }
 
   </script>
 </body>

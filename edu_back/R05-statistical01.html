@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
+
+  <link rel="stylesheet" href="dist/css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/respond/css/responsive-tables.min.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="ml-2">管理者介面</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="dist/img/man-user.svg" class="user-image" alt="User Image">
+                <span class="hidden-xs">系統管理者</span>
+              </a>
+              <ul class="shadow-lg dropdown-menu">
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">我的資料</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">登出</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <!-- <li class="header">MAIN NAVIGATION</li> -->
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-dashboard"></i>
+              <span>權限相關管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="A01-users1.html"><i class="list_dot fa fa-circle"></i>使用者管理</a></li>
+              <li><a href="A02-block1.html"><i class="list_dot fa fa-circle"></i>黑名單管理</a></li>
+              <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-calendar"></i>
+              <span>課程相關管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
+              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
+              <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
+              <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
+              <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
+            </ul>
+          </li>
+          <li class="active treeview">
+            <a href="#">
+              <i class="fa fa-file-archive-o"></i>
+              <span>紀錄查詢與報表下載</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="R01-statistical01.html"><i class="list_dot fa fa-circle"></i>學習記錄查詢</a></li>
+              <li><a href="R02-statistical01.html"><i class="list_dot fa fa-circle"></i>教學記錄查詢</a></li>
+              <li><a href="R03-statistical01.html"><i class="list_dot fa fa-circle"></i>開課時數統計表</a></li>
+              <li><a href="R04-statistical01.html"><i class="list_dot fa fa-circle"></i>必修時數統計</a></li>
+              <li><a href="R05-statistical01.html"><i class="list_dot fa fa-circle"></i>必修時數達成率</a></li>
+              <li class="active"><a href="R06-statistical01.html"><i class="list_dot fa fa-circle"></i>臨床教師達成報表</a></li>
+              <li><a href="R07-statistical01.html"><i class="list_dot fa fa-circle"></i>護理部在職教育</a></li>
+              <li><a href="R08-statistical01.html"><i class="list_dot fa fa-circle"></i>單位團體護理指導</a></li>
+              <li><a href="R09-statistical01.html"><i class="list_dot fa fa-circle"></i>在職進修成績彙整</a></li>
+              <li><a href="R10-statistical01.html"><i class="list_dot fa fa-circle"></i>護理人員在職教育時數</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-file-text"></i>
+              <span>問卷/評量管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="Q01-quest1.html"><i class="list_dot fa fa-circle"></i>問卷設定</a></li>
+              <li><a href="Q02-evaluation1.html"><i class="list_dot fa fa-circle"></i>評量設定</a></li>
+              <li><a href="Q03-Registration1.html"><i class="list_dot fa fa-circle"></i>報名表設定</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="M01-message1.html">
+              <i class="fa fa-commenting"></i>
+              <span>訊息管理</span>
+            </a>
+          </li>
+          <li>
+            <a href="I01-billboard1.html">
+              <i class="fa fa-clipboard"></i>
+              <span>公佈欄管理</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-gear"></i>
+              <span>系統參數設定</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="C00-compulsory1.html"><i class="list_dot fa fa-circle"></i>必修時數管理</a></li>
+              <li><a href="C01-system1.html"><i class="list_dot fa fa-circle"></i>單位管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>職類管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>全院課程性質管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>單位課程性質管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>行政職稱管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>實施方式管理</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>臨床教師資格設定</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-user-secret"></i>
+              <span>系統稽核與監控</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>帳號測試入口</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>聯絡我們紀錄</a></li>
+              <li><a href="#"><i class="list_dot fa fa-circle"></i>卡鐘匯入紀錄</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>護理人員在職教育時數統計</h1>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+            <form role="form">
+              <div class="row">
+                <div class="col-md-8">
+                  <label>起訖日</label>
+                  <div class="row">
+                    <div class="pseudo_dash col-md-6">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input class="date form-control pull-right" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </div>
+                          <input class="date form-control pull-right" type="text">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>類型</label>
+                    <select class="form-control select_option" id="type_option" name="type_option" style="width: 100%;">
+                      <option value="單位">單位</option>
+                      <option value="職稱">職稱</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4" id="unit_select">
+                  <div class="form-group">
+                    <label>單位</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="301">8200 護理部</option>
+                      <option value="526">82NPIN 感染科專科護理師</option>
+                      <option value="598">82APNL 整合照護服務中心護理</option>
+                      <option value="601">82APND 日照中心護理師</option>
+                      <option value="475">82CRC 癌篩中心</option>
+                      <option value="437">82HC 血友病整合治療中心</option>
+                      <option value="441">82SBR 新生兒病房</option>
+                      <option value="442">82A064 Ａ０６４病房</option>
+                      <option value="445">82SICU 腦中風加護中心</option>
+                      <option value="457">82PHDU 小兒洗腎室</option>
+                      <option value="431">82RCUA 胸腔重症加護室Ａ</option>
+                      <option value="351">82W6 第６病房</option>
+                      <option value="300">82TPN 全靜脈小組</option>
+                      <option value="299">82STDY 國內外進修或借調</option>
+                      <option value="298">82SNSP 專科護理師</option>
+                      <option value="524">82NPGI 胃腸肝膽科專科護理師</option>
+                      <option value="525">82NPRC 呼吸照護中心專科護理</option>
+                      <option value="522">82NPHE 血液科專科護理師</option>
+                      <option value="521">82NFAN 神外手術專責護理師</option>
+                      <option value="473">82RNFA 手術專責護理師</option>
+                      <option value="485">82NPOG 婦產科專科護理師</option>
+                      <option value="486">82NPGU 泌尿外科專科護理師</option>
+                      <option value="487">82NFAS 外科部手術專責護理師</option>
+                      <option value="489">82NPRS 直腸外科專科護理師</option>
+                      <option value="481">82NPCV 心臟內科專科護理師</option>
+                      <option value="480">82NPNS 神經外科專科護理師</option>
+                      <option value="479">82NPGS 一般外科專科護理師</option>
+                      <option value="476">82NPVS 心臟外科專科護理師</option>
+                      <option value="490">82APNI 護理資訊管理護理師</option>
+                      <option value="491">82NPHW ＨW專科護理師</option>
+                      <option value="493">82NPPS 整形外科專科護理師</option>
+                      <option value="494">82NFAO 骨科手術專責護理師</option>
+                      <option value="496">82NFAU 泌尿外科手術專責護理</option>
+                      <option value="497">82APNC 安寧共同照護護理師</option>
+                      <option value="498">82NPRT 胸腔部呼吸科專科護理</option>
+                      <option value="499">82NPER 急診內外科專科護理師</option>
+                      <option value="501">82NPON 腫瘤科專科護理師</option>
+                      <option value="502">82NPPD 兒童醫學部專科護理師</option>
+                      <option value="503">82NPNR 神經修復科專科護理師</option>
+                      <option value="504">82APNH 居家安寧護理師</option>
+                      <option value="505">82APNW 傷造口護理師</option>
+                      <option value="507">82NFAG 婦科手術專責護理師</option>
+                      <option value="488">82NPCM 胸腔部內科專科護理師</option>
+                      <option value="483">82NPOR 骨科專科護理師</option>
+                      <option value="511">82NPCS 胸腔外科專科護理師</option>
+                      <option value="512">82NPTS 移植外科專科護理師</option>
+                      <option value="513">82NPPN 小兒神經外科專科護理</option>
+                      <option value="518">82NPGE 高齡醫學專科護理師</option>
+                      <option value="297">82SNCU 神經外科加護病房</option>
+                      <option value="296">82SCU 腦中風加護中心</option>
+                      <option value="294">82RJUP 留職停薪</option>
+                      <option value="293">82RDCC 罕病治療中心</option>
+                      <option value="292">82RD 放射線</option>
+                      <option value="422">82RCUB 胸腔重症加護室Ｂ</option>
+                      <option value="291">82RCU 胸腔內外科加護中心</option>
+                      <option value="290">82QAC 醫療品質審議委員會</option>
+                      <option value="289">82PMR 復健科</option>
+                      <option value="288">82OTNS 器官移植小組</option>
+                      <option value="287">82OPDP 門診公共衛生</option>
+                      <option value="286">82OPDO 門診眼科</option>
+                      <option value="285">82OPDH 門診家醫科</option>
+                      <option value="284">82OPDG 門診婦產科</option>
+                      <option value="283">82OPDF 家庭訪視</option>
+                      <option value="282">82OPDE 門診耳鼻喉科</option>
+                      <option value="281">82OPDD 門診牙科</option>
+                      <option value="280">82OPDB 門診小兒科</option>
+                      <option value="279">82NSD 護士宿舍</option>
+                      <option value="276">82NRQC 護理品質管制</option>
+                      <option value="278">82NR2 神經修復病房Ｂ</option>
+                      <option value="277">82NR1 神經修復病房Ａ</option>
+                      <option value="275">82NM 核醫</option>
+                      <option value="274">82NICU 新生兒加護病房</option>
+                      <option value="273">82NICC 醫院傳管會</option>
+                      <option value="272">82NEH 護理館</option>
+                      <option value="271">82NDR 護理研究小組</option>
+                      <option value="270">82NDFN 總夜班及機動護士</option>
+                      <option value="269">82NCU 神經加護中心</option>
+                      <option value="268">82NC 國會聯絡組</option>
+                      <option value="267">82NBR 新生兒病房</option>
+                      <option value="266">82MGI 腸胃</option>
+                      <option value="337">82MERI 急診加護中心</option>
+                      <option value="361">82MCVF 心臟功能</option>
+                      <option value="265">82MCT 臨床毒物</option>
+                      <option value="264">82MATL 育嬰假</option>
+                      <option value="263">82LRL 白血病小組</option>
+                      <option value="262">82IMC 國際醫療中心</option>
+                      <option value="353">82IITC 胰島素加護中心</option>
+                      <option value="261">82ICCU 冠狀動脈加護中心</option>
+                      <option value="260">82GNDU 關渡院區</option>
+                      <option value="360">82GCRC 新藥臨床試驗中心病房</option>
+                      <option value="259">82GAMA 神經外科伽傌刀</option>
+                      <option value="256">82ERCU 急診加護中心</option>
+                      <option value="255">82ER 急診</option>
+                      <option value="254">82EDSC 內視鏡中心</option>
+                      <option value="258">82E035 Ｅ０３５（骨髓移植）</option>
+                      <option value="257">82E005 同位素治療病房</option>
+                      <option value="249">82DR 產房</option>
+                      <option value="248">82DOMA 醫務轉診</option>
+                      <option value="253">82D040 Ｄ０４０病房</option>
+                      <option value="252">82D030 Ｄ０３０病房</option>
+                      <option value="251">82D020 Ｄ０２０病房</option>
+                      <option value="250">82D010 Ｄ０１０病房</option>
+                      <option value="354">82CVSI 心血管外科加護中心</option>
+                      <option value="239">82CVSB 思源心外加護Ｂ</option>
+                      <option value="238">82CVSA 思源恢復心外加護Ａ</option>
+                      <option value="237">82CTC 癌病中心</option>
+                      <option value="236">82CMRN 個案管理師</option>
+                      <option value="484">82APNB 肺結核個案管理護理師</option>
+                      <option value="482">82ONGU 泌尿癌個案管理護理師</option>
+                      <option value="478">82ONLU 肺癌個案管理護理師</option>
+                      <option value="477">82ONGI 肝癌個案管理護理師</option>
+                      <option value="492">82ONCR 大腸癌個案管理護理師</option>
+                      <option value="495">82ONOR 口頭頸癌個案管理護理</option>
+                      <option value="500">82ONON 淋巴癌個案管理護理師</option>
+                      <option value="506">82APNA 氣喘個案管理護理師</option>
+                      <option value="508">82ONGS 乳癌胃癌個案管理護理</option>
+                      <option value="509">82APNK 慢性腎臟病管理護理師</option>
+                      <option value="510">82ONCS 食道癌個案管理護理師</option>
+                      <option value="514">82ONGY 婦癌個案管理護理師</option>
+                      <option value="515">82ONPN 兒癌個案管理護理師</option>
+                      <option value="516">82ONNS 腦癌個案管理護理師</option>
+                      <option value="517">82APNS 腦中風個案管理護理師</option>
+                      <option value="519">82APNG 高齡個案管理護理師</option>
+                      <option value="247">82C099 Ｃ０９９病房</option>
+                      <option value="246">82C089 Ｃ０８９病房</option>
+                      <option value="245">82C079 Ｃ０７９病房</option>
+                      <option value="244">82C069 Ｃ０６９病房</option>
+                      <option value="243">82C059 Ｃ０５９病房</option>
+                      <option value="242">82C049 Ｃ０４９病房</option>
+                      <option value="241">82C039 Ｃ０３９病房</option>
+                      <option value="240">82C029 Ｃ０２９病房</option>
+                      <option value="356">82C019 Ｃ０１９病房</option>
+                      <option value="221">82BU 燒傷中心</option>
+                      <option value="220">82BRCC 呼吸照護中心</option>
+                      <option value="350">82BOS 產病假</option>
+                      <option value="235">82B118 Ｂ１１８病房</option>
+                      <option value="234">82B117 Ｂ１１７病房</option>
+                      <option value="233">82B108 Ｂ１０８病房</option>
+                      <option value="232">82B107 Ｂ１０７病房</option>
+                      <option value="231">82B098 Ｂ０９８病房</option>
+                      <option value="230">82B097 Ｂ０９７病房</option>
+                      <option value="229">82B088 Ｂ０８８病房</option>
+                      <option value="228">82B087 Ｂ０８７病房</option>
+                      <option value="227">82B078 Ｂ０７８病房</option>
+                      <option value="226">82B077 Ｂ０７７病房</option>
+                      <option value="225">82B068 Ｂ０６８病房</option>
+                      <option value="224">82B067 Ｂ０６７病房</option>
+                      <option value="223">82B058 Ｂ０５８病房</option>
+                      <option value="222">82B047 Ｂ０４７（臨床新藥試</option>
+                      <option value="168">82APN 進階護理師</option>
+                      <option value="167">82AIR 過敏免疫風濕科</option>
+                      <option value="219">82A212 Ａ２１２病房</option>
+                      <option value="218">82A211 Ａ２１１（安寧）病房</option>
+                      <option value="217">82A194 Ａ１９４病房</option>
+                      <option value="216">82A193 Ａ１９３病房</option>
+                      <option value="215">82A192 Ａ１９２病房</option>
+                      <option value="214">82A191 Ａ１９１病房</option>
+                      <option value="213">82A184 Ａ１８４病房</option>
+                      <option value="212">82A183 Ａ１８３病房</option>
+                      <option value="211">82A182 Ａ１８２病房</option>
+                      <option value="355">82A181 Ａ１８１病房</option>
+                      <option value="210">82A173 Ａ１７３病房</option>
+                      <option value="209">82A172 Ａ１７２病房</option>
+                      <option value="208">82A171 Ａ１７１病房</option>
+                      <option value="207">82A163 Ａ１６３病房</option>
+                      <option value="206">82A162 Ａ１６２病房</option>
+                      <option value="205">82A161 Ａ１６１病房</option>
+                      <option value="204">82A154 Ａ１５４病房</option>
+                      <option value="203">82A153 Ａ１５３體檢病房</option>
+                      <option value="202">82A152 Ａ１５２體檢病房</option>
+                      <option value="201">82A151 Ａ１５１體檢病房</option>
+                      <option value="200">82A144 Ａ１４４病房</option>
+                      <option value="199">82A142 Ａ１４２病房</option>
+                      <option value="198">82A141 Ａ１４１病房</option>
+                      <option value="197">82A134 Ａ１３４病房</option>
+                      <option value="196">82A124 Ａ１２４病房</option>
+                      <option value="195">82A123 Ａ１２３病房</option>
+                      <option value="194">82A122 Ａ１２２病房</option>
+                      <option value="193">82A121 Ａ１２１病房</option>
+                      <option value="192">82A114 Ａ１１４病房</option>
+                      <option value="191">82A113 Ａ１１３病房</option>
+                      <option value="190">82A112 Ａ１１２病房</option>
+                      <option value="189">82A111 Ａ１１１病房</option>
+                      <option value="188">82A104 Ａ１０４病房</option>
+                      <option value="187">82A103 Ａ１０３病房</option>
+                      <option value="186">82A102 Ａ１０２病房</option>
+                      <option value="185">82A101 Ａ１０１病房</option>
+                      <option value="184">82A094 Ａ０９４病房（小兒加</option>
+                      <option value="183">82A093 Ａ０９３病房</option>
+                      <option value="182">82A092 Ａ０９２病房</option>
+                      <option value="181">82A091 Ａ０９１病房</option>
+                      <option value="180">82A083 Ａ０８３病房（嬰兒室</option>
+                      <option value="179">82A082 Ａ０８２病房</option>
+                      <option value="178">82A081 Ａ０８１病房</option>
+                      <option value="177">82A073 Ａ０７３病房</option>
+                      <option value="176">82A072 Ａ０７２病房</option>
+                      <option value="175">82A071 Ａ０７１病房</option>
+                      <option value="174">82A063 Ａ０６３病房</option>
+                      <option value="173">82A062 Ａ０６２病房</option>
+                      <option value="172">82A061 Ａ０６１病房</option>
+                      <option value="171">82A052 Ａ０５２病房</option>
+                      <option value="170">82A051 Ａ０５１病房</option>
+                      <option value="169">82A021 醫護加強中心</option>
+                      <option value="349">827354 婦幼門診</option>
+                      <option value="310">827352 內外科門診</option>
+                      <option value="309">826116 人工腎臟室</option>
+                      <option value="308">823POR 婦幼恢復室</option>
+                      <option value="307">823OR 婦幼手術室</option>
+                      <option value="306">822POR 思源樓恢復室</option>
+                      <option value="305">822OR 思源樓手術室</option>
+                      <option value="352">822CSR 第二供應中心</option>
+                      <option value="304">821POR 中正樓恢復室</option>
+                      <option value="303">821OR 中正樓手術室</option>
+                      <option value="302">821CSR 第一供應中心</option>
+                      <option value="474">82BC 乳房醫學中心門診</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>職稱</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="0">未選擇使用者醫事類別</option>
+                      <option value="1">不指定</option>
+                      <option selected="" value="7">西醫</option>
+                      <option value="13">中醫</option>
+                      <option value="19">牙醫</option>
+                      <option value="25">護理</option>
+                      <option value="29">醫事放射</option>
+                      <option value="30">醫事檢驗</option>
+                      <option value="31">藥事</option>
+                      <option value="32">營養</option>
+                      <option value="33">呼吸治療</option>
+                      <option value="34">物理治療</option>
+                      <option value="35">職能治療</option>
+                      <option value="36">臨床心理</option>
+                      <option value="37">語言治療</option>
+                      <option value="38">聽力治療</option>
+                      <option value="39">牙體技術</option>
+                      <option value="40">其他</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>臨床教師</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="">未選擇臨床教師職位</option>
+                      <option selected="" value="63">新進臨床教師</option>
+                      <option value="64">臨床教師</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- table contect list -->
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-warning pull-rightol"> 匯出查詢紀錄</button>
+            </div>
+          </div>
+          <div class="box-body">
+            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+              <!-- /.box-body -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-hover respond">
+                    <thead>
+                      <tr>
+                        <th width="15%">單位</th>
+                        <th>病人權利</th>
+                        <th>病人安全</th>
+                        <th>護理倫理</th>
+                        <th>全人醫療</th>
+                        <th>感染管制（護）</th>
+                        <th>危機處理（護）</th>
+                        <th>急重症照護</th>
+                        <th>生命末期照護</th>
+                        <th>總計</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>感染科專科護理師</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>22</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>24</td>
+                      </tr>
+                      <tr>
+                        <td>整合照護服務中心護理</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>12</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>16</td>
+                      </tr>
+                      <tr>
+                        <td>日照中心護理師</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
+                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+
+  <!-- ./wrapper -->
+
+  <!-- jQuery 3 -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Select2 -->
+  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+  <!-- Sparkline -->
+  <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- datepicker -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-TW.min.js"></script>
+  <!-- Slimscroll -->
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+  <!-- on-off-switch -->
+  <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
+
+  <script src="dist/js/script.js"></script>
+
+  <script type="text/javascript" src="bower_components/respond/js/jquery.responsive-tables.min.js"></script>
+  <script>
+    
+    $(document).ready(function(){
+
+      $('#type_option').change(function()   {
+        if($(this).val()==='職稱'){
+          $('#unit_select').hide();
+        }else{
+          $('#unit_select').show();
+        }
+      });
+
+      $.responsiveTables('850px');
+
+      $(".select_option").select2();
+
+      $('#date, .date').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        language: 'zh-TW'
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>
