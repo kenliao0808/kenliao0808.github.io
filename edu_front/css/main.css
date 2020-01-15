@@ -231,8 +231,8 @@ ol.listDecimalCh {list-style-type: cjk-ideographic;}
 .list_striped>li:first-child {border-top: 1px solid #E5E5E5;}
 .list_striped>li {padding: 5px 5px; border-bottom: 1px solid #E5E5E5; position: relative; z-index: 1;}
 .list_striped>li:nth-of-type(odd) {background: #fafafa;}
-.listDecimal,.listDot {list-style: none;}
-.listDecimal>li:before {display: block; counter-increment: listDecimalCounter; content: counter(listDecimalCounter) ". ";}
+.listDecimalCustom,.listDot {list-style: none;}
+.listDecimalCustom>li:before {display: block; counter-increment: listDecimalCounter; content: counter(listDecimalCounter) ". ";}
 .listDot>li {position: relative; padding-left: 3rem;}
 .listDot>li:before {content: "\f111"; font-family: FontAwesome; font-size: 1rem; line-height: 2.5; display: inline-block; font-weight: 400;
     font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: absolute; left: 0;}

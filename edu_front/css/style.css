@@ -258,10 +258,23 @@ input#search {
   /* display: inline-block; */
   white-space: nowrap;
 }
+.right {
+  background: #daf3be !important;
+  padding: .5rem !important;
+}
+.right::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f058";
+  color: #5b941c;
+}
 
 footer, footer a {color: white !important;}
 footer.bg_darkGrey_dotPattern {
-    background: #4477a0 !important;
+  background: #4477a0 !important;
 }
 
 /* Uikit Style
