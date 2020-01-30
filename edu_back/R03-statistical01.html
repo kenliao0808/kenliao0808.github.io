@@ -134,9 +134,9 @@
             <ul class="treeview-menu">
               <li><a href="R01-statistical01.html"><i class="list_dot fa fa-circle"></i>學習記錄查詢</a></li>
               <li><a href="R02-statistical01.html"><i class="list_dot fa fa-circle"></i>教學記錄查詢</a></li>
-              <li><a href="R03-statistical01.html"><i class="list_dot fa fa-circle"></i>開課時數統計表</a></li>
+              <li class="active"><a href="R03-statistical01.html"><i class="list_dot fa fa-circle"></i>開課時數統計表</a></li>
               <li><a href="R04-statistical01.html"><i class="list_dot fa fa-circle"></i>必修時數統計</a></li>
-              <li class="active"><a href="R05-statistical01.html"><i class="list_dot fa fa-circle"></i>必修時數達成率</a></li>
+              <li><a href="R05-statistical01.html"><i class="list_dot fa fa-circle"></i>必修時數達成率</a></li>
               <li><a href="R06-statistical01.html"><i class="list_dot fa fa-circle"></i>臨床教師達成報表</a></li>
               <li><a href="R07-statistical01.html"><i class="list_dot fa fa-circle"></i>護理部在職教育</a></li>
               <li><a href="R08-statistical01.html"><i class="list_dot fa fa-circle"></i>單位團體護理指導</a></li>
@@ -212,7 +212,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>必修時數達成率</h1>
+        <h1>開課時數統計表</h1>
       </section>
 
       <!-- Main content -->
@@ -745,63 +745,31 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label>必修</label>
+                    <label>性質</label>
                     <select class="form-control select_option" multiple="multiple" style="width: 100%;">
-                      <option value="" selected="selected">未限定必修</option>
-                      <option value="8688">針扎防護</option>
-                      <option value="8633">性別主流</option>
-                      <option value="8542">防護措施</option>
-                      <option value="7636">護理倫理</option>
-                      <option value="7417">研究技巧</option>
-                      <option value="7386">病人安全</option>
-                      <option value="7381">新進人員通識訓練</option>
-                      <option value="7373">全人醫療</option>
-                      <option value="7518">感染管制（護）</option>
-                      <option value="7514">危機處理（護）</option>
-                      <option value="7371">抗生素使用及管理</option>
-                      <option value="7511">急重症照護</option>
-                      <option value="7439">生命末期照護</option>
-                      <option value="7375">環境教育</option>
-                      <option value="7392">危機處理</option>
-                      <option value="7367">資訊安全訓練</option>
-                      <option value="7359">感染管制</option>
-                      <option value="7355">實證醫學</option>
-                      <option value="7360">結核病相關</option>
-                      <option value="7352">醫事倫理與法律</option>
-                      <option value="7361">新興傳染病(含H5N1、H7N9)</option>
-                      <option value="7348">安寧照護</option>
-                      <option value="7350">醫病溝通</option>
-                      <option value="7354">病歷寫作</option>
-                      <option value="7345">醫療倫理、醫事法令</option>
-                      <option value="7339">行政中立</option>
-                      <option value="7342">全民國防教育</option>
-                      <option value="7366">醫品、病人安全、病人權利及隱私</option>
-                      <option value="7365">教學能力</option>
-                      <option value="7368">病人權利</option>
+                      <option value="" selected="">未限定性質</option>
+                      <option value="64">u01 教學門診</option>
+                      <option value="65">u02 期刊討論會</option>
+                      <option value="66">u03 專題演講</option>
+                      <option value="67">u04 臨床教學討論會</option>
+                      <option value="68">u05 臨床病理討論會</option>
+                      <option value="69">u06 教學迴診(teaching round)</option>
+                      <option value="70">ua1 醫學專業課程</option>
+                      <option value="71">n00 單位團體護理指導</option>
+                      <option value="72">n01 家屬座談會</option>
+                      <option value="73">n02 家屬座談會暨團體護理指導</option>
+                      <option value="74">n03 團體護理指導</option>
+                      <option value="75">n04 團體護理指導及錄影帶衛教</option>
+                      <option value="76">n05 團體護理指導暨座談會</option>
+                      <option value="77">n06 錄影帶衛教</option>
+                      <option value="330">u07  跟診教學(一般門診教學)</option>
+                      <option value="331">u08 晨報會（臨床個案討論會）</option>
+                      <option value="332">u09 影像診療研討會</option>
+                      <option value="333">u10 臨床研討會</option>
+                      <option value="334">u11 外科組織病理討論會</option>
+                      <option value="335">u12 死亡及併發症討論會</option>
+                      <option value="336">u13 雜誌研討會</option>
                     </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>開課年份</label>
-                    <select class="form-control select_option" style="width: 100%;">
-                      <option value="2020" selected="selected">2020 年</option>
-                      <option value="2019">2019 年</option>
-                      <option value="2018">2018 年</option>
-                      <option value="2017">2017 年</option>
-                      <option value="2016">2016 年</option>
-                      <option value="2015">2015 年</option>
-                      <option value="2014">2014 年</option>
-                      <option value="2013">2013 年</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="row" id="text_user" style="display: none;">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>使用者名稱</label>
-                    <input class="date form-control pull-right" type="text" >
                   </div>
                 </div>
                 <div class="col-md-8">
@@ -830,6 +798,14 @@
                   </div>
                 </div>
               </div>
+              <div class="row" id="text_user" style="display: none;">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>使用者名稱</label>
+                    <input class="date form-control pull-right" type="text" >
+                  </div>
+                </div>
+              </div>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
               </div>
@@ -849,77 +825,126 @@
           <div class="box-body">
             <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
               <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12" style="overflow-x:auto;">
+              <div class="row" style="overflow-x:auto;">
+                <div class="col-sm-12">
                   <table class="table table-hover respond">
                     <thead>
                       <tr>
-                        <th style="width: 10px">單位</th>
-                        <th>針扎防護</th>
-                        <th>性別主流</th>
-                        <th>防護措施</th>
-                        <th>護理倫理</th>
-                        <th>研究技巧</th>
-                        <th>病人安全</th>
-                        <th>新進人員通識訓練</th>
-                        <th>全人醫療</th>
-                        <th>感染管制（護）</th>
-                        <th>危機處理（護）</th>
-                        <th>抗生素使用及管理</th>
-                        <th>急重症照護</th>
-                        <th>生命末期照護</th>
-                        <th>環境教育</th>
-                        <th>危機處理</th>
-                        <th>資訊安全訓練</th>
-                        <th>感染管制</th>
-                        <th>實證醫學</th>
-                        <th>結核病相關</th>
-                        <th>醫事倫理與法律</th>
-                        <th>新興傳染病(含H5N1、H7N9)</th>
-                        <th>安寧照護</th>
-                        <th>醫病溝通</th>
-                        <th>病歷寫作</th>
-                        <th>醫療倫理、醫事法令</th>
-                        <th>行政中立</th>
-                        <th>全民國防教育</th>
-                        <th>醫品、病人安全、病人權利及隱私</th>
-                        <th>教學能力</th>
-                        <th>病人權利</th>
+                        <th style="width: 10px" rowspan="2">單位</th>
+                        <th colspan="2">  教學門診  </th>
+                        <th colspan="2">  期刊討論會 </th>
+                        <th colspan="2">  專題演講  </th>
+                        <th colspan="2">  臨床教學討論會 </th>
+                        <th colspan="2">  臨床病理討論會 </th>
+                        <th colspan="2">  教學迴診(teaching round)  </th>
+                        <th colspan="2">  醫學專業課程  </th>
+                        <th colspan="2">  單位團體護理指導  </th>
+                        <th colspan="2">  單位團體護理指導 &gt; 家屬座談會 </th>
+                        <th colspan="2">  單位團體護理指導 &gt; 家屬座談會暨團體護理指導  </th>
+                        <th colspan="2">  單位團體護理指導 &gt; 團體護理指導  </th>
+                        <th colspan="2">  單位團體護理指導 &gt; 團體護理指導及錄影帶衛教  </th>
+                        <th colspan="2">  單位團體護理指導 &gt; 團體護理指導暨座談會  </th>
+                        <th colspan="2">  單位團體護理指導 &gt; 錄影帶衛教 </th>
+                        <th colspan="2">   跟診教學(一般門診教學) </th>
+                        <th colspan="2">  晨報會（臨床個案討論會）  </th>
+                        <th colspan="2">  影像診療研討會 </th>
+                        <th colspan="2">  臨床研討會 </th>
+                        <th colspan="2">  外科組織病理討論會 </th>
+                        <th colspan="2">  死亡及併發症討論會 </th>
+                        <th colspan="2">  雜誌研討會 </th>         
+                        <th rowspan="2">  總計</th>
+                      </tr>
+                      <tr>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
+                        <th>  小時</th>
+                        <th>  折算結果</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>一般行政</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
                       </tr>
                     </tbody>
                   </table>

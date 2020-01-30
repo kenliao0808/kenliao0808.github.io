@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
 
   <link rel="stylesheet" href="dist/css/style.css">
-
+  
   <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,7 +38,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -104,7 +103,7 @@
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span>課程相關管理</span>
@@ -115,7 +114,7 @@
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
               <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
-              <li class="active"><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
+              <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
               <li><a href="B06-course1.html"><i class="list_dot fa fa-circle"></i>院外課程管理</a></li>
@@ -187,7 +186,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>臨床教師資格設定</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-user-secret"></i>
               <span>系統稽核與監控</span>
@@ -197,7 +196,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>帳號測試入口</a></li>
-              <li><a href="S01-contact1.html"><i class="list_dot fa fa-circle"></i>聯絡我們紀錄</a></li>
+              <li class="active"><a href="S01-contact1.html"><i class="list_dot fa fa-circle"></i>聯絡我們紀錄</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>卡鐘匯入紀錄</a></li>
             </ul>
           </li>
@@ -210,153 +209,76 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>性質審查管理</h1>
+        <h1>聯絡我們紀錄</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
-        <ul class="nav nav-tabs">
-          <li><a href="B03-kind1.html" class="tab_text_color">待審查課程</a></li>
-          <li class="active"><a href="B03-kind3.html" class="tab_text_color">院外課程審查</a></li>
-          <li><a href="B03-kind2.html" class="tab_text_color">審查紀錄</a></li>
-        </ul>
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
+              <button type="button" class="btn btn-primary fa fa-pencil info_edit_btn" title="編輯" onclick="open_disabled();">編輯</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
-          <div class="box-body">
-            <form role="form">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label>課程代碼 OR 課程名稱</label>
-                    <input type="text" class="form-control" placeholder="請輸入課程系統編號、課程名稱">
-                  </div>
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">類別</label>
+                <div class="col-sm-6">
+                  <select class="form-control select_option" style="width: 100%;">
+                    <option value="1">課程問題</option>
+                    <option value="2" selected="selected">一般問題</option>
+                    <option value="3">操作問題與建議</option>
+                    <option value="5">申請權限</option>
+                  </select>
                 </div>
-                <div class="col-md-8">
-                  <label>課程起訖日</label>
-                  <div class="row">
-                    <div class="pseudo_dash col-md-6">
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input class="date form-control pull-right" type="text">
-                        </div>
-                      </div>
+              </div>
+              <div class="form-group">
+                <label for="selecttype" class="col-sm-2 control-label">建立時間</label>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-clock-o"></i>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                          </div>
-                          <input class="date form-control pull-right" type="text">
-                        </div>
-                      </div>
-                    </div>
+                    <input type="text" class="time form-control pull-right" value="2020-01-30 10:25:46">
                   </div>
                 </div>
               </div>
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- table contect list -->
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-          </div>
-          <div class="box-body">
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-              <!-- /.box-body -->
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th style="width: 10px"></th>
-                        <th>課程代碼</th>
-                        <th>課程名稱</th>
-                        <th>課程起訖時間</th>
-                        <th>課程時數</th>
-                        <th>審查性質</th>
-                        <th>送審時間</th>
-                        <th>其他功能</th>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td>8619</td>
-                        <td><a class="class_link" href="B02-lesson2.html">跨領域團隊會議之超期住院病歷及無效醫療案例討論會1028</a></td>
-                        <td><time>2020-01-29（三）08:00~2020-01-29（三）09:00</time></td>
-                        <td>2</td>
-                        <td>跨領域團隊合作照護課程</td>
-                        <td><time>2019-08-27（二） 11:46</time></td>
-                        <td>
-                          <div class="margin_y_all_child">
-                            <button type="submit" class="btn btn-success">通過</button>
-                            <button type="submit" class="btn btn-danger failed_btn" data-toggle="modal" data-target="#failed_info" data-keyboard="true">不通過</button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">聯絡人姓名</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="名冠數位">
                 </div>
               </div>
-              <!-- /.box-footer (第一頁 Previous & 最後頁 Next) 請在 class 加上 disabled 當前頁請加上 active-->
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                    <ul class="pagination">
-                      <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a></li>
-                      <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-                      <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-                      <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                    </ul>
-                  </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-6">
+                  <input type="email" class="form-control" value="service@mgdi.com.tw">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">聯絡電話</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" value="02-28757501">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">內容</label>
+                <div class="col-sm-6">
+                  <textarea style="width: 100%" rows="10" name="content" class="span6">聯絡我們測試 </textarea>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="modal fade" id="failed_info">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">審查備註</h4>
-              </div>
-              <form class="form-horizontal">
-                <div class="modal-body">
-                  <div class="box-body">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">原因</label>
-                      <div class="col-sm-10">
-                        <textarea class="form-control" rows="3" placeholder=""></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <input type="hidden" id="copy_html">
-                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">關閉</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">送出</button>
-                </div>
-              </form>
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary pull-right">儲存資料</button>
             </div>
-          </div>
+            <!-- /.box-footer -->
+          </form>
+          <!-- /.box-body -->
         </div>
+        <!-- /.box -->
       </section>
       <!-- /.content -->
     </div>
@@ -366,7 +288,6 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-
   <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
@@ -395,14 +316,19 @@
   <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
-  <script>
   
-    $('#date, .date').datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      language: 'zh-TW'
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("input").prop("disabled",true);
+      $("select").prop("disabled",true);
+      $("textarea").prop("disabled",true);
     })
 
+    function open_disabled(){
+      $("input").prop("disabled",false);
+      $("select").prop("disabled",false);
+      $("textarea").prop("disabled",false);
+    }
   </script>
 </body>
 

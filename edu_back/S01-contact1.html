@@ -15,18 +15,12 @@
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
   <!-- Theme style -->
@@ -35,9 +29,9 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/all-skins.min.css">
 
-  <link rel="stylesheet" href="dist/css/tailwind.ukmedia.min.css">
   <link rel="stylesheet" href="dist/css/style.css">
 
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-toggle.min.css"/>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -45,56 +39,8 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <style>
-    /* 進度條的css */
-    .progress {
-      position:relative; 
-      width:400px; 
-      border: 1px solid #ddd; 
-      padding: 1px; 
-      border-radius: 3px; 
-    }
-    .bar { 
-      background-color: #7cc7ee; 
-      width:0%; 
-      height:20px; 
-      border-radius: 3px; 
-    }
-    .percent { 
-      position:absolute; 
-      display:inline-block; 
-      top:-3px; 
-      left:48%; 
-    }
-
-    .btn-search{color: #fff;background-color: #ef0000;border-color: #ef0000;}
-
-    /*==【popout】==*/
-    .popout{display:none;z-index:9999;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.55);}
-    .popout .inbox{
-      background:#fff;width:600px;;position:absolute;left:50%;top:0;margin:0 0 0 -300px;
-      -webkit-box-shadow:2px 2px 10px rgba(0,0,0,0.2);-moz-box-shadow:2px 2px 10px rgba(0,0,0,0.2);box-shadow:2px 2px 10px rgba(0,0,0,0.2);
-    }
-    .pop_hd{background:#f9f9f9;padding:15px 20px;border-bottom:1px solid #eee;position:relative;}
-      .pop_hd h2{font-weight:bold;}
-      .i_close{position:absolute;right:15px;top:13px;background:none;border:0;cursor:pointer;padding:5px;margin-top:-2px;opacity:0.25;color:#000;font-size:21px;font-weight:bold;line-height:1;}
-      .i_close:hover{opacity:4;}
-    .pop_bd{padding:30px 20px;}
-      .psbox{text-align:center;padding:10px;border:1px dashed #ddd;margin:0 0 20px;}
-      .psbox a{color: #337ab7}
-      .psbox small{font-size:10px;}
-      .jquery-filestyle input{width:50% !important;}
-      .popbtn{padding:30px 0 0;text-align:right;margin-bottom:-15px}
-    .popout .chosen-container{width:20% !important;}
-    input[type=file] {display: unset;}
-
-  </style>
 </head>
-<style type="text/css">
-  .form-control{height:auto;}
-</style>
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -158,7 +104,7 @@
               <li><a href="A03-lecturer1.html"><i class="list_dot fa fa-circle"></i>外部講師管理</a></li>
             </ul>
           </li>
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span>課程相關管理</span>
@@ -168,7 +114,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="B01-class1.html"><i class="list_dot fa fa-circle"></i>班別管理</a></li>
-              <li class="active"><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
+              <li><a href="B02-lesson1.html"><i class="list_dot fa fa-circle"></i>課程管理</a></li>
               <li><a href="B03-kind1.html"><i class="list_dot fa fa-circle"></i>性質審查管理</a></li>
               <li><a href="B04-strative1.html"><i class="list_dot fa fa-circle"></i>行政審查管理</a></li>
               <li><a href="B05-missing1.html"><i class="list_dot fa fa-circle"></i>缺課紀錄查詢</a></li>
@@ -241,7 +187,7 @@
               <li><a href="#"><i class="list_dot fa fa-circle"></i>臨床教師資格設定</a></li>
             </ul>
           </li>
-          <li class="treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-user-secret"></i>
               <span>系統稽核與監控</span>
@@ -251,7 +197,7 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="#"><i class="list_dot fa fa-circle"></i>帳號測試入口</a></li>
-              <li><a href="S01-contact1.html"><i class="list_dot fa fa-circle"></i>聯絡我們紀錄</a></li>
+              <li class="active"><a href="S01-contact1.html"><i class="list_dot fa fa-circle"></i>聯絡我們紀錄</a></li>
               <li><a href="#"><i class="list_dot fa fa-circle"></i>卡鐘匯入紀錄</a></li>
             </ul>
           </li>
@@ -264,7 +210,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>課程編輯</h1>
+        <h1>聯絡我們紀錄</h1>
       </section>
 
       <!-- Main content -->
@@ -272,108 +218,47 @@
         <div class="box box-primary">
           <div class="box-header with-border">
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-warning" id="batch_popout">匯入報名表</button>
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
           </div>
           <div class="box-body">
-            <ul class="nav nav-tabs">
-              <li><a href="B02-lesson2.html">課程設定</a></li>
-              <li class="active"><a href="B02-lesson3.html">報名管理</a></li>
-              <li><a href="B02-lesson4.html">簽到管理</a></li>
-              <li><a href="B02-lesson5.html">評量管理</a></li>
-              <li><a href="B02-lesson6.html">問卷管理</a></li>
-              <li><a href="B02-lesson7.html">修習結果管理</a></li>
-              <li><a href="B02-lesson8.html">訊息通知管理</a></li>
-            </ul>
-            <div class="my-3 tab-content">
+            <form role="form">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label>等級</label>
-                    <select class="form-control">
-                      <option selected value="請選擇">- 請選擇 -</option>
-                      <option value="院內">院內</option>
-                      <option value="院外">院外</option>
+                    <label>類別</label>
+                    <select class="form-control select_option" style="width: 100%;">
+                      <option value="1">課程問題</option>
+                      <option value="2" selected="selected">一般問題</option>
+                      <option value="3">操作問題與建議</option>
+                      <option value="5">申請權限</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label>狀態</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <select class="form-control">
-                          <option selected value="請選擇">- 請選擇 -</option>
-                          <option value="等待審核">等待審核</option>
-                          <option value="已審核">已審核</option>
-                          <option value="資料缺損，請使用者補件">資料缺損，請使用者補件</option>
-                          <option value="審核失敗">審核失敗</option>
-                          <option value="取消報名">取消報名</option>
-                          <option value="正式名單">正式名單</option>
-                          <option value="候補名單">候補名單</option>
-                        </select>
-                      </div>
-                      <div class="col-md-2">
-                        <button type="submit" class="w-full btn btn-primary fa fa-search"> 查詢</button>
-                      </div>
-                    </div>
+                    <label>聯絡人姓名</label>
+                    <input type="text" class="form-control" placeholder="請輸入詢問人">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="請輸入Email">
                   </div>
                 </div>
               </div>
-              <!-- /.row -->
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>報名管理</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <select class="form-control">
-                          <option selected value="請選擇">- 請選擇 -</option>
-                          <option value="等待審核">等待審核</option>
-                          <option value="已審核">已審核</option>
-                          <option value="資料缺損，請使用者補件">資料缺損，請使用者補件</option>
-                          <option value="審核失敗">審核失敗</option>
-                          <option value="取消報名">取消報名</option>
-                          <option value="正式名單">正式名單</option>
-                          <option value="候補名單">候補名單</option>
-                        </select>
-                      </div>
-                      <div class="col-md-2">
-                        <button type="button" class="w-full btn btn-primary">套用</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>通知</label>
-                    <div class="row margin_y_child">
-                      <div class="col-md-10">
-                        <select class="form-control">
-                          <option selected value="寄信給">- 寄信給 -</option>
-                          <option value="課程報名成功">課程報名成功</option>
-                          <option value="勾選的人 ">勾選的人 </option>
-                        </select>
-                      </div>
-                      <div class="col-md-2">
-                        <button type="button" class="w-full btn btn-primary">發送</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right fa fa-search"> 查詢</button>
               </div>
-              <!-- /.row -->
-            </div>
+            </form>
           </div>
         </div>
+
+        <!-- table contect list -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <div class="dataTables_info s:inline-block" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">3</span> 筆</div>
-            <div class="s:float-right margin_y_all_child">
-              <button type="button" class="btn btn-warning">資料載入卡鐘</button>
-              <button type="button" class="btn btn-warning">匯出報名表</button>
-            </div>
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">共 <span class="text-primary px-2">1</span> 筆</div>
           </div>
           <div class="box-body">
             <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -384,27 +269,28 @@
                     <tbody>
                       <tr>
                         <th style="width: 10px"></th>
-                        <th><input type="checkbox"></th>
-                        <th>姓名</th>
-                        <th>單位</th>
-                        <th>職類</th>
-                        <th>職稱</th>
-                        <th>身份證字號</th>
-                        <th>院內 / 院外</th>
-                        <th>狀態</th>
-                        <th>報名時間</th>
+                        <th>聯絡人姓名</th>
+                        <th>類別</th>
+                        <th>Email</th>
+                        <th>聯絡電話</th>
+                        <th>內容</th>
+                        <th>建立時間</th>
+                        <th>動作</th>
                       </tr>
                       <tr>
                         <td></td>
-                        <td><input type="checkbox"></td>
-                        <td>許小飛</td>
-                        <td>細胞病理科</td>
-                        <td>西醫</td>
-                        <td>醫師兼科主任</td>
-                        <td>A12322****</td>
-                        <td>院內</td>
-                        <td>正式名單</td>
-                        <td><time>2019/7/30 10:13</time></td>
+                        <td>名冠數位</td>
+                        <td>一般問題</td>
+                        <td>service@mgdi.com.tw</td>
+                        <td>02-28757501</td>
+                        <td>聯絡我們測試 </td>
+                        <td><time>2019-08-27（二） 11:46</time></td>
+                        <td>
+                          <div class="margin_y_all_child">
+                            <button type="button" class="btn btn-primary fa fa-eye" title="檢視" onclick="javascript:location.href='S01-contact2.html'"></button>
+                            <button type="button" class="btn btn-warning fa fa-trash" title="刪除"></button>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -439,59 +325,17 @@
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-  <!-- ./wrapper -->
 
-    <!-- [popout] -->
-  <section class="popout" style="display: none">
-    <section class="inbox">
-      <section class="pop_hd">
-        <h2 id="batch_title">匯入報名表</h2>
-        <button type="button" class="i_close" id="close_batch" title="close">
-          <i class="fa fa-times"></i>
-        </button>
-      </section>
-      <section class="pop_bd">
-        <section class="formbox">
-          <div class="psbox" id="batch_eg_list">
-            <a href="./clinical_teacher_eg.xlsx">報名表匯入範例格式</a>
-          </div>
-          <form id="batch_form" name="batch_form" method="POST" action="" enctype="multipart/form-data">
-            <div class="tfbar tfbar01 clearfix">
-              <b>上傳檔案：</b>
-              <span class="mcont">
-                <input type="file" name="upload_file">
-              </span>
-            </div>
-          </form>
-        </section>
-        <section class="popbtn">
-          <button class="btn btn-success" type="submit">確認送出</button>
-        </section>
-      </section>
-    </section>
-  </section>
+  <!-- ./wrapper -->
 
   <!-- jQuery 3 -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button);
-  </script>
   <!-- Bootstrap 3.3.7 -->
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- DataTables -->
-  <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-  <!-- Morris.js charts -->
-  <script src="bower_components/raphael/raphael.min.js"></script>
-  <script src="bower_components/morris.js/morris.min.js"></script>
+  <!-- Select2 -->
+  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
   <!-- Sparkline -->
   <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-  <!-- jvectormap -->
-  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
   <!-- jQuery Knob Chart -->
   <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
   <!-- daterangepicker -->
@@ -500,42 +344,24 @@
   <!-- datepicker -->
   <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
   <script src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-TW.min.js"></script>
-  <!-- bootstrap time picker -->
-  <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
-  <!-- Bootstrap WYSIHTML5 -->
-  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
   <!-- Slimscroll -->
   <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
   <!-- FastClick -->
   <script src="bower_components/fastclick/lib/fastclick.js"></script>
-  <!-- Select2 -->
-  <script src="bower_components/select2/dist/js/select2.full.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="dist/js/demo.js"></script>
-  <!-- InputMask -->
-  <script src="plugins/input-mask/jquery.inputmask.js"></script>
-  <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-  <script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <!-- on-off-switch -->
+  <script type="text/javascript" src="dist/js/bootstrap-toggle.min.js"></script>
 
   <script src="dist/js/script.js"></script>
   <script>
-    
-    $(document).ready(function(){
-      $("#batch_popout").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').show();
-      })
-      $("#close_batch").on('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('.popout').hide();
-      })
+  
+    $('#date, .date').datepicker({
+      format: "yyyy-mm-dd",
+      autoclose: true,
+      language: 'zh-TW'
     })
-    //Money Euro
-    $('[data-mask]').inputmask()
+
   </script>
 </body>
 
