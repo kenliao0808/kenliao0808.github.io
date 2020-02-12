@@ -20,8 +20,11 @@
   <link rel="stylesheet" href="css/components/slider.min.css">
   <link rel="stylesheet" href="css/components/slidenav.min.css">
   <link rel="stylesheet" href="css/components/slideshow.min.css">
+  <link rel="stylesheet" href="css/components/tooltip.almost-flat.min.css">
   <link rel="stylesheet" href="css/fontawesome-all.min.css">
   <link rel="stylesheet" href="css/fontawesome-svg-with-js.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.min.css">
+  <link rel="stylesheet" href="css/select2.min.css">
   <link rel="stylesheet" href="css/animate-3.6.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/delay.css">
@@ -125,20 +128,6 @@
     <!-- .menuBar -->
   </header>
   <div class="bg_img">
-    <div class="bg_secondary uk-container uk-container-center">
-      <form class="px-0 py-2 uk-form">
-        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-          <div class="uk-width-5-6">
-            <input class="border-0 uk-width-1-1" type="text" placeholder="請輸入標題、公告單位、課程名稱、課程系統編號">
-          </div>
-          <div class="uk-width-1-6 uk-vertical-align">
-            <div class="w-100 h-100 uk-vertical-align-middle">
-              <a class="fontSizeM1_4 text-light bg-transparent border-0  h-100 uk-flex uk-flex-middle" href="#" title="搜尋" aria-label="search" role="button"><i class="fas fa-search"></i></a>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
     <div class="min_height100vh py-3 bg_white uk-container uk-container-center">
       <div class="uk-clearfix">
         <ul class="uk-breadcrumb uk-align-left uk-visible-large">
@@ -149,7 +138,34 @@
         </ul>
         <a class="color_secondary_dark uk-margin-bottom uk-align-right uk-visible-large" href="#" title="#" hidden>帳號：<span>a123</span></a>
       </div>
-      <h3 class="mt-0 mb-2">公佈欄</h3>
+      <h3 class="mt-0 mb-2">課程瀏覽</h3>
+      <form class="px-0 py-2 uk-form">
+        <div class="uk-grid uk-grid-small" data-uk-grid-margin>
+          <div class="uk-width-small-2-3">
+            <input class="uk-width-1-1" type="text" placeholder="請輸入標題名稱">
+          </div>
+          <div class="uk-width-small-1-3">
+            <a class="btn_primary line_height_btn w-100 uk-button uk-button-primary" href="#" title="搜尋" aria-label="search" role="button"><i class="mr-1 fas fa-search"></i>搜尋</a>
+          </div>
+          <div class="widthAutoL uk-width-1-1"><label class="d-block d-md-inline-block">進階篩選：</label></div>
+          <div>
+            <select class="select2">
+              <option>-開課單位-</option>
+              <option>教學部</option>
+              <option>護理部</option>
+              <option>藥學部</option>
+            </select>
+          </div>
+          <div>
+            <select class="select2">
+              <option>-職類-</option>
+              <option>西醫</option>
+              <option>牙醫</option>
+              <option>中醫</option>
+            </select>
+          </div>
+        </div>
+      </form>
       <div class="pagination uk-form uk-margin">
         <div class="m-auto uk-width-medium-2-3 uk-flex uk-flex-space-between uk-flex-middle uk-flex-center">
           <div>
@@ -173,19 +189,31 @@
           </div>
         </div>
       </div>
+      <div class="position-relative uk-hidden-large" data-uk-dropdown>
+        <button class="uk-button">排序 <i class="uk-icon-caret-down"></i></button>
+        <div class="uk-dropdown">
+          <ul class="uk-nav uk-nav-dropdown">
+            <li><a href="#">課程起訖↑</a></li>
+            <li><a href="#">課程起訖↓</a></li>
+            <li><a href="#">課程名稱↑</a></li>
+            <li><a href="#">課程名稱↓</a></li>
+            <li><a href="#">課程名稱↓</a></li>
+          </ul>
+        </div>
+      </div>
       <ul class="uk-list uk-list-line">
         <li class="uk-hidden-small">
           <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-            <div class="uk-width-medium-2-6 uk-width-large-4-10"><small class="bg_blackOpacity08 badge text-secondary">標題</small></div>
+            <div class="uk-width-medium-2-6 uk-width-large-5-10"><small class="bg_blackOpacity08 badge text-secondary">標題</small></div>
             <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-2-10"><small class="bg_blackOpacity08 badge text-secondary">公告單位</small></div>
-            <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-2-10"><small class="bg_blackOpacity08 badge text-secondary">職類</small></div>
+            <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">職類</small></div>
             <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">刊登者</small></div>
             <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-1-10"><small class="bg_blackOpacity08 badge text-secondary">刊登日期</small></div>
           </div>
         </li>
         <li>
           <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-            <div class="uk-width-medium-2-6 uk-width-large-4-10">
+            <div class="uk-width-medium-2-6 uk-width-large-5-10">
               <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">標題</small> -->
               <a class="color_primary d-inline" href="newsdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
             </div>
@@ -193,7 +221,7 @@
               <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">公告單位</small>
               <span>醫院感染管制委員會</span>
             </div>
-            <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-2-10">
+            <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-1-10">
               <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small>
               <span>西醫</span>
             </div>
@@ -209,7 +237,7 @@
         </li>
         <li>
           <div class="uk-grid uk-grid-small" data-uk-grid-margin>
-            <div class="uk-width-medium-2-6 uk-width-large-4-10">
+            <div class="uk-width-medium-2-6 uk-width-large-5-10">
               <!-- <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">標題</small> -->
               <a class="color_primary d-inline" href="newsdetail.html">最開物都作下試難線有主立關了的中愛廠從為燈嚴色部</a>
             </div>
@@ -217,7 +245,7 @@
               <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">公告單位</small>
               <span>醫院感染管制委員會</span>
             </div>
-            <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-2-10">
+            <div class="uk-width-small-1-2 uk-width-medium-1-6 uk-width-large-1-10">
               <small class="bg_blackOpacity08 badge text-secondary uk-visible-small">課程名稱</small>
               <span>西醫</span>
             </div>
@@ -415,8 +443,24 @@
   <script src="js/components/slideset.min.js "></script>
   <script src="js/components/slideshow.min.js "></script>
   <script src="js/components/slideshow-fx.min.js "></script>
+  <script src="js/components/tooltip.min.js "></script>
   <script src="js/fontawesome-all.min.js "></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/bootstrap-datepicker.zh-TW.min.js"></script>
+  <script src="js/select2.min.js "></script>
+  <script src="js/select2.zh-TW.js "></script>
   <script src="js/script.js "></script>
+  <script>
+    $('.select2').select2({
+      language: 'zh-TW'
+    });
+    //datepicker
+    $('.form_date').datepicker({
+      language: "zh-TW",
+      autoclose: true,
+      todayHighlight: true
+    });
+  </script>
 </body>
 
 </html>
