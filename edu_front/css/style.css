@@ -277,6 +277,12 @@ footer.bg_darkGrey_dotPattern {
   background: #4477a0 !important;
 }
 
+.btn_3d {
+  border-width: 0 0 4px 0;
+  border-color: #e08600;
+  /* box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5); */
+}
+
 /* Uikit Style
 ---------------------------------------------------- */
 
