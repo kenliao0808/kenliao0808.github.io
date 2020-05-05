@@ -327,7 +327,6 @@ footer.bg_darkGrey_dotPattern {
 } */
 .toggle_truncate.truncateL {
   display: block !important;
-  min-height: 45px;
 }
 .toggle_truncate.truncateL .uk-badge {
   background-color: transparent !important;
